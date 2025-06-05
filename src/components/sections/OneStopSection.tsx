@@ -7,65 +7,127 @@ import {
   CreditCard, 
   Users,
   CheckCircle,
-  Zap
+  Zap,
+  Sparkles
 } from "lucide-react";
 
 const OneStopSection = () => {
   const services = [
     { icon: Building, label: "CNPJ", color: "from-blue-500 to-cyan-400" },
-    { icon: FileText, label: "Notas Fiscais", color: "from-green-500 to-emerald-400" },
-    { icon: Shield, label: "Certificado", color: "from-purple-500 to-pink-400" },
+    { icon: FileText, label: "Emissão de Nota", color: "from-green-500 to-emerald-400" },
+    { icon: Shield, label: "Certificado Digital", color: "from-purple-500 to-pink-400" },
     { icon: Calculator, label: "Impostos", color: "from-orange-500 to-red-400" },
     { icon: CreditCard, label: "Financeiro", color: "from-indigo-500 to-blue-400" },
     { icon: Users, label: "Consultoria", color: "from-teal-500 to-cyan-400" }
   ];
 
+  const openWhatsApp = () => {
+    window.open(`https://wa.me/5511999999999?text=${encodeURIComponent("Quero a integração total da Tucont - Tudo em um só lugar")}`, '_blank');
+  };
+
   return (
-    <section className="py-24 px-4 bg-slate-950">
-      <div className="max-w-6xl mx-auto text-center">
+    <section className="py-24 px-4 bg-slate-950 relative overflow-hidden">
+      {/* Background Effects */}
+      <div className="absolute inset-0 bg-gradient-to-br from-green-950/20 via-transparent to-blue-950/20"></div>
+      <div className="absolute top-1/3 left-1/4 w-80 h-80 bg-green-500/10 rounded-full blur-3xl animate-pulse"></div>
+      
+      <div className="max-w-7xl mx-auto text-center relative z-10">
+        
         <div className="inline-flex items-center gap-2 bg-slate-800/50 backdrop-blur-xl border border-slate-700/50 text-green-300 px-6 py-3 rounded-full mb-8">
           <CheckCircle className="w-5 h-5" />
-          <span className="font-medium">Solução Completa</span>
+          <span className="font-medium">Balcão Único</span>
         </div>
         
-        <h2 className="text-5xl md:text-6xl font-bold mb-6">
-          <span className="bg-gradient-to-r from-white via-green-200 to-orange-300 bg-clip-text text-transparent">
+        <h2 className="text-5xl md:text-7xl font-bold mb-8 leading-tight">
+          <span className="bg-gradient-to-r from-white via-green-200 to-blue-300 bg-clip-text text-transparent">
             Tudo em um só lugar.
           </span>
           <br />
-          <span className="text-orange-400">E sem enrolação.</span>
+          <span className="text-orange-400 text-4xl md:text-6xl">
+            Tudo agora.
+          </span>
         </h2>
 
-        <p className="text-xl text-slate-300 mb-16 max-w-3xl mx-auto">
+        <p className="text-xl md:text-2xl text-slate-300 mb-16 max-w-4xl mx-auto leading-relaxed">
           Pare de usar 10 sistemas diferentes. Com a Tucont, você tem tudo integrado 
           em uma única plataforma inteligente.
         </p>
 
+        {/* Grid de Serviços */}
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 mb-16">
           {services.map((service, index) => (
-            <div key={index} className="group">
-              <div className={`w-20 h-20 bg-gradient-to-r ${service.color} rounded-3xl flex items-center justify-center mx-auto mb-4 shadow-2xl group-hover:scale-110 transform transition-all duration-300`}>
-                <service.icon className="w-10 h-10 text-white" />
+            <div key={index} className="group cursor-pointer">
+              <div className={`w-20 h-20 md:w-24 md:h-24 bg-gradient-to-r ${service.color} rounded-3xl flex items-center justify-center mx-auto mb-4 shadow-2xl group-hover:scale-110 transform transition-all duration-300 group-hover:shadow-xl`}>
+                <service.icon className="w-10 h-10 md:w-12 md:h-12 text-white" />
               </div>
-              <h3 className="font-semibold text-white text-sm">{service.label}</h3>
+              <h3 className="font-semibold text-white text-sm md:text-base group-hover:text-orange-300 transition-colors">
+                {service.label}
+              </h3>
             </div>
           ))}
         </div>
 
-        <div className="bg-slate-800/30 backdrop-blur-xl border border-slate-700/50 rounded-3xl p-8 max-w-2xl mx-auto">
-          <Zap className="w-12 h-12 text-orange-400 mx-auto mb-4" />
-          <h3 className="text-2xl font-bold text-white mb-4">
+        {/* Destaque da Integração */}
+        <div className="bg-gradient-to-r from-slate-800/50 to-slate-700/50 backdrop-blur-xl border border-slate-600/50 rounded-3xl p-8 md:p-12 max-w-4xl mx-auto mb-12">
+          <div className="flex items-center justify-center gap-4 mb-6">
+            <Zap className="w-12 h-12 text-orange-400" />
+            <Sparkles className="w-8 h-8 text-yellow-400 animate-pulse" />
+          </div>
+          
+          <h3 className="text-3xl md:text-4xl font-bold text-white mb-6">
             Integração Total em 24 horas
           </h3>
-          <p className="text-slate-300 mb-6">
-            Nossa equipe configura tudo para você. Amanhã sua empresa já estará rodando no piloto automático.
+          
+          <p className="text-slate-300 mb-8 text-lg md:text-xl leading-relaxed">
+            Nossa equipe configura tudo para você. <span className="font-semibold text-green-400">Amanhã sua empresa já estará rodando no piloto automático.</span>
           </p>
+
+          {/* Benefícios da Integração */}
+          <div className="grid md:grid-cols-3 gap-6 mb-8">
+            <div className="text-center">
+              <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-emerald-400 rounded-full flex items-center justify-center mx-auto mb-3">
+                <CheckCircle className="w-6 h-6 text-white" />
+              </div>
+              <h4 className="font-semibold text-white mb-2">Zero Configuração</h4>
+              <p className="text-slate-400 text-sm">Fazemos tudo para você</p>
+            </div>
+            
+            <div className="text-center">
+              <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-cyan-400 rounded-full flex items-center justify-center mx-auto mb-3">
+                <Zap className="w-6 h-6 text-white" />
+              </div>
+              <h4 className="font-semibold text-white mb-2">Automação Total</h4>
+              <p className="text-slate-400 text-sm">Processos inteligentes</p>
+            </div>
+            
+            <div className="text-center">
+              <div className="w-12 h-12 bg-gradient-to-r from-orange-500 to-red-400 rounded-full flex items-center justify-center mx-auto mb-3">
+                <Users className="w-6 h-6 text-white" />
+              </div>
+              <h4 className="font-semibold text-white mb-2">Suporte Humano</h4>
+              <p className="text-slate-400 text-sm">Equipe sempre disponível</p>
+            </div>
+          </div>
+
           <button 
-            onClick={() => window.open(`https://wa.me/5511999999999?text=${encodeURIComponent("Quero a integração total da Tucont")}`, '_blank')}
-            className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white px-8 py-4 rounded-full font-semibold shadow-2xl transform hover:scale-105 transition-all duration-300"
+            onClick={openWhatsApp}
+            className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white px-10 py-5 rounded-full font-bold shadow-2xl transform hover:scale-105 transition-all duration-300 text-lg md:text-xl"
           >
+            <Zap className="w-6 h-6 mr-3 inline" />
             Configurar minha empresa agora
+            <Sparkles className="w-5 h-5 ml-3 inline" />
           </button>
+          
+          <p className="text-slate-400 text-sm mt-4">
+            Implementação completa • Sem dor de cabeça • Resultados imediatos
+          </p>
+        </div>
+
+        {/* Frase de Impacto Final */}
+        <div className="text-center">
+          <p className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-green-400 to-blue-400 bg-clip-text text-transparent">
+            "Sua empresa conectada, automatizada e crescendo. Tudo agora."
+          </p>
         </div>
       </div>
     </section>

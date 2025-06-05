@@ -76,8 +76,8 @@ const Footer = () => {
 
         <div className="border-t border-slate-800 mt-12 pt-8">
           <div className="text-center">
-            <p className="text-xl font-semibold text-orange-400 mb-2">
-              "Sua contabilidade parou de olhar para trás. Agora ela olha para o seu futuro."
+            <p className="text-2xl md:text-3xl font-bold text-orange-400 mb-4">
+              "Sua contabilidade passou a olhar para o futuro."
             </p>
             <p className="text-slate-400">
               &copy; 2024 Tucont. Todos os direitos reservados.

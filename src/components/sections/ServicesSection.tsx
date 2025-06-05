@@ -6,10 +6,9 @@ import {
   Calculator, 
   TrendingUp, 
   Shield, 
-  FileText, 
+  Globe, 
   Users, 
   Zap, 
-  Target,
   ArrowRight,
   Sparkles
 } from "lucide-react";
@@ -21,7 +20,7 @@ const ServicesSection = () => {
     {
       icon: Building,
       title: "Abertura de empresa",
-      description: "CNPJ em 24h com orientação completa sobre melhor enquadramento tributário",
+      description: "CNPJ em 24h com orientação completa sobre melhor enquadramento tributário e estrutura legal",
       price: "A partir de R$ 297",
       color: "from-blue-500 to-cyan-400",
       features: ["CNPJ em 24h", "Análise tributária", "Suporte completo"]
@@ -29,47 +28,39 @@ const ServicesSection = () => {
     {
       icon: Calculator,
       title: "Diagnóstico tributário",
-      description: "Análise completa da sua situação fiscal com oportunidades de economia",
+      description: "Análise completa da sua situação fiscal com oportunidades de economia e otimização",
       price: "Consulta gratuita",
       color: "from-green-500 to-emerald-400",
       features: ["Análise fiscal", "Economia de impostos", "Relatório detalhado"]
     },
     {
       icon: TrendingUp,
-      title: "Consultoria para escalar",
-      description: "Estratégias personalizadas para crescimento sustentável do seu negócio",
+      title: "Planejamento para escalar",
+      description: "Estratégias personalizadas e frameworks validados para crescimento sustentável",
       price: "R$ 497/mês",
       color: "from-orange-500 to-red-400",
       features: ["Mentoria 1:1", "Plano estratégico", "Acompanhamento mensal"]
     },
     {
       icon: Shield,
-      title: "Compliance automático",
-      description: "Mantenha sua empresa sempre em dia com obrigações fiscais automatizadas",
+      title: "Regularização fiscal",
+      description: "Resolva pendências e mantenha sua empresa sempre em dia com automação inteligente",
       price: "R$ 197/mês",
       color: "from-purple-500 to-pink-400",
       features: ["Automação fiscal", "Alertas em tempo real", "Zero multas"]
     },
     {
-      icon: FileText,
-      title: "Emissão de notas",
-      description: "Sistema inteligente para emissão automática de notas fiscais",
-      price: "R$ 97/mês",
+      icon: Globe,
+      title: "Criação de site + solução digital",
+      description: "Site profissional + ferramentas digitais integradas ao seu negócio",
+      price: "R$ 897",
       color: "from-indigo-500 to-blue-400",
-      features: ["Emissão automática", "Integração total", "Backup seguro"]
-    },
-    {
-      icon: Users,
-      title: "BPO Financeiro",
-      description: "Terceirização completa do seu departamento financeiro",
-      price: "Sob consulta",
-      color: "from-teal-500 to-cyan-400",
-      features: ["Equipe especializada", "Relatórios gerenciais", "Consultoria incluída"]
+      features: ["Site responsivo", "Integração total", "Suporte técnico"]
     }
   ];
 
   const handleServiceClick = (service: any) => {
-    const message = `Olá! Quero conhecer o serviço: ${service.title}`;
+    const message = `Olá! Quero este agora: ${service.title} 🚀`;
     window.open(`https://wa.me/5511999999999?text=${encodeURIComponent(message)}`, '_blank');
   };
 
@@ -96,7 +87,7 @@ const ServicesSection = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
           {services.map((service, index) => (
             <div 
               key={index}
@@ -108,14 +99,14 @@ const ServicesSection = () => {
               <div className={`absolute inset-0 bg-gradient-to-r ${service.color} opacity-0 group-hover:opacity-20 rounded-3xl blur-xl transition-all duration-500`}></div>
               
               {/* Card */}
-              <div className="relative bg-slate-900/80 backdrop-blur-xl border border-slate-700/50 rounded-3xl p-6 hover:bg-slate-800/80 transition-all duration-300 transform hover:scale-105 hover:-translate-y-2 shadow-2xl group-hover:shadow-xl h-full flex flex-col">
+              <div className="relative bg-slate-900/80 backdrop-blur-xl border border-slate-700/50 rounded-3xl p-8 hover:bg-slate-800/80 transition-all duration-300 transform hover:scale-105 hover:-translate-y-2 shadow-2xl group-hover:shadow-xl h-full flex flex-col">
                 
                 {/* Header */}
                 <div className="flex items-center gap-4 mb-6">
-                  <div className={`w-14 h-14 bg-gradient-to-r ${service.color} rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300`}>
-                    <service.icon className="w-7 h-7 text-white" />
+                  <div className={`w-16 h-16 bg-gradient-to-r ${service.color} rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300`}>
+                    <service.icon className="w-8 h-8 text-white" />
                   </div>
-                  <div>
+                  <div className="flex-1">
                     <h3 className="text-xl font-bold text-white leading-tight">
                       {service.title}
                     </h3>
@@ -131,7 +122,7 @@ const ServicesSection = () => {
                 </p>
 
                 {/* Features */}
-                <div className="space-y-2 mb-6">
+                <div className="space-y-2 mb-8">
                   {service.features.map((feature, idx) => (
                     <div key={idx} className="flex items-center gap-3 text-slate-300 text-sm">
                       <div className={`w-2 h-2 rounded-full bg-gradient-to-r ${service.color}`}></div>
@@ -143,10 +134,10 @@ const ServicesSection = () => {
                 {/* CTA Button */}
                 <Button 
                   onClick={() => handleServiceClick(service)}
-                  className={`w-full bg-gradient-to-r ${service.color} hover:shadow-lg text-white rounded-xl py-3 font-semibold transform transition-all duration-300 ${hoveredCard === index ? 'scale-105' : ''}`}
+                  className={`w-full bg-gradient-to-r ${service.color} hover:shadow-lg text-white rounded-xl py-4 font-semibold transform transition-all duration-300 ${hoveredCard === index ? 'scale-105' : ''} text-lg`}
                 >
-                  Quero esse agora
-                  <ArrowRight className="w-4 h-4 ml-2" />
+                  Quero este agora
+                  <ArrowRight className="w-5 h-5 ml-2" />
                 </Button>
               </div>
             </div>
@@ -154,20 +145,21 @@ const ServicesSection = () => {
         </div>
 
         {/* Bottom CTA */}
-        <div className="text-center mt-16">
+        <div className="text-center">
           <div className="bg-gradient-to-r from-slate-800/50 to-slate-700/50 backdrop-blur-xl border border-slate-600/50 rounded-3xl p-8 max-w-3xl mx-auto">
-            <h3 className="text-2xl font-bold text-white mb-4">
+            <h3 className="text-3xl font-bold text-white mb-4">
               Não sabe qual serviço escolher?
             </h3>
-            <p className="text-slate-300 mb-6">
+            <p className="text-slate-300 mb-6 text-lg">
               Nossa IA analisa sua situação e recomenda a solução ideal para sua empresa.
             </p>
             <Button 
               onClick={() => window.open(`https://wa.me/5511999999999?text=${encodeURIComponent("Quero uma análise completa da minha empresa")}`, '_blank')}
-              className="bg-gradient-to-r from-blue-500 via-purple-500 to-orange-500 hover:from-blue-600 hover:via-purple-600 hover:to-orange-600 text-white px-8 py-4 text-lg rounded-full shadow-2xl transform hover:scale-105 transition-all duration-300"
+              className="bg-gradient-to-r from-blue-500 via-purple-500 to-orange-500 hover:from-blue-600 hover:via-purple-600 hover:to-orange-600 text-white px-10 py-5 text-xl rounded-full shadow-2xl transform hover:scale-105 transition-all duration-300"
             >
-              <Zap className="w-5 h-5 mr-2" />
+              <Zap className="w-6 h-6 mr-3" />
               Análise gratuita com IA
+              <ArrowRight className="w-6 h-6 ml-3" />
             </Button>
           </div>
         </div>

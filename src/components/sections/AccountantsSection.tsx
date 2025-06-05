@@ -1,183 +1,160 @@
 
+import { Users, Zap, TrendingUp, Crown, Shield, Target, ArrowRight, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { 
-  Users, 
-  Handshake, 
-  TrendingUp, 
-  Award, 
-  Zap, 
-  Target,
-  ArrowRight,
-  Crown,
-  Building
-} from "lucide-react";
 
 const AccountantsSection = () => {
-  const openWhatsApp = () => {
-    window.open(`https://wa.me/5511999999999?text=${encodeURIComponent("Sou contador e quero ser um Agente Tucont")}`, '_blank');
-  };
-
   const benefits = [
     {
-      icon: Zap,
-      title: "Tecnologia",
-      description: "Plataforma completa com IA para automatizar 90% dos processos"
+      icon: Crown,
+      title: "Plataforma com IA e método exclusivo",
+      description: "Acesso a tecnologia proprietária e frameworks validados em milhares de empresas"
     },
     {
-      icon: Target,
-      title: "Método",
-      description: "Metodologia exclusiva testada em milhares de empresas"
+      icon: Shield,
+      title: "Autonomia com suporte",
+      description: "Trabalhe de forma independente com backup completo da nossa equipe especializada"
     },
     {
-      icon: Award,
-      title: "Marca",
-      description: "Use a força da marca Tucont no seu mercado local"
-    },
-    {
-      icon: Users,
-      title: "Comunidade",
-      description: "Network exclusivo com os melhores contadores do Brasil"
+      icon: TrendingUp,
+      title: "Expansão com marca consolidada",
+      description: "Cresça aproveitando nossa reputação e metodologia reconhecida no mercado"
     }
   ];
+
+  const openWhatsApp = () => {
+    const message = "Quero ser um Agente Integrativo Tucont - Conte-me mais sobre a parceria";
+    window.open(`https://wa.me/5511999999999?text=${encodeURIComponent(message)}`, '_blank');
+  };
 
   return (
     <section className="py-24 px-4 bg-gradient-to-br from-slate-900 via-orange-950/20 to-slate-900 relative overflow-hidden">
       {/* Background Effects */}
-      <div className="absolute inset-0">
-        <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-orange-500/10 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-1/4 left-1/4 w-80 h-80 bg-yellow-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
-      </div>
-
-      <div className="max-w-6xl mx-auto relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+      <div className="absolute inset-0 bg-gradient-to-r from-orange-600/10 via-transparent to-yellow-500/10"></div>
+      <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-orange-500/10 rounded-full blur-3xl animate-pulse"></div>
+      
+      <div className="max-w-7xl mx-auto relative z-10">
+        
+        {/* Header com destaque especial */}
+        <div className="text-center mb-16">
+          <div className="inline-flex items-center gap-2 bg-gradient-to-r from-orange-500/20 to-yellow-500/20 backdrop-blur-sm border border-orange-500/30 rounded-full px-6 py-3 mb-8">
+            <Crown className="w-5 h-5 text-orange-400" />
+            <span className="text-sm font-medium bg-gradient-to-r from-orange-200 to-yellow-200 bg-clip-text text-transparent">
+              Oportunidade Exclusiva
+            </span>
+          </div>
           
-          {/* Left Side - Content */}
+          <h2 className="text-5xl md:text-6xl font-bold mb-8 leading-tight">
+            <span className="text-white">Contador,</span>
+            <br />
+            <span className="bg-gradient-to-r from-orange-400 via-yellow-400 to-orange-500 bg-clip-text text-transparent">
+              torne-se um Agente Integrativo Tucont
+            </span>
+          </h2>
+          
+          <p className="text-xl text-orange-200 max-w-4xl mx-auto leading-relaxed">
+            Transforme sua prática contábil em um <span className="font-semibold text-yellow-400">negócio estratégico</span> 
+            com nossa tecnologia, metodologia e suporte completo.
+          </p>
+        </div>
+
+        <div className="grid lg:grid-cols-2 gap-16 items-center mb-16">
+          
+          {/* Conteúdo à esquerda */}
           <div className="space-y-8">
-            <div>
-              <div className="inline-flex items-center gap-2 bg-orange-100 text-orange-700 px-6 py-3 rounded-full mb-8">
-                <Crown className="w-5 h-5" />
-                <span className="font-medium">Para Contadores Visionários</span>
-              </div>
-              
-              <h2 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
-                <span className="bg-gradient-to-r from-orange-400 via-yellow-300 to-orange-400 bg-clip-text text-transparent">
-                  Você é contador 
-                </span>
-                <br />
-                <span className="text-white">
-                  e quer escalar?
-                </span>
-              </h2>
-              
-              <p className="text-xl text-slate-300 leading-relaxed mb-8">
-                Torne-se um <span className="font-semibold text-orange-400">Agente Integrativo Tucont</span> e 
-                transforme sua contabilidade tradicional em uma máquina de crescimento para seus clientes.
-              </p>
-
-              <div className="bg-slate-800/50 backdrop-blur-xl border border-orange-400/30 rounded-2xl p-6 mb-8">
-                <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-3">
-                  <Handshake className="w-6 h-6 text-orange-400" />
-                  O que você recebe como parceiro:
-                </h3>
-                
-                <div className="grid md:grid-cols-2 gap-4">
-                  {benefits.map((benefit, index) => (
-                    <div key={index} className="flex items-start gap-3 p-3 rounded-xl hover:bg-slate-700/50 transition-colors">
-                      <div className="w-10 h-10 bg-gradient-to-r from-orange-500 to-yellow-500 rounded-xl flex items-center justify-center flex-shrink-0">
-                        <benefit.icon className="w-5 h-5 text-white" />
-                      </div>
-                      <div>
-                        <h4 className="font-semibold text-white text-sm">{benefit.title}</h4>
-                        <p className="text-slate-400 text-xs leading-relaxed">{benefit.description}</p>
-                      </div>
-                    </div>
-                  ))}
+            
+            {/* Benefícios principais */}
+            <div className="space-y-6">
+              {benefits.map((benefit, index) => (
+                <div key={index} className="group flex gap-4 p-6 bg-slate-800/30 backdrop-blur-sm border border-orange-500/20 rounded-2xl hover:bg-orange-500/10 hover:border-orange-500/40 transition-all duration-300">
+                  <div className="w-12 h-12 bg-gradient-to-r from-orange-500 to-yellow-500 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                    <benefit.icon className="w-6 h-6 text-white" />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-white mb-2">{benefit.title}</h3>
+                    <p className="text-orange-200 leading-relaxed">{benefit.description}</p>
+                  </div>
                 </div>
-              </div>
+              ))}
+            </div>
 
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button 
-                  onClick={openWhatsApp}
-                  className="bg-gradient-to-r from-orange-500 to-yellow-500 hover:from-orange-600 hover:to-yellow-600 text-white px-8 py-4 text-lg rounded-full shadow-2xl transform hover:scale-105 transition-all duration-300 flex-1"
-                >
-                  <Users className="w-5 h-5 mr-2" />
-                  Quero ser um Agente Tucont
-                </Button>
-                
-                <Button 
-                  variant="outline"
-                  className="border-orange-400 text-orange-400 hover:bg-orange-400 hover:text-white px-6 py-4 text-lg rounded-full"
-                >
-                  Ver apresentação
-                  <ArrowRight className="w-4 h-4 ml-2" />
-                </Button>
+            {/* CTA Principal */}
+            <div className="space-y-4">
+              <Button 
+                onClick={openWhatsApp}
+                className="w-full md:w-auto bg-gradient-to-r from-orange-500 to-yellow-500 hover:from-orange-600 hover:to-yellow-600 text-slate-900 px-10 py-5 text-xl font-bold rounded-2xl shadow-2xl transform hover:scale-105 transition-all duration-300"
+              >
+                <Users className="w-6 h-6 mr-3" />
+                Quero ser parceiro
+                <ArrowRight className="w-6 h-6 ml-3" />
+              </Button>
+              
+              <p className="text-orange-300 text-sm">
+                Processo seletivo • Vagas limitadas • Suporte total
+              </p>
+            </div>
+
+          </div>
+
+          {/* Imagem/Visual à direita */}
+          <div className="relative">
+            <div className="bg-gradient-to-r from-orange-500/20 to-yellow-500/20 backdrop-blur-sm border border-orange-400/30 rounded-3xl p-8 shadow-2xl shadow-orange-500/10">
+              <div className="aspect-square bg-gradient-to-br from-orange-900/50 to-slate-800/50 rounded-2xl flex items-center justify-center overflow-hidden">
+                <img 
+                  src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?auto=format&fit=crop&w=800&h=800"
+                  alt="Contador trabalhando com tecnologia avançada"
+                  className="w-full h-full object-cover rounded-2xl"
+                />
+              </div>
+              
+              {/* Stats overlay */}
+              <div className="absolute bottom-4 left-4 right-4 bg-slate-900/80 backdrop-blur-sm rounded-xl p-4">
+                <div className="grid grid-cols-3 gap-4 text-center">
+                  <div>
+                    <div className="text-2xl font-bold text-orange-400">300%</div>
+                    <div className="text-xs text-slate-300">Aumento médio de receita</div>
+                  </div>
+                  <div>
+                    <div className="text-2xl font-bold text-yellow-400">24h</div>
+                    <div className="text-xs text-slate-300">Suporte especializado</div>
+                  </div>
+                  <div>
+                    <div className="text-2xl font-bold text-orange-400">100+</div>
+                    <div className="text-xs text-slate-300">Agentes ativos</div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
 
-          {/* Right Side - Visual */}
-          <div className="relative">
-            {/* Partnership Illustration */}
-            <div className="relative bg-slate-800/30 backdrop-blur-xl border border-orange-400/30 rounded-3xl p-8 shadow-2xl">
-              
-              {/* Partnership Visual */}
-              <div className="text-center mb-8">
-                <div className="flex items-center justify-center gap-8 mb-6">
-                  {/* Contador */}
-                  <div className="text-center">
-                    <div className="w-20 h-20 bg-gradient-to-r from-blue-500 to-cyan-400 rounded-full flex items-center justify-center mb-3 shadow-lg">
-                      <Users className="w-10 h-10 text-white" />
-                    </div>
-                    <div className="text-blue-300 font-semibold text-sm">Seu Escritório</div>
-                  </div>
+        </div>
 
-                  {/* Plus */}
-                  <div className="text-3xl font-bold text-orange-400">+</div>
-
-                  {/* Tucont */}
-                  <div className="text-center">
-                    <div className="w-20 h-20 bg-gradient-to-r from-orange-500 to-yellow-500 rounded-full flex items-center justify-center mb-3 shadow-lg">
-                      <Building className="w-10 h-10 text-white" />
-                    </div>
-                    <div className="text-orange-300 font-semibold text-sm">Tucont</div>
-                  </div>
-                </div>
-
-                {/* Equals */}
-                <div className="text-2xl font-bold text-white mb-6">=</div>
-
-                {/* Result */}
-                <div className="bg-gradient-to-r from-orange-500/20 to-yellow-500/20 border border-orange-400/30 rounded-2xl p-6">
-                  <TrendingUp className="w-12 h-12 text-orange-400 mx-auto mb-4" />
-                  <h3 className="text-xl font-bold text-white mb-2">Crescimento Exponencial</h3>
-                  <p className="text-slate-300 text-sm">
-                    Seus clientes crescem 3x mais rápido com nossa metodologia integrada
-                  </p>
-                </div>
+        {/* Seção de destaque final */}
+        <div className="text-center">
+          <div className="bg-gradient-to-r from-orange-900/30 to-yellow-900/30 backdrop-blur-xl border border-orange-500/30 rounded-3xl p-8 max-w-4xl mx-auto">
+            <h3 className="text-2xl font-bold text-white mb-4">
+              Transforme sua contabilidade tradicional em consultoria estratégica
+            </h3>
+            <p className="text-orange-200 mb-6 text-lg">
+              Junte-se aos contadores que já descobriram como <span className="font-semibold text-yellow-400">triplicar a receita</span> oferecendo valor real aos clientes.
+            </p>
+            
+            <div className="flex flex-wrap justify-center gap-4">
+              <div className="flex items-center gap-2 bg-slate-800/50 rounded-full px-4 py-2">
+                <Sparkles className="w-4 h-4 text-yellow-400" />
+                <span className="text-sm text-slate-300">Tecnologia exclusiva</span>
               </div>
-
-              {/* Stats */}
-              <div className="grid grid-cols-3 gap-4 text-center">
-                <div className="bg-slate-700/50 rounded-xl p-4">
-                  <div className="text-2xl font-bold text-orange-400 mb-1">90%</div>
-                  <div className="text-slate-400 text-xs">Menos trabalho manual</div>
-                </div>
-                <div className="bg-slate-700/50 rounded-xl p-4">
-                  <div className="text-2xl font-bold text-orange-400 mb-1">3x</div>
-                  <div className="text-slate-400 text-xs">Mais receita</div>
-                </div>
-                <div className="bg-slate-700/50 rounded-xl p-4">
-                  <div className="text-2xl font-bold text-orange-400 mb-1">100%</div>
-                  <div className="text-slate-400 text-xs">Clientes satisfeitos</div>
-                </div>
+              <div className="flex items-center gap-2 bg-slate-800/50 rounded-full px-4 py-2">
+                <Target className="w-4 h-4 text-orange-400" />
+                <span className="text-sm text-slate-300">Métodos validados</span>
+              </div>
+              <div className="flex items-center gap-2 bg-slate-800/50 rounded-full px-4 py-2">
+                <Zap className="w-4 h-4 text-yellow-400" />
+                <span className="text-sm text-slate-300">Resultados garantidos</span>
               </div>
             </div>
-
-            {/* Floating Elements */}
-            <div className="absolute -top-4 -right-4 w-8 h-8 bg-orange-400 rounded-full animate-pulse"></div>
-            <div className="absolute -bottom-4 -left-4 w-6 h-6 bg-yellow-400 rounded-full animate-pulse delay-500"></div>
           </div>
         </div>
+
       </div>
     </section>
   );

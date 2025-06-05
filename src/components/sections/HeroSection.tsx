@@ -1,170 +1,161 @@
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { MessageCircle, Send, Sparkles } from "lucide-react";
+import { MessageCircle, Sparkles, ArrowRight, Bot } from "lucide-react";
 
 const HeroSection = () => {
   const [inputValue, setInputValue] = useState("");
   const [isTyping, setIsTyping] = useState(false);
-  const [showResponse, setShowResponse] = useState(false);
-  const [animatedText, setAnimatedText] = useState("");
+  const [aiResponse, setAiResponse] = useState("");
 
-  const typeWriterTexts = [
-    "Como abrir minha empresa rapidamente?",
-    "Preciso de consultoria tributária urgente",
-    "Quero escalar meu negócio com segurança",
-    "Como otimizar meus impostos?"
-  ];
-
-  const aiResponse = "Perfeito! Vou analisar sua situação e criar um plano personalizado. Nossa IA já identificou 3 oportunidades de economia fiscal e um caminho estratégico para seu crescimento. Vamos conversar no WhatsApp?";
-
-  useEffect(() => {
-    const animateText = () => {
-      const currentText = typeWriterTexts[Math.floor(Math.random() * typeWriterTexts.length)];
-      let index = 0;
-      setAnimatedText("");
-      
-      const interval = setInterval(() => {
-        if (index < currentText.length) {
-          setAnimatedText(currentText.slice(0, index + 1));
-          index++;
-        } else {
-          clearInterval(interval);
-          setTimeout(() => {
-            animateText();
-          }, 3000);
-        }
-      }, 80);
-    };
-
-    const timer = setTimeout(animateText, 1000);
-    return () => clearTimeout(timer);
-  }, []);
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
+  const handleInputSubmit = async () => {
     if (!inputValue.trim()) return;
     
     setIsTyping(true);
+    setAiResponse("");
+    
+    // Simular resposta da IA
     setTimeout(() => {
+      const responses = [
+        "Entendi! Vou conectar você com nossa equipe para regularizar sua empresa e criar um plano de crescimento personalizado.",
+        "Perfeito! Nossa IA identificou 3 oportunidades de economia fiscal. Vou enviar um especialista via WhatsApp.",
+        "Excelente! Seu caso requer nossa Avenida de Negócios. Vou preparar um diagnóstico completo para você."
+      ];
+      
+      const randomResponse = responses[Math.floor(Math.random() * responses.length)];
+      setAiResponse(randomResponse);
       setIsTyping(false);
-      setShowResponse(true);
     }, 2000);
   };
 
   const openWhatsApp = () => {
-    window.open(`https://wa.me/5511999999999?text=${encodeURIComponent("Olá! Vim do site e quero conhecer a Tucont")}`, '_blank');
+    const message = inputValue 
+      ? `Olá! Acabei de usar a IA no site e preciso de ajuda com: ${inputValue}`
+      : "Olá! Vim do site e quero conhecer a Tucont 🚀";
+    window.open(`https://wa.me/5511999999999?text=${encodeURIComponent(message)}`, '_blank');
   };
 
   return (
-    <section className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-slate-950 via-blue-950 to-slate-900">
-      {/* Animated Background */}
+    <section className="min-h-screen bg-gradient-to-br from-slate-950 via-blue-950/50 to-slate-900 relative overflow-hidden flex items-center">
+      {/* Background Effects */}
       <div className="absolute inset-0">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-orange-500/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-cyan-400/10 rounded-full blur-2xl animate-pulse delay-500"></div>
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-orange-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-r from-blue-500/5 to-orange-500/5 rounded-full blur-3xl animate-pulse delay-500"></div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 grid lg:grid-cols-2 gap-12 items-center relative z-10 pt-20">
-        {/* Left Side - Human Face */}
-        <div className="text-center lg:text-left">
-          <div className="mb-8">
-            <img 
-              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face"
-              alt="Empreendedor"
-              className="w-32 h-32 rounded-full mx-auto lg:mx-0 border-4 border-blue-400/50 shadow-2xl shadow-blue-500/20"
-            />
-            <div className="mt-4 text-blue-300 font-medium">Empreendedor Real</div>
-          </div>
+      <div className="max-w-7xl mx-auto px-4 py-16 relative z-10">
+        <div className="text-center space-y-8">
           
-          <h1 className="text-5xl lg:text-7xl font-bold mb-6 leading-tight">
-            <span className="bg-gradient-to-r from-white via-blue-200 to-orange-300 bg-clip-text text-transparent">
-              Contabilidade era para o governo.
-            </span>
-            <br />
-            <span className="text-orange-400">
-              Agora é para o seu negócio.
-            </span>
-          </h1>
-          
-          <p className="text-xl lg:text-2xl text-slate-300 mb-8 leading-relaxed">
-            Tucont resolve sua empresa com <span className="text-blue-400 font-semibold">IA + mentoria estratégica</span>
-          </p>
-
-          <Button 
-            onClick={openWhatsApp}
-            className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white px-8 py-4 text-lg rounded-full shadow-2xl shadow-orange-500/30 transform hover:scale-105 transition-all duration-300"
-          >
-            <MessageCircle className="w-5 h-5 mr-2" />
-            Começar Agora - Grátis
-          </Button>
-        </div>
-
-        {/* Right Side - AI Avatar and Interactive Chat */}
-        <div className="space-y-8">
-          <div className="text-center">
-            <div className="relative inline-block mb-6">
-              <div className="w-32 h-32 rounded-full bg-gradient-to-br from-blue-500 to-cyan-400 flex items-center justify-center shadow-2xl shadow-blue-500/30">
-                <Sparkles className="w-16 h-16 text-white animate-pulse" />
-              </div>
-              <div className="absolute -top-2 -right-2 w-8 h-8 bg-green-500 rounded-full animate-ping"></div>
-            </div>
-            <div className="text-cyan-300 font-medium">IA Tucont Online</div>
+          {/* Badge */}
+          <div className="inline-flex items-center gap-2 bg-slate-800/50 backdrop-blur-xl border border-blue-400/30 text-blue-300 px-6 py-3 rounded-full">
+            <Sparkles className="w-5 h-5" />
+            <span className="font-medium">IA + Mentoria Estratégica</span>
           </div>
 
-          {/* Interactive Chat Interface */}
-          <div className="bg-slate-800/50 backdrop-blur-xl border border-slate-700/50 rounded-3xl p-6 shadow-2xl">
-            <form onSubmit={handleSubmit} className="space-y-4">
-              <div className="relative">
-                <input
-                  type="text"
-                  value={inputValue}
-                  onChange={(e) => setInputValue(e.target.value)}
-                  placeholder={animatedText || "Descreva o que você precisa..."}
-                  className="w-full bg-slate-700/50 border border-slate-600 rounded-2xl px-6 py-4 text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
-                />
+          {/* Headlines */}
+          <div className="space-y-6">
+            <h1 className="text-5xl md:text-7xl font-bold leading-tight">
+              <span className="bg-gradient-to-r from-white via-blue-200 to-orange-300 bg-clip-text text-transparent">
+                Contabilidade era para o governo.
+              </span>
+              <br />
+              <span className="text-orange-400">
+                Agora é para o seu negócio.
+              </span>
+            </h1>
+            
+            <p className="text-xl md:text-2xl text-slate-300 max-w-4xl mx-auto leading-relaxed">
+              <span className="font-semibold text-blue-400">Tucont</span> une IA + mentoria para 
+              resolver e impulsionar sua empresa.
+            </p>
+          </div>
+
+          {/* AI Input Interface */}
+          <div className="max-w-3xl mx-auto space-y-6">
+            <div className="relative">
+              <div className="flex gap-3 bg-slate-800/50 backdrop-blur-xl border border-slate-700/50 rounded-2xl p-4 shadow-2xl">
+                <div className="flex-1">
+                  <input
+                    type="text"
+                    placeholder="Descreva o que você precisa..."
+                    value={inputValue}
+                    onChange={(e) => setInputValue(e.target.value)}
+                    onKeyPress={(e) => e.key === 'Enter' && handleInputSubmit()}
+                    className="w-full bg-transparent text-white placeholder:text-slate-400 text-lg focus:outline-none"
+                  />
+                </div>
                 <Button 
-                  type="submit"
-                  className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-blue-500 hover:bg-blue-600 rounded-xl p-2"
+                  onClick={handleInputSubmit}
+                  disabled={!inputValue.trim() || isTyping}
+                  className="bg-gradient-to-r from-blue-500 to-orange-500 hover:from-blue-600 hover:to-orange-600 px-6 py-3 rounded-xl font-semibold"
                 >
-                  <Send className="w-5 h-5" />
+                  {isTyping ? (
+                    <div className="flex items-center gap-2">
+                      <Bot className="w-5 h-5 animate-pulse" />
+                      Pensando...
+                    </div>
+                  ) : (
+                    <div className="flex items-center gap-2">
+                      <Sparkles className="w-5 h-5" />
+                      Resolver
+                    </div>
+                  )}
                 </Button>
               </div>
-            </form>
-
-            {/* Typing Animation */}
-            {isTyping && (
-              <div className="mt-4 flex items-center gap-2 text-slate-400">
-                <div className="flex gap-1">
-                  <div className="w-2 h-2 bg-blue-400 rounded-full animate-bounce"></div>
-                  <div className="w-2 h-2 bg-blue-400 rounded-full animate-bounce delay-100"></div>
-                  <div className="w-2 h-2 bg-blue-400 rounded-full animate-bounce delay-200"></div>
-                </div>
-                <span>IA analisando...</span>
-              </div>
-            )}
+            </div>
 
             {/* AI Response */}
-            {showResponse && (
-              <div className="mt-4 p-4 bg-gradient-to-r from-blue-600/20 to-cyan-600/20 border border-blue-500/30 rounded-2xl">
-                <div className="flex items-start gap-3">
-                  <div className="w-8 h-8 rounded-full bg-gradient-to-r from-blue-500 to-cyan-400 flex items-center justify-center flex-shrink-0">
-                    <Sparkles className="w-4 h-4 text-white" />
+            {(isTyping || aiResponse) && (
+              <div className="bg-gradient-to-r from-blue-900/30 to-slate-800/30 backdrop-blur-xl border border-blue-400/30 rounded-2xl p-6 text-left">
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-orange-500 rounded-full flex items-center justify-center flex-shrink-0">
+                    <Bot className="w-6 h-6 text-white" />
                   </div>
-                  <div>
-                    <p className="text-slate-200 leading-relaxed">{aiResponse}</p>
-                    <Button 
-                      onClick={openWhatsApp}
-                      className="mt-3 bg-green-600 hover:bg-green-700 text-white rounded-full px-6 py-2 text-sm"
-                    >
-                      <MessageCircle className="w-4 h-4 mr-2" />
-                      Continuar no WhatsApp
-                    </Button>
+                  <div className="flex-1">
+                    <h4 className="font-semibold text-blue-300 mb-2">IA Tucont</h4>
+                    {isTyping ? (
+                      <div className="flex items-center gap-2 text-slate-400">
+                        <div className="flex gap-1">
+                          <div className="w-2 h-2 bg-blue-400 rounded-full animate-bounce"></div>
+                          <div className="w-2 h-2 bg-blue-400 rounded-full animate-bounce delay-100"></div>
+                          <div className="w-2 h-2 bg-blue-400 rounded-full animate-bounce delay-200"></div>
+                        </div>
+                        Analisando sua demanda...
+                      </div>
+                    ) : (
+                      <p className="text-slate-200 leading-relaxed">{aiResponse}</p>
+                    )}
                   </div>
                 </div>
               </div>
             )}
           </div>
+
+          {/* CTA Principal */}
+          <div className="space-y-4">
+            <Button 
+              onClick={openWhatsApp}
+              size="lg"
+              className="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white px-12 py-6 text-xl font-semibold rounded-2xl shadow-2xl transform hover:scale-105 transition-all duration-300"
+            >
+              <MessageCircle className="w-6 h-6 mr-3" />
+              Começar agora pelo WhatsApp
+              <ArrowRight className="w-6 h-6 ml-3" />
+            </Button>
+            
+            <p className="text-slate-400 text-sm">
+              Resposta em minutos • Sem formulários • Sem enrolação
+            </p>
+          </div>
+
+        </div>
+      </div>
+
+      {/* Scroll Indicator */}
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+        <div className="w-6 h-10 border-2 border-slate-600 rounded-full flex justify-center">
+          <div className="w-1 h-3 bg-gradient-to-b from-blue-400 to-orange-400 rounded-full mt-2 animate-pulse"></div>
         </div>
       </div>
     </section>
