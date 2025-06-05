@@ -34,7 +34,7 @@ const BusinessAvenueSection = () => {
             <div className="bg-gradient-to-r from-orange-500/20 to-yellow-500/20 backdrop-blur-sm border border-orange-400/30 rounded-2xl p-8 shadow-2xl shadow-orange-500/10">
               <div className="aspect-square bg-gradient-to-br from-orange-900/50 to-slate-800/50 rounded-xl flex items-center justify-center overflow-hidden">
                 <img 
-                  src="/lovable-uploads/08c8fd63-07d5-4e07-8f26-6eb8bd4508d4.png"
+                  src="/lovable-uploads/46365f26-9adb-4a59-9910-83ed2a27e4a3.png"
                   alt="Founder na jornada de negócios"
                   className="w-full h-full object-cover rounded-xl"
                 />

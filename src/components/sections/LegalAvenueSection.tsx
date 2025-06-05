@@ -73,9 +73,12 @@ const LegalAvenueSection = () => {
             {/* Imagem à direita com bordas neon */}
             <div className="relative">
               <div className="bg-gradient-to-r from-blue-500/20 to-blue-600/20 backdrop-blur-sm border border-blue-400/30 rounded-2xl p-8 shadow-2xl shadow-blue-500/10">
-                <div className="aspect-square bg-gradient-to-br from-blue-900/50 to-slate-800/50 rounded-xl flex items-center justify-center">
-                  <Shield className="w-24 h-24 text-blue-400 mx-auto mb-4" />
-                  <p className="text-blue-200 text-lg">Compliance e obrigações automatizadas</p>
+                <div className="aspect-square bg-gradient-to-br from-blue-900/50 to-slate-800/50 rounded-xl flex items-center justify-center overflow-hidden">
+                  <img 
+                    src="https://images.unsplash.com/photo-1460574283810-2aab119d8511?auto=format&fit=crop&w=800&h=800"
+                    alt="Relação empresa e governo - compliance automatizado"
+                    className="w-full h-full object-cover rounded-xl"
+                  />
                 </div>
               </div>
             </div>
