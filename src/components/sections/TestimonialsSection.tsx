@@ -18,10 +18,10 @@ const TestimonialsSection = () => {
       rating: 5
     },
     {
-      name: "João Contador",
+      name: "Ricardo Contadores",
       role: "Agente Tucont, SP",
       image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=80&h=80&fit=crop&crop=face",
-      text: "Como parceiro Tucont, minha receita triplicou. A tecnologia e metodologia são impressionantes!",
+      text: "Como Agente Integrativo Tucont, deixei de ser apenas operacional. Hoje atuo como consultor estratégico e minha receita triplicou!",
       rating: 5
     }
   ];

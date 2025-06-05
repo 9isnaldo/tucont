@@ -1,10 +1,17 @@
 
 import { Link } from "react-router-dom";
-import { MessageCircle, Mail, MapPin, Instagram } from "lucide-react";
+import { MessageCircle, Mail, MapPin, Instagram, Calculator } from "lucide-react";
 
 const Footer = () => {
   const openWhatsApp = () => {
     window.open(`https://wa.me/5511999999999?text=${encodeURIComponent("Olá! Quero conhecer a Tucont")}`, '_blank');
+  };
+
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
   };
 
   return (
@@ -43,10 +50,17 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Partners */}
+          {/* Para Contadores */}
           <div>
             <h3 className="font-semibold text-white mb-6 text-lg">Para Contadores</h3>
             <div className="space-y-3">
+              <button 
+                onClick={() => scrollToSection('agentes-section')} 
+                className="block text-slate-400 hover:text-orange-400 transition-colors text-left"
+              >
+                <Calculator className="w-4 h-4 inline mr-2" />
+                Área para Contadores
+              </button>
               <Link to="/partner" className="block text-slate-400 hover:text-orange-400 transition-colors">Seja um Agente Tucont</Link>
               <Link to="/cec" className="block text-slate-400 hover:text-orange-400 transition-colors">Programa CEC</Link>
               <Link to="/poder-contabil" className="block text-slate-400 hover:text-orange-400 transition-colors">Poder Contábil</Link>

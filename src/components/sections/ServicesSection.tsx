@@ -23,7 +23,8 @@ const ServicesSection = () => {
       description: "CNPJ em 24h com orientação completa sobre melhor enquadramento tributário e estrutura legal",
       price: "A partir de R$ 297",
       color: "from-blue-500 to-cyan-400",
-      features: ["CNPJ em 24h", "Análise tributária", "Suporte completo"]
+      features: ["CNPJ em 24h", "Análise tributária", "Suporte completo"],
+      avenue: "Legal"
     },
     {
       icon: Calculator,
@@ -31,7 +32,8 @@ const ServicesSection = () => {
       description: "Análise completa da sua situação fiscal com oportunidades de economia e otimização",
       price: "Consulta gratuita",
       color: "from-green-500 to-emerald-400",
-      features: ["Análise fiscal", "Economia de impostos", "Relatório detalhado"]
+      features: ["Análise fiscal", "Economia de impostos", "Relatório detalhado"],
+      avenue: "Legal"
     },
     {
       icon: TrendingUp,
@@ -39,7 +41,8 @@ const ServicesSection = () => {
       description: "Estratégias personalizadas e frameworks validados para crescimento sustentável",
       price: "R$ 497/mês",
       color: "from-orange-500 to-red-400",
-      features: ["Mentoria 1:1", "Plano estratégico", "Acompanhamento mensal"]
+      features: ["Mentoria 1:1", "Plano estratégico", "Acompanhamento mensal"],
+      avenue: "Negócios"
     },
     {
       icon: Shield,
@@ -47,7 +50,8 @@ const ServicesSection = () => {
       description: "Resolva pendências e mantenha sua empresa sempre em dia com automação inteligente",
       price: "R$ 197/mês",
       color: "from-purple-500 to-pink-400",
-      features: ["Automação fiscal", "Alertas em tempo real", "Zero multas"]
+      features: ["Automação fiscal", "Alertas em tempo real", "Zero multas"],
+      avenue: "Legal"
     },
     {
       icon: Globe,
@@ -55,7 +59,8 @@ const ServicesSection = () => {
       description: "Site profissional + ferramentas digitais integradas ao seu negócio",
       price: "R$ 897",
       color: "from-indigo-500 to-blue-400",
-      features: ["Site responsivo", "Integração total", "Suporte técnico"]
+      features: ["Site responsivo", "Integração total", "Suporte técnico"],
+      avenue: "Negócios"
     }
   ];
 
@@ -65,25 +70,25 @@ const ServicesSection = () => {
   };
 
   return (
-    <section className="py-24 px-4 bg-slate-950 relative overflow-hidden">
+    <section id="services-section" className="py-24 px-4 bg-slate-950 relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-br from-blue-950/30 via-transparent to-orange-950/30"></div>
       
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 bg-slate-800/50 backdrop-blur-xl border border-slate-700/50 text-blue-300 px-6 py-3 rounded-full mb-8">
             <Sparkles className="w-5 h-5" />
-            <span className="font-medium">Serviços Inteligentes</span>
+            <span className="font-medium">Para Empresas e Empreendedores</span>
           </div>
           
           <h2 className="text-5xl md:text-6xl font-bold mb-8 leading-tight">
             <span className="bg-gradient-to-r from-white via-blue-200 to-orange-300 bg-clip-text text-transparent">
-              Soluções que sua empresa precisa
+              Soluções para empresas e empreendedores
             </span>
           </h2>
           
           <p className="text-xl text-slate-300 max-w-4xl mx-auto leading-relaxed">
-            Cada serviço é <span className="font-semibold text-blue-400">otimizado por IA</span> e 
-            acompanhado por especialistas para garantir resultados excepcionais.
+            Para quem busca abrir, regularizar ou escalar seu negócio com <span className="font-semibold text-blue-400">tecnologia</span>, 
+            inteligência contábil e <span className="font-semibold text-orange-400">orientação estratégica real</span>.
           </p>
         </div>
 
@@ -101,8 +106,19 @@ const ServicesSection = () => {
               {/* Card */}
               <div className="relative bg-slate-900/80 backdrop-blur-xl border border-slate-700/50 rounded-3xl p-8 hover:bg-slate-800/80 transition-all duration-300 transform hover:scale-105 hover:-translate-y-2 shadow-2xl group-hover:shadow-xl h-full flex flex-col">
                 
+                {/* Avenue Badge */}
+                <div className="absolute top-4 right-4">
+                  <span className={`text-xs px-3 py-1 rounded-full font-medium ${
+                    service.avenue === 'Legal' 
+                      ? 'bg-blue-500/20 text-blue-300 border border-blue-500/30' 
+                      : 'bg-orange-500/20 text-orange-300 border border-orange-500/30'
+                  }`}>
+                    Avenida {service.avenue}
+                  </span>
+                </div>
+
                 {/* Header */}
-                <div className="flex items-center gap-4 mb-6">
+                <div className="flex items-center gap-4 mb-6 mt-8">
                   <div className={`w-16 h-16 bg-gradient-to-r ${service.color} rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300`}>
                     <service.icon className="w-8 h-8 text-white" />
                   </div>

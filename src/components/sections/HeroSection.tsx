@@ -1,7 +1,6 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { MessageCircle, Sparkles, ArrowRight, Bot } from "lucide-react";
+import { MessageCircle, Sparkles, ArrowRight, Bot, User, Calculator } from "lucide-react";
 
 const HeroSection = () => {
   const [inputValue, setInputValue] = useState("");
@@ -35,9 +34,16 @@ const HeroSection = () => {
     window.open(`https://wa.me/5511999999999?text=${encodeURIComponent(message)}`, '_blank');
   };
 
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section className="min-h-screen bg-gradient-to-br from-slate-950 via-blue-950/50 to-slate-900 relative overflow-hidden flex items-center">
-      {/* Background Effects */}
+      {/* ... keep existing code (background effects) */}
       <div className="absolute inset-0">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse"></div>
         <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-orange-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
@@ -69,9 +75,36 @@ const HeroSection = () => {
               <span className="font-semibold text-blue-400">Tucont</span> une IA + mentoria para 
               resolver e impulsionar sua empresa.
             </p>
+
+            {/* Pergunta de público-alvo */}
+            <div className="space-y-4">
+              <p className="text-lg text-slate-300 font-medium">
+                Você é empreendedor ou contador?
+              </p>
+              
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <Button 
+                  onClick={() => scrollToSection('services-section')}
+                  variant="outline"
+                  className="border-blue-400/50 text-blue-300 hover:bg-blue-400/10 px-6 py-3 rounded-xl"
+                >
+                  <User className="w-5 h-5 mr-2" />
+                  Sou empreendedor
+                </Button>
+                
+                <Button 
+                  onClick={() => scrollToSection('agentes-section')}
+                  variant="outline"
+                  className="border-orange-400/50 text-orange-300 hover:bg-orange-400/10 px-6 py-3 rounded-xl"
+                >
+                  <Calculator className="w-5 h-5 mr-2" />
+                  Sou contador
+                </Button>
+              </div>
+            </div>
           </div>
 
-          {/* AI Input Interface */}
+          {/* ... keep existing code (AI Input Interface) */}
           <div className="max-w-3xl mx-auto space-y-6">
             <div className="relative">
               <div className="flex gap-3 bg-slate-800/50 backdrop-blur-xl border border-slate-700/50 rounded-2xl p-4 shadow-2xl">
@@ -132,7 +165,7 @@ const HeroSection = () => {
             )}
           </div>
 
-          {/* CTA Principal */}
+          {/* ... keep existing code (CTA Principal) */}
           <div className="space-y-4">
             <Button 
               onClick={openWhatsApp}
@@ -152,7 +185,7 @@ const HeroSection = () => {
         </div>
       </div>
 
-      {/* Scroll Indicator */}
+      {/* ... keep existing code (Scroll Indicator) */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
         <div className="w-6 h-10 border-2 border-slate-600 rounded-full flex justify-center">
           <div className="w-1 h-3 bg-gradient-to-b from-blue-400 to-orange-400 rounded-full mt-2 animate-pulse"></div>
