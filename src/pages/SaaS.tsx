@@ -28,6 +28,15 @@ const SaaS = () => {
               <span className="font-medium">Modelo SaaS</span>
             </div>
             
+            {/* Logo Tucont Money */}
+            <div className="mb-8">
+              <img 
+                src="/lovable-uploads/c42b6d52-90c3-47dc-a699-9ab88033b4fe.png" 
+                alt="Tucont Money - Financeiro as a Service" 
+                className="h-20 mx-auto"
+              />
+            </div>
+            
             <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-slate-900 to-blue-600 bg-clip-text text-transparent">
               Autoatendimento Inteligente
             </h1>

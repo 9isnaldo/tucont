@@ -27,6 +27,15 @@ const Tucont = () => {
               <span className="font-medium">Modelo Tucont - Mais Popular</span>
             </div>
             
+            {/* Logo Tucont Consulting */}
+            <div className="mb-8">
+              <img 
+                src="/lovable-uploads/4c92d87f-6732-4486-a6bc-79b4f3e47c57.png" 
+                alt="Tucont Consulting - Mentorias e Estratégias" 
+                className="h-20 mx-auto"
+              />
+            </div>
+            
             <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-orange-600 to-slate-900 bg-clip-text text-transparent">
               Modelo Unificado Completo
             </h1>
