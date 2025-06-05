@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -35,20 +36,20 @@
     --radius: 0.5rem;
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* Tucont Brand Colors */
+    --tucont-dark-blue: 221 100% 15%; /* #000D4F */
+    --tucont-orange: 33 100% 50%; /* #FF8C00 */
+    --tucont-white: 0 0% 100%; /* #FFFFFF */
+    --tucont-light-blue: 208 100% 56%; /* #1E90FF */
+    --tucont-light-gray: 0 0% 96%; /* #F5F5F5 */
   }
 
   .dark {
@@ -97,5 +98,50 @@
 
   body {
     @apply bg-background text-foreground;
+  }
+  
+  /* Smooth scrolling for anchor links */
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Custom Tucont brand classes */
+@layer utilities {
+  .bg-tucont-dark {
+    background-color: hsl(var(--tucont-dark-blue));
+  }
+  
+  .bg-tucont-orange {
+    background-color: hsl(var(--tucont-orange));
+  }
+  
+  .bg-tucont-light-blue {
+    background-color: hsl(var(--tucont-light-blue));
+  }
+  
+  .text-tucont-orange {
+    color: hsl(var(--tucont-orange));
+  }
+  
+  .text-tucont-light-blue {
+    color: hsl(var(--tucont-light-blue));
+  }
+  
+  .border-tucont-orange {
+    border-color: hsl(var(--tucont-orange));
+  }
+  
+  .border-tucont-light-blue {
+    border-color: hsl(var(--tucont-light-blue));
+  }
+  
+  .hover-glow-orange {
+    transition: all 0.3s ease;
+  }
+  
+  .hover-glow-orange:hover {
+    box-shadow: 0 0 20px hsl(var(--tucont-orange) / 0.5);
+    transform: translateY(-2px);
   }
 }

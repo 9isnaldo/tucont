@@ -10,6 +10,8 @@ import Tucont from "./pages/Tucont";
 import Partner from "./pages/Partner";
 import CEC from "./pages/CEC";
 import PoderContabil from "./pages/PoderContabil";
+import Solucoes from "./pages/Solucoes";
+import Parceiros from "./pages/Parceiros";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -22,6 +24,9 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route path="/solucoes" element={<Solucoes />} />
+          <Route path="/parceiros" element={<Parceiros />} />
+          <Route path="/agentes" element={<Parceiros />} />
           <Route path="/saas" element={<SaaS />} />
           <Route path="/tucont" element={<Tucont />} />
           <Route path="/partner" element={<Partner />} />

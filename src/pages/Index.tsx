@@ -1,5 +1,4 @@
 
-import { useState } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import HeroSection from "@/components/sections/HeroSection";
@@ -10,6 +9,7 @@ import AgentesSection from "@/components/sections/AgentesSection";
 import InteractiveAISection from "@/components/sections/InteractiveAISection";
 import TestimonialsSection from "@/components/sections/TestimonialsSection";
 import OneStopSection from "@/components/sections/OneStopSection";
+import PlansSection from "@/components/sections/PlansSection";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import GrowthModelsSection from "@/components/sections/GrowthModelsSection";
 
@@ -18,17 +18,28 @@ const Index = () => {
     <div className="min-h-screen bg-slate-950 text-white">
       <Header />
       
-      <HeroSection />
+      <div id="hero">
+        <HeroSection />
+      </div>
       <TwoAvenuesSection />
       <GrowthModelsSection />
       <JourneySection />
-      <ServicesSection />
+      <div id="solucoes">
+        <ServicesSection />
+      </div>
       <InteractiveAISection />
-      <AgentesSection />
+      <div id="planos">
+        <PlansSection />
+      </div>
+      <div id="agentes">
+        <AgentesSection />
+      </div>
       <TestimonialsSection />
       <OneStopSection />
       
-      <Footer />
+      <div id="contato">
+        <Footer />
+      </div>
       <WhatsAppButton />
     </div>
   );
