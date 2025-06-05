@@ -52,14 +52,14 @@ const ReadyToStartSection = () => {
           ].map((option, index) => (
             <div key={index} className={`bg-gradient-to-r ${option.gradient} backdrop-blur-xl border ${option.border} rounded-2xl p-8 shadow-2xl ${option.shadow} hover:shadow-xl transition-all duration-300 transform hover:scale-105`}>
               <div className="text-center">
-                <div className="w-16 h-16 bg-gradient-to-r from-slate-700 to-slate-800 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                <div className="w-16 h-16 bg-gradient-to-r from-slate-700/80 to-slate-800/80 backdrop-blur-sm border border-slate-600/30 rounded-2xl flex items-center justify-center mx-auto mb-6">
                   <option.icon className="w-8 h-8 text-orange-400" />
                 </div>
                 <h3 className="text-2xl font-bold text-white mb-4">{option.title}</h3>
                 <p className="text-blue-200 mb-6 leading-relaxed">{option.description}</p>
                 <Button 
                   onClick={() => openWhatsApp(`Quero ${option.action.toLowerCase()} com a Tucont`)}
-                  className="w-full bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 py-3 rounded-xl font-semibold transition-all duration-300"
+                  className="w-full bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 py-3 rounded-xl font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
                 >
                   {option.action}
                 </Button>
