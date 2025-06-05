@@ -20,11 +20,8 @@ const Footer = () => {
         <div className="grid md:grid-cols-4 gap-8">
           {/* Logo e Descrição */}
           <div className="space-y-4">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-gradient-to-r from-orange-500 to-orange-600 rounded-xl flex items-center justify-center">
-                <img src="/lovable-uploads/08c8fd63-07d5-4e07-8f26-6eb8bd4508d4.png" alt="Tucont" className="w-6 h-6" />
-              </div>
-              <span className="text-2xl font-bold">tucont</span>
+            <div className="flex items-center">
+              <img src="/lovable-uploads/06946f78-e9ff-48f7-b9a5-26f5f246320c.png" alt="Tucont" className="h-10" />
             </div>
             <p className="text-slate-400 leading-relaxed">
               Revolucionando a contabilidade no Brasil com IA, automação e mentoria estratégica.
@@ -67,6 +64,7 @@ const Footer = () => {
               >
                 BPO Financeiro
               </button>
+              <Link to="/solucoes" className="block text-slate-400 hover:text-orange-400 transition-colors">Ver todas as soluções</Link>
             </div>
           </div>
 
@@ -87,7 +85,7 @@ const Footer = () => {
               >
                 Seja um Agente Tucont
               </button>
-              <Link to="/cec" className="block text-slate-400 hover:text-orange-400 transition-colors">Programa CEC</Link>
+              <Link to="/parceiros" className="block text-slate-400 hover:text-orange-400 transition-colors">Programa de Parceiros</Link>
               <Link to="/poder-contabil" className="block text-slate-400 hover:text-orange-400 transition-colors">Poder Contábil</Link>
             </div>
           </div>
