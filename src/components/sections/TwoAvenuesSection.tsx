@@ -1,5 +1,5 @@
 
-import { Scale, TrendingUp, Zap, Target, ArrowRight, Sparkles } from "lucide-react";
+import { Scale, TrendingUp, Zap, Target, ArrowRight, Sparkles, Shield } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const TwoAvenuesSection = () => {
@@ -23,7 +23,7 @@ const TwoAvenuesSection = () => {
           
           <h2 className="text-5xl md:text-6xl font-bold mb-8 leading-tight">
             <span className="bg-gradient-to-r from-white via-blue-200 to-orange-300 bg-clip-text text-transparent">
-              Sua empresa tem duas jornadas cruciais
+              Na Tucont, resolvemos sua empresa por duas avenidas complementares:
             </span>
           </h2>
           
@@ -39,13 +39,21 @@ const TwoAvenuesSection = () => {
             <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
             <div className="relative bg-slate-900/80 backdrop-blur-xl border border-blue-400/30 rounded-3xl p-8 shadow-2xl hover:shadow-blue-500/20 transition-all duration-500 transform hover:scale-105 hover:-translate-y-2 h-full">
               
-              <div className="flex items-center gap-4 mb-6">
+              {/* Rótulo da Avenida */}
+              <div className="absolute -top-3 left-6">
+                <div className="bg-gradient-to-r from-blue-500 to-cyan-400 text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg flex items-center gap-2">
+                  <Shield className="w-4 h-4" />
+                  Avenida Legal
+                </div>
+              </div>
+
+              <div className="flex items-center gap-4 mb-6 mt-4">
                 <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-cyan-400 rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
                   <Scale className="w-8 h-8 text-white" />
                 </div>
                 <div>
                   <h3 className="text-3xl font-bold bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">
-                    Avenida Legal
+                    Esteira automatizada
                   </h3>
                   <div className="flex items-center gap-2 text-blue-300 text-sm">
                     <Zap className="w-4 h-4" />
@@ -55,7 +63,7 @@ const TwoAvenuesSection = () => {
               </div>
               
               <h4 className="text-xl font-semibold text-white mb-4">
-                Esteira automatizada de obrigações
+                Conformidade fiscal e operacional
               </h4>
               
               <p className="text-blue-200 mb-6 leading-relaxed">
@@ -92,7 +100,7 @@ const TwoAvenuesSection = () => {
             </div>
           </div>
 
-          {/* Avenida Negócios - COM MAIOR DESTAQUE */}
+          {/* Avenida Negócios */}
           <div className="group relative">
             {/* Badge de destaque */}
             <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 z-10">
@@ -102,20 +110,28 @@ const TwoAvenuesSection = () => {
               </div>
             </div>
 
+            {/* Rótulo da Avenida */}
+            <div className="absolute top-3 left-6 z-10">
+              <div className="bg-gradient-to-r from-orange-500 to-red-500 text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg flex items-center gap-2">
+                <TrendingUp className="w-4 h-4" />
+                Avenida de Negócios
+              </div>
+            </div>
+
             <div className="absolute inset-0 bg-gradient-to-r from-orange-500/30 to-red-500/30 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
             <div className="relative bg-slate-900/80 backdrop-blur-xl border border-orange-400/50 rounded-3xl p-8 shadow-2xl hover:shadow-orange-500/30 transition-all duration-500 transform hover:scale-105 hover:-translate-y-2 h-full">
               
-              <div className="flex items-center gap-4 mb-6">
+              <div className="flex items-center gap-4 mb-6 mt-8">
                 <div className="w-16 h-16 bg-gradient-to-r from-orange-500 to-red-500 rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
                   <TrendingUp className="w-8 h-8 text-white" />
                 </div>
                 <div>
                   <h3 className="text-3xl font-bold bg-gradient-to-r from-orange-400 to-red-300 bg-clip-text text-transparent">
-                    Avenida de Negócios
+                    Crescimento estratégico
                   </h3>
                   <div className="flex items-center gap-2 text-orange-300 text-sm">
                     <Target className="w-4 h-4" />
-                    <span>Crescimento Estratégico</span>
+                    <span>Mentoria + Frameworks</span>
                   </div>
                 </div>
               </div>

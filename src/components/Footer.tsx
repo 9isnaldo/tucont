@@ -43,10 +43,30 @@ const Footer = () => {
           <div>
             <h3 className="font-semibold text-white mb-6 text-lg">Soluções para Empresas</h3>
             <div className="space-y-3">
-              <Link to="/plataforma-notas" className="block text-slate-400 hover:text-orange-400 transition-colors">Abertura de Empresa</Link>
-              <Link to="/contabilidade-online" className="block text-slate-400 hover:text-orange-400 transition-colors">Contabilidade Automática</Link>
-              <Link to="/jornada-negocios" className="block text-slate-400 hover:text-orange-400 transition-colors">Consultoria Estratégica</Link>
-              <Link to="/bpo-financeiro" className="block text-slate-400 hover:text-orange-400 transition-colors">BPO Financeiro</Link>
+              <button 
+                onClick={() => scrollToSection('solucoes')} 
+                className="block text-slate-400 hover:text-orange-400 transition-colors text-left"
+              >
+                Abertura de Empresa
+              </button>
+              <button 
+                onClick={() => scrollToSection('solucoes')} 
+                className="block text-slate-400 hover:text-orange-400 transition-colors text-left"
+              >
+                Contabilidade Automática
+              </button>
+              <button 
+                onClick={() => scrollToSection('solucoes')} 
+                className="block text-slate-400 hover:text-orange-400 transition-colors text-left"
+              >
+                Consultoria Estratégica
+              </button>
+              <button 
+                onClick={() => scrollToSection('solucoes')} 
+                className="block text-slate-400 hover:text-orange-400 transition-colors text-left"
+              >
+                BPO Financeiro
+              </button>
             </div>
           </div>
 
@@ -55,16 +75,20 @@ const Footer = () => {
             <h3 className="font-semibold text-white mb-6 text-lg">Para Contadores</h3>
             <div className="space-y-3">
               <button 
-                onClick={() => scrollToSection('agentes-section')} 
+                onClick={() => scrollToSection('agentes')} 
                 className="block text-slate-400 hover:text-orange-400 transition-colors text-left"
               >
                 <Calculator className="w-4 h-4 inline mr-2" />
                 Área para Contadores
               </button>
-              <Link to="/partner" className="block text-slate-400 hover:text-orange-400 transition-colors">Seja um Agente Tucont</Link>
+              <button 
+                onClick={() => scrollToSection('agentes')} 
+                className="block text-slate-400 hover:text-orange-400 transition-colors text-left"
+              >
+                Seja um Agente Tucont
+              </button>
               <Link to="/cec" className="block text-slate-400 hover:text-orange-400 transition-colors">Programa CEC</Link>
               <Link to="/poder-contabil" className="block text-slate-400 hover:text-orange-400 transition-colors">Poder Contábil</Link>
-              <Link to="/marketplace" className="block text-slate-400 hover:text-orange-400 transition-colors">Marketplace BEM</Link>
             </div>
           </div>
 

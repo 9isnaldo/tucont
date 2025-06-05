@@ -7,6 +7,7 @@ import TwoAvenuesSection from "@/components/sections/TwoAvenuesSection";
 import JourneySection from "@/components/sections/JourneySection";
 import ServicesSection from "@/components/sections/ServicesSection";
 import AgentesSection from "@/components/sections/AgentesSection";
+import InteractiveAISection from "@/components/sections/InteractiveAISection";
 import TestimonialsSection from "@/components/sections/TestimonialsSection";
 import OneStopSection from "@/components/sections/OneStopSection";
 import WhatsAppButton from "@/components/WhatsAppButton";
@@ -22,6 +23,7 @@ const Index = () => {
       <GrowthModelsSection />
       <JourneySection />
       <ServicesSection />
+      <InteractiveAISection />
       <AgentesSection />
       <TestimonialsSection />
       <OneStopSection />

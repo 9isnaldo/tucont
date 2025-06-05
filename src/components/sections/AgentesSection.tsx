@@ -27,12 +27,12 @@ const AgentesSection = () => {
   ];
 
   const openWhatsApp = () => {
-    const message = "Quero ser um parceiro Tucont - Conte-me mais sobre como me tornar um Agente de Contabilidade Integrativa";
+    const message = "Quero ser um Agente Tucont - Conte-me mais sobre a parceria";
     window.open(`https://wa.me/5511999999999?text=${encodeURIComponent(message)}`, '_blank');
   };
 
   return (
-    <section id="agentes-section" className="py-24 px-4 bg-gradient-to-br from-slate-900 via-orange-950/20 to-slate-900 relative overflow-hidden">
+    <section id="agentes" className="py-24 px-4 bg-gradient-to-br from-slate-900 via-orange-950/20 to-slate-900 relative overflow-hidden">
       {/* Background Effects */}
       <div className="absolute inset-0 bg-gradient-to-r from-orange-600/10 via-transparent to-yellow-500/10"></div>
       <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-orange-500/10 rounded-full blur-3xl animate-pulse"></div>
@@ -49,16 +49,14 @@ const AgentesSection = () => {
           </div>
           
           <h2 className="text-5xl md:text-6xl font-bold mb-8 leading-tight">
-            <span className="text-white">Contador,</span>
-            <br />
             <span className="bg-gradient-to-r from-orange-400 via-yellow-400 to-orange-500 bg-clip-text text-transparent">
-              torne-se um Agente de Contabilidade Integrativa
+              Contadores: venham para a Contabilidade Integrativa
             </span>
           </h2>
           
           <p className="text-xl text-orange-200 max-w-4xl mx-auto leading-relaxed">
-            Escale sua atuação com tecnologia, método e posicionamento. Deixe de ser apenas operacional 
-            e passe a construir um <span className="font-semibold text-yellow-400">negócio de verdade</span> — 
+            Com a Tucont, você deixa de ser apenas operacional e passa a atuar com marca, método e tecnologia. 
+            Construa um <span className="font-semibold text-yellow-400">negócio de verdade</span> — 
             com a Tucont como sua parceira.
           </p>
         </div>
@@ -90,7 +88,7 @@ const AgentesSection = () => {
                 className="w-full md:w-auto bg-gradient-to-r from-orange-500 to-yellow-500 hover:from-orange-600 hover:to-yellow-600 text-slate-900 px-10 py-5 text-xl font-bold rounded-2xl shadow-2xl transform hover:scale-105 transition-all duration-300"
               >
                 <Users className="w-6 h-6 mr-3" />
-                Quero ser um parceiro Tucont
+                Quero ser um Agente Tucont
                 <ArrowRight className="w-6 h-6 ml-3" />
               </Button>
               

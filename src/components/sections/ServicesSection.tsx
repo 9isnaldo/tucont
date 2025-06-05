@@ -5,18 +5,16 @@ import {
   Building, 
   Calculator, 
   TrendingUp, 
-  Shield, 
-  Globe, 
-  Users, 
-  Zap, 
   ArrowRight,
-  Sparkles
+  Sparkles,
+  Shield,
+  BarChart3
 } from "lucide-react";
 
 const ServicesSection = () => {
   const [hoveredCard, setHoveredCard] = useState<number | null>(null);
 
-  const services = [
+  const mainServices = [
     {
       icon: Building,
       title: "Abertura de empresa",
@@ -24,7 +22,8 @@ const ServicesSection = () => {
       price: "A partir de R$ 297",
       color: "from-blue-500 to-cyan-400",
       features: ["CNPJ em 24h", "Análise tributária", "Suporte completo"],
-      avenue: "Legal"
+      avenue: "Legal",
+      avenueIcon: Shield
     },
     {
       icon: Calculator,
@@ -33,56 +32,45 @@ const ServicesSection = () => {
       price: "Consulta gratuita",
       color: "from-green-500 to-emerald-400",
       features: ["Análise fiscal", "Economia de impostos", "Relatório detalhado"],
-      avenue: "Legal"
+      avenue: "Legal",
+      avenueIcon: Shield
     },
     {
       icon: TrendingUp,
-      title: "Planejamento para escalar",
-      description: "Estratégias personalizadas e frameworks validados para crescimento sustentável",
+      title: "Mentoria Estratégica",
+      description: "Estratégias personalizadas e frameworks validados para crescimento sustentável do seu negócio",
       price: "R$ 497/mês",
       color: "from-orange-500 to-red-400",
       features: ["Mentoria 1:1", "Plano estratégico", "Acompanhamento mensal"],
-      avenue: "Negócios"
-    },
-    {
-      icon: Shield,
-      title: "Regularização fiscal",
-      description: "Resolva pendências e mantenha sua empresa sempre em dia com automação inteligente",
-      price: "R$ 197/mês",
-      color: "from-purple-500 to-pink-400",
-      features: ["Automação fiscal", "Alertas em tempo real", "Zero multas"],
-      avenue: "Legal"
-    },
-    {
-      icon: Globe,
-      title: "Criação de site + solução digital",
-      description: "Site profissional + ferramentas digitais integradas ao seu negócio",
-      price: "R$ 897",
-      color: "from-indigo-500 to-blue-400",
-      features: ["Site responsivo", "Integração total", "Suporte técnico"],
-      avenue: "Negócios"
+      avenue: "Negócios",
+      avenueIcon: BarChart3
     }
   ];
 
   const handleServiceClick = (service: any) => {
-    const message = `Olá! Quero este agora: ${service.title} 🚀`;
+    const message = `Olá! Quero este serviço agora: ${service.title} 🚀`;
+    window.open(`https://wa.me/5511999999999?text=${encodeURIComponent(message)}`, '_blank');
+  };
+
+  const handleSeeAllServices = () => {
+    const message = "Quero ver todos os serviços disponíveis";
     window.open(`https://wa.me/5511999999999?text=${encodeURIComponent(message)}`, '_blank');
   };
 
   return (
-    <section id="services-section" className="py-24 px-4 bg-slate-950 relative overflow-hidden">
+    <section id="solucoes" className="py-24 px-4 bg-slate-950 relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-br from-blue-950/30 via-transparent to-orange-950/30"></div>
       
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 bg-slate-800/50 backdrop-blur-xl border border-slate-700/50 text-blue-300 px-6 py-3 rounded-full mb-8">
             <Sparkles className="w-5 h-5" />
-            <span className="font-medium">Para Empresas e Empreendedores</span>
+            <span className="font-medium">Para Empreendedores</span>
           </div>
           
           <h2 className="text-5xl md:text-6xl font-bold mb-8 leading-tight">
             <span className="bg-gradient-to-r from-white via-blue-200 to-orange-300 bg-clip-text text-transparent">
-              Soluções para empresas e empreendedores
+              Soluções para empreendedores
             </span>
           </h2>
           
@@ -92,8 +80,8 @@ const ServicesSection = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-          {services.map((service, index) => (
+        <div className="grid md:grid-cols-3 gap-8 mb-12">
+          {mainServices.map((service, index) => (
             <div 
               key={index}
               className="group relative"
@@ -108,13 +96,14 @@ const ServicesSection = () => {
                 
                 {/* Avenue Badge */}
                 <div className="absolute top-4 right-4">
-                  <span className={`text-xs px-3 py-1 rounded-full font-medium ${
+                  <div className={`flex items-center gap-2 text-xs px-3 py-1 rounded-full font-medium ${
                     service.avenue === 'Legal' 
                       ? 'bg-blue-500/20 text-blue-300 border border-blue-500/30' 
                       : 'bg-orange-500/20 text-orange-300 border border-orange-500/30'
                   }`}>
+                    <service.avenueIcon className="w-3 h-3" />
                     Avenida {service.avenue}
-                  </span>
+                  </div>
                 </div>
 
                 {/* Header */}
@@ -160,6 +149,18 @@ const ServicesSection = () => {
           ))}
         </div>
 
+        {/* Ver todos os serviços */}
+        <div className="text-center mb-16">
+          <Button 
+            onClick={handleSeeAllServices}
+            variant="outline"
+            className="border-slate-600 text-slate-300 hover:bg-slate-800/50 px-8 py-4 text-lg rounded-xl"
+          >
+            Ver todos os serviços
+            <ArrowRight className="w-5 h-5 ml-2" />
+          </Button>
+        </div>
+
         {/* Bottom CTA */}
         <div className="text-center">
           <div className="bg-gradient-to-r from-slate-800/50 to-slate-700/50 backdrop-blur-xl border border-slate-600/50 rounded-3xl p-8 max-w-3xl mx-auto">
@@ -173,7 +174,7 @@ const ServicesSection = () => {
               onClick={() => window.open(`https://wa.me/5511999999999?text=${encodeURIComponent("Quero uma análise completa da minha empresa")}`, '_blank')}
               className="bg-gradient-to-r from-blue-500 via-purple-500 to-orange-500 hover:from-blue-600 hover:via-purple-600 hover:to-orange-600 text-white px-10 py-5 text-xl rounded-full shadow-2xl transform hover:scale-105 transition-all duration-300"
             >
-              <Zap className="w-6 h-6 mr-3" />
+              <Sparkles className="w-6 h-6 mr-3" />
               Análise gratuita com IA
               <ArrowRight className="w-6 h-6 ml-3" />
             </Button>
