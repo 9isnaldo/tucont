@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -186,10 +185,8 @@ const Index = () => {
             <div className="relative">
               <div className="bg-gradient-to-r from-orange-500/20 to-yellow-500/20 backdrop-blur-sm border border-orange-400/30 rounded-2xl p-8 shadow-2xl shadow-orange-500/10">
                 <div className="aspect-square bg-gradient-to-br from-orange-900/50 to-slate-800/50 rounded-xl flex items-center justify-center">
-                  <div className="text-center">
-                    <Rocket className="w-24 h-24 text-orange-400 mx-auto mb-4" />
-                    <p className="text-orange-200 text-lg">Founder pessoalmente na sua jornada</p>
-                  </div>
+                  <Rocket className="w-24 h-24 text-orange-400 mx-auto mb-4" />
+                  <p className="text-orange-200 text-lg">Founder pessoalmente na sua jornada</p>
                 </div>
               </div>
             </div>
@@ -293,10 +290,8 @@ const Index = () => {
             <div className="relative">
               <div className="bg-gradient-to-r from-blue-500/20 to-blue-600/20 backdrop-blur-sm border border-blue-400/30 rounded-2xl p-8 shadow-2xl shadow-blue-500/10">
                 <div className="aspect-square bg-gradient-to-br from-blue-900/50 to-slate-800/50 rounded-xl flex items-center justify-center">
-                  <div className="text-center">
-                    <Shield className="w-24 h-24 text-blue-400 mx-auto mb-4" />
-                    <p className="text-blue-200 text-lg">Compliance e obrigações automatizadas</p>
-                  </div>
+                  <Shield className="w-24 h-24 text-blue-400 mx-auto mb-4" />
+                  <p className="text-blue-200 text-lg">Compliance e obrigações automatizadas</p>
                 </div>
               </div>
             </div>
@@ -314,393 +309,81 @@ const Index = () => {
             <p className="text-xl text-blue-200">Soluções para cada momento da sua jornada empresarial</p>
           </div>
           
-          <div className="flex flex-col lg:flex-row gap-12 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 max-w-6xl mx-auto">
             {/* Para sua empresa */}
-            <div className="flex-1">
+            <div>
               <h3 className="text-2xl font-bold text-center mb-8 text-blue-300">Para sua empresa</h3>
               <div className="grid gap-6">
                 <Link to="/saas">
-                  <Card className="transition-all duration-300 hover:scale-105 bg-gradient-to-r from-slate-800/80 to-slate-900/80 backdrop-blur-xl border border-blue-400/30 shadow-2xl shadow-blue-500/10 hover:shadow-blue-500/20 h-full">
-                    <CardHeader className="pb-4 text-center">
-                      <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                        <Zap className="w-8 h-8 text-white" />
-                      </div>
-                      <CardTitle className="text-2xl text-white mb-2">SaaS</CardTitle>
-                      <CardDescription className="text-slate-300">Autoatendimento inteligente</CardDescription>
-                    </CardHeader>
-                    <CardContent className="text-center">
-                      <div className="text-2xl font-bold mb-6 text-blue-300">
-                        A partir de R$ 97/mês
-                      </div>
-                      <Button variant="outline" className="w-full border-blue-400/30 text-slate-300 hover:bg-slate-700/50 rounded-xl">
-                        Saiba mais
-                      </Button>
-                    </CardContent>
-                  </Card>
+                  <div className="bg-gradient-to-br from-orange-500 to-orange-600 rounded-3xl p-8 text-white hover:from-orange-600 hover:to-orange-700 transition-all duration-300 transform hover:scale-105 shadow-2xl">
+                    <h4 className="text-3xl font-bold mb-2">SaaS</h4>
+                    <p className="text-xl mb-4 text-orange-100">Softwares as a Service</p>
+                    <h5 className="text-lg font-semibold mb-4">Simplificamos<br />Sua Operação</h5>
+                    <p className="text-orange-100 leading-relaxed">
+                      Venda, emita notas fiscais, gerencie o financeiro
+                    </p>
+                  </div>
                 </Link>
 
                 <Link to="/tucont">
-                  <Card className="transition-all duration-300 hover:scale-105 bg-gradient-to-r from-orange-900/50 to-slate-800/50 backdrop-blur-xl border border-orange-400/30 shadow-2xl shadow-orange-500/10 hover:shadow-orange-500/20 relative overflow-hidden h-full">
+                  <div className="bg-gradient-to-br from-orange-500 to-orange-600 rounded-3xl p-8 text-white hover:from-orange-600 hover:to-orange-700 transition-all duration-300 transform hover:scale-105 shadow-2xl relative overflow-hidden">
                     <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
-                      <div className="bg-gradient-to-r from-orange-500 to-orange-600 text-white px-6 py-1 rounded-full text-sm font-semibold">
+                      <div className="bg-gradient-to-r from-yellow-400 to-yellow-500 text-orange-900 px-6 py-1 rounded-full text-sm font-bold">
                         Mais Popular
                       </div>
                     </div>
-                    <CardHeader className="pb-4 text-center">
-                      <div className="w-16 h-16 bg-gradient-to-r from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                        <Rocket className="w-8 h-8 text-white" />
-                      </div>
-                      <CardTitle className="text-2xl text-white mb-2">Tucont</CardTitle>
-                      <CardDescription className="text-orange-200">Modelo unificado completo</CardDescription>
-                    </CardHeader>
-                    <CardContent className="text-center">
-                      <div className="text-2xl font-bold mb-6 text-orange-300">
-                        A partir de R$ 297/mês
-                      </div>
-                      <Button className="w-full bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 rounded-xl">
-                        Começar agora
-                      </Button>
-                    </CardContent>
-                  </Card>
+                    <h4 className="text-3xl font-bold mb-2">Tucont</h4>
+                    <p className="text-xl mb-4 text-orange-100">Contabilidade Integrativa</p>
+                    <h5 className="text-lg font-semibold mb-4">Unificamos<br />Legal e Negócios</h5>
+                    <p className="text-orange-100 leading-relaxed">
+                      Destravamos o empreendedorismo e cuidamos das duas principais avenidas, a Legal e a de Negócios
+                    </p>
+                  </div>
                 </Link>
               </div>
             </div>
 
             {/* Para contadores e escritórios */}
-            <div className="flex-1">
+            <div>
               <h3 className="text-2xl font-bold text-center mb-8 text-orange-300">Para contadores e escritórios</h3>
               <div className="grid gap-4">
-                <Card className="transition-all duration-300 hover:scale-105 bg-gradient-to-r from-slate-800/80 to-slate-900/80 backdrop-blur-xl border border-blue-400/30 shadow-2xl shadow-blue-500/10 hover:shadow-blue-500/20 h-full">
-                  <CardHeader className="pb-4 text-center">
-                    <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                      <Users className="w-6 h-6 text-white" />
-                    </div>
-                    <CardTitle className="text-lg text-white mb-2">Partner</CardTitle>
-                    <CardDescription className="text-slate-300 text-sm">Agente integrativo</CardDescription>
-                  </CardHeader>
-                  <CardContent className="text-center">
-                    <div className="text-lg font-bold mb-4 text-purple-300">Sob demanda</div>
-                    <Button variant="outline" className="w-full border-blue-400/30 text-slate-300 hover:bg-slate-700/50 rounded-xl text-sm py-2">
-                      Saiba mais
-                    </Button>
-                  </CardContent>
-                </Card>
+                <Link to="/partner">
+                  <div className="bg-gradient-to-br from-orange-500 to-orange-600 rounded-3xl p-6 text-white hover:from-orange-600 hover:to-orange-700 transition-all duration-300 transform hover:scale-105 shadow-2xl">
+                    <h4 className="text-2xl font-bold mb-2">Tucont</h4>
+                    <p className="text-lg mb-3 text-orange-100">Partner Integrativo</p>
+                    <h5 className="text-base font-semibold mb-3">Fazemos<br />juntos</h5>
+                    <p className="text-orange-100 text-sm leading-relaxed">
+                      Acesso a plataforma personalizada, processos, automações e IA
+                    </p>
+                  </div>
+                </Link>
 
-                <Card className="transition-all duration-300 hover:scale-105 bg-gradient-to-r from-slate-800/80 to-slate-900/80 backdrop-blur-xl border border-blue-400/30 shadow-2xl shadow-blue-500/10 hover:shadow-blue-500/20 h-full">
-                  <CardHeader className="pb-4 text-center">
-                    <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-green-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                      <Target className="w-6 h-6 text-white" />
-                    </div>
-                    <CardTitle className="text-lg text-white mb-2">Cada Passo Conta - CEC</CardTitle>
-                    <CardDescription className="text-slate-300 text-sm">Implementação total via IA</CardDescription>
-                  </CardHeader>
-                  <CardContent className="text-center">
-                    <div className="text-lg font-bold mb-4 text-green-300">Consulte</div>
-                    <Button variant="outline" className="w-full border-blue-400/30 text-slate-300 hover:bg-slate-700/50 rounded-xl text-sm py-2">
-                      Saiba mais
-                    </Button>
-                  </CardContent>
-                </Card>
+                <Link to="/cec">
+                  <div className="bg-gradient-to-br from-orange-500 to-orange-600 rounded-3xl p-6 text-white hover:from-orange-600 hover:to-orange-700 transition-all duration-300 transform hover:scale-105 shadow-2xl">
+                    <h4 className="text-2xl font-bold mb-2">CEC</h4>
+                    <p className="text-lg mb-3 text-orange-100">Cada Etapa Conta</p>
+                    <h5 className="text-base font-semibold mb-3">Fazemos<br />pra você</h5>
+                    <p className="text-orange-100 text-sm leading-relaxed">
+                      Implementação na prática, de Processos, IA e automações. Personalizadas para sua empresa.
+                    </p>
+                  </div>
+                </Link>
 
-                <Card className="transition-all duration-300 hover:scale-105 bg-gradient-to-r from-slate-800/80 to-slate-900/80 backdrop-blur-xl border border-blue-400/30 shadow-2xl shadow-blue-500/10 hover:shadow-blue-500/20 h-full">
-                  <CardHeader className="pb-4 text-center">
-                    <div className="w-12 h-12 bg-gradient-to-r from-amber-500 to-amber-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                      <Crown className="w-6 h-6 text-white" />
-                    </div>
-                    <CardTitle className="text-lg text-white mb-2">Poder Contábil</CardTitle>
-                    <CardDescription className="text-slate-300 text-sm">Comunidade exclusiva</CardDescription>
-                  </CardHeader>
-                  <CardContent className="text-center">
-                    <div className="text-lg font-bold mb-4 text-amber-300">Acesso VIP</div>
-                    <Button variant="outline" className="w-full border-blue-400/30 text-slate-300 hover:bg-slate-700/50 rounded-xl text-sm py-2">
-                      Saiba mais
-                    </Button>
-                  </CardContent>
-                </Card>
+                <Link to="/poder-contabil">
+                  <div className="bg-gradient-to-br from-orange-500 to-orange-600 rounded-3xl p-6 text-white hover:from-orange-600 hover:to-orange-700 transition-all duration-300 transform hover:scale-105 shadow-2xl">
+                    <h4 className="text-2xl font-bold mb-2">Poder Contábil</h4>
+                    <p className="text-lg mb-3 text-orange-100"></p>
+                    <h5 className="text-base font-semibold mb-3">Compartilhamos<br />com você</h5>
+                    <p className="text-orange-100 text-sm leading-relaxed">
+                      Comunidade com acesso em primeira mão, a todas soluções Tucont
+                    </p>
+                  </div>
+                </Link>
               </div>
             </div>
           </div>
         </div>
       </section>
-
-      {/* Como Funciona com CTA */}
-      <section className="py-24 px-4 bg-gradient-to-r from-slate-900/50 to-slate-800/50 backdrop-blur-sm">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent">
-              Como revolucionamos sua empresa
-            </h2>
-            <p className="text-xl text-blue-200">Em 3 passos simples para resultados extraordinários</p>
-          </div>
-          
-          <div className="grid md:grid-cols-3 gap-8 mb-12">
-            {[
-              {
-                step: "01",
-                title: "IA analisa sua demanda",
-                description: "Nossa inteligência artificial processa suas necessidades em tempo real e cria uma solução personalizada",
-                icon: Bot,
-                gradient: "from-blue-500 to-blue-600"
-              },
-              {
-                step: "02", 
-                title: "Esteira automática em ação",
-                description: "Processamento completo com supervisão especializada. Zero fricção, máxima eficiência",
-                icon: Zap,
-                gradient: "from-purple-500 to-purple-600"
-              },
-              {
-                step: "03",
-                title: "Resultados entregues",
-                description: "Plano executável, mentoria ativa e crescimento mensurável. Contratação em 1 clique",
-                icon: Target,
-                gradient: "from-orange-500 to-orange-600"
-              }
-            ].map((item, index) => (
-              <div key={index} className="text-center group">
-                <div className={`w-20 h-20 bg-gradient-to-r ${item.gradient} rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                  <item.icon className="w-10 h-10 text-white" />
-                </div>
-                <div className="text-4xl font-bold text-slate-400 mb-4">{item.step}</div>
-                <h3 className="text-2xl font-bold text-white mb-4">{item.title}</h3>
-                <p className="text-slate-300 leading-relaxed">{item.description}</p>
-              </div>
-            ))}
-          </div>
-
-          {/* CTA */}
-          <div className="text-center">
-            <Button 
-              className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 px-12 py-6 text-xl font-semibold rounded-2xl shadow-2xl hover:shadow-orange-500/25 transition-all duration-300 transform hover:scale-105"
-              onClick={() => openWhatsApp("Quero revolucionar minha empresa com a Tucont agora mesmo")}
-            >
-              <Rocket className="w-6 h-6 mr-3" />
-              Revolucionar minha empresa
-            </Button>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA para Contadores com cards no padrão neon */}
-      <section className="py-24 px-4 bg-gradient-to-br from-blue-950 via-slate-900 to-blue-950 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-600/5 via-transparent to-orange-500/5"></div>
-        <div className="max-w-5xl mx-auto text-center relative">
-          <div className="w-24 h-24 bg-gradient-to-r from-blue-500 to-orange-500 rounded-3xl flex items-center justify-center mx-auto mb-8">
-            <Building className="w-12 h-12 text-white" />
-          </div>
-          <h2 className="text-4xl md:text-5xl font-bold mb-8">
-            <span className="bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent">
-              Pronto para empreender
-            </span>
-            <br />
-            <span className="bg-gradient-to-r from-orange-400 to-yellow-300 bg-clip-text text-transparent">
-              com a Tucont?
-            </span>
-          </h2>
-          <p className="text-xl mb-12 text-blue-200 max-w-3xl mx-auto leading-relaxed">
-            Torne-se um <span className="font-semibold text-white">Agente de Contabilidade Integrativa</span>. 
-            Nossa tecnologia, método validado, marca forte e suporte completo para transformar seus clientes.
-          </p>
-          
-          <div className="grid md:grid-cols-3 gap-8 mb-12 max-w-4xl mx-auto">
-            {[
-              { 
-                title: "Tecnologia", 
-                desc: "Plataforma completa já desenvolvida", 
-                icon: Zap,
-                gradient: "from-blue-500 to-blue-600"
-              },
-              { 
-                title: "Método", 
-                desc: "Frameworks validados de crescimento", 
-                icon: Target,
-                gradient: "from-purple-500 to-purple-600"
-              },
-              { 
-                title: "Suporte", 
-                desc: "Time especializado 24/7", 
-                icon: Award,
-                gradient: "from-orange-500 to-orange-600"
-              }
-            ].map((item, index) => (
-              <Card key={index} className="bg-gradient-to-r from-slate-800/80 to-slate-900/80 backdrop-blur-xl border border-blue-400/30 shadow-2xl shadow-blue-500/10 hover:shadow-blue-500/20 hover:border-blue-400/50 transition-all duration-300">
-                <CardContent className="p-6 text-center">
-                  <div className={`w-16 h-16 bg-gradient-to-r ${item.gradient} rounded-2xl flex items-center justify-center mx-auto mb-4`}>
-                    <item.icon className="w-8 h-8 text-white" />
-                  </div>
-                  <h3 className="text-lg font-bold text-white mb-2">{item.title}</h3>
-                  <p className="text-blue-200">{item.desc}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-          
-          <Button 
-            className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white px-12 py-6 text-xl font-semibold rounded-2xl shadow-2xl hover:shadow-orange-500/25 transition-all duration-300 transform hover:scale-105"
-            onClick={() => openWhatsApp("Quero ser parceiro da Tucont e me tornar um Agente de Contabilidade Integrativa")}
-          >
-            <Users className="w-6 h-6 mr-3" />
-            Quero ser parceiro
-          </Button>
-        </div>
-      </section>
-
-      {/* WhatsApp Integration */}
-      <section className="py-24 px-4 bg-gradient-to-r from-green-900/30 to-slate-900/50">
-        <div className="max-w-5xl mx-auto text-center">
-          <div className="w-24 h-24 bg-gradient-to-r from-green-500 to-green-600 rounded-3xl flex items-center justify-center mx-auto mb-8">
-            <MessageCircle className="w-12 h-12 text-white" />
-          </div>
-          <h2 className="text-4xl md:text-5xl font-bold mb-8 bg-gradient-to-r from-white to-green-200 bg-clip-text text-transparent">
-            Sua contabilidade resolve no WhatsApp
-          </h2>
-          <p className="text-xl mb-8 text-green-100 max-w-3xl mx-auto">
-            Atendimento omnichannel no canal que você mais usa. Simples, rápido e eficiente.
-          </p>
-          <Button 
-            className="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 px-12 py-6 text-xl font-semibold rounded-2xl transition-all duration-300 transform hover:scale-105"
-            onClick={() => openWhatsApp("Olá! Quero conhecer todos os serviços da Tucont")}
-          >
-            <MessageCircle className="w-6 h-6 mr-3" />
-            Falar no WhatsApp
-          </Button>
-        </div>
-      </section>
-
-      {/* Prova Social */}
-      <section className="py-24 px-4">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent">
-              Histórias de transformação
-            </h2>
-            <p className="text-xl text-blue-200">Empresas reais, resultados extraordinários</p>
-          </div>
-          
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              {
-                text: "De caótico a organizado. A Tucont me deu a estrutura que eu precisava para focar no crescimento.",
-                author: "João Silva",
-                role: "CEO, TechStart",
-                avatar: "👨‍💼"
-              },
-              {
-                text: "Agora tenho dados reais para tomar decisões. Meu faturamento cresceu 300% em 8 meses.",
-                author: "Maria Santos", 
-                role: "Fundadora, EcoStyle",
-                avatar: "👩‍💼"
-              },
-              {
-                text: "Como parceiro, consegui escalar sem aumentar equipe. Meus clientes estão crescendo mais que nunca.",
-                author: "Carlos Oliveira",
-                role: "Contador Parceiro",
-                avatar: "👨‍💻"
-              }
-            ].map((testimonial, index) => (
-              <Card key={index} className="bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-xl border-slate-600/50 hover:border-blue-500/30 transition-all duration-300">
-                <CardContent className="pt-8">
-                  <div className="flex justify-center mb-6">
-                    {[1,2,3,4,5].map((star) => (
-                      <Star key={star} className="w-5 h-5 text-yellow-400 fill-current" />
-                    ))}
-                  </div>
-                  <p className="text-lg mb-6 italic text-slate-200 leading-relaxed">"{testimonial.text}"</p>
-                  <div className="flex items-center gap-4">
-                    <div className="text-3xl">{testimonial.avatar}</div>
-                    <div>
-                      <p className="font-bold text-white">{testimonial.author}</p>
-                      <p className="text-blue-300">{testimonial.role}</p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Final - Inspirado na XP Investimentos */}
-      <section className="py-32 px-4 bg-gradient-to-br from-slate-950 via-blue-950 to-slate-950 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-600/5 via-transparent to-orange-500/5"></div>
-        <div className="absolute top-1/4 left-1/3 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-1/4 right-1/3 w-96 h-96 bg-orange-500/10 rounded-full blur-3xl"></div>
-        
-        <div className="max-w-6xl mx-auto text-center relative">
-          <div className="inline-flex items-center gap-2 bg-gradient-to-r from-orange-500/20 to-yellow-500/20 backdrop-blur-sm border border-orange-500/30 rounded-full px-6 py-2 mb-8">
-            <Trophy className="w-4 h-4 text-orange-400" />
-            <span className="text-sm font-medium bg-gradient-to-r from-orange-200 to-yellow-200 bg-clip-text text-transparent">
-              A Maior Rede de Contabilidade Integrativa do Brasil
-            </span>
-          </div>
-          
-          <h2 className="text-5xl md:text-7xl font-bold mb-8 leading-tight">
-            <span className="bg-gradient-to-r from-white via-blue-200 to-white bg-clip-text text-transparent">
-              Seja parte da
-            </span>
-            <br />
-            <span className="bg-gradient-to-r from-orange-400 via-orange-300 to-yellow-300 bg-clip-text text-transparent">
-              revolução contábil
-            </span>
-          </h2>
-          
-          <p className="text-2xl mb-12 text-blue-200 max-w-4xl mx-auto leading-relaxed">
-            Assim como a XP revolucionou o mercado financeiro, 
-            <span className="font-semibold text-white"> a Tucont está transformando a contabilidade brasileira</span>. 
-            Junte-se aos pioneiros que escolheram crescer conosco.
-          </p>
-          
-          {/* Stats Impressionantes */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16 max-w-4xl mx-auto">
-            {[
-              { number: "10x", label: "Mais eficiência" },
-              { number: "95%", label: "Redução de erros" },
-              { number: "24h", label: "Implementação" },
-              { number: "∞", label: "Possibilidades" }
-            ].map((stat, index) => (
-              <div key={index} className="text-center">
-                <div className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-orange-300 to-yellow-300 bg-clip-text text-transparent mb-2">
-                  {stat.number}
-                </div>
-                <div className="text-sm text-blue-200">{stat.label}</div>
-              </div>
-            ))}
-          </div>
-          
-          <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <Button 
-              className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 px-12 py-6 text-xl font-semibold rounded-2xl shadow-2xl hover:shadow-orange-500/25 transition-all duration-300 transform hover:scale-105"
-              onClick={() => openWhatsApp("Quero fazer parte da revolução contábil da Tucont agora mesmo")}
-            >
-              <Rocket className="w-6 h-6 mr-3" />
-              Começar minha revolução
-            </Button>
-            <Button 
-              className="border-2 border-white/30 text-white hover:bg-white hover:text-slate-900 px-12 py-6 text-xl font-semibold rounded-2xl backdrop-blur-sm transition-all duration-300 bg-transparent"
-              onClick={() => openWhatsApp("Quero agendar uma demonstração executiva da plataforma Tucont")}
-            >
-              <MessageCircle className="w-6 h-6 mr-3" />
-              Demonstração executiva
-            </Button>
-          </div>
-          
-          <div className="mt-12 text-slate-400">
-            <p className="text-lg">
-              "O futuro da contabilidade já chegou. A questão é: você vai liderar ou ser liderado?"
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* WhatsApp Float Button */}
-      <div className="fixed bottom-8 right-8 z-50">
-        <Button
-          className="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 rounded-full w-16 h-16 shadow-2xl hover:shadow-green-500/25 transition-all duration-300 transform hover:scale-110"
-          onClick={() => openWhatsApp("Olá! Preciso de ajuda com minha contabilidade")}
-        >
-          <MessageCircle className="w-8 h-8" />
-        </Button>
-      </div>
 
       <Footer />
     </div>

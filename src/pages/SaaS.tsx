@@ -22,40 +22,41 @@ const SaaS = () => {
       <main className="pt-24">
         {/* Hero Section */}
         <section className="py-20 px-4">
-          <div className="max-w-5xl mx-auto text-center">
-            <div className="inline-flex items-center gap-2 bg-blue-100 text-blue-700 px-4 py-2 rounded-full mb-8">
-              <Zap className="w-4 h-4" />
-              <span className="font-medium">Modelo SaaS</span>
-            </div>
-            
-            {/* Logo Tucont Money */}
-            <div className="mb-8">
+          <div className="max-w-5xl mx-auto">
+            <div className="flex items-start mb-8">
               <img 
                 src="/lovable-uploads/c42b6d52-90c3-47dc-a699-9ab88033b4fe.png" 
                 alt="Tucont Money - Financeiro as a Service" 
-                className="h-20 mx-auto"
+                className="h-16"
               />
             </div>
             
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-slate-900 to-blue-600 bg-clip-text text-transparent">
-              Autoatendimento Inteligente
-            </h1>
-            
-            <p className="text-xl text-slate-600 mb-8 max-w-3xl mx-auto">
-              Plataforma completa de gestão contábil e empresarial com IA integrada. 
-              Autonomia total para sua empresa crescer sem depender de terceiros.
-            </p>
-            
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button 
-                onClick={openWhatsApp}
-                className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 px-8 py-4 text-lg"
-              >
-                Começar agora - R$ 97/mês
-              </Button>
-              <Button variant="outline" className="px-8 py-4 text-lg">
-                Ver demonstração
-              </Button>
+            <div className="text-center">
+              <div className="inline-flex items-center gap-2 bg-blue-100 text-blue-700 px-4 py-2 rounded-full mb-8">
+                <Zap className="w-4 h-4" />
+                <span className="font-medium">Modelo SaaS</span>
+              </div>
+              
+              <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-slate-900 to-blue-600 bg-clip-text text-transparent">
+                Autoatendimento Inteligente
+              </h1>
+              
+              <p className="text-xl text-slate-600 mb-8 max-w-3xl mx-auto">
+                Plataforma completa de gestão contábil e empresarial com IA integrada. 
+                Autonomia total para sua empresa crescer sem depender de terceiros.
+              </p>
+              
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button 
+                  onClick={openWhatsApp}
+                  className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 px-8 py-4 text-lg"
+                >
+                  Começar agora - R$ 97/mês
+                </Button>
+                <Button variant="outline" className="px-8 py-4 text-lg">
+                  Ver demonstração
+                </Button>
+              </div>
             </div>
           </div>
         </section>
