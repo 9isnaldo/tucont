@@ -1,5 +1,5 @@
 
-import { TrendingUp, Users, Lightbulb } from "lucide-react";
+import { TrendingUp, Users, Lightbulb, BookOpen } from "lucide-react";
 
 const WhyChooseTucontSection = () => {
   return (
@@ -72,9 +72,10 @@ const WhyChooseTucontSection = () => {
                 <img 
                   src="/lovable-uploads/693aec20-2c27-48a1-8efe-f12b58bff5bf.png" 
                   alt="Geraldo Oliveira" 
-                  className="relative w-80 h-80 object-cover object-top rounded-full shadow-2xl border-4 border-gradient-to-r from-blue-500 to-orange-500"
+                  className="relative w-80 h-80 object-cover rounded-full shadow-2xl border-4 border-gradient-to-r from-blue-500 to-orange-500"
                   style={{
-                    boxShadow: '0 0 50px rgba(59, 130, 246, 0.3), 0 0 100px rgba(249, 115, 22, 0.2)'
+                    boxShadow: '0 0 50px rgba(59, 130, 246, 0.3), 0 0 100px rgba(249, 115, 22, 0.2)',
+                    objectPosition: 'center 20%'
                   }}
                 />
                 <div className="absolute -bottom-4 -right-4 bg-gradient-to-r from-blue-500 to-orange-500 text-white px-6 py-3 rounded-full font-bold shadow-lg">
@@ -127,72 +128,81 @@ const WhyChooseTucontSection = () => {
                 {/* Fundo com efeito de integração */}
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-orange-500/20 rounded-2xl backdrop-blur-sm"></div>
                 
-                {/* Elementos integrativos */}
+                {/* Elementos integrativos - Fluxo: Pessoas → Educação → Tecnologia */}
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="relative w-full h-full">
-                    {/* Centro - Pessoas */}
-                    <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-20 h-20 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center shadow-2xl shadow-blue-500/50">
+                    {/* 1. Pessoas - Centro inicial */}
+                    <div className="absolute top-1/2 left-8 transform -translate-y-1/2 w-20 h-20 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center shadow-2xl shadow-blue-500/50">
                       <Users className="w-10 h-10 text-white" />
                     </div>
                     
-                    {/* Tecnologia - Canto superior direito */}
-                    <div className="absolute top-8 right-8 w-16 h-16 bg-gradient-to-r from-purple-500 to-orange-500 rounded-full flex items-center justify-center shadow-xl shadow-purple-500/40">
-                      <Lightbulb className="w-8 h-8 text-white" />
+                    {/* 2. Educação - Centro */}
+                    <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-20 h-20 bg-gradient-to-r from-purple-500 to-orange-500 rounded-full flex items-center justify-center shadow-2xl shadow-purple-500/50">
+                      <BookOpen className="w-10 h-10 text-white" />
                     </div>
                     
-                    {/* Crescimento - Canto inferior esquerdo */}
-                    <div className="absolute bottom-8 left-8 w-16 h-16 bg-gradient-to-r from-orange-500 to-blue-500 rounded-full flex items-center justify-center shadow-xl shadow-orange-500/40">
-                      <TrendingUp className="w-8 h-8 text-white" />
+                    {/* 3. Tecnologia - Direita final */}
+                    <div className="absolute top-1/2 right-8 transform -translate-y-1/2 w-20 h-20 bg-gradient-to-r from-orange-500 to-blue-500 rounded-full flex items-center justify-center shadow-2xl shadow-orange-500/50">
+                      <Lightbulb className="w-10 h-10 text-white" />
                     </div>
                     
-                    {/* Conectores animados */}
+                    {/* Conectores animados - Fluxo da esquerda para direita */}
                     <svg className="absolute inset-0 w-full h-full" viewBox="0 0 384 384">
                       <defs>
-                        <linearGradient id="connector1" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <linearGradient id="flow1" x1="0%" y1="50%" x2="100%" y2="50%">
                           <stop offset="0%" stopColor="#3b82f6" stopOpacity="0.8" />
-                          <stop offset="100%" stopColor="#f97316" stopOpacity="0.8" />
+                          <stop offset="100%" stopColor="#8b5cf6" stopOpacity="0.8" />
                         </linearGradient>
-                        <linearGradient id="connector2" x1="0%" y1="100%" x2="100%" y2="0%">
+                        <linearGradient id="flow2" x1="0%" y1="50%" x2="100%" y2="50%">
                           <stop offset="0%" stopColor="#8b5cf6" stopOpacity="0.8" />
-                          <stop offset="100%" stopColor="#06b6d4" stopOpacity="0.8" />
+                          <stop offset="100%" stopColor="#f97316" stopOpacity="0.8" />
                         </linearGradient>
                       </defs>
                       
-                      {/* Linha conectando centro com tecnologia */}
+                      {/* Linha conectando Pessoas → Educação */}
                       <path
-                        d="M 192,192 Q 280,120 320,64"
-                        stroke="url(#connector1)"
-                        strokeWidth="3"
+                        d="M 72,192 Q 140,192 152,192"
+                        stroke="url(#flow1)"
+                        strokeWidth="4"
                         fill="none"
                         className="animate-pulse"
-                        filter="drop-shadow(0 0 10px rgba(59, 130, 246, 0.5))"
+                        filter="drop-shadow(0 0 10px rgba(59, 130, 246, 0.6))"
                       />
                       
-                      {/* Linha conectando centro com crescimento */}
+                      {/* Linha conectando Educação → Tecnologia */}
                       <path
-                        d="M 192,192 Q 100,260 64,320"
-                        stroke="url(#connector2)"
-                        strokeWidth="3"
+                        d="M 232,192 Q 300,192 312,192"
+                        stroke="url(#flow2)"
+                        strokeWidth="4"
                         fill="none"
-                        className="animate-pulse delay-300"
-                        filter="drop-shadow(0 0 10px rgba(139, 92, 246, 0.5))"
+                        className="animate-pulse delay-500"
+                        filter="drop-shadow(0 0 10px rgba(139, 92, 246, 0.6))"
                       />
                       
-                      {/* Linha conectando tecnologia com crescimento */}
+                      {/* Conectores de feedback entre todos os elementos */}
                       <path
-                        d="M 320,64 Q 320,192 64,320"
-                        stroke="url(#connector1)"
+                        d="M 72,172 Q 192,120 312,172"
+                        stroke="url(#flow1)"
                         strokeWidth="2"
                         fill="none"
-                        className="animate-pulse delay-700"
-                        opacity="0.6"
+                        className="animate-pulse delay-1000"
+                        opacity="0.4"
+                      />
+                      
+                      <path
+                        d="M 72,212 Q 192,264 312,212"
+                        stroke="url(#flow2)"
+                        strokeWidth="2"
+                        fill="none"
+                        className="animate-pulse delay-1500"
+                        opacity="0.4"
                       />
                     </svg>
                     
                     {/* Labels */}
-                    <div className="absolute top-16 right-24 text-xs text-slate-300 font-medium">Tecnologia</div>
-                    <div className="absolute bottom-16 left-24 text-xs text-slate-300 font-medium">Crescimento</div>
-                    <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 translate-y-8 text-xs text-slate-300 font-medium">Pessoas</div>
+                    <div className="absolute top-1/2 left-2 transform -translate-y-1/2 translate-y-12 text-xs text-slate-300 font-medium">Pessoas</div>
+                    <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 translate-y-12 text-xs text-slate-300 font-medium">Educação</div>
+                    <div className="absolute top-1/2 right-2 transform -translate-y-1/2 translate-y-12 text-xs text-slate-300 font-medium">Tecnologia</div>
                   </div>
                 </div>
               </div>
