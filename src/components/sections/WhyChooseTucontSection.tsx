@@ -1,4 +1,5 @@
-import { TrendingUp, Users, Lightbulb, BookOpen } from "lucide-react";
+import { TrendingUp, Users, Lightbulb, BookOpen, ArrowRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const WhyChooseTucontSection = () => {
   return (
@@ -203,6 +204,52 @@ const WhyChooseTucontSection = () => {
                     <div className="absolute top-1/2 right-2 transform -translate-y-1/2 translate-y-12 text-xs text-slate-300 font-medium">Tecnologia</div>
                   </div>
                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* CTA Section */}
+        <div className="text-center mt-16">
+          <div className="bg-gradient-to-r from-blue-500/10 to-orange-500/10 rounded-3xl p-12 backdrop-blur-sm border border-gradient-to-r from-blue-500/20 to-orange-500/20">
+            <h3 className="text-3xl md:text-4xl font-bold text-white mb-6">
+              Pronto para <span className="bg-gradient-to-r from-blue-400 to-orange-400 bg-clip-text text-transparent">transformar</span> seu negócio?
+            </h3>
+            <p className="text-xl text-slate-300 mb-8 max-w-2xl mx-auto">
+              Junte-se a mais de 30 negócios que já transformaram suas jornadas empreendedoras conosco. 
+              Vamos construir o futuro juntos!
+            </p>
+            
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <Button 
+                size="lg" 
+                className="bg-gradient-to-r from-blue-500 to-orange-500 hover:from-blue-600 hover:to-orange-600 text-white font-semibold px-8 py-4 rounded-full shadow-2xl shadow-blue-500/25 transition-all duration-300 hover:scale-105 hover:shadow-orange-500/25"
+              >
+                Começar Agora
+                <ArrowRight className="w-5 h-5 ml-2" />
+              </Button>
+              
+              <Button 
+                variant="outline" 
+                size="lg"
+                className="border-2 border-slate-400 text-slate-300 hover:bg-slate-800 hover:text-white px-8 py-4 rounded-full transition-all duration-300"
+              >
+                Falar com Especialista
+              </Button>
+            </div>
+            
+            <div className="mt-8 flex items-center justify-center gap-8 text-sm text-slate-400">
+              <div className="flex items-center gap-2">
+                <div className="w-2 h-2 bg-green-400 rounded-full"></div>
+                <span>Sem compromisso</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
+                <span>Consultoria gratuita</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <div className="w-2 h-2 bg-orange-400 rounded-full"></div>
+                <span>Resultados garantidos</span>
               </div>
             </div>
           </div>
