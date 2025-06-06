@@ -1,12 +1,14 @@
 
-import { Scale, TrendingUp, Zap, Target, ArrowRight, Shield } from "lucide-react";
+import { Scale, TrendingUp, Zap, Target, ArrowRight, Shield, Route } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const TwoAvenuesSection = () => {
   const openWhatsApp = (avenue: string) => {
     const message = avenue === 'legal' 
       ? "Quero conhecer a Avenida Legal - automação de obrigações"
-      : "Quero conhecer a Avenida de Negócios - mentoria estratégica";
+      : avenue === 'business'
+      ? "Quero conhecer a Avenida Empreendedora - jornada estratégica"
+      : "Quero as duas avenidas integradas";
     window.open(`https://wa.me/5511999999999?text=${encodeURIComponent(message)}`, '_blank');
   };
 
@@ -14,16 +16,35 @@ const TwoAvenuesSection = () => {
     <section className="py-24 px-4 bg-slate-950 relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-r from-blue-600/5 via-transparent to-orange-500/5"></div>
       
+      {/* Road/Path Background Effect */}
+      <div className="absolute inset-0 opacity-10">
+        <svg viewBox="0 0 1200 800" className="w-full h-full">
+          <path
+            d="M 0,600 Q 300,500 600,400 Q 900,300 1200,200"
+            stroke="url(#roadGradient)"
+            strokeWidth="40"
+            fill="none"
+            strokeDasharray="20,10"
+          />
+          <defs>
+            <linearGradient id="roadGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stopColor="#3b82f6" stopOpacity="0.3" />
+              <stop offset="100%" stopColor="#f97316" stopOpacity="0.3" />
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+      
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 bg-slate-800/50 backdrop-blur-xl border border-slate-700/50 text-blue-300 px-6 py-3 rounded-full mb-8">
-            <Target className="w-5 h-5" />
+            <Route className="w-5 h-5" />
             <span className="font-medium">Duas Avenidas Integradas</span>
           </div>
           
           <h2 className="text-5xl md:text-6xl font-bold mb-8 leading-tight">
             <span className="bg-gradient-to-r from-white via-blue-200 to-orange-300 bg-clip-text text-transparent">
-              A Tucont resolve as duas principais avenidas.
+              A Tucont resolve as duas principais avenidas: a Empreendedora e a Legal.
             </span>
           </h2>
           
@@ -36,14 +57,20 @@ const TwoAvenuesSection = () => {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 mb-16">
-          {/* Avenida de Negócios - Agora primeiro */}
-          <div className="group relative">
+        <div className="grid lg:grid-cols-2 gap-16 mb-16 relative">
+          {/* Connecting Road Element */}
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-0 hidden lg:block">
+            <div className="w-32 h-2 bg-gradient-to-r from-orange-500/30 via-yellow-400/50 to-blue-500/30 rounded-full blur-sm"></div>
+            <div className="w-24 h-1 bg-gradient-to-r from-orange-400 via-yellow-300 to-blue-400 rounded-full mt-1 mx-auto"></div>
+          </div>
+
+          {/* Avenida Empreendedora - Left side (start of journey) */}
+          <div className="group relative order-1">
             {/* Rótulo da Avenida */}
             <div className="absolute -top-3 left-6 z-10">
               <div className="bg-gradient-to-r from-orange-500 to-red-500 text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg flex items-center gap-2 group-hover:from-yellow-400 group-hover:to-orange-500 group-hover:text-slate-900 transition-all duration-300">
                 <TrendingUp className="w-4 h-4" />
-                <span className="group-hover:hidden">Avenida de Negócios</span>
+                <span className="group-hover:hidden">Avenida Empreendedora</span>
                 <span className="hidden group-hover:block">Nosso Grande Diferencial</span>
               </div>
             </div>
@@ -57,40 +84,39 @@ const TwoAvenuesSection = () => {
                 </div>
                 <div>
                   <h3 className="text-3xl font-bold bg-gradient-to-r from-orange-400 to-red-300 bg-clip-text text-transparent">
-                    Crescimento estratégico
+                    Jornada Empreendedora
                   </h3>
                   <div className="flex items-center gap-2 text-orange-300 text-sm">
                     <Target className="w-4 h-4" />
-                    <span>Mentoria + Frameworks</span>
+                    <span>Você em boa companhia</span>
                   </div>
                 </div>
               </div>
               
               <h4 className="text-xl font-semibold text-white mb-4">
-                Planos, estratégia e acompanhamento
+                Planos, estratégia e operação
               </h4>
               
               <p className="text-orange-200 mb-6 leading-relaxed">
-                Frameworks validados + mentoria 1:1 para transformar sua contabilidade 
-                em vantagem competitiva real e impulsionar o crescimento.
+                Da ideia a operação, nós vamos com você. Nossa tecnologia é proprietária, simples de usar, os materiais e frameworks aplicáveis imediatamente.
               </p>
 
               <ul className="space-y-3 mb-8">
                 <li className="flex items-center gap-3 text-slate-300">
                   <div className="w-2 h-2 bg-orange-400 rounded-full"></div>
-                  <span>Consultoria estratégica personalizada</span>
+                  <span>Estruturação e consultoria, do MVP ao Go-to-Market</span>
                 </li>
                 <li className="flex items-center gap-3 text-slate-300">
                   <div className="w-2 h-2 bg-orange-400 rounded-full"></div>
-                  <span>Frameworks de crescimento validados</span>
+                  <span>Frameworks de evolução validados</span>
+                </li>
+                <li className="flex items-center gap-3 text-slate-300">
+                  <div className="w-2 h-2 bg-orange-400 rounded-full"></div>
+                  <span>Software para vendas, emissão de notas e financeiro</span>
                 </li>
                 <li className="flex items-center gap-3 text-slate-300">
                   <div className="w-2 h-2 bg-orange-400 rounded-full"></div>
                   <span>Mentoria 1:1 especializada</span>
-                </li>
-                <li className="flex items-center gap-3 text-slate-300">
-                  <div className="w-2 h-2 bg-orange-400 rounded-full"></div>
-                  <span>Estruturação para escalar</span>
                 </li>
               </ul>
 
@@ -104,8 +130,8 @@ const TwoAvenuesSection = () => {
             </div>
           </div>
 
-          {/* Avenida Legal - Agora segundo */}
-          <div className="group relative">
+          {/* Avenida Legal - Right side (destination) */}
+          <div className="group relative order-2">
             <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
             <div className="relative bg-slate-900/80 backdrop-blur-xl border border-blue-400/30 rounded-3xl p-8 shadow-2xl hover:shadow-blue-500/20 transition-all duration-500 transform hover:scale-105 hover:-translate-y-2 h-full">
               
