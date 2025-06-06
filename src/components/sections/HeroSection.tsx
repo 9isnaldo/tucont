@@ -56,8 +56,11 @@ const HeroSection = () => {
           {/* Headlines */}
           <div className="space-y-6">
             <h1 className="text-5xl md:text-7xl font-bold leading-tight">
-              <span className="bg-gradient-to-r from-white via-blue-200 to-orange-300 bg-clip-text text-transparent">
-                A Primeira Contabilidade Integrativa.
+              <span className="bg-gradient-to-r from-white via-blue-200 to-blue-300 bg-clip-text text-transparent">
+                A Primeira Contabilidade{" "}
+              </span>
+              <span className="text-orange-400">
+                Integrativa.
               </span>
               <br />
               <span className="text-orange-400">
@@ -68,6 +71,22 @@ const HeroSection = () => {
             <p className="text-xl md:text-2xl text-slate-300 max-w-4xl mx-auto leading-relaxed">
               Destrave o empreendedorismo, impulsione sua empresa.
             </p>
+          </div>
+
+          {/* User Type Buttons */}
+          <div className="flex justify-center gap-4 mb-8">
+            <Button 
+              variant="outline" 
+              className="border-orange-500 text-orange-500 bg-transparent backdrop-blur-sm hover:bg-orange-500/10 hover:border-orange-400 hover:text-orange-400 transition-all duration-300"
+            >
+              Empreendedor(a)
+            </Button>
+            <Button 
+              variant="outline" 
+              className="border-orange-500 text-orange-500 bg-transparent backdrop-blur-sm hover:bg-orange-500/10 hover:border-orange-400 hover:text-orange-400 transition-all duration-300"
+            >
+              Contador(a)
+            </Button>
           </div>
 
           {/* AI Input Interface */}
@@ -106,7 +125,7 @@ const HeroSection = () => {
                   className="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white px-6 py-3 rounded-xl font-semibold"
                 >
                   <MessageCircle className="w-5 h-5 mr-2" />
-                  Começar agora pelo WhatsApp
+                  Resolver pelo whatsapp
                 </Button>
               </div>
             </div>
