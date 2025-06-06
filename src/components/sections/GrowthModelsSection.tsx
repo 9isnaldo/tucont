@@ -23,6 +23,17 @@ const GrowthModelsSection = () => {
   const businessModels = [
     {
       icon: Building,
+      title: "Abertura de empresa",
+      subtitle: "CNPJ Rápido",
+      description: "CNPJ em 24h com orientação completa sobre melhor enquadramento tributário e estrutura legal",
+      tagline: "Empresa regularizada em 24h",
+      price: "A partir de R$ 297",
+      color: "from-blue-500 to-cyan-400",
+      features: ["CNPJ em 24h", "Análise tributária", "Suporte completo"],
+      isService: true
+    },
+    {
+      icon: Building,
       title: "SaaS",
       subtitle: "Softwares as a Service",
       description: "Venda, emita notas fiscais, gerencie o financeiro",
@@ -43,17 +54,6 @@ const GrowthModelsSection = () => {
       features: ["IA + Mentoria", "Duas avenidas", "Crescimento sustentável"],
       route: "/tucont",
       popular: true
-    },
-    {
-      icon: Building,
-      title: "Abertura de empresa",
-      subtitle: "CNPJ Rápido",
-      description: "CNPJ em 24h com orientação completa sobre melhor enquadramento tributário e estrutura legal",
-      tagline: "Empresa regularizada em 24h",
-      price: "A partir de R$ 297",
-      color: "from-blue-500 to-cyan-400",
-      features: ["CNPJ em 24h", "Análise tributária", "Suporte completo"],
-      isService: true
     },
     {
       icon: Calculator,
@@ -239,7 +239,7 @@ const GrowthModelsSection = () => {
           <Button 
             onClick={handleSeeAllServices}
             variant="outline"
-            className="border-slate-600 text-slate-300 hover:bg-slate-800/50 hover:text-white hover:border-slate-500 px-8 py-4 text-lg rounded-xl transition-all duration-300"
+            className="border-orange-500 text-orange-500 bg-transparent backdrop-blur-sm hover:bg-orange-500/10 hover:border-orange-400 hover:text-orange-400 transition-all duration-300 px-8 py-4 text-lg rounded-xl"
           >
             Ver todos os serviços
             <ArrowRight className="w-5 h-5 ml-2" />
