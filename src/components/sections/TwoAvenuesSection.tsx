@@ -67,7 +67,7 @@ const TwoAvenuesSection = () => {
               </div>
               
               <h4 className="text-xl font-semibold text-white mb-4">
-                Mentoria + plano de ação + estruturação estratégica
+                Planos, estratégia e acompanhamento
               </h4>
               
               <p className="text-orange-200 mb-6 leading-relaxed">
