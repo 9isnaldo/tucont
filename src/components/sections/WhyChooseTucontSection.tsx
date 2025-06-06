@@ -74,7 +74,7 @@ const WhyChooseTucontSection = () => {
                   className="relative w-80 h-80 object-cover rounded-full shadow-2xl border-4 border-gradient-to-r from-blue-500 to-orange-500"
                   style={{
                     boxShadow: '0 0 50px rgba(59, 130, 246, 0.3), 0 0 100px rgba(249, 115, 22, 0.2)',
-                    objectPosition: 'center 35%'
+                    objectPosition: 'center 50%'
                   }}
                 />
                 <div className="absolute -bottom-4 -right-4 bg-gradient-to-r from-blue-500 to-orange-500 text-white px-6 py-3 rounded-full font-bold shadow-lg">
