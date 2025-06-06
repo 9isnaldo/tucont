@@ -1,5 +1,5 @@
 
-import { Scale, TrendingUp, Zap, Target, ArrowRight, Sparkles, Shield } from "lucide-react";
+import { Scale, TrendingUp, Zap, Target, ArrowRight, Shield } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const TwoAvenuesSection = () => {
@@ -28,7 +28,10 @@ const TwoAvenuesSection = () => {
           </h2>
           
           <p className="text-xl text-slate-300 max-w-4xl mx-auto leading-relaxed">
-            Nossa revolução: Unir compliance perfeito, com crescimento estratégico. 
+            <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent font-bold text-shadow-glow">
+              Nossa revolução
+            </span>
+            : Unir compliance perfeito, com crescimento estratégico. 
             Porque sua empresa merece mais que apenas "estar em dia" com o fisco.
           </p>
         </div>
@@ -36,18 +39,9 @@ const TwoAvenuesSection = () => {
         <div className="grid lg:grid-cols-2 gap-12 mb-16">
           {/* Avenida de Negócios - Agora primeiro */}
           <div className="group relative">
-            {/* Badge de destaque */}
-            <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 z-10">
-              <div className="bg-gradient-to-r from-yellow-400 to-orange-500 text-slate-900 px-6 py-2 rounded-full text-sm font-bold shadow-lg flex items-center gap-2">
-                <Sparkles className="w-4 h-4" />
-                <span className="group-hover:hidden">Nosso Grande Diferencial</span>
-                <span className="hidden group-hover:block">Nosso Grande Diferencial</span>
-              </div>
-            </div>
-
             {/* Rótulo da Avenida */}
             <div className="absolute -top-3 left-6 z-10">
-              <div className="bg-gradient-to-r from-orange-500 to-red-500 text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg flex items-center gap-2">
+              <div className="bg-gradient-to-r from-orange-500 to-red-500 text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg flex items-center gap-2 group-hover:from-yellow-400 group-hover:to-orange-500 group-hover:text-slate-900 transition-all duration-300">
                 <TrendingUp className="w-4 h-4" />
                 <span className="group-hover:hidden">Avenida de Negócios</span>
                 <span className="hidden group-hover:block">Nosso Grande Diferencial</span>
@@ -180,8 +174,8 @@ const TwoAvenuesSection = () => {
         {/* Texto explicativo antes do CTA */}
         <div className="text-center mb-8">
           <p className="text-lg text-slate-300 max-w-4xl mx-auto leading-relaxed">
-            Enquanto outros cuidam apenas do compliance, nós revolucionamos ambas as avenidas 
-            para criar o ecossistema completo do seu crescimento.
+            Enquanto outros cuidam apenas do fisco, nós revolucionamos. 
+            Navegue pelas avenidas que transformam completamente o seu negócio.
           </p>
         </div>
 
