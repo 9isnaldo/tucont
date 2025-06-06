@@ -40,8 +40,8 @@ const GrowthModelsSection = () => {
       description: "Venda, emita notas fiscais, gerencie o financeiro",
       tagline: "Simplificamos Sua Operação",
       price: "A partir de R$ 297/mês",
-      color: "from-blue-600 to-blue-800",
-      neonColor: "blue-500",
+      color: "from-orange-500 to-orange-700",
+      neonColor: "orange-500",
       features: ["Emissão automática", "Gestão financeira", "Relatórios inteligentes"],
       route: "/saas"
     },
@@ -52,8 +52,8 @@ const GrowthModelsSection = () => {
       description: "Destravamos o empreendedorismo cuidando das duas avenidas",
       tagline: "Unificamos Legal e Negócios",
       price: "Mais Popular",
-      color: "from-orange-500 to-orange-700",
-      neonColor: "orange-500",
+      color: "from-blue-600 to-blue-800",
+      neonColor: "blue-500",
       features: ["IA + Mentoria", "Duas avenidas", "Crescimento sustentável"],
       route: "/tucont",
       popular: true
@@ -65,8 +65,8 @@ const GrowthModelsSection = () => {
       description: "Análise completa da sua situação fiscal com oportunidades de economia e otimização",
       tagline: "Economia garantida",
       price: "Consulta gratuita",
-      color: "from-blue-600 to-blue-800",
-      neonColor: "blue-500",
+      color: "from-orange-500 to-orange-700",
+      neonColor: "orange-500",
       features: ["Análise fiscal", "Economia de impostos", "Relatório detalhado"],
       isService: true
     },
@@ -77,8 +77,8 @@ const GrowthModelsSection = () => {
       description: "Estratégias personalizadas e frameworks validados para crescimento sustentável do seu negócio",
       tagline: "Mentoria especializada",
       price: "R$ 497/mês",
-      color: "from-orange-500 to-orange-700",
-      neonColor: "orange-500",
+      color: "from-blue-600 to-blue-800",
+      neonColor: "blue-500",
       features: ["Mentoria 1:1", "Plano estratégico", "Acompanhamento mensal"],
       isService: true
     }
@@ -142,7 +142,7 @@ const GrowthModelsSection = () => {
       <h3 className={`text-3xl font-bold text-center mb-12 ${titleColor}`}>
         {title}
       </h3>
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="grid grid-cols-5 gap-4 max-w-7xl mx-auto">
         {models.map((model, index) => (
           <div 
             key={index}
@@ -153,7 +153,7 @@ const GrowthModelsSection = () => {
             {/* Popular Badge */}
             {model.popular && (
               <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 z-10">
-                <div className="bg-gradient-to-r from-orange-400 to-orange-600 text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg">
+                <div className="bg-gradient-to-r from-orange-400 to-orange-600 text-white px-3 py-1 rounded-full text-xs font-bold shadow-lg">
                   Mais Popular
                 </div>
               </div>
@@ -163,39 +163,39 @@ const GrowthModelsSection = () => {
             <div className={`absolute inset-0 bg-${model.neonColor} opacity-0 group-hover:opacity-30 rounded-3xl blur-xl transition-all duration-500`}></div>
             
             {/* Glass Card */}
-            <div className={`relative bg-slate-900/40 backdrop-blur-xl border-2 border-${model.neonColor}/30 group-hover:border-${model.neonColor}/60 rounded-3xl p-6 transition-all duration-300 transform hover:scale-105 hover:-translate-y-2 shadow-2xl group-hover:shadow-${model.neonColor}/20 h-full flex flex-col`}>
+            <div className={`relative bg-slate-900/40 backdrop-blur-xl border-2 border-${model.neonColor}/30 group-hover:border-${model.neonColor}/60 rounded-3xl p-4 transition-all duration-300 transform hover:scale-105 hover:-translate-y-2 shadow-2xl group-hover:shadow-${model.neonColor}/20 h-full flex flex-col min-h-[420px]`}>
               
               {/* Header */}
-              <div className="flex items-center gap-4 mb-6">
-                <div className={`w-14 h-14 bg-gradient-to-r ${model.color} rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300 group-hover:shadow-${model.neonColor}/40`}>
-                  <model.icon className="w-7 h-7 text-white" />
+              <div className="flex flex-col items-center gap-3 mb-4">
+                <div className={`w-12 h-12 bg-gradient-to-r ${model.color} rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300 group-hover:shadow-${model.neonColor}/40`}>
+                  <model.icon className="w-6 h-6 text-white" />
                 </div>
-                <div>
-                  <h4 className="text-xl font-bold text-white leading-tight">
+                <div className="text-center">
+                  <h4 className="text-lg font-bold text-white leading-tight mb-1">
                     {model.title}
                   </h4>
-                  <p className="text-slate-300 text-sm">{model.subtitle}</p>
-                  <div className={`text-sm font-semibold bg-gradient-to-r ${model.color} bg-clip-text text-transparent`}>
+                  <p className="text-slate-300 text-xs">{model.subtitle}</p>
+                  <div className={`text-xs font-semibold bg-gradient-to-r ${model.color} bg-clip-text text-transparent mt-1`}>
                     {model.price}
                   </div>
                 </div>
               </div>
 
               {/* Tagline */}
-              <h5 className={`text-lg font-semibold mb-4 ${model.neonColor === 'blue-500' ? 'text-blue-300' : 'text-orange-300'}`}>
+              <h5 className={`text-sm font-semibold mb-3 text-center ${model.neonColor === 'blue-500' ? 'text-blue-300' : 'text-orange-300'}`}>
                 {model.tagline}
               </h5>
 
               {/* Description */}
-              <p className="text-slate-300 mb-6 leading-relaxed flex-grow">
+              <p className="text-slate-300 mb-4 leading-relaxed flex-grow text-sm text-center">
                 {model.description}
               </p>
 
               {/* Features */}
-              <div className="space-y-2 mb-6">
+              <div className="space-y-2 mb-4">
                 {model.features.map((feature, idx) => (
-                  <div key={idx} className="flex items-center gap-3 text-slate-200 text-sm">
-                    <div className={`w-2 h-2 rounded-full bg-gradient-to-r ${model.color} shadow-lg group-hover:shadow-${model.neonColor}/40`}></div>
+                  <div key={idx} className="flex items-center gap-2 text-slate-200 text-xs">
+                    <div className={`w-1.5 h-1.5 rounded-full bg-gradient-to-r ${model.color} shadow-lg group-hover:shadow-${model.neonColor}/40 flex-shrink-0`}></div>
                     <span>{feature}</span>
                   </div>
                 ))}
@@ -204,10 +204,10 @@ const GrowthModelsSection = () => {
               {/* CTA Button */}
               <Button 
                 onClick={() => handleModelClick(model)}
-                className={`w-full bg-gradient-to-r ${model.color} hover:shadow-lg hover:shadow-${model.neonColor}/40 text-white rounded-xl py-3 font-semibold transform transition-all duration-300 ${hoveredCard === index ? 'scale-105' : ''} border border-${model.neonColor}/20 hover:border-${model.neonColor}/40`}
+                className={`w-full bg-gradient-to-r ${model.color} hover:shadow-lg hover:shadow-${model.neonColor}/40 text-white rounded-xl py-2 text-sm font-semibold transform transition-all duration-300 ${hoveredCard === index ? 'scale-105' : ''} border border-${model.neonColor}/20 hover:border-${model.neonColor}/40`}
               >
                 {model.isService ? "Quero este agora" : "Quero conhecer"}
-                <ArrowRight className="w-4 h-4 ml-2" />
+                <ArrowRight className="w-3 h-3 ml-2" />
               </Button>
             </div>
           </div>
@@ -248,10 +248,10 @@ const GrowthModelsSection = () => {
           <Button 
             onClick={handleSeeAllServices}
             variant="outline"
-            className="border-orange-500 text-orange-500 bg-transparent backdrop-blur-sm hover:bg-orange-500/10 hover:border-orange-400 hover:text-orange-400 transition-all duration-300 px-8 py-4 text-lg rounded-xl"
+            className="bg-transparent border-2 border-blue-500/30 text-blue-400 backdrop-blur-xl hover:bg-blue-500/10 hover:border-blue-400/50 hover:text-blue-300 transition-all duration-300 px-8 py-3 text-base rounded-full font-medium shadow-lg hover:shadow-blue-500/20"
           >
             Ver todos os serviços
-            <ArrowRight className="w-5 h-5 ml-2" />
+            <ArrowRight className="w-4 h-4 ml-2" />
           </Button>
         </div>
 
