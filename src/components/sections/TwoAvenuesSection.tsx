@@ -23,18 +23,94 @@ const TwoAvenuesSection = () => {
           
           <h2 className="text-5xl md:text-6xl font-bold mb-8 leading-tight">
             <span className="bg-gradient-to-r from-white via-blue-200 to-orange-300 bg-clip-text text-transparent">
-              Na Tucont, resolvemos sua empresa por duas avenidas complementares:
+              A Tucont resolve as duas principais avenidas.
             </span>
           </h2>
           
           <p className="text-xl text-slate-300 max-w-4xl mx-auto leading-relaxed">
-            Enquanto outros cuidam apenas do compliance, nós <span className="font-semibold text-orange-400">revolucionamos ambas as avenidas</span> 
-            para criar o ecossistema completo do seu crescimento.
+            Nossa revolução: Unir compliance perfeito, com crescimento estratégico. 
+            Porque sua empresa merece mais que apenas "estar em dia" com o fisco.
           </p>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12 mb-16">
-          {/* Avenida Legal */}
+          {/* Avenida de Negócios - Agora primeiro */}
+          <div className="group relative">
+            {/* Badge de destaque */}
+            <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 z-10">
+              <div className="bg-gradient-to-r from-yellow-400 to-orange-500 text-slate-900 px-6 py-2 rounded-full text-sm font-bold shadow-lg flex items-center gap-2">
+                <Sparkles className="w-4 h-4" />
+                <span className="group-hover:hidden">Nosso Grande Diferencial</span>
+                <span className="hidden group-hover:block">Nosso Grande Diferencial</span>
+              </div>
+            </div>
+
+            {/* Rótulo da Avenida */}
+            <div className="absolute -top-3 left-6 z-10">
+              <div className="bg-gradient-to-r from-orange-500 to-red-500 text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg flex items-center gap-2">
+                <TrendingUp className="w-4 h-4" />
+                <span className="group-hover:hidden">Avenida de Negócios</span>
+                <span className="hidden group-hover:block">Nosso Grande Diferencial</span>
+              </div>
+            </div>
+
+            <div className="absolute inset-0 bg-gradient-to-r from-orange-500/30 to-red-500/30 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
+            <div className="relative bg-slate-900/80 backdrop-blur-xl border border-orange-400/50 rounded-3xl p-8 shadow-2xl hover:shadow-orange-500/30 transition-all duration-500 transform hover:scale-105 hover:-translate-y-2 h-full">
+              
+              <div className="flex items-center gap-4 mb-6 mt-4">
+                <div className="w-16 h-16 bg-gradient-to-r from-orange-500 to-red-500 rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                  <TrendingUp className="w-8 h-8 text-white" />
+                </div>
+                <div>
+                  <h3 className="text-3xl font-bold bg-gradient-to-r from-orange-400 to-red-300 bg-clip-text text-transparent">
+                    Crescimento estratégico
+                  </h3>
+                  <div className="flex items-center gap-2 text-orange-300 text-sm">
+                    <Target className="w-4 h-4" />
+                    <span>Mentoria + Frameworks</span>
+                  </div>
+                </div>
+              </div>
+              
+              <h4 className="text-xl font-semibold text-white mb-4">
+                Mentoria + plano de ação + estruturação estratégica
+              </h4>
+              
+              <p className="text-orange-200 mb-6 leading-relaxed">
+                Frameworks validados + mentoria 1:1 para transformar sua contabilidade 
+                em vantagem competitiva real e impulsionar o crescimento.
+              </p>
+
+              <ul className="space-y-3 mb-8">
+                <li className="flex items-center gap-3 text-slate-300">
+                  <div className="w-2 h-2 bg-orange-400 rounded-full"></div>
+                  <span>Consultoria estratégica personalizada</span>
+                </li>
+                <li className="flex items-center gap-3 text-slate-300">
+                  <div className="w-2 h-2 bg-orange-400 rounded-full"></div>
+                  <span>Frameworks de crescimento validados</span>
+                </li>
+                <li className="flex items-center gap-3 text-slate-300">
+                  <div className="w-2 h-2 bg-orange-400 rounded-full"></div>
+                  <span>Mentoria 1:1 especializada</span>
+                </li>
+                <li className="flex items-center gap-3 text-slate-300">
+                  <div className="w-2 h-2 bg-orange-400 rounded-full"></div>
+                  <span>Estruturação para escalar</span>
+                </li>
+              </ul>
+
+              <Button 
+                onClick={() => openWhatsApp('business')}
+                className="w-full bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white rounded-xl py-4 font-semibold text-lg shadow-lg"
+              >
+                Ver soluções desta avenida
+                <ArrowRight className="w-5 h-5 ml-2" />
+              </Button>
+            </div>
+          </div>
+
+          {/* Avenida Legal - Agora segundo */}
           <div className="group relative">
             <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
             <div className="relative bg-slate-900/80 backdrop-blur-xl border border-blue-400/30 rounded-3xl p-8 shadow-2xl hover:shadow-blue-500/20 transition-all duration-500 transform hover:scale-105 hover:-translate-y-2 h-full">
@@ -99,89 +175,18 @@ const TwoAvenuesSection = () => {
               </Button>
             </div>
           </div>
+        </div>
 
-          {/* Avenida Negócios */}
-          <div className="group relative">
-            {/* Badge de destaque */}
-            <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 z-10">
-              <div className="bg-gradient-to-r from-yellow-400 to-orange-500 text-slate-900 px-6 py-2 rounded-full text-sm font-bold shadow-lg flex items-center gap-2">
-                <Sparkles className="w-4 h-4" />
-                Nosso Grande Diferencial
-              </div>
-            </div>
-
-            {/* Rótulo da Avenida */}
-            <div className="absolute top-3 left-6 z-10">
-              <div className="bg-gradient-to-r from-orange-500 to-red-500 text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg flex items-center gap-2">
-                <TrendingUp className="w-4 h-4" />
-                Avenida de Negócios
-              </div>
-            </div>
-
-            <div className="absolute inset-0 bg-gradient-to-r from-orange-500/30 to-red-500/30 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
-            <div className="relative bg-slate-900/80 backdrop-blur-xl border border-orange-400/50 rounded-3xl p-8 shadow-2xl hover:shadow-orange-500/30 transition-all duration-500 transform hover:scale-105 hover:-translate-y-2 h-full">
-              
-              <div className="flex items-center gap-4 mb-6 mt-8">
-                <div className="w-16 h-16 bg-gradient-to-r from-orange-500 to-red-500 rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
-                  <TrendingUp className="w-8 h-8 text-white" />
-                </div>
-                <div>
-                  <h3 className="text-3xl font-bold bg-gradient-to-r from-orange-400 to-red-300 bg-clip-text text-transparent">
-                    Crescimento estratégico
-                  </h3>
-                  <div className="flex items-center gap-2 text-orange-300 text-sm">
-                    <Target className="w-4 h-4" />
-                    <span>Mentoria + Frameworks</span>
-                  </div>
-                </div>
-              </div>
-              
-              <h4 className="text-xl font-semibold text-white mb-4">
-                Mentoria + plano de ação + estruturação estratégica
-              </h4>
-              
-              <p className="text-orange-200 mb-6 leading-relaxed">
-                Frameworks validados + mentoria 1:1 para transformar sua contabilidade 
-                em vantagem competitiva real e impulsionar o crescimento.
-              </p>
-
-              <ul className="space-y-3 mb-8">
-                <li className="flex items-center gap-3 text-slate-300">
-                  <div className="w-2 h-2 bg-orange-400 rounded-full"></div>
-                  <span>Consultoria estratégica personalizada</span>
-                </li>
-                <li className="flex items-center gap-3 text-slate-300">
-                  <div className="w-2 h-2 bg-orange-400 rounded-full"></div>
-                  <span>Frameworks de crescimento validados</span>
-                </li>
-                <li className="flex items-center gap-3 text-slate-300">
-                  <div className="w-2 h-2 bg-orange-400 rounded-full"></div>
-                  <span>Mentoria 1:1 especializada</span>
-                </li>
-                <li className="flex items-center gap-3 text-slate-300">
-                  <div className="w-2 h-2 bg-orange-400 rounded-full"></div>
-                  <span>Estruturação para escalar</span>
-                </li>
-              </ul>
-
-              <Button 
-                onClick={() => openWhatsApp('business')}
-                className="w-full bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white rounded-xl py-4 font-semibold text-lg shadow-lg"
-              >
-                Ver soluções desta avenida
-                <ArrowRight className="w-5 h-5 ml-2" />
-              </Button>
-            </div>
-          </div>
+        {/* Texto explicativo antes do CTA */}
+        <div className="text-center mb-8">
+          <p className="text-lg text-slate-300 max-w-4xl mx-auto leading-relaxed">
+            Enquanto outros cuidam apenas do compliance, nós revolucionamos ambas as avenidas 
+            para criar o ecossistema completo do seu crescimento.
+          </p>
         </div>
 
         {/* CTA Final */}
         <div className="text-center">
-          <p className="text-lg text-slate-300 max-w-3xl mx-auto mb-6">
-            <span className="font-semibold text-orange-400">Nossa revolução:</span> Unir compliance perfeito com crescimento estratégico. 
-            Porque sua empresa merece mais que apenas "estar em dia".
-          </p>
-          
           <Button 
             onClick={() => openWhatsApp('both')}
             className="bg-gradient-to-r from-blue-500 via-purple-500 to-orange-500 hover:from-blue-600 hover:via-purple-600 hover:to-orange-600 text-white px-10 py-5 text-xl rounded-full shadow-2xl transform hover:scale-105 transition-all duration-300"
