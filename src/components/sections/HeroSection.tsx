@@ -1,7 +1,7 @@
 
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { MessageCircle, Sparkles, ArrowRight, Bot, User, Calculator } from "lucide-react";
+import { MessageCircle, Sparkles, Bot } from "lucide-react";
 
 const HeroSection = () => {
   const [inputValue, setInputValue] = useState("");
@@ -35,13 +35,6 @@ const HeroSection = () => {
     window.open(`https://wa.me/5511999999999?text=${encodeURIComponent(message)}`, '_blank');
   };
 
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   return (
     <section className="min-h-screen bg-gradient-to-br from-slate-950 via-blue-950/50 to-slate-900 relative overflow-hidden flex items-center">
       {/* Background effects */}
@@ -57,14 +50,14 @@ const HeroSection = () => {
           {/* Badge */}
           <div className="inline-flex items-center gap-2 bg-slate-800/50 backdrop-blur-xl border border-blue-400/30 text-blue-300 px-6 py-3 rounded-full">
             <Sparkles className="w-5 h-5" />
-            <span className="font-medium">IA + Mentoria Estratégica</span>
+            <span className="font-medium">Plataforma + IA + Mentoria Estratégica</span>
           </div>
 
           {/* Headlines */}
           <div className="space-y-6">
             <h1 className="text-5xl md:text-7xl font-bold leading-tight">
               <span className="bg-gradient-to-r from-white via-blue-200 to-orange-300 bg-clip-text text-transparent">
-                Contabilidade era para o governo.
+                A Primeira Contabilidade Integrativa.
               </span>
               <br />
               <span className="text-orange-400">
@@ -73,40 +66,12 @@ const HeroSection = () => {
             </h1>
             
             <p className="text-xl md:text-2xl text-slate-300 max-w-4xl mx-auto leading-relaxed">
-              <span className="font-semibold text-blue-400">Tucont</span> une IA + mentoria para 
-              resolver e impulsionar sua empresa.
+              Destrave o empreendedorismo, impulsione sua empresa.
             </p>
-
-            {/* Pergunta de público-alvo */}
-            <div className="space-y-4">
-              <p className="text-lg text-slate-300 font-medium">
-                Você é empreendedor ou contador?
-              </p>
-              
-              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <Button 
-                  onClick={() => scrollToSection('solucoes')}
-                  variant="outline"
-                  className="border-blue-400/50 text-blue-300 hover:bg-blue-400/10 px-6 py-3 rounded-xl"
-                >
-                  <User className="w-5 h-5 mr-2" />
-                  Sou empreendedor
-                </Button>
-                
-                <Button 
-                  onClick={() => scrollToSection('agentes')}
-                  variant="outline"
-                  className="border-orange-400/50 text-orange-300 hover:bg-orange-400/10 px-6 py-3 rounded-xl"
-                >
-                  <Calculator className="w-5 h-5 mr-2" />
-                  Sou contador
-                </Button>
-              </div>
-            </div>
           </div>
 
           {/* AI Input Interface */}
-          <div className="max-w-3xl mx-auto space-y-6">
+          <div className="max-w-3xl mx-auto space-y-4">
             <div className="relative">
               <div className="flex gap-3 bg-slate-800/50 backdrop-blur-xl border border-slate-700/50 rounded-2xl p-4 shadow-2xl">
                 <div className="flex-1">
@@ -136,8 +101,19 @@ const HeroSection = () => {
                     </div>
                   )}
                 </Button>
+                <Button 
+                  onClick={openWhatsApp}
+                  className="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white px-6 py-3 rounded-xl font-semibold"
+                >
+                  <MessageCircle className="w-5 h-5 mr-2" />
+                  Começar agora pelo WhatsApp
+                </Button>
               </div>
             </div>
+
+            <p className="text-slate-400 text-sm">
+              Resposta em minutos • Sem formulários • Sem enrolação
+            </p>
 
             {/* AI Response */}
             {(isTyping || aiResponse) && (
@@ -164,23 +140,6 @@ const HeroSection = () => {
                 </div>
               </div>
             )}
-          </div>
-
-          {/* CTA Principal */}
-          <div className="space-y-4">
-            <Button 
-              onClick={openWhatsApp}
-              size="lg"
-              className="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white px-12 py-6 text-xl font-semibold rounded-2xl shadow-2xl transform hover:scale-105 transition-all duration-300"
-            >
-              <MessageCircle className="w-6 h-6 mr-3" />
-              Começar agora pelo WhatsApp
-              <ArrowRight className="w-6 h-6 ml-3" />
-            </Button>
-            
-            <p className="text-slate-400 text-sm">
-              Resposta em minutos • Sem formulários • Sem enrolação
-            </p>
           </div>
 
         </div>
