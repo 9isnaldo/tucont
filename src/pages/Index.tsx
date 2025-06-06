@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import HeroSection from "@/components/sections/HeroSection";
 import TwoAvenuesSection from "@/components/sections/TwoAvenuesSection";
+import GrowthModelsSection from "@/components/sections/GrowthModelsSection";
 import WhyChooseTucontSection from "@/components/sections/WhyChooseTucontSection";
 import JourneySection from "@/components/sections/JourneySection";
 import AgentesSection from "@/components/sections/AgentesSection";
@@ -11,7 +12,6 @@ import TestimonialsSection from "@/components/sections/TestimonialsSection";
 import OneStopSection from "@/components/sections/OneStopSection";
 import PlansSection from "@/components/sections/PlansSection";
 import WhatsAppButton from "@/components/WhatsAppButton";
-import GrowthModelsSection from "@/components/sections/GrowthModelsSection";
 
 const Index = () => {
   return (
@@ -22,10 +22,10 @@ const Index = () => {
         <HeroSection />
       </div>
       <TwoAvenuesSection />
-      <WhyChooseTucontSection />
       <div id="solucoes">
         <GrowthModelsSection />
       </div>
+      <WhyChooseTucontSection />
       <JourneySection />
       <InteractiveAISection />
       <div id="planos">
