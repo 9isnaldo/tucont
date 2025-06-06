@@ -13,7 +13,8 @@ import {
   ArrowRight,
   Sparkles,
   Handshake,
-  Crown
+  Crown,
+  BarChart3
 } from "lucide-react";
 
 const GrowthModelsSection = () => {
@@ -42,6 +43,39 @@ const GrowthModelsSection = () => {
       features: ["IA + Mentoria", "Duas avenidas", "Crescimento sustentável"],
       route: "/tucont",
       popular: true
+    },
+    {
+      icon: Building,
+      title: "Abertura de empresa",
+      subtitle: "CNPJ Rápido",
+      description: "CNPJ em 24h com orientação completa sobre melhor enquadramento tributário e estrutura legal",
+      tagline: "Empresa regularizada em 24h",
+      price: "A partir de R$ 297",
+      color: "from-blue-500 to-cyan-400",
+      features: ["CNPJ em 24h", "Análise tributária", "Suporte completo"],
+      isService: true
+    },
+    {
+      icon: Calculator,
+      title: "Diagnóstico tributário",
+      subtitle: "Análise Fiscal Completa",
+      description: "Análise completa da sua situação fiscal com oportunidades de economia e otimização",
+      tagline: "Economia garantida",
+      price: "Consulta gratuita",
+      color: "from-green-500 to-emerald-400",
+      features: ["Análise fiscal", "Economia de impostos", "Relatório detalhado"],
+      isService: true
+    },
+    {
+      icon: TrendingUp,
+      title: "Mentoria Estratégica",
+      subtitle: "Crescimento Orientado",
+      description: "Estratégias personalizadas e frameworks validados para crescimento sustentável do seu negócio",
+      tagline: "Mentoria especializada",
+      price: "R$ 497/mês",
+      color: "from-orange-500 to-red-400",
+      features: ["Mentoria 1:1", "Plano estratégico", "Acompanhamento mensal"],
+      isService: true
     }
   ];
 
@@ -82,7 +116,17 @@ const GrowthModelsSection = () => {
   ];
 
   const handleModelClick = (model: any) => {
-    window.location.href = model.route;
+    if (model.route) {
+      window.location.href = model.route;
+    } else if (model.isService) {
+      const message = `Olá! Quero este serviço agora: ${model.title} 🚀`;
+      window.open(`https://wa.me/5511999999999?text=${encodeURIComponent(message)}`, '_blank');
+    }
+  };
+
+  const handleSeeAllServices = () => {
+    const message = "Quero ver todos os serviços disponíveis";
+    window.open(`https://wa.me/5511999999999?text=${encodeURIComponent(message)}`, '_blank');
   };
 
   const renderModelGrid = (models: any[], title: string, titleColor: string) => (
@@ -154,7 +198,7 @@ const GrowthModelsSection = () => {
                 onClick={() => handleModelClick(model)}
                 className={`w-full bg-gradient-to-r ${model.color} hover:shadow-lg text-white rounded-xl py-3 font-semibold transform transition-all duration-300 ${hoveredCard === index ? 'scale-105' : ''}`}
               >
-                Quero conhecer
+                {model.isService ? "Quero este agora" : "Quero conhecer"}
                 <ArrowRight className="w-4 h-4 ml-2" />
               </Button>
             </div>
@@ -182,16 +226,25 @@ const GrowthModelsSection = () => {
           </h2>
           
           <p className="text-xl text-slate-300 max-w-4xl mx-auto leading-relaxed">
-            Soluções <span className="font-semibold text-blue-400">personalizadas</span> para 
-            cada momento da sua jornada empresarial.
+            Para quem busca abrir, regularizar ou escalar seu negócio com <span className="font-semibold text-blue-400">tecnologia</span>, 
+            inteligência contábil e <span className="font-semibold text-orange-400">orientação estratégica real</span>.
           </p>
         </div>
 
-        {/* Para sua empresa */}
-        {renderModelGrid(businessModels, "Para sua empresa", "text-blue-300")}
+        {/* Soluções personalizadas */}
+        {renderModelGrid(businessModels, "Soluções personalizadas para cada momento da sua jornada empresarial", "text-blue-300")}
 
-        {/* Para contadores e escritórios */}
-        {renderModelGrid(partnerModels, "Para contadores e escritórios", "text-orange-300")}
+        {/* Ver todos os serviços */}
+        <div className="text-center mb-16">
+          <Button 
+            onClick={handleSeeAllServices}
+            variant="outline"
+            className="border-slate-600 text-slate-300 hover:bg-slate-800/50 hover:text-white hover:border-slate-500 px-8 py-4 text-lg rounded-xl transition-all duration-300"
+          >
+            Ver todos os serviços
+            <ArrowRight className="w-5 h-5 ml-2" />
+          </Button>
+        </div>
 
         {/* Bottom CTA */}
         <div className="text-center mt-16">
@@ -211,6 +264,11 @@ const GrowthModelsSection = () => {
             </Button>
           </div>
         </div>
+      </div>
+
+      {/* Seção Para contadores e escritórios - movida para o final */}
+      <div className="max-w-7xl mx-auto relative z-10 mt-24">
+        {renderModelGrid(partnerModels, "Para contadores e escritórios", "text-orange-300")}
       </div>
     </section>
   );
