@@ -216,7 +216,7 @@ const WhyChooseTucontSection = () => {
               Pronto para <span className="bg-gradient-to-r from-blue-400 to-orange-400 bg-clip-text text-transparent">transformar</span> seu negócio?
             </h3>
             <p className="text-xl text-slate-300 mb-8 max-w-2xl mx-auto">
-              Junte-se a mais de 30 negócios que já transformaram suas jornadas empreendedoras conosco. 
+              Junte-se aos negócios que já transformaram suas jornadas empreendedoras conosco. 
               Vamos construir o futuro juntos!
             </p>
             
