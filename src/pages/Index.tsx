@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import HeroSection from "@/components/sections/HeroSection";
 import TwoAvenuesSection from "@/components/sections/TwoAvenuesSection";
+import WhyChooseTucontSection from "@/components/sections/WhyChooseTucontSection";
 import JourneySection from "@/components/sections/JourneySection";
 import AgentesSection from "@/components/sections/AgentesSection";
 import InteractiveAISection from "@/components/sections/InteractiveAISection";
@@ -21,6 +22,7 @@ const Index = () => {
         <HeroSection />
       </div>
       <TwoAvenuesSection />
+      <WhyChooseTucontSection />
       <div id="solucoes">
         <GrowthModelsSection />
       </div>

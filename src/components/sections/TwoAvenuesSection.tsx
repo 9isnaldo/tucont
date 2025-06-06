@@ -1,4 +1,3 @@
-
 import { Scale, TrendingUp, Zap, Target, ArrowRight, Shield, Route } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -39,7 +38,7 @@ const TwoAvenuesSection = () => {
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 bg-slate-800/50 backdrop-blur-xl border border-slate-700/50 text-blue-300 px-6 py-3 rounded-full mb-8">
             <Route className="w-5 h-5" />
-            <span className="font-medium">Duas Avenidas Integradas</span>
+            <span className="font-medium">Integratividade</span>
           </div>
           
           <h2 className="text-5xl md:text-6xl font-bold mb-8 leading-tight">
@@ -57,6 +56,7 @@ const TwoAvenuesSection = () => {
           </p>
         </div>
 
+        {/* ... keep existing code (grid with the two avenues cards) */}
         <div className="grid lg:grid-cols-2 gap-16 mb-16 relative">
           {/* Connecting Road Element */}
           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-0 hidden lg:block">
