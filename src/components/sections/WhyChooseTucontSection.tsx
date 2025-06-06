@@ -1,13 +1,13 @@
-
 import { TrendingUp, Users, Lightbulb, BookOpen } from "lucide-react";
 
 const WhyChooseTucontSection = () => {
   return (
     <section className="py-24 px-4 bg-slate-900 relative overflow-hidden">
+      
       <div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 via-slate-900 to-orange-900/20"></div>
       
       <div className="max-w-7xl mx-auto relative z-10">
-        {/* Header */}
+        
         <div className="text-center mb-20">
           <h2 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
             <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-orange-400 bg-clip-text text-transparent">
@@ -19,7 +19,7 @@ const WhyChooseTucontSection = () => {
           </p>
         </div>
 
-        {/* 1º Bloco - Nosso Sonho Grande */}
+        
         <div className="mb-24 relative">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="space-y-6">
@@ -57,7 +57,6 @@ const WhyChooseTucontSection = () => {
             </div>
           </div>
           
-          {/* Conector Neon 1 */}
           <div className="absolute -bottom-12 left-1/2 transform -translate-x-1/2">
             <div className="w-1 h-24 bg-gradient-to-b from-orange-400 to-purple-400 rounded-full shadow-lg shadow-orange-400/50 animate-pulse"></div>
           </div>
@@ -75,7 +74,7 @@ const WhyChooseTucontSection = () => {
                   className="relative w-80 h-80 object-cover rounded-full shadow-2xl border-4 border-gradient-to-r from-blue-500 to-orange-500"
                   style={{
                     boxShadow: '0 0 50px rgba(59, 130, 246, 0.3), 0 0 100px rgba(249, 115, 22, 0.2)',
-                    objectPosition: 'center 10%'
+                    objectPosition: 'center 30%'
                   }}
                 />
                 <div className="absolute -bottom-4 -right-4 bg-gradient-to-r from-blue-500 to-orange-500 text-white px-6 py-3 rounded-full font-bold shadow-lg">
@@ -101,13 +100,12 @@ const WhyChooseTucontSection = () => {
             </div>
           </div>
           
-          {/* Conector Neon 2 */}
           <div className="absolute -bottom-12 right-1/3 transform translate-x-1/2">
             <div className="w-1 h-24 bg-gradient-to-b from-purple-400 to-blue-400 rounded-full shadow-lg shadow-purple-400/50 animate-pulse delay-500"></div>
           </div>
         </div>
 
-        {/* 3º Bloco - Porque somos Integrativos */}
+        
         <div className="mb-16 relative">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="space-y-6">
@@ -125,28 +123,28 @@ const WhyChooseTucontSection = () => {
             
             <div className="flex justify-center relative">
               <div className="relative w-96 h-96">
-                {/* Fundo com efeito de integração */}
+                
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-orange-500/20 rounded-2xl backdrop-blur-sm"></div>
                 
-                {/* Elementos integrativos - Fluxo: Pessoas → Educação → Tecnologia */}
+                
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="relative w-full h-full">
-                    {/* 1. Pessoas - Centro inicial */}
+                    
                     <div className="absolute top-1/2 left-8 transform -translate-y-1/2 w-20 h-20 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center shadow-2xl shadow-blue-500/50">
                       <Users className="w-10 h-10 text-white" />
                     </div>
                     
-                    {/* 2. Educação - Centro */}
+                    
                     <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-20 h-20 bg-gradient-to-r from-purple-500 to-orange-500 rounded-full flex items-center justify-center shadow-2xl shadow-purple-500/50">
                       <BookOpen className="w-10 h-10 text-white" />
                     </div>
                     
-                    {/* 3. Tecnologia - Direita final */}
+                    
                     <div className="absolute top-1/2 right-8 transform -translate-y-1/2 w-20 h-20 bg-gradient-to-r from-orange-500 to-blue-500 rounded-full flex items-center justify-center shadow-2xl shadow-orange-500/50">
                       <Lightbulb className="w-10 h-10 text-white" />
                     </div>
                     
-                    {/* Conectores animados - Fluxo da esquerda para direita */}
+                    
                     <svg className="absolute inset-0 w-full h-full" viewBox="0 0 384 384">
                       <defs>
                         <linearGradient id="flow1" x1="0%" y1="50%" x2="100%" y2="50%">
@@ -159,7 +157,7 @@ const WhyChooseTucontSection = () => {
                         </linearGradient>
                       </defs>
                       
-                      {/* Linha conectando Pessoas → Educação */}
+                      
                       <path
                         d="M 72,192 Q 140,192 152,192"
                         stroke="url(#flow1)"
@@ -169,7 +167,7 @@ const WhyChooseTucontSection = () => {
                         filter="drop-shadow(0 0 10px rgba(59, 130, 246, 0.6))"
                       />
                       
-                      {/* Linha conectando Educação → Tecnologia */}
+                      
                       <path
                         d="M 232,192 Q 300,192 312,192"
                         stroke="url(#flow2)"
@@ -179,7 +177,7 @@ const WhyChooseTucontSection = () => {
                         filter="drop-shadow(0 0 10px rgba(139, 92, 246, 0.6))"
                       />
                       
-                      {/* Conectores de feedback entre todos os elementos */}
+                      
                       <path
                         d="M 72,172 Q 192,120 312,172"
                         stroke="url(#flow1)"
@@ -199,7 +197,7 @@ const WhyChooseTucontSection = () => {
                       />
                     </svg>
                     
-                    {/* Labels */}
+                    
                     <div className="absolute top-1/2 left-2 transform -translate-y-1/2 translate-y-12 text-xs text-slate-300 font-medium">Pessoas</div>
                     <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 translate-y-12 text-xs text-slate-300 font-medium">Educação</div>
                     <div className="absolute top-1/2 right-2 transform -translate-y-1/2 translate-y-12 text-xs text-slate-300 font-medium">Tecnologia</div>
