@@ -17,21 +17,21 @@ const GrowthModelsSection = () => {
     {
       id: 1,
       title: "Regularizar",
-      image: "/lovable-uploads/08c8fd63-07d5-4e07-8f26-6eb8bd4508d4.png",
+      image: "/lovable-uploads/73689ad4-07d7-4ce3-bedc-bf705c361717.png",
       text: "CNPJ em 24h com orientação completa. Cuidamos de toda burocracia legal, escolhemos o melhor enquadramento tributário e deixamos sua empresa 100% regularizada.",
       cta: "Regularizar agora"
     },
     {
       id: 2,
       title: "Vender e Emitir Notas",
-      image: "/lovable-uploads/1b9f99f8-e6ea-4f81-a968-77762e3ad6d0.png",
+      image: "/lovable-uploads/ee55d91a-0c58-4720-9afa-567d76f39bb1.png",
       text: "Plataforma completa para vendas e emissão automática de notas fiscais. Simplifique sua operação e foque no que realmente importa: crescer.",
       cta: "Automatizar vendas"
     },
     {
       id: 3,
       title: "Cuidar do Fisco",
-      image: "/lovable-uploads/46365f26-9adb-4a59-9910-83ed2a27e4d3.png",
+      image: "/lovable-uploads/5a59f1c0-30f6-4595-877e-bafeeb234e2e.png",
       text: "Compliance fiscal automatizado com IA. Nossa tecnologia cuida de todas as obrigações fiscais, relatórios e deadlines para você dormir tranquilo.",
       cta: "Automatizar fisco"
     },
