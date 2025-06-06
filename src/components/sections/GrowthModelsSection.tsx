@@ -50,26 +50,40 @@ const GrowthModelsSection = () => {
       if (!section) return;
 
       const rect = section.getBoundingClientRect();
-      const windowHeight = window.innerHeight;
       const sectionHeight = rect.height;
-      const sectionTop = rect.top;
-
-      // Se a seção está visível
-      if (sectionTop <= windowHeight && sectionTop + sectionHeight >= 0) {
-        // Calcular progresso do scroll dentro da seção
-        const scrollProgress = Math.max(0, Math.min(1, (windowHeight - sectionTop) / (sectionHeight - windowHeight)));
-        const stepIndex = Math.floor(scrollProgress * businessSteps.length);
-        const clampedStepIndex = Math.max(0, Math.min(businessSteps.length - 1, stepIndex));
+      const viewportHeight = window.innerHeight;
+      
+      // Verifica se a seção está na viewport
+      if (rect.top <= 0 && rect.bottom >= viewportHeight) {
+        // Calcula o progresso do scroll dentro da seção
+        const scrolledIntoSection = Math.abs(rect.top);
+        const totalScrollableHeight = sectionHeight - viewportHeight;
+        const scrollProgress = Math.min(scrolledIntoSection / totalScrollableHeight, 1);
         
-        if (clampedStepIndex !== activeStep) {
-          setActiveStep(clampedStepIndex);
+        // Calcula qual step deve estar ativo
+        const stepProgress = scrollProgress * (businessSteps.length - 1);
+        const newActiveStep = Math.round(stepProgress);
+        
+        if (newActiveStep !== activeStep && newActiveStep >= 0 && newActiveStep < businessSteps.length) {
+          setActiveStep(newActiveStep);
         }
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
-    handleScroll(); // Check initial position
-    return () => window.removeEventListener('scroll', handleScroll);
+    let ticking = false;
+    const scrollHandler = () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          handleScroll();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+
+    window.addEventListener('scroll', scrollHandler, { passive: true });
+    handleScroll(); // Initial check
+    return () => window.removeEventListener('scroll', scrollHandler);
   }, [activeStep, businessSteps.length]);
 
   const handleStepClick = (step: any) => {
@@ -78,20 +92,20 @@ const GrowthModelsSection = () => {
   };
 
   return (
-    <section id="growth-models-section" className="min-h-[400vh] bg-slate-950 relative">
+    <section id="growth-models-section" className="relative bg-slate-950" style={{ height: `${100 + (businessSteps.length - 1) * 100}vh` }}>
       {/* Sticky container */}
       <div className="sticky top-0 h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-blue-950/20 via-slate-950/50 to-orange-950/20"></div>
         
-        <div className="max-w-7xl mx-auto px-4 relative z-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           {/* Header */}
-          <div className="text-center mb-16">
-            <h2 className="text-5xl md:text-6xl font-bold mb-8 leading-tight">
+          <div className="text-center mb-12 lg:mb-16">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 lg:mb-8 leading-tight">
               <span className="bg-gradient-to-r from-white via-blue-200 to-orange-300 bg-clip-text text-transparent">
                 Em qual momento seu negócio está?
               </span>
             </h2>
-            <p className="text-xl text-slate-300 max-w-4xl mx-auto leading-relaxed">
+            <p className="text-lg md:text-xl text-slate-300 max-w-4xl mx-auto leading-relaxed">
               Para <span className="font-semibold text-blue-400">Criar e Validar</span>, 
               <span className="font-semibold text-orange-400"> Regularizar</span>, 
               <span className="font-semibold text-blue-400"> Vender e Emitir Notas</span>, 
@@ -101,16 +115,18 @@ const GrowthModelsSection = () => {
           </div>
 
           {/* Main content */}
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             {/* Image side */}
-            <div className="relative h-96">
+            <div className="relative h-80 md:h-96 order-2 lg:order-1">
               {businessSteps.map((step, index) => (
                 <div
                   key={step.id}
-                  className={`absolute inset-0 transition-all duration-700 ease-in-out ${
+                  className={`absolute inset-0 transition-all duration-1000 ease-out ${
                     activeStep === index 
                       ? 'opacity-100 scale-100 transform translate-x-0' 
-                      : 'opacity-0 scale-95 transform translate-x-8'
+                      : index < activeStep 
+                        ? 'opacity-0 scale-95 transform -translate-x-8'
+                        : 'opacity-0 scale-95 transform translate-x-8'
                   }`}
                 >
                   <div className="relative w-full h-full">
@@ -122,8 +138,9 @@ const GrowthModelsSection = () => {
                       style={{
                         boxShadow: '0 0 40px rgba(59, 130, 246, 0.2), 0 0 80px rgba(249, 115, 22, 0.1)'
                       }}
+                      loading="lazy"
                     />
-                    <div className="absolute -bottom-4 -right-4 bg-gradient-to-r from-blue-500 to-orange-500 text-white px-6 py-3 rounded-full font-bold shadow-lg">
+                    <div className="absolute -bottom-4 -right-4 bg-gradient-to-r from-blue-500 to-orange-500 text-white px-4 py-2 lg:px-6 lg:py-3 rounded-full font-bold shadow-lg text-sm lg:text-base">
                       {step.title}
                     </div>
                   </div>
@@ -132,28 +149,28 @@ const GrowthModelsSection = () => {
             </div>
 
             {/* Text side */}
-            <div className="space-y-8 relative">
+            <div className="space-y-8 relative order-1 lg:order-2">
               {businessSteps.map((step, index) => (
                 <div
                   key={step.id}
-                  className={`transition-all duration-700 ease-in-out ${
+                  className={`transition-all duration-1000 ease-out ${
                     activeStep === index 
                       ? 'opacity-100 transform translate-x-0' 
                       : 'opacity-0 transform translate-x-8 absolute inset-0'
                   }`}
                 >
-                  <h3 className="text-4xl font-bold text-white mb-6">
+                  <h3 className="text-3xl lg:text-4xl font-bold text-white mb-4 lg:mb-6">
                     {step.title}
                   </h3>
-                  <p className="text-xl text-slate-300 leading-relaxed mb-8">
+                  <p className="text-lg lg:text-xl text-slate-300 leading-relaxed mb-6 lg:mb-8">
                     {step.text}
                   </p>
                   <Button 
                     onClick={() => handleStepClick(step)}
-                    className="bg-gradient-to-r from-blue-500 to-orange-500 hover:from-blue-600 hover:to-orange-600 text-white font-semibold px-8 py-4 rounded-full shadow-2xl shadow-blue-500/25 transition-all duration-300 hover:scale-105"
+                    className="bg-gradient-to-r from-blue-500 to-orange-500 hover:from-blue-600 hover:to-orange-600 text-white font-semibold px-6 py-3 lg:px-8 lg:py-4 rounded-full shadow-2xl shadow-blue-500/25 transition-all duration-300 hover:scale-105"
                   >
                     {step.cta}
-                    <ArrowRight className="w-5 h-5 ml-2" />
+                    <ArrowRight className="w-4 h-4 lg:w-5 lg:h-5 ml-2" />
                   </Button>
                 </div>
               ))}
@@ -161,15 +178,25 @@ const GrowthModelsSection = () => {
           </div>
 
           {/* Progress indicators */}
-          <div className="flex justify-center mt-16 space-x-4">
+          <div className="flex justify-center mt-12 lg:mt-16 space-x-3">
             {businessSteps.map((_, index) => (
               <div
                 key={index}
-                className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                className={`w-2 h-2 lg:w-3 lg:h-3 rounded-full transition-all duration-500 ${
                   activeStep === index 
                     ? 'bg-gradient-to-r from-blue-500 to-orange-500 scale-125' 
-                    : 'bg-slate-600'
+                    : 'bg-slate-600 hover:bg-slate-500 cursor-pointer'
                 }`}
+                onClick={() => setActiveStep(index)}
+                role="button"
+                tabIndex={0}
+                aria-label={`Ir para etapa ${index + 1}: ${businessSteps[index].title}`}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    setActiveStep(index);
+                  }
+                }}
               />
             ))}
           </div>
@@ -177,19 +204,19 @@ const GrowthModelsSection = () => {
       </div>
 
       {/* Bottom CTA */}
-      <div className="absolute bottom-0 left-0 right-0 bg-slate-950/90 backdrop-blur-xl py-16">
-        <div className="max-w-3xl mx-auto text-center px-4">
-          <h3 className="text-2xl font-bold text-white mb-4">
+      <div className="absolute bottom-0 left-0 right-0 bg-slate-950/90 backdrop-blur-xl py-12 lg:py-16">
+        <div className="max-w-3xl mx-auto text-center px-4 sm:px-6">
+          <h3 className="text-xl lg:text-2xl font-bold text-white mb-4">
             Não sabe em qual momento está?
           </h3>
-          <p className="text-slate-300 mb-6">
+          <p className="text-slate-300 mb-6 text-sm lg:text-base">
             Nossa IA analisa seu perfil e recomenda o momento ideal para seu negócio atual.
           </p>
           <Button 
             onClick={() => window.open(`https://wa.me/5511999999999?text=${encodeURIComponent("Quero descobrir em qual momento meu negócio está")}`, '_blank')}
-            className="bg-gradient-to-r from-blue-600 via-blue-700 to-orange-600 hover:from-blue-700 hover:via-blue-800 hover:to-orange-700 text-white px-8 py-4 text-lg rounded-full shadow-2xl hover:shadow-blue-500/20 transform hover:scale-105 transition-all duration-300"
+            className="bg-gradient-to-r from-blue-600 via-blue-700 to-orange-600 hover:from-blue-700 hover:via-blue-800 hover:to-orange-700 text-white px-6 py-3 lg:px-8 lg:py-4 text-base lg:text-lg rounded-full shadow-2xl hover:shadow-blue-500/20 transform hover:scale-105 transition-all duration-300"
           >
-            <Zap className="w-5 h-5 mr-2" />
+            <Zap className="w-4 h-4 lg:w-5 lg:h-5 mr-2" />
             Descobrir meu momento ideal
           </Button>
         </div>
