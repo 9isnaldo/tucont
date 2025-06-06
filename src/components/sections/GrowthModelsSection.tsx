@@ -28,7 +28,8 @@ const GrowthModelsSection = () => {
       description: "CNPJ em 24h com orientação completa sobre melhor enquadramento tributário e estrutura legal",
       tagline: "Empresa regularizada em 24h",
       price: "A partir de R$ 297",
-      color: "from-blue-500 to-cyan-400",
+      color: "from-blue-600 to-blue-800",
+      neonColor: "blue-500",
       features: ["CNPJ em 24h", "Análise tributária", "Suporte completo"],
       isService: true
     },
@@ -39,7 +40,8 @@ const GrowthModelsSection = () => {
       description: "Venda, emita notas fiscais, gerencie o financeiro",
       tagline: "Simplificamos Sua Operação",
       price: "A partir de R$ 297/mês",
-      color: "from-blue-500 to-cyan-400",
+      color: "from-blue-600 to-blue-800",
+      neonColor: "blue-500",
       features: ["Emissão automática", "Gestão financeira", "Relatórios inteligentes"],
       route: "/saas"
     },
@@ -50,7 +52,8 @@ const GrowthModelsSection = () => {
       description: "Destravamos o empreendedorismo cuidando das duas avenidas",
       tagline: "Unificamos Legal e Negócios",
       price: "Mais Popular",
-      color: "from-green-500 to-emerald-400",
+      color: "from-orange-500 to-orange-700",
+      neonColor: "orange-500",
       features: ["IA + Mentoria", "Duas avenidas", "Crescimento sustentável"],
       route: "/tucont",
       popular: true
@@ -62,7 +65,8 @@ const GrowthModelsSection = () => {
       description: "Análise completa da sua situação fiscal com oportunidades de economia e otimização",
       tagline: "Economia garantida",
       price: "Consulta gratuita",
-      color: "from-green-500 to-emerald-400",
+      color: "from-blue-600 to-blue-800",
+      neonColor: "blue-500",
       features: ["Análise fiscal", "Economia de impostos", "Relatório detalhado"],
       isService: true
     },
@@ -73,7 +77,8 @@ const GrowthModelsSection = () => {
       description: "Estratégias personalizadas e frameworks validados para crescimento sustentável do seu negócio",
       tagline: "Mentoria especializada",
       price: "R$ 497/mês",
-      color: "from-orange-500 to-red-400",
+      color: "from-orange-500 to-orange-700",
+      neonColor: "orange-500",
       features: ["Mentoria 1:1", "Plano estratégico", "Acompanhamento mensal"],
       isService: true
     }
@@ -87,7 +92,8 @@ const GrowthModelsSection = () => {
       description: "Acesso a plataforma personalizada, processos, automações e IA",
       tagline: "Fazemos juntos",
       price: "Sob consulta",
-      color: "from-orange-500 to-red-400",
+      color: "from-orange-500 to-orange-700",
+      neonColor: "orange-500",
       features: ["Plataforma exclusiva", "Automações", "Suporte completo"],
       route: "/partner"
     },
@@ -98,7 +104,8 @@ const GrowthModelsSection = () => {
       description: "Implementação na prática, de processos, IA e automações personalizadas",
       tagline: "Fazemos pra você",
       price: "Implementação completa",
-      color: "from-purple-500 to-pink-400",
+      color: "from-blue-600 to-blue-800",
+      neonColor: "blue-500",
       features: ["Implementação total", "IA personalizada", "Processos otimizados"],
       route: "/cec"
     },
@@ -109,7 +116,8 @@ const GrowthModelsSection = () => {
       description: "Comunidade com acesso em primeira mão, a todas soluções Tucont",
       tagline: "Compartilhamos com você",
       price: "Acesso antecipado",
-      color: "from-indigo-500 to-blue-400",
+      color: "from-orange-500 to-orange-700",
+      neonColor: "orange-500",
       features: ["Primeira mão", "Comunidade exclusiva", "Todas as soluções"],
       route: "/poder-contabil"
     }
@@ -145,28 +153,28 @@ const GrowthModelsSection = () => {
             {/* Popular Badge */}
             {model.popular && (
               <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 z-10">
-                <div className="bg-gradient-to-r from-yellow-400 to-yellow-500 text-slate-900 px-4 py-2 rounded-full text-sm font-bold shadow-lg">
+                <div className="bg-gradient-to-r from-orange-400 to-orange-600 text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg">
                   Mais Popular
                 </div>
               </div>
             )}
 
-            {/* Glow Effect */}
-            <div className={`absolute inset-0 bg-gradient-to-r ${model.color} opacity-0 group-hover:opacity-20 rounded-3xl blur-xl transition-all duration-500`}></div>
+            {/* Neon Glow Effect */}
+            <div className={`absolute inset-0 bg-${model.neonColor} opacity-0 group-hover:opacity-30 rounded-3xl blur-xl transition-all duration-500`}></div>
             
-            {/* Card */}
-            <div className="relative bg-slate-900/80 backdrop-blur-xl border border-slate-700/50 rounded-3xl p-6 hover:bg-slate-800/80 transition-all duration-300 transform hover:scale-105 hover:-translate-y-2 shadow-2xl group-hover:shadow-xl h-full flex flex-col">
+            {/* Glass Card */}
+            <div className={`relative bg-slate-900/40 backdrop-blur-xl border-2 border-${model.neonColor}/30 group-hover:border-${model.neonColor}/60 rounded-3xl p-6 transition-all duration-300 transform hover:scale-105 hover:-translate-y-2 shadow-2xl group-hover:shadow-${model.neonColor}/20 h-full flex flex-col`}>
               
               {/* Header */}
               <div className="flex items-center gap-4 mb-6">
-                <div className={`w-14 h-14 bg-gradient-to-r ${model.color} rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300`}>
+                <div className={`w-14 h-14 bg-gradient-to-r ${model.color} rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300 group-hover:shadow-${model.neonColor}/40`}>
                   <model.icon className="w-7 h-7 text-white" />
                 </div>
                 <div>
                   <h4 className="text-xl font-bold text-white leading-tight">
                     {model.title}
                   </h4>
-                  <p className="text-slate-400 text-sm">{model.subtitle}</p>
+                  <p className="text-slate-300 text-sm">{model.subtitle}</p>
                   <div className={`text-sm font-semibold bg-gradient-to-r ${model.color} bg-clip-text text-transparent`}>
                     {model.price}
                   </div>
@@ -174,20 +182,20 @@ const GrowthModelsSection = () => {
               </div>
 
               {/* Tagline */}
-              <h5 className="text-lg font-semibold mb-4 text-blue-300">
+              <h5 className={`text-lg font-semibold mb-4 ${model.neonColor === 'blue-500' ? 'text-blue-300' : 'text-orange-300'}`}>
                 {model.tagline}
               </h5>
 
               {/* Description */}
-              <p className="text-slate-400 mb-6 leading-relaxed flex-grow">
+              <p className="text-slate-300 mb-6 leading-relaxed flex-grow">
                 {model.description}
               </p>
 
               {/* Features */}
               <div className="space-y-2 mb-6">
                 {model.features.map((feature, idx) => (
-                  <div key={idx} className="flex items-center gap-3 text-slate-300 text-sm">
-                    <div className={`w-2 h-2 rounded-full bg-gradient-to-r ${model.color}`}></div>
+                  <div key={idx} className="flex items-center gap-3 text-slate-200 text-sm">
+                    <div className={`w-2 h-2 rounded-full bg-gradient-to-r ${model.color} shadow-lg group-hover:shadow-${model.neonColor}/40`}></div>
                     <span>{feature}</span>
                   </div>
                 ))}
@@ -196,7 +204,7 @@ const GrowthModelsSection = () => {
               {/* CTA Button */}
               <Button 
                 onClick={() => handleModelClick(model)}
-                className={`w-full bg-gradient-to-r ${model.color} hover:shadow-lg text-white rounded-xl py-3 font-semibold transform transition-all duration-300 ${hoveredCard === index ? 'scale-105' : ''}`}
+                className={`w-full bg-gradient-to-r ${model.color} hover:shadow-lg hover:shadow-${model.neonColor}/40 text-white rounded-xl py-3 font-semibold transform transition-all duration-300 ${hoveredCard === index ? 'scale-105' : ''} border border-${model.neonColor}/20 hover:border-${model.neonColor}/40`}
               >
                 {model.isService ? "Quero este agora" : "Quero conhecer"}
                 <ArrowRight className="w-4 h-4 ml-2" />
@@ -210,11 +218,12 @@ const GrowthModelsSection = () => {
 
   return (
     <section className="py-24 px-4 bg-slate-950 relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-950/30 via-transparent to-orange-950/30"></div>
+      {/* Background with glass effect */}
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-950/20 via-slate-950/50 to-orange-950/20 backdrop-blur-3xl"></div>
       
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 bg-slate-800/50 backdrop-blur-xl border border-slate-700/50 text-blue-300 px-6 py-3 rounded-full mb-8">
+          <div className="inline-flex items-center gap-2 bg-slate-800/30 backdrop-blur-xl border border-blue-500/30 text-blue-300 px-6 py-3 rounded-full mb-8 shadow-lg shadow-blue-500/10">
             <Sparkles className="w-5 h-5" />
             <span className="font-medium">Modelos de Crescimento</span>
           </div>
@@ -248,7 +257,7 @@ const GrowthModelsSection = () => {
 
         {/* Bottom CTA */}
         <div className="text-center mt-16">
-          <div className="bg-gradient-to-r from-slate-800/50 to-slate-700/50 backdrop-blur-xl border border-slate-600/50 rounded-3xl p-8 max-w-3xl mx-auto">
+          <div className="bg-slate-800/30 backdrop-blur-xl border border-blue-500/30 rounded-3xl p-8 max-w-3xl mx-auto shadow-2xl shadow-blue-500/10">
             <h3 className="text-2xl font-bold text-white mb-4">
               Não sabe qual modelo escolher?
             </h3>
@@ -257,7 +266,7 @@ const GrowthModelsSection = () => {
             </p>
             <Button 
               onClick={() => window.open(`https://wa.me/5511999999999?text=${encodeURIComponent("Quero descobrir o modelo ideal para mim")}`, '_blank')}
-              className="bg-gradient-to-r from-blue-500 via-purple-500 to-orange-500 hover:from-blue-600 hover:via-purple-600 hover:to-orange-600 text-white px-8 py-4 text-lg rounded-full shadow-2xl transform hover:scale-105 transition-all duration-300"
+              className="bg-gradient-to-r from-blue-600 via-blue-700 to-orange-600 hover:from-blue-700 hover:via-blue-800 hover:to-orange-700 text-white px-8 py-4 text-lg rounded-full shadow-2xl hover:shadow-blue-500/20 transform hover:scale-105 transition-all duration-300 border border-blue-500/20"
             >
               <Zap className="w-5 h-5 mr-2" />
               Descobrir meu modelo ideal
@@ -266,7 +275,7 @@ const GrowthModelsSection = () => {
         </div>
       </div>
 
-      {/* Seção Para contadores e escritórios - movida para o final */}
+      {/* Seção Para contadores e escritórios */}
       <div className="max-w-7xl mx-auto relative z-10 mt-24">
         {renderModelGrid(partnerModels, "Para contadores e escritórios", "text-orange-300")}
       </div>
