@@ -10,7 +10,7 @@ const GrowthModelsSection = () => {
     {
       id: 0,
       title: "Criar e Validar",
-      image: "/lovable-uploads/06946f78-e9ff-48f7-b9a5-26f5f246320c.png",
+      image: "/lovable-uploads/41fcb3b9-a11b-4ca7-aac8-3e452f41999b.png",
       text: "Transforme sua ideia em realidade. Validamos seu modelo de negócio, definimos a estrutura legal ideal e orientamos os primeiros passos para criar uma base sólida.",
       cta: "Começar minha jornada"
     },
@@ -56,8 +56,8 @@ const GrowthModelsSection = () => {
 
       // Se a seção está visível
       if (sectionTop <= windowHeight && sectionTop + sectionHeight >= 0) {
-        // Calcular qual step deve estar ativo baseado na posição do scroll
-        const scrollProgress = Math.max(0, Math.min(1, (windowHeight - sectionTop) / (windowHeight + sectionHeight * 0.5)));
+        // Calcular progresso do scroll dentro da seção
+        const scrollProgress = Math.max(0, Math.min(1, (windowHeight - sectionTop) / (sectionHeight - windowHeight)));
         const stepIndex = Math.floor(scrollProgress * businessSteps.length);
         const clampedStepIndex = Math.max(0, Math.min(businessSteps.length - 1, stepIndex));
         
@@ -68,6 +68,7 @@ const GrowthModelsSection = () => {
     };
 
     window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Check initial position
     return () => window.removeEventListener('scroll', handleScroll);
   }, [activeStep, businessSteps.length]);
 
@@ -77,7 +78,7 @@ const GrowthModelsSection = () => {
   };
 
   return (
-    <section id="growth-models-section" className="min-h-[500vh] bg-slate-950 relative">
+    <section id="growth-models-section" className="min-h-[400vh] bg-slate-950 relative">
       {/* Sticky container */}
       <div className="sticky top-0 h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-blue-950/20 via-slate-950/50 to-orange-950/20"></div>
@@ -106,20 +107,20 @@ const GrowthModelsSection = () => {
               {businessSteps.map((step, index) => (
                 <div
                   key={step.id}
-                  className={`absolute inset-0 transition-all duration-1000 ease-in-out ${
+                  className={`absolute inset-0 transition-all duration-700 ease-in-out ${
                     activeStep === index 
                       ? 'opacity-100 scale-100 transform translate-x-0' 
                       : 'opacity-0 scale-95 transform translate-x-8'
                   }`}
                 >
                   <div className="relative w-full h-full">
-                    <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-orange-500/20 rounded-3xl blur-xl"></div>
+                    <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-orange-500/10 rounded-2xl blur-2xl"></div>
                     <img 
                       src={step.image} 
                       alt={step.title}
-                      className="relative w-full h-full object-cover rounded-3xl shadow-2xl border-2 border-gradient-to-r from-blue-500/30 to-orange-500/30"
+                      className="relative w-full h-full object-cover rounded-2xl shadow-2xl"
                       style={{
-                        boxShadow: '0 0 50px rgba(59, 130, 246, 0.3), 0 0 100px rgba(249, 115, 22, 0.2)'
+                        boxShadow: '0 0 40px rgba(59, 130, 246, 0.2), 0 0 80px rgba(249, 115, 22, 0.1)'
                       }}
                     />
                     <div className="absolute -bottom-4 -right-4 bg-gradient-to-r from-blue-500 to-orange-500 text-white px-6 py-3 rounded-full font-bold shadow-lg">
@@ -131,14 +132,14 @@ const GrowthModelsSection = () => {
             </div>
 
             {/* Text side */}
-            <div className="space-y-8">
+            <div className="space-y-8 relative">
               {businessSteps.map((step, index) => (
                 <div
                   key={step.id}
-                  className={`transition-all duration-1000 ease-in-out ${
+                  className={`transition-all duration-700 ease-in-out ${
                     activeStep === index 
                       ? 'opacity-100 transform translate-x-0' 
-                      : 'opacity-0 transform translate-x-8 absolute'
+                      : 'opacity-0 transform translate-x-8 absolute inset-0'
                   }`}
                 >
                   <h3 className="text-4xl font-bold text-white mb-6">
