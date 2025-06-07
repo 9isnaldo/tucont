@@ -125,18 +125,18 @@ const WhyChooseTucontSection = () => {
             </div>
             
             <div className="flex justify-center relative">
-              <div className="relative w-96 h-96">
+              <div className="relative w-full h-96 max-w-md">
                 
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-orange-500/20 rounded-2xl backdrop-blur-sm"></div>
                 
-                {/* Empreendedora no centro */}
-                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-24 h-24">
+                {/* Empreendedora no centro - imagem ocupando todo o card */}
+                <div className="absolute inset-4">
                   <div className="relative w-full h-full">
-                    <div className="absolute inset-0 bg-gradient-to-r from-blue-500/30 to-orange-500/30 rounded-full blur-lg animate-pulse"></div>
+                    <div className="absolute inset-0 bg-gradient-to-r from-blue-500/30 to-orange-500/30 rounded-xl blur-lg animate-pulse"></div>
                     <img 
                       src="/lovable-uploads/b869c949-b485-49f0-94dc-c7e090134647.png" 
                       alt="Empreendedora no centro" 
-                      className="relative w-full h-full object-cover rounded-full shadow-2xl border-2 border-gradient-to-r from-blue-500 to-orange-500"
+                      className="relative w-full h-full object-cover rounded-xl shadow-2xl border-2 border-gradient-to-r from-blue-500 to-orange-500"
                       style={{
                         boxShadow: '0 0 30px rgba(59, 130, 246, 0.4), 0 0 60px rgba(249, 115, 22, 0.2)'
                       }}
@@ -144,12 +144,12 @@ const WhyChooseTucontSection = () => {
                   </div>
                 </div>
                 
-                {/* Ícones orbitando */}
+                {/* Ícones orbitando - ajustados para orbitar a imagem maior */}
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="relative w-full h-full">
                     
                     {/* Pessoas - esquerda */}
-                    <div className="absolute top-1/2 left-8 transform -translate-y-1/2 flex flex-col items-center">
+                    <div className="absolute top-1/2 -left-8 transform -translate-y-1/2 flex flex-col items-center">
                       <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center shadow-2xl shadow-blue-500/50 animate-bounce mb-2">
                         <Users className="w-8 h-8 text-white" />
                       </div>
@@ -157,7 +157,7 @@ const WhyChooseTucontSection = () => {
                     </div>
                     
                     {/* Educação - topo */}
-                    <div className="absolute top-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center">
+                    <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center">
                       <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-orange-500 rounded-full flex items-center justify-center shadow-2xl shadow-purple-500/50 animate-bounce delay-500 mb-2">
                         <BookOpen className="w-8 h-8 text-white" />
                       </div>
@@ -165,15 +165,15 @@ const WhyChooseTucontSection = () => {
                     </div>
                     
                     {/* Tecnologia - direita */}
-                    <div className="absolute top-1/2 right-8 transform -translate-y-1/2 flex flex-col items-center">
+                    <div className="absolute top-1/2 -right-8 transform -translate-y-1/2 flex flex-col items-center">
                       <div className="w-16 h-16 bg-gradient-to-r from-orange-500 to-blue-500 rounded-full flex items-center justify-center shadow-2xl shadow-orange-500/50 animate-bounce delay-1000 mb-2">
                         <Lightbulb className="w-8 h-8 text-white" />
                       </div>
                       <div className="text-xs text-slate-300 font-medium">Tecnologia</div>
                     </div>
                     
-                    {/* Linhas conectoras animadas */}
-                    <svg className="absolute inset-0 w-full h-full" viewBox="0 0 384 384">
+                    {/* Linhas conectoras animadas - ajustadas para a nova posição */}
+                    <svg className="absolute inset-0 w-full h-full" viewBox="0 0 320 384">
                       <defs>
                         <linearGradient id="flow1" x1="0%" y1="50%" x2="100%" y2="50%">
                           <stop offset="0%" stopColor="#3b82f6" stopOpacity="0.6" />
@@ -187,7 +187,7 @@ const WhyChooseTucontSection = () => {
                       
                       {/* Linha da esquerda para o centro */}
                       <path
-                        d="M 72,192 Q 140,192 152,192"
+                        d="M 24,192 Q 80,192 120,192"
                         stroke="url(#flow1)"
                         strokeWidth="3"
                         fill="none"
@@ -197,7 +197,7 @@ const WhyChooseTucontSection = () => {
                       
                       {/* Linha da direita para o centro */}
                       <path
-                        d="M 232,192 Q 300,192 312,192"
+                        d="M 200,192 Q 240,192 296,192"
                         stroke="url(#flow2)"
                         strokeWidth="3"
                         fill="none"
@@ -207,7 +207,7 @@ const WhyChooseTucontSection = () => {
                       
                       {/* Linha do topo para o centro */}
                       <path
-                        d="M 192,72 Q 192,140 192,152"
+                        d="M 160,24 Q 160,80 160,120"
                         stroke="url(#flow1)"
                         strokeWidth="3"
                         fill="none"
