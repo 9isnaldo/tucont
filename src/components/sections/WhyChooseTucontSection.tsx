@@ -1,3 +1,4 @@
+
 import { TrendingUp, Users, Lightbulb, BookOpen, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -133,7 +134,7 @@ const WhyChooseTucontSection = () => {
                   <div className="relative w-full h-full">
                     <div className="absolute inset-0 bg-gradient-to-r from-blue-500/30 to-orange-500/30 rounded-full blur-lg animate-pulse"></div>
                     <img 
-                      src="/lovable-uploads/db1e5302-c6fa-40ce-ac0b-f2350248bdb8.png" 
+                      src="/lovable-uploads/b869c949-b485-49f0-94dc-c7e090134647.png" 
                       alt="Empreendedora no centro" 
                       className="relative w-full h-full object-cover rounded-full shadow-2xl border-2 border-gradient-to-r from-blue-500 to-orange-500"
                       style={{
@@ -148,18 +149,27 @@ const WhyChooseTucontSection = () => {
                   <div className="relative w-full h-full">
                     
                     {/* Pessoas - esquerda */}
-                    <div className="absolute top-1/2 left-8 transform -translate-y-1/2 w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center shadow-2xl shadow-blue-500/50 animate-bounce">
-                      <Users className="w-8 h-8 text-white" />
+                    <div className="absolute top-1/2 left-8 transform -translate-y-1/2 flex flex-col items-center">
+                      <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center shadow-2xl shadow-blue-500/50 animate-bounce mb-2">
+                        <Users className="w-8 h-8 text-white" />
+                      </div>
+                      <div className="text-xs text-slate-300 font-medium">Pessoas</div>
                     </div>
                     
                     {/* Educação - topo */}
-                    <div className="absolute top-8 left-1/2 transform -translate-x-1/2 w-16 h-16 bg-gradient-to-r from-purple-500 to-orange-500 rounded-full flex items-center justify-center shadow-2xl shadow-purple-500/50 animate-bounce delay-500">
-                      <BookOpen className="w-8 h-8 text-white" />
+                    <div className="absolute top-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center">
+                      <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-orange-500 rounded-full flex items-center justify-center shadow-2xl shadow-purple-500/50 animate-bounce delay-500 mb-2">
+                        <BookOpen className="w-8 h-8 text-white" />
+                      </div>
+                      <div className="text-xs text-slate-300 font-medium">Educação</div>
                     </div>
                     
                     {/* Tecnologia - direita */}
-                    <div className="absolute top-1/2 right-8 transform -translate-y-1/2 w-16 h-16 bg-gradient-to-r from-orange-500 to-blue-500 rounded-full flex items-center justify-center shadow-2xl shadow-orange-500/50 animate-bounce delay-1000">
-                      <Lightbulb className="w-8 h-8 text-white" />
+                    <div className="absolute top-1/2 right-8 transform -translate-y-1/2 flex flex-col items-center">
+                      <div className="w-16 h-16 bg-gradient-to-r from-orange-500 to-blue-500 rounded-full flex items-center justify-center shadow-2xl shadow-orange-500/50 animate-bounce delay-1000 mb-2">
+                        <Lightbulb className="w-8 h-8 text-white" />
+                      </div>
+                      <div className="text-xs text-slate-300 font-medium">Tecnologia</div>
                     </div>
                     
                     {/* Linhas conectoras animadas */}
@@ -205,11 +215,6 @@ const WhyChooseTucontSection = () => {
                         filter="drop-shadow(0 0 8px rgba(139, 92, 246, 0.4))"
                       />
                     </svg>
-                    
-                    {/* Labels */}
-                    <div className="absolute top-1/2 left-2 transform -translate-y-1/2 translate-y-12 text-xs text-slate-300 font-medium">Pessoas</div>
-                    <div className="absolute top-2 left-1/2 transform -translate-x-1/2 translate-y-12 text-xs text-slate-300 font-medium">Educação</div>
-                    <div className="absolute top-1/2 right-2 transform -translate-y-1/2 translate-y-12 text-xs text-slate-300 font-medium">Tecnologia</div>
                   </div>
                 </div>
               </div>

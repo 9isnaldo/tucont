@@ -38,7 +38,7 @@ const GrowthModelsSection = () => {
     {
       id: 4,
       title: "Tracionar e Evoluir",
-      image: "/lovable-uploads/db1e5302-c6fa-40ce-ac0b-f2350248bdb8.png",
+      image: "/lovable-uploads/6a0211ba-87b9-4186-af4f-f5144fbff2dc.png",
       text: "Mentoria estratégica e frameworks validados para crescimento sustentável. Destravamos seu potencial empreendedor com orientação especializada.",
       cta: "Acelerar crescimento"
     }
