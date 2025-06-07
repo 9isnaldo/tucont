@@ -68,19 +68,28 @@ const WhyChooseTucontSection = () => {
         <div className="mb-24 relative">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="order-2 lg:order-1 flex justify-center relative">
-              <div className="relative">
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-500/30 to-orange-500/30 rounded-full blur-xl"></div>
-                <img 
-                  src="/lovable-uploads/693aec20-2c27-48a1-8efe-f12b58bff5bf.png" 
-                  alt="Geraldo Oliveira" 
-                  className="relative w-80 h-80 object-cover rounded-full shadow-2xl border-4 border-gradient-to-r from-blue-500 to-orange-500"
-                  style={{
-                    boxShadow: '0 0 50px rgba(59, 130, 246, 0.3), 0 0 100px rgba(249, 115, 22, 0.2)',
-                    objectPosition: 'center 50%'
-                  }}
-                />
-                <div className="absolute -bottom-4 -right-4 bg-gradient-to-r from-blue-500 to-orange-500 text-white px-6 py-3 rounded-full font-bold shadow-lg">
-                  Geraldo Oliveira
+              <div className="relative w-full h-96 max-w-md">
+                {/* Card background com efeitos de glass */}
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-orange-500/20 rounded-2xl backdrop-blur-sm"></div>
+                
+                {/* Imagem do Geraldo ocupando todo o card */}
+                <div className="absolute inset-4">
+                  <div className="relative w-full h-full">
+                    <div className="absolute inset-0 bg-gradient-to-r from-blue-500/30 to-orange-500/30 rounded-xl blur-lg animate-pulse"></div>
+                    <img 
+                      src="/lovable-uploads/693aec20-2c27-48a1-8efe-f12b58bff5bf.png" 
+                      alt="Geraldo Oliveira" 
+                      className="relative w-full h-full object-cover rounded-xl shadow-2xl"
+                      style={{
+                        boxShadow: '0 0 50px rgba(59, 130, 246, 0.4), 0 0 100px rgba(249, 115, 22, 0.3)',
+                        objectPosition: 'center 30%'
+                      }}
+                    />
+                    {/* Badge do nome */}
+                    <div className="absolute -bottom-2 -right-2 bg-gradient-to-r from-blue-500 to-orange-500 text-white px-4 py-2 rounded-full font-bold shadow-lg text-sm">
+                      Geraldo Oliveira
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -136,7 +145,7 @@ const WhyChooseTucontSection = () => {
                     <img 
                       src="/lovable-uploads/b869c949-b485-49f0-94dc-c7e090134647.png" 
                       alt="Empreendedora no centro" 
-                      className="relative w-full h-full object-cover rounded-xl shadow-2xl border-2 border-gradient-to-r from-blue-500 to-orange-500"
+                      className="relative w-full h-full object-cover rounded-xl shadow-2xl"
                       style={{
                         boxShadow: '0 0 30px rgba(59, 130, 246, 0.4), 0 0 60px rgba(249, 115, 22, 0.2)'
                       }}
