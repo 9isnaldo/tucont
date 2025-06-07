@@ -82,7 +82,7 @@ const WhyChooseTucontSection = () => {
                       className="relative w-full h-full object-cover rounded-xl shadow-2xl"
                       style={{
                         boxShadow: '0 0 50px rgba(59, 130, 246, 0.4), 0 0 100px rgba(249, 115, 22, 0.3)',
-                        objectPosition: 'center 30%'
+                        objectPosition: 'center 50%'
                       }}
                     />
                     {/* Badge do nome */}
