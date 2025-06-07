@@ -38,7 +38,7 @@ const GrowthModelsSection = () => {
     {
       id: 4,
       title: "Tracionar e Evoluir",
-      image: "/lovable-uploads/4c92d87f-6732-4486-a6bc-79b4f3e47c57.png",
+      image: "/lovable-uploads/db1e5302-c6fa-40ce-ac0b-f2350248bdb8.png",
       text: "Mentoria estratégica e frameworks validados para crescimento sustentável. Destravamos seu potencial empreendedor com orientação especializada.",
       cta: "Acelerar crescimento"
     }
@@ -106,7 +106,7 @@ const GrowthModelsSection = () => {
               </span>
             </h2>
             <p className="text-lg md:text-xl text-slate-300 max-w-4xl mx-auto leading-relaxed">
-              Para <span className="font-semibold text-blue-400">Criar e Validar</span>, 
+              Momento de <span className="font-semibold text-blue-400">Criar e Validar</span>, 
               <span className="font-semibold text-orange-400"> Regularizar</span>, 
               <span className="font-semibold text-blue-400"> Vender e Emitir Notas</span>, 
               <span className="font-semibold text-orange-400"> Cuidar do Fisco</span>, 

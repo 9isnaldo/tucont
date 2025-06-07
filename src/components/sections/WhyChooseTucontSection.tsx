@@ -63,7 +63,7 @@ const WhyChooseTucontSection = () => {
           </div>
         </div>
 
-        {/* 2º Bloco - Temos experiência */}
+        
         <div className="mb-24 relative">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="order-2 lg:order-1 flex justify-center relative">
@@ -106,18 +106,19 @@ const WhyChooseTucontSection = () => {
           </div>
         </div>
 
-        
+        {/* 3º Bloco - Somos Integrativos */}
         <div className="mb-16 relative">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="space-y-6">
               <h3 className="text-4xl font-bold text-white mb-6">
-                Porque somos Integrativos
+                Somos Integrativos, é <span className="bg-gradient-to-r from-blue-400 to-orange-400 bg-clip-text text-transparent">Você no Centro</span>
               </h3>
-              <div className="text-xl text-slate-300 leading-relaxed">
+              <div className="text-xl text-slate-300 leading-relaxed space-y-4">
                 <p>
-                  "Para que todos atinjamos nossos objetivos, reunimos na Tucont, 
-                  educação empreendedora, processos, tecnologia, contabilidade e pessoas, 
-                  uma abundância delas."
+                  Enquanto a Contabilidade Tradicional é <span className="text-slate-400 italic">reativa e foca no Governo</span>.
+                </p>
+                <p>
+                  A Tucont Integrativa foca no seu negócio, utiliza tecnologia proprietária para integrar e fluir a rotina empresarial.
                 </p>
               </div>
             </div>
@@ -127,80 +128,87 @@ const WhyChooseTucontSection = () => {
                 
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-orange-500/20 rounded-2xl backdrop-blur-sm"></div>
                 
+                {/* Empreendedora no centro */}
+                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-24 h-24">
+                  <div className="relative w-full h-full">
+                    <div className="absolute inset-0 bg-gradient-to-r from-blue-500/30 to-orange-500/30 rounded-full blur-lg animate-pulse"></div>
+                    <img 
+                      src="/lovable-uploads/db1e5302-c6fa-40ce-ac0b-f2350248bdb8.png" 
+                      alt="Empreendedora no centro" 
+                      className="relative w-full h-full object-cover rounded-full shadow-2xl border-2 border-gradient-to-r from-blue-500 to-orange-500"
+                      style={{
+                        boxShadow: '0 0 30px rgba(59, 130, 246, 0.4), 0 0 60px rgba(249, 115, 22, 0.2)'
+                      }}
+                    />
+                  </div>
+                </div>
                 
+                {/* Ícones orbitando */}
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="relative w-full h-full">
                     
-                    <div className="absolute top-1/2 left-8 transform -translate-y-1/2 w-20 h-20 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center shadow-2xl shadow-blue-500/50">
-                      <Users className="w-10 h-10 text-white" />
+                    {/* Pessoas - esquerda */}
+                    <div className="absolute top-1/2 left-8 transform -translate-y-1/2 w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center shadow-2xl shadow-blue-500/50 animate-bounce">
+                      <Users className="w-8 h-8 text-white" />
                     </div>
                     
-                    
-                    <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-20 h-20 bg-gradient-to-r from-purple-500 to-orange-500 rounded-full flex items-center justify-center shadow-2xl shadow-purple-500/50">
-                      <BookOpen className="w-10 h-10 text-white" />
+                    {/* Educação - topo */}
+                    <div className="absolute top-8 left-1/2 transform -translate-x-1/2 w-16 h-16 bg-gradient-to-r from-purple-500 to-orange-500 rounded-full flex items-center justify-center shadow-2xl shadow-purple-500/50 animate-bounce delay-500">
+                      <BookOpen className="w-8 h-8 text-white" />
                     </div>
                     
-                    
-                    <div className="absolute top-1/2 right-8 transform -translate-y-1/2 w-20 h-20 bg-gradient-to-r from-orange-500 to-blue-500 rounded-full flex items-center justify-center shadow-2xl shadow-orange-500/50">
-                      <Lightbulb className="w-10 h-10 text-white" />
+                    {/* Tecnologia - direita */}
+                    <div className="absolute top-1/2 right-8 transform -translate-y-1/2 w-16 h-16 bg-gradient-to-r from-orange-500 to-blue-500 rounded-full flex items-center justify-center shadow-2xl shadow-orange-500/50 animate-bounce delay-1000">
+                      <Lightbulb className="w-8 h-8 text-white" />
                     </div>
                     
-                    
+                    {/* Linhas conectoras animadas */}
                     <svg className="absolute inset-0 w-full h-full" viewBox="0 0 384 384">
                       <defs>
                         <linearGradient id="flow1" x1="0%" y1="50%" x2="100%" y2="50%">
-                          <stop offset="0%" stopColor="#3b82f6" stopOpacity="0.8" />
-                          <stop offset="100%" stopColor="#8b5cf6" stopOpacity="0.8" />
+                          <stop offset="0%" stopColor="#3b82f6" stopOpacity="0.6" />
+                          <stop offset="100%" stopColor="#8b5cf6" stopOpacity="0.6" />
                         </linearGradient>
                         <linearGradient id="flow2" x1="0%" y1="50%" x2="100%" y2="50%">
-                          <stop offset="0%" stopColor="#8b5cf6" stopOpacity="0.8" />
-                          <stop offset="100%" stopColor="#f97316" stopOpacity="0.8" />
+                          <stop offset="0%" stopColor="#8b5cf6" stopOpacity="0.6" />
+                          <stop offset="100%" stopColor="#f97316" stopOpacity="0.6" />
                         </linearGradient>
                       </defs>
                       
-                      
+                      {/* Linha da esquerda para o centro */}
                       <path
                         d="M 72,192 Q 140,192 152,192"
                         stroke="url(#flow1)"
-                        strokeWidth="4"
+                        strokeWidth="3"
                         fill="none"
                         className="animate-pulse"
-                        filter="drop-shadow(0 0 10px rgba(59, 130, 246, 0.6))"
+                        filter="drop-shadow(0 0 8px rgba(59, 130, 246, 0.4))"
                       />
                       
-                      
+                      {/* Linha da direita para o centro */}
                       <path
                         d="M 232,192 Q 300,192 312,192"
                         stroke="url(#flow2)"
-                        strokeWidth="4"
+                        strokeWidth="3"
                         fill="none"
                         className="animate-pulse delay-500"
-                        filter="drop-shadow(0 0 10px rgba(139, 92, 246, 0.6))"
+                        filter="drop-shadow(0 0 8px rgba(139, 92, 246, 0.4))"
                       />
                       
-                      
+                      {/* Linha do topo para o centro */}
                       <path
-                        d="M 72,172 Q 192,120 312,172"
+                        d="M 192,72 Q 192,140 192,152"
                         stroke="url(#flow1)"
-                        strokeWidth="2"
+                        strokeWidth="3"
                         fill="none"
                         className="animate-pulse delay-1000"
-                        opacity="0.4"
-                      />
-                      
-                      <path
-                        d="M 72,212 Q 192,264 312,212"
-                        stroke="url(#flow2)"
-                        strokeWidth="2"
-                        fill="none"
-                        className="animate-pulse delay-1500"
-                        opacity="0.4"
+                        filter="drop-shadow(0 0 8px rgba(139, 92, 246, 0.4))"
                       />
                     </svg>
                     
-                    
+                    {/* Labels */}
                     <div className="absolute top-1/2 left-2 transform -translate-y-1/2 translate-y-12 text-xs text-slate-300 font-medium">Pessoas</div>
-                    <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 translate-y-12 text-xs text-slate-300 font-medium">Educação</div>
+                    <div className="absolute top-2 left-1/2 transform -translate-x-1/2 translate-y-12 text-xs text-slate-300 font-medium">Educação</div>
                     <div className="absolute top-1/2 right-2 transform -translate-y-1/2 translate-y-12 text-xs text-slate-300 font-medium">Tecnologia</div>
                   </div>
                 </div>
