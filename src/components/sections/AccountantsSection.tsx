@@ -98,10 +98,10 @@ const AccountantsSection = () => {
           {/* Imagem/Visual à direita */}
           <div className="relative">
             <div className="bg-gradient-to-r from-orange-500/20 to-yellow-500/20 backdrop-blur-sm border border-orange-400/30 rounded-3xl p-8 shadow-2xl shadow-orange-500/10">
-              <div className="aspect-square bg-gradient-to-br from-orange-900/50 to-slate-800/50 rounded-2xl flex items-center justify-center overflow-hidden">
+              <div className="aspect-video bg-gradient-to-br from-orange-900/50 to-slate-800/50 rounded-2xl flex items-center justify-center overflow-hidden">
                 <img 
-                  src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?auto=format&fit=crop&w=800&h=800"
-                  alt="Contador trabalhando com tecnologia avançada"
+                  src="/lovable-uploads/b7d10485-3f34-4c41-ba09-6dcd6889483f.png"
+                  alt="Plataforma SpeedCont - Gestão contábil profissional"
                   className="w-full h-full object-cover rounded-2xl"
                 />
               </div>
