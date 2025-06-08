@@ -1,7 +1,7 @@
 
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { MessageCircle, Sparkles, Bot } from "lucide-react";
+import { Sparkles, Bot } from "lucide-react";
 
 const HeroSection = () => {
   const [inputValue, setInputValue] = useState("");
@@ -26,13 +26,6 @@ const HeroSection = () => {
       setAiResponse(randomResponse);
       setIsTyping(false);
     }, 2000);
-  };
-
-  const openWhatsApp = () => {
-    const message = inputValue 
-      ? `Olá! Acabei de usar a IA no site e preciso de ajuda com: ${inputValue}`
-      : "Olá! Vim do site e quero conhecer a Tucont 🚀";
-    window.open(`https://wa.me/5511999999999?text=${encodeURIComponent(message)}`, '_blank');
   };
 
   return (
@@ -119,13 +112,6 @@ const HeroSection = () => {
                       Resolver
                     </div>
                   )}
-                </Button>
-                <Button 
-                  onClick={openWhatsApp}
-                  className="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white px-6 py-3 rounded-xl font-semibold"
-                >
-                  <MessageCircle className="w-5 h-5 mr-2" />
-                  Resolver pelo whatsapp
                 </Button>
               </div>
             </div>
