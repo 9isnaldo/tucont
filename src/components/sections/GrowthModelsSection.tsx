@@ -203,13 +203,13 @@ const GrowthModelsSection = () => {
         </div>
       </div>
 
-      {/* Fixed bottom CTA that doesn't overlap cards and moves with scroll */}
-      <div className="fixed bottom-0 left-0 right-0 z-50 bg-slate-950/95 backdrop-blur-xl border-t border-slate-800/30 py-6 lg:py-8 transform transition-transform duration-300">
+      {/* Bottom CTA that appears after all cards */}
+      <div className="absolute bottom-0 left-0 right-0 bg-slate-950/95 backdrop-blur-xl border-t border-slate-800/30 py-12 lg:py-16">
         <div className="max-w-3xl mx-auto text-center px-4 sm:px-6">
-          <h3 className="text-lg lg:text-xl font-bold text-white mb-3">
+          <h3 className="text-xl lg:text-2xl font-bold text-white mb-4">
             Não sabe em qual momento está?
           </h3>
-          <p className="text-slate-300 mb-4 text-sm lg:text-base">
+          <p className="text-slate-300 mb-6 text-sm lg:text-base">
             Nossa IA analisa seu perfil e recomenda o momento ideal para seu negócio atual.
           </p>
           <Button 
