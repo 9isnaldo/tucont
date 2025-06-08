@@ -12,7 +12,6 @@ import InteractiveAISection from "@/components/sections/InteractiveAISection";
 import TestimonialsSection from "@/components/sections/TestimonialsSection";
 import OneStopSection from "@/components/sections/OneStopSection";
 import AccountantsSection from "@/components/sections/AccountantsSection";
-import DescribeYourDemandSection from "@/components/sections/DescribeYourDemandSection";
 import WhatsAppButton from "@/components/WhatsAppButton";
 
 const Index = () => {
@@ -31,9 +30,7 @@ const Index = () => {
       <div id="planos">
         <PlansSection />
       </div>
-      <JourneySection />
       <InteractiveAISection />
-      <DescribeYourDemandSection />
       <OneStopSection />
       <div id="agentes">
         <AccountantsSection />

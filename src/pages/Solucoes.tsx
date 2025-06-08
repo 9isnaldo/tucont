@@ -2,6 +2,7 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import JourneySection from "@/components/sections/JourneySection";
 import { 
   Building, 
   Calculator, 
@@ -94,6 +95,9 @@ const Solucoes = () => {
             </p>
           </div>
         </section>
+
+        {/* Como funciona na prática */}
+        <JourneySection />
 
         {/* Avenida Legal */}
         <section className="py-16 px-4">
