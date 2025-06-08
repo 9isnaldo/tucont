@@ -17,29 +17,29 @@ const GrowthModelsSection = () => {
     {
       id: 1,
       title: "Regularizar",
-      image: "/lovable-uploads/73689ad4-07d7-4ce3-bedc-bf705c361717.png",
+      image: "/lovable-uploads/186878a1-99b4-4f84-877a-85bf6fb1e737.png",
       text: "CNPJ em 24h com orientação completa. Cuidamos de toda burocracia legal, escolhemos o melhor enquadramento tributário e deixamos sua empresa 100% regularizada.",
       cta: "Regularizar agora"
     },
     {
       id: 2,
       title: "Vender e Emitir Notas",
-      image: "/lovable-uploads/ee55d91a-0c58-4720-9afa-567d76f39bb1.png",
+      image: "/lovable-uploads/f32255a9-8411-4496-88d0-12256b5cadb3.png",
       text: "Plataforma completa para vendas e emissão automática de notas fiscais. Simplifique sua operação e foque no que realmente importa: crescer.",
       cta: "Automatizar vendas"
     },
     {
       id: 3,
       title: "Cuidar do Fisco",
-      image: "/lovable-uploads/5a59f1c0-30f6-4595-877e-bafeeb234e2e.png",
+      image: "/lovable-uploads/3cff2625-e342-4add-b38e-c92bcc0db520.png",
       text: "Compliance fiscal automatizado com IA. Nossa tecnologia cuida de todas as obrigações fiscais, relatórios e deadlines para você dormir tranquilo.",
       cta: "Automatizar fisco"
     },
     {
       id: 4,
       title: "Tracionar e Evoluir",
-      image: "/lovable-uploads/6a0211ba-87b9-4186-af4f-f5144fbff2dc.png",
-      text: "Mentoria estratégica e frameworks validados para crescimento sustentável. Destravamos seu potencial empreendedor com orientação especializada.",
+      image: "/lovable-uploads/3cff2625-e342-4add-b38e-c92bcc0db520.png",
+      text: "Plataforma de Jornada Empreendedora, Frameworks Validados para crescimento sustentável e Mentoria estratégica. Destravamos seu potencial empreendedor com orientação especializada.",
       cta: "Acelerar crescimento"
     }
   ];
@@ -203,13 +203,13 @@ const GrowthModelsSection = () => {
         </div>
       </div>
 
-      {/* Bottom CTA */}
-      <div className="absolute bottom-0 left-0 right-0 bg-slate-950/90 backdrop-blur-xl py-12 lg:py-16">
+      {/* Fixed bottom CTA that doesn't overlap cards and moves with scroll */}
+      <div className="fixed bottom-0 left-0 right-0 z-50 bg-slate-950/95 backdrop-blur-xl border-t border-slate-800/30 py-6 lg:py-8 transform transition-transform duration-300">
         <div className="max-w-3xl mx-auto text-center px-4 sm:px-6">
-          <h3 className="text-xl lg:text-2xl font-bold text-white mb-4">
+          <h3 className="text-lg lg:text-xl font-bold text-white mb-3">
             Não sabe em qual momento está?
           </h3>
-          <p className="text-slate-300 mb-6 text-sm lg:text-base">
+          <p className="text-slate-300 mb-4 text-sm lg:text-base">
             Nossa IA analisa seu perfil e recomenda o momento ideal para seu negócio atual.
           </p>
           <Button 
