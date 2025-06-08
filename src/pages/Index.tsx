@@ -5,12 +5,14 @@ import HeroSection from "@/components/sections/HeroSection";
 import TwoAvenuesSection from "@/components/sections/TwoAvenuesSection";
 import GrowthModelsSection from "@/components/sections/GrowthModelsSection";
 import WhyChooseTucontSection from "@/components/sections/WhyChooseTucontSection";
+import PlansSection from "@/components/sections/PlansSection";
 import JourneySection from "@/components/sections/JourneySection";
 import AgentesSection from "@/components/sections/AgentesSection";
 import InteractiveAISection from "@/components/sections/InteractiveAISection";
 import TestimonialsSection from "@/components/sections/TestimonialsSection";
 import OneStopSection from "@/components/sections/OneStopSection";
-import PlansSection from "@/components/sections/PlansSection";
+import AccountantsSection from "@/components/sections/AccountantsSection";
+import DescribeYourDemandSection from "@/components/sections/DescribeYourDemandSection";
 import WhatsAppButton from "@/components/WhatsAppButton";
 
 const Index = () => {
@@ -26,16 +28,17 @@ const Index = () => {
         <GrowthModelsSection />
       </div>
       <WhyChooseTucontSection />
-      <JourneySection />
-      <InteractiveAISection />
       <div id="planos">
         <PlansSection />
       </div>
+      <JourneySection />
+      <InteractiveAISection />
+      <DescribeYourDemandSection />
+      <OneStopSection />
       <div id="agentes">
-        <AgentesSection />
+        <AccountantsSection />
       </div>
       <TestimonialsSection />
-      <OneStopSection />
       
       <div id="contato">
         <Footer />
