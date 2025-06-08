@@ -20,15 +20,15 @@ const PoderContabil = () => {
       <Header />
       
       <main className="pt-24">
-        <section className="py-20 px-4">
+        <section className="py-12 px-4">
           <div className="max-w-5xl mx-auto">
             <div className="text-center">
-              <div className="inline-flex items-center gap-2 bg-gradient-to-r from-orange-100 to-blue-100 text-slate-700 px-4 py-2 rounded-full mb-8">
+              <div className="inline-flex items-center gap-2 bg-gradient-to-r from-orange-100 to-blue-100 text-slate-700 px-4 py-2 rounded-full mb-6">
                 <Crown className="w-4 h-4 text-orange-600" />
                 <span className="font-medium">Comunidade Exclusiva</span>
               </div>
               
-              <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-orange-600 via-blue-600 to-slate-900 bg-clip-text text-transparent">
+              <h1 className="text-5xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-orange-600 via-blue-600 to-slate-900 bg-clip-text text-transparent">
                 Poder Contábil
               </h1>
               
@@ -37,7 +37,7 @@ const PoderContabil = () => {
                 Networking, conhecimento e oportunidades de alto nível.
               </p>
               
-              <div className="flex justify-center mb-12">
+              <div className="flex justify-center mb-8">
                 <img 
                   src="/lovable-uploads/c21c9d3f-66aa-498b-992c-6021e181d483.png" 
                   alt="Poder Contábil" 
