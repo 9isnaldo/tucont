@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Zap } from "lucide-react";
@@ -38,7 +37,7 @@ const GrowthModelsSection = () => {
     {
       id: 4,
       title: "Tracionar e Evoluir",
-      image: "/lovable-uploads/3cff2625-e342-4add-b38e-c92bcc0db520.png",
+      image: "/lovable-uploads/05c65c48-85aa-4a2b-ad4b-75e4beea5a17.png",
       text: "Plataforma de Jornada Empreendedora, Frameworks Validados para crescimento sustentável e Mentoria estratégica. Destravamos seu potencial empreendedor com orientação especializada.",
       cta: "Acelerar crescimento"
     }
@@ -131,15 +130,22 @@ const GrowthModelsSection = () => {
                 >
                   <div className="relative w-full h-full">
                     <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-orange-500/10 rounded-2xl blur-2xl"></div>
-                    <img 
-                      src={step.image} 
-                      alt={step.title}
-                      className="relative w-full h-full object-cover rounded-2xl shadow-2xl"
-                      style={{
-                        boxShadow: '0 0 40px rgba(59, 130, 246, 0.2), 0 0 80px rgba(249, 115, 22, 0.1)'
-                      }}
-                      loading="lazy"
-                    />
+                    <div className={`relative w-full h-full rounded-2xl shadow-2xl overflow-hidden ${
+                      step.id === 4 ? 'backdrop-blur-md bg-white/10 border border-white/20' : ''
+                    }`}>
+                      <img 
+                        src={step.image} 
+                        alt={step.title}
+                        className="relative w-full h-full object-cover rounded-2xl"
+                        style={{
+                          boxShadow: '0 0 40px rgba(59, 130, 246, 0.2), 0 0 80px rgba(249, 115, 22, 0.1)'
+                        }}
+                        loading="lazy"
+                      />
+                      {step.id === 4 && (
+                        <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-white/5 rounded-2xl"></div>
+                      )}
+                    </div>
                     <div className="absolute -bottom-4 -right-4 bg-gradient-to-r from-blue-500 to-orange-500 text-white px-4 py-2 lg:px-6 lg:py-3 rounded-full font-bold shadow-lg text-sm lg:text-base">
                       {step.title}
                     </div>
