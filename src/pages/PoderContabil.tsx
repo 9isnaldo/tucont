@@ -22,11 +22,11 @@ const PoderContabil = () => {
       <main className="pt-24">
         <section className="py-20 px-4">
           <div className="max-w-5xl mx-auto">
-            <div className="flex items-start mb-8">
+            <div className="flex justify-center mb-12">
               <img 
                 src="/lovable-uploads/c21c9d3f-66aa-498b-992c-6021e181d483.png" 
                 alt="Poder Contábil" 
-                className="h-24"
+                className="h-32 md:h-40"
               />
             </div>
             
