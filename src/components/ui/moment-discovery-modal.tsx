@@ -57,23 +57,23 @@ export const MomentDiscoveryModal = ({ isOpen, onClose }: MomentDiscoveryModalPr
         </div>
 
         <div className="space-y-4 mb-6">
-          <p className="text-slate-300 text-sm">
+          <p className="text-slate-200 text-sm font-medium">
             Marque as opções que se aplicam ao seu momento atual:
           </p>
           
           {options.map((option, index) => (
-            <div key={index} className="flex items-start space-x-3">
+            <div key={index} className="flex items-start space-x-3 p-3 rounded-lg hover:bg-slate-800/50 transition-colors">
               <Checkbox
                 id={`option-${index}`}
                 checked={selectedOptions.includes(option)}
                 onCheckedChange={(checked) => 
                   handleOptionChange(option, checked as boolean)
                 }
-                className="mt-1"
+                className="mt-1 border-2 border-orange-400 data-[state=checked]:bg-orange-500 data-[state=checked]:border-orange-500"
               />
               <Label 
                 htmlFor={`option-${index}`}
-                className="text-slate-300 text-sm leading-relaxed cursor-pointer"
+                className="text-white text-sm leading-relaxed cursor-pointer flex-1"
               >
                 {option}
               </Label>
@@ -82,7 +82,7 @@ export const MomentDiscoveryModal = ({ isOpen, onClose }: MomentDiscoveryModalPr
         </div>
 
         <div className="space-y-4 mb-6">
-          <Label htmlFor="additional-info" className="text-slate-300 text-sm">
+          <Label htmlFor="additional-info" className="text-white text-sm font-medium">
             Conte-nos mais sobre seu momento
           </Label>
           <Textarea
@@ -90,7 +90,7 @@ export const MomentDiscoveryModal = ({ isOpen, onClose }: MomentDiscoveryModalPr
             placeholder="Descreva sua situação atual, desafios ou objetivos..."
             value={additionalInfo}
             onChange={(e) => setAdditionalInfo(e.target.value)}
-            className="bg-slate-800/50 border-slate-600 text-white placeholder:text-slate-400 resize-none"
+            className="bg-slate-800/70 border-slate-500 text-white placeholder:text-slate-400 resize-none focus:border-orange-400 focus:ring-orange-400"
             rows={4}
           />
         </div>
