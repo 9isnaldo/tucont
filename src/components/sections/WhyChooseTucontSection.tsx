@@ -1,8 +1,12 @@
 
+import { useState } from "react";
 import { TrendingUp, Users, Lightbulb, BookOpen, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { CaptureFormModal } from "@/components/ui/capture-form-modal";
 
 const WhyChooseTucontSection = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
     <section className="py-24 px-4 bg-slate-900 relative overflow-hidden">
       
@@ -12,9 +16,7 @@ const WhyChooseTucontSection = () => {
         
         <div className="text-center mb-20">
           <h2 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
-            <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-orange-400 bg-clip-text text-transparent">
-              Por que escolhem a Tucont Integrativa?
-            </span>
+            Por que escolhem a <span className="bg-gradient-to-r from-orange-400 to-orange-500 bg-clip-text text-transparent">Tucont Integrativa</span>?
           </h2>
           <p className="text-2xl text-slate-300 font-semibold">
             Porque também somos empreendedores, te entendemos!
@@ -30,7 +32,7 @@ const WhyChooseTucontSection = () => {
               </h3>
               <div className="text-xl text-slate-300 leading-relaxed space-y-4">
                 <p>
-                  Contribuir o Brasil a chegar a <span className="text-orange-400 font-bold">50 milhões de PJs</span> e
+                  Contribuir para o Brasil a chegar a <span className="text-orange-400 font-bold">50 milhões de PJs</span> e
                   mudar a sociedade, pelo despertar do empreendedorismo e acesso às oportunidades.
                 </p>
               </div>
@@ -100,12 +102,12 @@ const WhyChooseTucontSection = () => {
               </h3>
               <div className="text-xl text-slate-300 leading-relaxed space-y-4">
                 <p>
-                  Depois de criar, inspirar e ajudar mais de <span className="text-blue-400 font-bold">30 negócios</span>, 
+                  Depois de criar, inspirar e ajudar mais de <span className="text-orange-400 font-bold">30 negócios</span>, 
                   tínhamos o dever de impactar e transformar mais empreendedores.
                 </p>
                 <p>
                   Eu sou o <span className="text-orange-400 font-bold">Geraldo Oliveira</span>, jornadeando no empreendedorismo 
-                  com a Infoco, Iuptec, Iupcare e agora transformando o mercado com a <span className="text-blue-400 font-bold">Tucont!</span>
+                  com a Infoco, Iuptec, Iupcare e agora transformando o mercado com a <span className="text-orange-400 font-bold">Tucont!</span>
                 </p>
               </div>
             </div>
@@ -244,6 +246,7 @@ const WhyChooseTucontSection = () => {
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Button 
+                onClick={() => setIsModalOpen(true)}
                 size="lg" 
                 className="bg-gradient-to-r from-blue-500 to-orange-500 hover:from-blue-600 hover:to-orange-600 text-white font-semibold px-8 py-4 rounded-full shadow-2xl shadow-blue-500/25 transition-all duration-300 hover:scale-105 hover:shadow-orange-500/25"
               >
@@ -277,6 +280,11 @@ const WhyChooseTucontSection = () => {
           </div>
         </div>
       </div>
+
+      <CaptureFormModal 
+        isOpen={isModalOpen} 
+        onClose={() => setIsModalOpen(false)} 
+      />
     </section>
   );
 };

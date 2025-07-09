@@ -6,7 +6,6 @@ import ForWhomSection from "@/components/sections/ForWhomSection";
 import TwoAvenuesSection from "@/components/sections/TwoAvenuesSection";
 import GrowthModelsSection from "@/components/sections/GrowthModelsSection";
 import WhyChooseTucontSection from "@/components/sections/WhyChooseTucontSection";
-import PlansSection from "@/components/sections/PlansSection";
 import JourneySection from "@/components/sections/JourneySection";
 import AgentesSection from "@/components/sections/AgentesSection";
 import InteractiveAISection from "@/components/sections/InteractiveAISection";
@@ -29,9 +28,6 @@ const Index = () => {
         <GrowthModelsSection />
       </div>
       <WhyChooseTucontSection />
-      <div id="planos">
-        <PlansSection />
-      </div>
       <InteractiveAISection />
       <OneStopSection />
       <div id="agentes">

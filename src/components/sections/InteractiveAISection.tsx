@@ -2,11 +2,13 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Bot, MessageCircle, ArrowRight, Sparkles } from "lucide-react";
+import { CaptureFormModal } from "@/components/ui/capture-form-modal";
 
 const InteractiveAISection = () => {
   const [inputValue, setInputValue] = useState("");
   const [isTyping, setIsTyping] = useState(false);
   const [aiResponse, setAiResponse] = useState("");
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleInputSubmit = async () => {
     if (!inputValue.trim()) return;
@@ -118,14 +120,22 @@ const InteractiveAISection = () => {
                   ) : (
                     <>
                       <p className="text-slate-200 leading-relaxed mb-4">{aiResponse}</p>
-                      <Button 
-                        onClick={openWhatsApp}
-                        className="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white px-6 py-3 rounded-xl font-semibold"
-                      >
-                        <MessageCircle className="w-5 h-5 mr-2" />
-                        Fale com um especialista pelo WhatsApp
-                        <ArrowRight className="w-5 h-5 ml-2" />
-                      </Button>
+                      <div className="flex flex-col sm:flex-row gap-3">
+                        <Button 
+                          onClick={openWhatsApp}
+                          className="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white px-6 py-3 rounded-xl font-semibold shadow-lg hover:shadow-green-500/25 transition-all duration-300"
+                        >
+                          <MessageCircle className="w-5 h-5 mr-2" />
+                          Conversar no WhatsApp
+                          <ArrowRight className="w-5 h-5 ml-2" />
+                        </Button>
+                        <Button 
+                          onClick={() => setIsModalOpen(true)}
+                          className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white px-6 py-3 rounded-xl font-semibold shadow-lg hover:shadow-orange-500/25 transition-all duration-300"
+                        >
+                          Configurar minha empresa agora
+                        </Button>
+                      </div>
                     </>
                   )}
                 </div>
@@ -141,8 +151,7 @@ const InteractiveAISection = () => {
               </p>
               <Button 
                 onClick={openWhatsApp}
-                variant="outline"
-                className="border-slate-600 text-slate-300 hover:bg-slate-800/50 px-6 py-3 rounded-xl"
+                className="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white px-6 py-3 rounded-xl font-semibold shadow-lg hover:shadow-green-500/25 transition-all duration-300"
               >
                 <MessageCircle className="w-5 h-5 mr-2" />
                 Conversar no WhatsApp
@@ -152,6 +161,11 @@ const InteractiveAISection = () => {
         </div>
 
       </div>
+
+      <CaptureFormModal 
+        isOpen={isModalOpen} 
+        onClose={() => setIsModalOpen(false)} 
+      />
     </section>
   );
 };
