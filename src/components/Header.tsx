@@ -36,25 +36,15 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-8">
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <div 
-                  className="text-white hover:text-orange-400 transition-colors font-medium flex items-center gap-1 cursor-pointer"
-                  onMouseEnter={(e) => e.currentTarget.click()}
-                >
-                  Para você e sua empresa
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                  </svg>
-                </div>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent 
-                className="w-[600px] bg-slate-800 border-slate-700 p-6 z-50"
-                onMouseLeave={(e) => {
-                  const trigger = e.currentTarget.previousElementSibling as HTMLElement;
-                  if (trigger) trigger.click();
-                }}
-              >
+            <div className="relative group">
+              <button className="text-white hover:text-orange-400 transition-colors font-medium flex items-center gap-1">
+                Para você e sua empresa
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              
+              <div className="absolute top-full left-0 w-[600px] bg-slate-800 border border-slate-700 p-6 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 rounded-md shadow-lg">
                 <div className="flex gap-8">
                   <div className="flex-1">
                     <h3 className="text-orange-400 font-semibold mb-3">Contabilidade Integrativa</h3>
@@ -64,45 +54,39 @@ const Header = () => {
                     </p>
                   </div>
                   <div className="flex-1 space-y-3">
-                    <DropdownMenuItem asChild>
-                      <a 
-                        href="https://rouvbymulgc.typeform.com/to/OSIekGSL?typeform-source=www.tucont.com.br" 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="flex items-center gap-3 p-3 hover:bg-slate-700 rounded-md cursor-pointer text-white hover:text-white"
-                      >
-                        <Home className="w-5 h-5 text-orange-400" />
-                        <span>Abrir empresa</span>
-                      </a>
-                    </DropdownMenuItem>
-                    <DropdownMenuItem asChild>
-                      <Link to="/avenida-legal" className="flex items-center gap-3 p-3 hover:bg-slate-700 rounded-md cursor-pointer">
-                        <CheckCircle className="w-5 h-5 text-orange-400" />
-                        <span className="text-white">Contabilidade Completa - Avenida Legal</span>
-                      </Link>
-                    </DropdownMenuItem>
-                    <DropdownMenuItem asChild>
-                      <Link to="/avenida-empreendedora" className="flex items-center gap-3 p-3 hover:bg-slate-700 rounded-md cursor-pointer">
-                        <TrendingUp className="w-5 h-5 text-orange-400" />
-                        <span className="text-white">Jornada Empreendedora</span>
-                      </Link>
-                    </DropdownMenuItem>
-                    <DropdownMenuItem asChild>
-                      <Link to="/produtos" className="flex items-center gap-3 p-3 hover:bg-slate-700 rounded-md cursor-pointer">
-                        <ShoppingCart className="w-5 h-5 text-orange-400" />
-                        <span className="text-white">Plataforma para Vendas, NFs e Financeiro</span>
-                      </Link>
-                    </DropdownMenuItem>
-                    <DropdownMenuItem asChild>
-                      <Link to="/bpo-financeiro" className="flex items-center gap-3 p-3 hover:bg-slate-700 rounded-md cursor-pointer">
-                        <DollarSign className="w-5 h-5 text-orange-400" />
-                        <span className="text-white">BPO Financeiro</span>
-                      </Link>
-                    </DropdownMenuItem>
+                    <a 
+                      href="https://rouvbymulgc.typeform.com/to/OSIekGSL?typeform-source=www.tucont.com.br" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-3 p-3 hover:bg-slate-700 rounded-md cursor-pointer text-white hover:text-white transition-colors"
+                    >
+                      <Home className="w-5 h-5 text-orange-400" />
+                      <span>Abrir empresa</span>
+                    </a>
+                    
+                    <Link to="/avenida-legal" className="flex items-center gap-3 p-3 hover:bg-slate-700 rounded-md cursor-pointer text-white hover:text-white transition-colors">
+                      <CheckCircle className="w-5 h-5 text-orange-400" />
+                      <span>Contabilidade Completa - Avenida Legal</span>
+                    </Link>
+                    
+                    <Link to="/avenida-empreendedora" className="flex items-center gap-3 p-3 hover:bg-slate-700 rounded-md cursor-pointer text-white hover:text-white transition-colors">
+                      <TrendingUp className="w-5 h-5 text-orange-400" />
+                      <span>Jornada Empreendedora</span>
+                    </Link>
+                    
+                    <Link to="/produtos" className="flex items-center gap-3 p-3 hover:bg-slate-700 rounded-md cursor-pointer text-white hover:text-white transition-colors">
+                      <ShoppingCart className="w-5 h-5 text-orange-400" />
+                      <span>Plataforma para Vendas, NFs e Financeiro</span>
+                    </Link>
+                    
+                    <Link to="/bpo-financeiro" className="flex items-center gap-3 p-3 hover:bg-slate-700 rounded-md cursor-pointer text-white hover:text-white transition-colors">
+                      <DollarSign className="w-5 h-5 text-orange-400" />
+                      <span>BPO Financeiro</span>
+                    </Link>
                   </div>
                 </div>
-              </DropdownMenuContent>
-            </DropdownMenu>
+              </div>
+            </div>
             
             <Link to="/parceiros-contadores" className="text-white hover:text-orange-400 transition-colors font-medium">
               Para Contabilidades
