@@ -31,46 +31,31 @@ const Header = () => {
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-8">
             <button 
-              onClick={() => scrollToSection('hero')} 
-              className="text-white hover:text-orange-400 transition-colors font-medium"
-            >
-              Início
-            </button>
-            <button 
               onClick={() => scrollToSection('solucoes')} 
               className="text-white hover:text-orange-400 transition-colors font-medium"
             >
-              Soluções
+              Para vc e sua empresa
             </button>
-            <Link to="/planos" className="text-white hover:text-orange-400 transition-colors font-medium">
-              Planos
-            </Link>
             <Link to="/produtos" className="text-white hover:text-orange-400 transition-colors font-medium">
               Produtos
             </Link>
             <Link to="/parceiros-contadores" className="text-white hover:text-orange-400 transition-colors font-medium">
-              Sou contador
+              Para Contabilidades
             </Link>
-            <button 
-              onClick={() => scrollToSection('contato')} 
-              className="text-white hover:text-orange-400 transition-colors font-medium"
-            >
-              Contato
-            </button>
           </nav>
 
           {/* Desktop Actions */}
           <div className="hidden lg:flex items-center gap-4">
-            <Link to="/solucoes">
+            <Link to="/planos">
               <Button 
                 variant="outline" 
                 className="border-orange-500 text-orange-500 bg-transparent backdrop-blur-sm hover:bg-orange-500/10 hover:border-orange-400 hover:text-orange-400 transition-all duration-300"
               >
-                Ver todas as soluções
+                Planos
               </Button>
             </Link>
             <Button 
-              onClick={openWhatsApp} 
+              onClick={() => window.open('https://app.tucont.com.br/auth/login', '_blank')} 
               className="bg-orange-500/20 border border-orange-500 text-orange-500 backdrop-blur-sm hover:bg-orange-500/30 hover:border-orange-400 hover:text-orange-400 hover:shadow-lg hover:shadow-orange-500/25 transition-all duration-300"
             >
               Acessar
@@ -91,43 +76,28 @@ const Header = () => {
           <div className="lg:hidden py-4 border-t border-slate-700">
             <div className="space-y-4">
               <button 
-                onClick={() => scrollToSection('hero')} 
-                className="block text-white hover:text-orange-400 w-full text-left"
-              >
-                Início
-              </button>
-              <button 
                 onClick={() => scrollToSection('solucoes')} 
                 className="block text-white hover:text-orange-400 w-full text-left"
               >
-                Soluções
+                Para vc e sua empresa
               </button>
-              <Link to="/planos" className="block text-white hover:text-orange-400 w-full text-left">
-                Planos
-              </Link>
               <Link to="/produtos" className="block text-white hover:text-orange-400 w-full text-left">
                 Produtos
               </Link>
               <Link to="/parceiros-contadores" className="block text-white hover:text-orange-400 w-full text-left">
-                Sou contador
+                Para Contabilidades
               </Link>
-              <button 
-                onClick={() => scrollToSection('contato')} 
-                className="block text-white hover:text-orange-400 w-full text-left"
-              >
-                Contato
-              </button>
               <div className="flex gap-4 pt-4">
-                <Link to="/solucoes" className="flex-1">
+                <Link to="/planos" className="flex-1">
                   <Button 
                     variant="outline" 
                     className="w-full border-orange-500 text-orange-500 bg-transparent backdrop-blur-sm hover:bg-orange-500/10"
                   >
-                    Ver soluções
+                    Planos
                   </Button>
                 </Link>
                 <Button 
-                  onClick={openWhatsApp} 
+                  onClick={() => window.open('https://app.tucont.com.br/auth/login', '_blank')} 
                   className="flex-1 bg-orange-500/20 border border-orange-500 text-orange-500 backdrop-blur-sm hover:bg-orange-500/30"
                 >
                   Acessar
