@@ -43,26 +43,23 @@ const HeroSection = () => {
           {/* Badge */}
           <div className="inline-flex items-center gap-2 bg-slate-800/50 backdrop-blur-xl border border-blue-400/30 text-blue-300 px-6 py-3 rounded-full">
             <Sparkles className="w-5 h-5" />
-            <span className="font-medium">Plataforma + IA + Mentoria Estratégica</span>
+            <span className="font-medium">Plataforma + IA + Jornada Empreendedora</span>
           </div>
 
           {/* Headlines */}
           <div className="space-y-6">
             <h1 className="text-5xl md:text-7xl font-bold leading-tight">
               <span className="bg-gradient-to-r from-white via-blue-200 to-blue-300 bg-clip-text text-transparent">
-                A Primeira Contabilidade{" "}
+                A tucont é a primeira contabilidade{" "}
               </span>
               <span className="text-orange-400">
-                Integrativa.
-              </span>
-              <br />
-              <span className="text-orange-400">
-                Agora é para o seu negócio.
+                integrativa do Brasil!
               </span>
             </h1>
             
             <p className="text-xl md:text-2xl text-slate-300 max-w-4xl mx-auto leading-relaxed">
-              Destrave o empreendedorismo, impulsione sua empresa.
+              Destrave Seu Empreendedorismo Hoje!<br />
+              CNPJ e Notas Fiscais em 24 horas.
             </p>
           </div>
 
@@ -72,13 +69,13 @@ const HeroSection = () => {
               variant="outline" 
               className="border-orange-500 text-orange-500 bg-transparent backdrop-blur-sm hover:bg-orange-500/10 hover:border-orange-400 hover:text-orange-400 transition-all duration-300"
             >
-              Empreendedor(a)
+              Abrir Empresa
             </Button>
             <Button 
               variant="outline" 
               className="border-orange-500 text-orange-500 bg-transparent backdrop-blur-sm hover:bg-orange-500/10 hover:border-orange-400 hover:text-orange-400 transition-all duration-300"
             >
-              Contador(a)
+              Migrar para Tucont
             </Button>
           </div>
 
@@ -89,7 +86,7 @@ const HeroSection = () => {
                 <div className="flex-1">
                   <input
                     type="text"
-                    placeholder="Descreva o que você precisa..."
+                    placeholder="Vamos destravar, escreva o que você precisa..."
                     value={inputValue}
                     onChange={(e) => setInputValue(e.target.value)}
                     onKeyPress={(e) => e.key === 'Enter' && handleInputSubmit()}
