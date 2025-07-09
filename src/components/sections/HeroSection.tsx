@@ -50,10 +50,19 @@ const HeroSection = () => {
           <div className="space-y-6">
             <h1 className="text-5xl md:text-7xl font-bold leading-tight">
               <span className="bg-gradient-to-r from-white via-blue-200 to-blue-300 bg-clip-text text-transparent">
-                A tucont é a primeira contabilidade{" "}
+                A{" "}
               </span>
               <span className="text-orange-400">
-                integrativa do Brasil!
+                tucont{" "}
+              </span>
+              <span className="bg-gradient-to-r from-white via-blue-200 to-blue-300 bg-clip-text text-transparent">
+                é a primeira contabilidade{" "}
+              </span>
+              <span className="text-orange-400">
+                integrativa{" "}
+              </span>
+              <span className="bg-gradient-to-r from-white via-blue-200 to-blue-300 bg-clip-text text-transparent">
+                do Brasil!
               </span>
             </h1>
             
