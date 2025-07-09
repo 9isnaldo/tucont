@@ -38,28 +38,42 @@ const Header = () => {
           <nav className="hidden lg:flex items-center space-x-8">
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <button className="text-white hover:text-orange-400 transition-colors font-medium flex items-center gap-1">
+                <div 
+                  className="text-white hover:text-orange-400 transition-colors font-medium flex items-center gap-1 cursor-pointer"
+                  onMouseEnter={(e) => e.currentTarget.click()}
+                >
                   Para você e sua empresa
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                   </svg>
-                </button>
+                </div>
               </DropdownMenuTrigger>
-              <DropdownMenuContent className="w-[600px] bg-slate-800 border-slate-700 p-6">
+              <DropdownMenuContent 
+                className="w-[600px] bg-slate-800 border-slate-700 p-6 z-50"
+                onMouseLeave={(e) => {
+                  const trigger = e.currentTarget.previousElementSibling as HTMLElement;
+                  if (trigger) trigger.click();
+                }}
+              >
                 <div className="flex gap-8">
                   <div className="flex-1">
                     <h3 className="text-orange-400 font-semibold mb-3">Contabilidade Integrativa</h3>
                     <p className="text-slate-300 text-sm leading-relaxed">
-                      A Tucont simplifica e combina em uma Plataforma All-in-one, isso é a Contabilidade Integrativa. 
-                      Empresários não querem sistemas e processos fragmentados. Eles querem uma única plataforma que una ERP, emissão de NF, financeiro, contabilidade, IA, produtos e consultoria estratégica.
+                      A Tucont simplifica e combina serviços ao seu momento, em uma Plataforma All-in-one. 
+                      Isso é a Contabilidade Integrativa. Empresários e empresárias, não querem sistemas e processos fragmentados, querem uma única plataforma que una ERP, emissão de NF, financeiro, contabilidade, IA, produtos e consultoria estratégica.
                     </p>
                   </div>
                   <div className="flex-1 space-y-3">
                     <DropdownMenuItem asChild>
-                      <Link to="/avenida-empreendedora" className="flex items-center gap-3 p-3 hover:bg-slate-700 rounded-md cursor-pointer">
+                      <a 
+                        href="https://rouvbymulgc.typeform.com/to/OSIekGSL?typeform-source=www.tucont.com.br" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-3 p-3 hover:bg-slate-700 rounded-md cursor-pointer text-white hover:text-white"
+                      >
                         <Home className="w-5 h-5 text-orange-400" />
-                        <span className="text-white">Abrir empresa</span>
-                      </Link>
+                        <span>Abrir empresa</span>
+                      </a>
                     </DropdownMenuItem>
                     <DropdownMenuItem asChild>
                       <Link to="/avenida-legal" className="flex items-center gap-3 p-3 hover:bg-slate-700 rounded-md cursor-pointer">
