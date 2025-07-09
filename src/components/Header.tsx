@@ -1,8 +1,14 @@
 
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Home, CheckCircle, TrendingUp, ShoppingCart, DollarSign } from "lucide-react";
 import { Link } from "react-router-dom";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -30,17 +36,66 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-8">
-            <button 
-              onClick={() => scrollToSection('solucoes')} 
-              className="text-white hover:text-orange-400 transition-colors font-medium"
-            >
-              Para vc e sua empresa
-            </button>
-            <Link to="/produtos" className="text-white hover:text-orange-400 transition-colors font-medium">
-              Produtos
-            </Link>
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <button className="text-white hover:text-orange-400 transition-colors font-medium flex items-center gap-1">
+                  Para você e sua empresa
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="w-[600px] bg-slate-800 border-slate-700 p-6">
+                <div className="flex gap-8">
+                  <div className="flex-1">
+                    <h3 className="text-orange-400 font-semibold mb-3">Contabilidade Integrativa</h3>
+                    <p className="text-slate-300 text-sm leading-relaxed">
+                      A Tucont simplifica e combina em uma Plataforma All-in-one, isso é a Contabilidade Integrativa. 
+                      Empresários não querem sistemas e processos fragmentados. Eles querem uma única plataforma que una ERP, emissão de NF, financeiro, contabilidade, IA, produtos e consultoria estratégica.
+                    </p>
+                  </div>
+                  <div className="flex-1 space-y-3">
+                    <DropdownMenuItem asChild>
+                      <Link to="/avenida-empreendedora" className="flex items-center gap-3 p-3 hover:bg-slate-700 rounded-md cursor-pointer">
+                        <Home className="w-5 h-5 text-orange-400" />
+                        <span className="text-white">Abrir empresa</span>
+                      </Link>
+                    </DropdownMenuItem>
+                    <DropdownMenuItem asChild>
+                      <Link to="/avenida-legal" className="flex items-center gap-3 p-3 hover:bg-slate-700 rounded-md cursor-pointer">
+                        <CheckCircle className="w-5 h-5 text-orange-400" />
+                        <span className="text-white">Contabilidade Completa - Avenida Legal</span>
+                      </Link>
+                    </DropdownMenuItem>
+                    <DropdownMenuItem asChild>
+                      <Link to="/avenida-empreendedora" className="flex items-center gap-3 p-3 hover:bg-slate-700 rounded-md cursor-pointer">
+                        <TrendingUp className="w-5 h-5 text-orange-400" />
+                        <span className="text-white">Jornada Empreendedora</span>
+                      </Link>
+                    </DropdownMenuItem>
+                    <DropdownMenuItem asChild>
+                      <Link to="/produtos" className="flex items-center gap-3 p-3 hover:bg-slate-700 rounded-md cursor-pointer">
+                        <ShoppingCart className="w-5 h-5 text-orange-400" />
+                        <span className="text-white">Plataforma para Vendas, NFs e Financeiro</span>
+                      </Link>
+                    </DropdownMenuItem>
+                    <DropdownMenuItem asChild>
+                      <Link to="/bpo-financeiro" className="flex items-center gap-3 p-3 hover:bg-slate-700 rounded-md cursor-pointer">
+                        <DollarSign className="w-5 h-5 text-orange-400" />
+                        <span className="text-white">BPO Financeiro</span>
+                      </Link>
+                    </DropdownMenuItem>
+                  </div>
+                </div>
+              </DropdownMenuContent>
+            </DropdownMenu>
+            
             <Link to="/parceiros-contadores" className="text-white hover:text-orange-400 transition-colors font-medium">
               Para Contabilidades
+            </Link>
+            
+            <Link to="/marketplace" className="text-white hover:text-orange-400 transition-colors font-medium">
+              Marketplace
             </Link>
           </nav>
 
@@ -79,13 +134,13 @@ const Header = () => {
                 onClick={() => scrollToSection('solucoes')} 
                 className="block text-white hover:text-orange-400 w-full text-left"
               >
-                Para vc e sua empresa
+                Para você e sua empresa
               </button>
-              <Link to="/produtos" className="block text-white hover:text-orange-400 w-full text-left">
-                Produtos
-              </Link>
               <Link to="/parceiros-contadores" className="block text-white hover:text-orange-400 w-full text-left">
                 Para Contabilidades
+              </Link>
+              <Link to="/marketplace" className="block text-white hover:text-orange-400 w-full text-left">
+                Marketplace
               </Link>
               <div className="flex gap-4 pt-4">
                 <Link to="/planos" className="flex-1">
