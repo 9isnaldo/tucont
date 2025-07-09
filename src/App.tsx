@@ -8,6 +8,11 @@ import Index from "./pages/Index";
 import PoderContabil from "./pages/PoderContabil";
 import Solucoes from "./pages/Solucoes";
 import BPOFinanceiro from "./pages/BPOFinanceiro";
+import Planos from "./pages/Planos";
+import AvenidaEmpreendedora from "./pages/AvenidaEmpreendedora";
+import AvenidaLegal from "./pages/AvenidaLegal";
+import ParceirosContadores from "./pages/ParceirosContadores";
+import Produtos from "./pages/Produtos";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
