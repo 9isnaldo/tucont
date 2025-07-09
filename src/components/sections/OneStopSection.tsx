@@ -1,4 +1,5 @@
 
+import { useState } from "react";
 import { 
   FileText, 
   Building, 
@@ -10,8 +11,10 @@ import {
   Zap,
   Sparkles
 } from "lucide-react";
+import { CaptureFormModal } from "@/components/ui/capture-form-modal";
 
 const OneStopSection = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const services = [
     { icon: Building, label: "CNPJ", color: "from-blue-500 to-cyan-400" },
     { icon: FileText, label: "Emissão de Nota", color: "from-green-500 to-emerald-400" },
@@ -110,7 +113,7 @@ const OneStopSection = () => {
           </div>
 
           <button 
-            onClick={openWhatsApp}
+            onClick={() => setIsModalOpen(true)}
             className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white px-10 py-5 rounded-full font-bold shadow-2xl transform hover:scale-105 transition-all duration-300 text-lg md:text-xl"
           >
             <Zap className="w-6 h-6 mr-3 inline" />
@@ -130,6 +133,11 @@ const OneStopSection = () => {
           </p>
         </div>
       </div>
+
+      <CaptureFormModal 
+        isOpen={isModalOpen} 
+        onClose={() => setIsModalOpen(false)} 
+      />
     </section>
   );
 };
