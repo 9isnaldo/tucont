@@ -42,18 +42,15 @@ const Header = () => {
             >
               Soluções
             </button>
-            <button 
-              onClick={() => scrollToSection('planos')} 
-              className="text-white hover:text-orange-400 transition-colors font-medium"
-            >
+            <Link to="/planos" className="text-white hover:text-orange-400 transition-colors font-medium">
               Planos
-            </button>
-            <button 
-              onClick={() => scrollToSection('agentes')} 
-              className="text-white hover:text-orange-400 transition-colors font-medium"
-            >
+            </Link>
+            <Link to="/produtos" className="text-white hover:text-orange-400 transition-colors font-medium">
+              Produtos
+            </Link>
+            <Link to="/parceiros-contadores" className="text-white hover:text-orange-400 transition-colors font-medium">
               Sou contador
-            </button>
+            </Link>
             <button 
               onClick={() => scrollToSection('contato')} 
               className="text-white hover:text-orange-400 transition-colors font-medium"
@@ -105,18 +102,15 @@ const Header = () => {
               >
                 Soluções
               </button>
-              <button 
-                onClick={() => scrollToSection('planos')} 
-                className="block text-white hover:text-orange-400 w-full text-left"
-              >
+              <Link to="/planos" className="block text-white hover:text-orange-400 w-full text-left">
                 Planos
-              </button>
-              <button 
-                onClick={() => scrollToSection('agentes')} 
-                className="block text-white hover:text-orange-400 w-full text-left"
-              >
+              </Link>
+              <Link to="/produtos" className="block text-white hover:text-orange-400 w-full text-left">
+                Produtos
+              </Link>
+              <Link to="/parceiros-contadores" className="block text-white hover:text-orange-400 w-full text-left">
                 Sou contador
-              </button>
+              </Link>
               <button 
                 onClick={() => scrollToSection('contato')} 
                 className="block text-white hover:text-orange-400 w-full text-left"
