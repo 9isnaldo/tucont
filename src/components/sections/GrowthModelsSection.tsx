@@ -1,9 +1,11 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Zap } from "lucide-react";
+import { MomentDiscoveryModal } from "@/components/ui/moment-discovery-modal";
 
 const GrowthModelsSection = () => {
   const [activeStep, setActiveStep] = useState(0);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const businessSteps = [
     {
@@ -105,7 +107,7 @@ const GrowthModelsSection = () => {
               </span>
             </h2>
             <p className="text-lg md:text-xl text-slate-300 max-w-4xl mx-auto leading-relaxed">
-              Momento de <span className="font-semibold text-blue-400">Criar e Validar</span>, 
+              <span className="font-semibold text-blue-400">Criar e Validar</span>, 
               <span className="font-semibold text-orange-400"> Regularizar</span>, 
               <span className="font-semibold text-blue-400"> Vender e Emitir Notas</span>, 
               <span className="font-semibold text-orange-400"> Cuidar do Fisco</span>, 
@@ -145,9 +147,6 @@ const GrowthModelsSection = () => {
                       {step.id === 4 && (
                         <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-white/5 rounded-2xl"></div>
                       )}
-                    </div>
-                    <div className="absolute -bottom-4 -right-4 bg-gradient-to-r from-blue-500 to-orange-500 text-white px-4 py-2 lg:px-6 lg:py-3 rounded-full font-bold shadow-lg text-sm lg:text-base">
-                      {step.title}
                     </div>
                   </div>
                 </div>
@@ -216,10 +215,10 @@ const GrowthModelsSection = () => {
             Não sabe em qual momento está?
           </h3>
           <p className="text-slate-300 mb-6 text-sm lg:text-base">
-            Nossa IA analisa seu perfil e recomenda o momento ideal para seu negócio atual.
+            Calma, nós te ajudamos. Conte-nos um pouco, que nossa equipe humana e de IA, recomendará.
           </p>
           <Button 
-            onClick={() => window.open(`https://wa.me/5511999999999?text=${encodeURIComponent("Quero descobrir em qual momento meu negócio está")}`, '_blank')}
+            onClick={() => setIsModalOpen(true)}
             className="bg-gradient-to-r from-blue-600 via-blue-700 to-orange-600 hover:from-blue-700 hover:via-blue-800 hover:to-orange-700 text-white px-6 py-3 lg:px-8 lg:py-4 text-base lg:text-lg rounded-full shadow-2xl hover:shadow-blue-500/20 transform hover:scale-105 transition-all duration-300"
           >
             <Zap className="w-4 h-4 lg:w-5 lg:h-5 mr-2" />
@@ -227,6 +226,11 @@ const GrowthModelsSection = () => {
           </Button>
         </div>
       </div>
+
+      <MomentDiscoveryModal 
+        isOpen={isModalOpen} 
+        onClose={() => setIsModalOpen(false)} 
+      />
     </section>
   );
 };
