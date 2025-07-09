@@ -1,14 +1,17 @@
 import { Scale, TrendingUp, Zap, Target, ArrowRight, Shield, Route } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { CaptureFormModal } from "@/components/ui/capture-form-modal";
+import { useState } from "react";
 
 const TwoAvenuesSection = () => {
-  const openWhatsApp = (avenue: string) => {
-    const message = avenue === 'legal' 
-      ? "Quero conhecer a Avenida Legal - automação de obrigações"
-      : avenue === 'business'
-      ? "Quero conhecer a Avenida Empreendedora - jornada estratégica"
-      : "Quero as duas avenidas integradas";
-    window.open(`https://wa.me/5511999999999?text=${encodeURIComponent(message)}`, '_blank');
+  const [isFormModalOpen, setIsFormModalOpen] = useState(false);
+
+  const navigateToAvenue = (avenue: string) => {
+    if (avenue === 'legal') {
+      window.location.href = '/avenida-legal';
+    } else if (avenue === 'business') {
+      window.location.href = '/avenida-empreendedora';
+    }
   };
 
   return (
@@ -51,8 +54,7 @@ const TwoAvenuesSection = () => {
             <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent font-bold text-shadow-glow">
               Nossa revolução
             </span>
-            : Unir compliance perfeito, com crescimento estratégico. 
-            Porque sua empresa merece mais que apenas "estar em dia" com o fisco.
+            : Muito mais que somente atender ao Governo, somos um copiloto estratégico, que automatiza a burocracia e impulsiona seu crescimento!
           </p>
         </div>
 
@@ -88,7 +90,7 @@ const TwoAvenuesSection = () => {
                   </h3>
                   <div className="flex items-center gap-2 text-orange-300 text-sm">
                     <Target className="w-4 h-4" />
-                    <span>Você em boa companhia</span>
+                    <span>A Plataforma!</span>
                   </div>
                 </div>
               </div>
@@ -98,21 +100,21 @@ const TwoAvenuesSection = () => {
               </h4>
               
               <p className="text-orange-200 mb-6 leading-relaxed">
-                Da ideia a operação, nós vamos com você. Nossa tecnologia é proprietária, simples de usar, os materiais e frameworks aplicáveis imediatamente.
+                Da ideia a operação, do plano a execução, nós vamos com você!
               </p>
 
               <ul className="space-y-3 mb-8">
                 <li className="flex items-center gap-3 text-slate-300">
                   <div className="w-2 h-2 bg-orange-400 rounded-full"></div>
-                  <span>Estruturação e consultoria, do MVP ao Go-to-Market</span>
+                  <span>Educação, materiais e frameworks aplicáveis imediatamente</span>
                 </li>
                 <li className="flex items-center gap-3 text-slate-300">
                   <div className="w-2 h-2 bg-orange-400 rounded-full"></div>
-                  <span>Frameworks de evolução validados</span>
+                  <span>Do MVP ao Go-to-Market</span>
                 </li>
                 <li className="flex items-center gap-3 text-slate-300">
                   <div className="w-2 h-2 bg-orange-400 rounded-full"></div>
-                  <span>Software para vendas, emissão de notas e financeiro</span>
+                  <span>Venda, emita notas e controle o financeiro em nosso ERP</span>
                 </li>
                 <li className="flex items-center gap-3 text-slate-300">
                   <div className="w-2 h-2 bg-orange-400 rounded-full"></div>
@@ -121,7 +123,7 @@ const TwoAvenuesSection = () => {
               </ul>
 
               <Button 
-                onClick={() => openWhatsApp('business')}
+                onClick={() => navigateToAvenue('business')}
                 className="w-full bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white rounded-xl py-4 font-semibold text-lg shadow-lg"
               >
                 Ver soluções desta avenida
@@ -159,12 +161,12 @@ const TwoAvenuesSection = () => {
               </div>
               
               <h4 className="text-xl font-semibold text-white mb-4">
-                Conformidade fiscal e operacional
+                Conformidade Fiscal
               </h4>
               
               <p className="text-blue-200 mb-6 leading-relaxed">
-                Nossa IA cuida de toda burocracia fiscal: impostos, folha, regularização. 
-                Deixando você livre para focar no que realmente importa.
+                Automação e IA para agilizar cuidar da burocracia fiscal. Nossa equipe para cuidar de você e sua empresa. 
+                Faz o seu. A gente cuida do resto.
               </p>
 
               <ul className="space-y-3 mb-8">
@@ -178,16 +180,16 @@ const TwoAvenuesSection = () => {
                 </li>
                 <li className="flex items-center gap-3 text-slate-300">
                   <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
-                  <span>Regularização inteligente</span>
+                  <span>Seus documentos disponíveis 24/7</span>
                 </li>
                 <li className="flex items-center gap-3 text-slate-300">
                   <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
-                  <span>Relatórios automatizados</span>
+                  <span>WhatsApp, chat e e-mail SEM enrolação, perguntas ou solicitações no seu tempo</span>
                 </li>
               </ul>
 
               <Button 
-                onClick={() => openWhatsApp('legal')}
+                onClick={() => navigateToAvenue('legal')}
                 className="w-full bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white rounded-xl py-4 font-semibold text-lg"
               >
                 Ver soluções desta avenida
@@ -208,13 +210,18 @@ const TwoAvenuesSection = () => {
         {/* CTA Final */}
         <div className="text-center">
           <Button 
-            onClick={() => openWhatsApp('both')}
+            onClick={() => setIsFormModalOpen(true)}
             className="bg-gradient-to-r from-blue-500 via-purple-500 to-orange-500 hover:from-blue-600 hover:via-purple-600 hover:to-orange-600 text-white px-10 py-5 text-xl rounded-full shadow-2xl transform hover:scale-105 transition-all duration-300"
           >
             Quero as duas avenidas integradas
           </Button>
         </div>
       </div>
+      
+      <CaptureFormModal 
+        isOpen={isFormModalOpen} 
+        onClose={() => setIsFormModalOpen(false)} 
+      />
     </section>
   );
 };
