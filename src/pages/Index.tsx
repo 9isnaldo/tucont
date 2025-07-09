@@ -2,6 +2,7 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import HeroSection from "@/components/sections/HeroSection";
+import ForWhomSection from "@/components/sections/ForWhomSection";
 import TwoAvenuesSection from "@/components/sections/TwoAvenuesSection";
 import GrowthModelsSection from "@/components/sections/GrowthModelsSection";
 import WhyChooseTucontSection from "@/components/sections/WhyChooseTucontSection";
@@ -22,6 +23,7 @@ const Index = () => {
       <div id="hero">
         <HeroSection />
       </div>
+      <ForWhomSection />
       <TwoAvenuesSection />
       <div id="solucoes">
         <GrowthModelsSection />
