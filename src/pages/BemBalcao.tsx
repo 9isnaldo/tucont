@@ -415,7 +415,7 @@ const BemBalcao = () => {
               ))}
             </div>
 
-            <div className="bg-gradient-to-r from-orange-950/50 to-red-950/50 rounded-3xl p-8 text-center">
+            <div className="rounded-3xl p-8 text-center">
               <h3 className="text-3xl font-bold text-white mb-4">
                 Encontre e Seja Encontrado
               </h3>
