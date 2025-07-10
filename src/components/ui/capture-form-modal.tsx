@@ -37,6 +37,10 @@ export const CaptureFormModal = ({ isOpen, onClose, hasExtraFields = false }: Ca
     "Análise de Mercado",
     "Gestão de Clínicas (Iupcare)",
     "Emissão de Notas Fiscais",
+    "Direito empresarial e Tributário",
+    "Marketing Digital",
+    "Desenvolvimento de softwares",
+    "Social Media",
     "Outro"
   ];
 
@@ -184,7 +188,7 @@ CNPJ: ${data.cnpj}`;
                 <>
                   <div>
                     <Label htmlFor="service" className="text-white font-medium">
-                      Produto/Serviço de Interesse
+                      Produto/Serviço de Interesse ou a Ofertar
                     </Label>
                     <Select value={selectedService} onValueChange={(value) => setValue("service", value)}>
                       <SelectTrigger className="bg-white/10 border-white/20 text-white backdrop-blur-sm focus:bg-white/15 focus:border-orange-400/50">

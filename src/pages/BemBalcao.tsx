@@ -425,21 +425,13 @@ const BemBalcao = () => {
                 consultores, fornecedores - todos unidos em um ecossistema colaborativo.
               </p>
               
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <div className="flex justify-center">
                 <Button 
                   onClick={() => window.open('https://app.balcaodoempresario.com.br/acesso/cadastro', '_blank')}
                   className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white px-8 py-4 text-lg rounded-full shadow-2xl transform hover:scale-105 transition-all duration-300"
                 >
                   <UserPlus className="w-5 h-5 mr-2" />
                   Quero Ser Parceiro
-                </Button>
-                <Button 
-                  onClick={() => window.open('https://app.balcaodoempresario.com.br/acesso/cadastro', '_blank')}
-                  variant="outline"
-                  className="border-orange-500 text-orange-500 bg-transparent backdrop-blur-sm hover:bg-orange-500/10 hover:border-orange-400 hover:text-orange-400 transition-all duration-300 px-8 py-4 text-lg rounded-full"
-                >
-                  <Globe className="w-5 h-5 mr-2" />
-                  Explorar Oportunidades
                 </Button>
               </div>
             </div>
@@ -462,10 +454,10 @@ const BemBalcao = () => {
                 className="bg-gradient-to-r from-blue-500 to-orange-500 hover:from-blue-600 hover:to-orange-600 text-white px-8 py-4 text-lg rounded-full shadow-2xl transform hover:scale-105 transition-all duration-300"
               >
                 <Phone className="w-5 h-5 mr-2" />
-                Falar com um Consultor
+                Falar Conosco
               </Button>
               <Button 
-                onClick={() => window.open('https://app.balcaodoempresario.com.br', '_blank')}
+                onClick={() => window.open('https://www.balcaodoempresario.com.br/', '_blank')}
                 variant="outline"
                 className="border-orange-500 text-orange-500 bg-transparent backdrop-blur-sm hover:bg-orange-500/10 hover:border-orange-400 hover:text-orange-400 transition-all duration-300 px-8 py-4 text-lg rounded-full"
               >
