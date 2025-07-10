@@ -38,7 +38,9 @@ const HeroSection = () => {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 py-16 relative z-10">
-        <div className="text-center space-y-8">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          {/* Left Side - Content */}
+          <div className="text-center lg:text-left space-y-8">
           
           {/* Badge */}
           <div className="inline-flex items-center gap-2 bg-secondary backdrop-blur-xl border border-primary/30 text-primary px-6 py-3 rounded-full">
@@ -48,7 +50,7 @@ const HeroSection = () => {
 
           {/* Headlines */}
           <div className="space-y-6">
-            <h1 className="text-5xl md:text-7xl font-bold leading-tight">
+            <h1 className="text-4xl md:text-6xl font-bold leading-tight">
               <span className="text-foreground">
                 A{" "}
               </span>
@@ -66,27 +68,52 @@ const HeroSection = () => {
               </span>
             </h1>
             
-            <p className="text-xl md:text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
-              Destrave Seu Empreendedorismo Hoje!<br />
-              CNPJ e Notas Fiscais em 24 horas.
-            </p>
+            <div className="space-y-4">
+              <p className="text-xl md:text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
+                Seu sonho precisa de um CNPJ? A gente resolve.
+              </p>
+              <p className="text-lg md:text-xl font-semibold text-foreground max-w-4xl mx-auto">
+                24h sua empresa está pronta. Já estou faturando.
+              </p>
+            </div>
           </div>
 
           {/* User Type Buttons */}
-          <div className="flex justify-center gap-4 mb-8">
-            <Button 
-              variant="royal" 
-              size="lg"
-            >
-              Abrir Empresa
-            </Button>
+          <div className="flex flex-col sm:flex-row justify-center gap-4 mb-8">
             <Button 
               variant="outline" 
               size="lg"
-              className="border-tucont-orange text-tucont-orange hover:bg-tucont-orange/10"
+              className="border-foreground text-foreground hover:bg-foreground hover:text-background"
             >
-              Migrar para Tucont
+              Quero minha empresa agora
             </Button>
+            <Button 
+              variant="cta" 
+              size="lg"
+              className="bg-tucont-orange hover:bg-tucont-orange/90 text-white"
+            >
+              Fale Conosco no WhatsApp
+            </Button>
+          </div>
+
+          {/* Features Grid */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8 max-w-4xl mx-auto">
+            <div className="flex items-center gap-2 text-sm text-muted-foreground">
+              <div className="w-2 h-2 bg-red-500 rounded-full"></div>
+              <span>Abertura de CNPJ em 48h</span>
+            </div>
+            <div className="flex items-center gap-2 text-sm text-muted-foreground">
+              <div className="w-2 h-2 bg-red-500 rounded-full"></div>
+              <span>Atendimento 24/7 WhatsApp</span>
+            </div>
+            <div className="flex items-center gap-2 text-sm text-muted-foreground">
+              <div className="w-2 h-2 bg-red-500 rounded-full"></div>
+              <span>Economia até 40% impostos</span>
+            </div>
+            <div className="flex items-center gap-2 text-sm text-muted-foreground">
+              <div className="w-2 h-2 bg-red-500 rounded-full"></div>
+              <span>100% Digital</span>
+            </div>
           </div>
 
           {/* AI Input Interface */}
@@ -154,6 +181,54 @@ const HeroSection = () => {
                 </div>
               </div>
             )}
+          </div>
+          
+          </div>
+
+          {/* Right Side - WhatsApp Conversation */}
+          <div className="hidden lg:block">
+            <div className="bg-card rounded-3xl p-6 shadow-2xl border border-border max-w-md mx-auto">
+              {/* WhatsApp Header */}
+              <div className="flex items-center gap-3 mb-6 pb-4 border-b border-border">
+                <div className="w-10 h-10 bg-tucont-cta-green rounded-full flex items-center justify-center">
+                  <span className="text-white font-semibold text-sm">T</span>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-foreground">Assistente TuCont</h4>
+                  <p className="text-sm text-tucont-cta-green">agora online</p>
+                </div>
+              </div>
+
+              {/* Conversation */}
+              <div className="space-y-4">
+                <div className="bg-muted rounded-2xl rounded-tl-sm p-3">
+                  <p className="text-sm text-foreground">
+                    Olá Geraldo 👋! Seja bem-vindo(a) à <strong>Tucont sua contabilidade integrativa!</strong>
+                  </p>
+                </div>
+
+                <div className="bg-muted rounded-2xl rounded-tl-sm p-3">
+                  <p className="text-sm text-foreground mb-2">Como vamos te ajudar hoje?</p>
+                  <p className="text-xs text-muted-foreground italic mb-3">Digite uma opção</p>
+                  <div className="space-y-2 text-sm">
+                    <p>1. Abra minha empresa e ganhe um <strong>PLANO DE NEGÓCIO 🧡</strong></p>
+                    <p>2. Transferir minha empresa para a Tucont Integrativa</p>
+                    <p>3. Conhecer a jornada integrativa da Tucont</p>
+                  </div>
+                </div>
+
+                <div className="bg-primary text-primary-foreground rounded-2xl rounded-tr-sm p-3 ml-8">
+                  <p className="text-sm">1</p>
+                </div>
+
+                <div className="bg-muted rounded-2xl rounded-tl-sm p-3">
+                  <p className="text-sm text-foreground">Ótima escolha! Você vai nos ajudar a alcançar nosso Grande Sonho!</p>
+                  <p className="text-sm text-foreground mt-2">
+                    Contribuir para que o Brasil chegue a <strong>50 milhões de CNPJs</strong>
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
 
         </div>
