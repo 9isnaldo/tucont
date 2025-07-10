@@ -38,7 +38,7 @@ const OneStopSection = () => {
         
         <div className="inline-flex items-center gap-2 bg-secondary backdrop-blur-xl border border-border text-tucont-cta px-6 py-3 rounded-full mb-8">
           <CheckCircle className="w-5 h-5" />
-          <span className="font-medium">Balcão Único</span>
+          <span className="font-medium">Plataforma All-in-one</span>
         </div>
         
         <h2 className="text-5xl md:text-7xl font-bold mb-8 leading-tight">
@@ -51,10 +51,6 @@ const OneStopSection = () => {
           </span>
         </h2>
 
-        <p className="text-xl md:text-2xl text-tucont-text-secondary mb-16 max-w-4xl mx-auto leading-relaxed">
-          Pare de usar 10 sistemas diferentes. Com a Tucont, você tem tudo integrado 
-          em uma única plataforma inteligente.
-        </p>
 
         {/* Grid de Serviços */}
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 mb-16">
@@ -68,62 +64,6 @@ const OneStopSection = () => {
               </h3>
             </div>
           ))}
-        </div>
-
-        {/* Destaque da Integração */}
-        <div className="bg-secondary backdrop-blur-xl border border-border rounded-3xl p-8 md:p-12 max-w-4xl mx-auto mb-12">
-          <div className="flex items-center justify-center gap-4 mb-6">
-            <Zap className="w-12 h-12 text-tucont-orange" />
-            <Sparkles className="w-8 h-8 text-tucont-royal animate-pulse" />
-          </div>
-          
-          <h3 className="text-3xl md:text-4xl font-bold text-tucont-text-primary mb-6">
-            Integração Total em 24 horas
-          </h3>
-          
-          <p className="text-tucont-text-secondary mb-8 text-lg md:text-xl leading-relaxed">
-            Nossa equipe configura tudo para você. <span className="font-semibold text-tucont-cta">Amanhã sua empresa já estará rodando no piloto automático.</span>
-          </p>
-
-          {/* Benefícios da Integração */}
-          <div className="grid md:grid-cols-3 gap-6 mb-8">
-            <div className="text-center">
-              <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-emerald-400 rounded-full flex items-center justify-center mx-auto mb-3">
-                <CheckCircle className="w-6 h-6 text-white" />
-              </div>
-              <h4 className="font-semibold text-tucont-text-primary mb-2">Zero Configuração</h4>
-              <p className="text-tucont-text-secondary text-sm">Fazemos tudo para você</p>
-            </div>
-            
-            <div className="text-center">
-              <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-cyan-400 rounded-full flex items-center justify-center mx-auto mb-3">
-                <Zap className="w-6 h-6 text-white" />
-              </div>
-              <h4 className="font-semibold text-tucont-text-primary mb-2">Automação Total</h4>
-              <p className="text-tucont-text-secondary text-sm">Processos inteligentes</p>
-            </div>
-            
-            <div className="text-center">
-              <div className="w-12 h-12 bg-gradient-to-r from-orange-500 to-red-400 rounded-full flex items-center justify-center mx-auto mb-3">
-                <Users className="w-6 h-6 text-white" />
-              </div>
-              <h4 className="font-semibold text-tucont-text-primary mb-2">Suporte Humano</h4>
-              <p className="text-tucont-text-secondary text-sm">Equipe sempre disponível</p>
-            </div>
-          </div>
-
-          <button 
-            onClick={() => setIsModalOpen(true)}
-            className="bg-tucont-cta hover:bg-tucont-cta/90 text-white px-10 py-5 rounded-full font-bold shadow-2xl transform hover:scale-105 transition-all duration-300 text-lg md:text-xl"
-          >
-            <Zap className="w-6 h-6 mr-3 inline" />
-            Configurar minha empresa agora
-            <Sparkles className="w-5 h-5 ml-3 inline" />
-          </button>
-          
-          <p className="text-tucont-text-secondary text-sm mt-4">
-            Implementação completa • Sem dor de cabeça • Resultados imediatos
-          </p>
         </div>
 
         {/* Frase de Impacto Final */}

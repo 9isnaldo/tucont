@@ -22,11 +22,11 @@ const Index = () => {
         <HeroSection />
       </div>
       <InteractiveAISection />
-      <ForWhomSection />
       <TwoAvenuesSection />
       <div id="solucoes">
         <GrowthModelsSection />
       </div>
+      <ForWhomSection />
       <WhyChooseTucontSection />
       <OneStopSection />
       <TestimonialsSection />

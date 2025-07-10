@@ -56,7 +56,7 @@ const InteractiveAISection = () => {
           
           <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
             <span className="text-tucont-text-primary">
-              Descreva sua demanda
+              Vamos resolvendo, escreve aí
             </span>
           </h2>
           
@@ -72,7 +72,7 @@ const InteractiveAISection = () => {
               <div className="flex-1">
                 <input
                   type="text"
-                  placeholder="Vamos destravar, escreva o que você precisa..."
+                  placeholder="Emitir NF, o que é MVP, abrir empresa..."
                   value={inputValue}
                   onChange={(e) => setInputValue(e.target.value)}
                   onKeyPress={(e) => e.key === 'Enter' && handleInputSubmit()}
@@ -147,21 +147,6 @@ const InteractiveAISection = () => {
             </div>
           )}
 
-          {/* CTA when no response yet */}
-          {!isTyping && !aiResponse && (
-            <div className="text-center">
-              <p className="text-muted-foreground mb-4">
-                Ou fale diretamente com nossa equipe:
-              </p>
-              <Button 
-                onClick={openWhatsApp}
-                className="bg-tucont-cta-green hover:bg-tucont-cta-green/90 text-white px-6 py-3 rounded-xl font-semibold shadow-lg transition-all duration-300"
-              >
-                <MessageCircle className="w-5 h-5 mr-2" />
-                Conversar no WhatsApp
-              </Button>
-            </div>
-          )}
         </div>
 
       </div>
