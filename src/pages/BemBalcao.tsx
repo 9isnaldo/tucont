@@ -182,27 +182,27 @@ const BemBalcao = () => {
       
       <main className="pt-24">
         {/* Hero Section */}
-        <section className="py-16 px-4 bg-gradient-to-br from-slate-950 via-blue-950/30 to-orange-950/30 relative overflow-hidden">
+        <section className="py-16 px-4 bg-gradient-to-br from-tucont-royal/20 via-tucont-orange/10 to-tucont-secondary relative overflow-hidden">
           <div className="absolute inset-0">
-            <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse"></div>
-            <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-orange-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
+            <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-tucont-royal/5 rounded-full blur-3xl animate-pulse"></div>
+            <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-tucont-orange/5 rounded-full blur-3xl animate-pulse delay-1000"></div>
           </div>
           
           <div className="max-w-6xl mx-auto text-center relative z-10">
-            <div className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-500/20 to-orange-500/20 backdrop-blur-xl border border-blue-500/30 text-blue-300 px-6 py-3 rounded-full mb-8">
+            <div className="inline-flex items-center gap-2 bg-secondary border border-border text-tucont-royal px-6 py-3 rounded-full mb-8">
               <ShoppingCart className="w-5 h-5" />
               <span className="font-medium">Ecossistema Completo</span>
             </div>
             
             <h1 className="text-5xl md:text-6xl font-bold mb-8 leading-tight">
-              <span className="bg-gradient-to-r from-blue-400 via-orange-400 to-purple-400 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-tucont-royal via-tucont-orange to-tucont-text-primary bg-clip-text text-transparent">
                 Bem - Balcão do Empresário
               </span>
               <br />
-              <span className="text-white">Marketplace Tucont</span>
+              <span className="text-tucont-text-primary">Marketplace Tucont</span>
             </h1>
             
-            <p className="text-xl text-slate-300 max-w-4xl mx-auto leading-relaxed mb-8">
+            <p className="text-xl text-tucont-text-secondary max-w-4xl mx-auto leading-relaxed mb-8">
               Produtos e serviços adequados ao seu momento e integrados para acelerar seu negócio. 
               Uma abundância de parceiros, tudo em um só lugar.
             </p>

@@ -98,7 +98,7 @@ const Planos = () => {
         </section>
 
         {/* Plans Section */}
-        <section className="py-24 px-4 bg-tucont-secondary-gray relative overflow-hidden">
+        <section className="py-24 px-4 bg-tucont-secondary relative overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-br from-tucont-royal/5 via-transparent to-tucont-orange/5"></div>
           
           <div className="max-w-4xl mx-auto relative z-10">
@@ -184,7 +184,7 @@ const Planos = () => {
                     {/* Saiba Mais Button */}
                     <button
                       onClick={() => setExpandedPlan(expandedPlan === index ? null : index)}
-                      className="text-blue-400 hover:text-blue-300 text-sm font-medium flex items-center justify-center gap-2 transition-colors"
+                      className="text-tucont-royal hover:text-tucont-royal/80 text-sm font-medium flex items-center justify-center gap-2 transition-colors"
                     >
                       Saiba mais
                       {expandedPlan === index ? (
@@ -196,11 +196,11 @@ const Planos = () => {
 
                     {/* Expanded Content */}
                     {expandedPlan === index && (
-                      <div className="mt-6 pt-6 border-t border-slate-700/50 animate-fade-in">
-                        <p className="text-slate-400 mb-4">{plan.description}</p>
+                      <div className="mt-6 pt-6 border-t border-border animate-fade-in">
+                        <p className="text-tucont-text-secondary mb-4">{plan.description}</p>
                         <div className="space-y-3">
-                          <h4 className="text-white font-semibold">Recursos adicionais:</h4>
-                          <div className="text-sm text-slate-300 space-y-1">
+                          <h4 className="text-tucont-text-primary font-semibold">Recursos adicionais:</h4>
+                          <div className="text-sm text-tucont-text-secondary space-y-1">
                             <div>• Backup automático de dados</div>
                             <div>• Certificado digital incluído</div>
                             <div>• Relatórios personalizados</div>
@@ -217,52 +217,46 @@ const Planos = () => {
         </section>
 
         {/* Comparison Table */}
-        <section className="py-16 px-4 bg-slate-900/50">
+        <section className="py-16 px-4 bg-tucont-secondary">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl font-bold text-center text-white mb-12">
+            <h2 className="text-3xl font-bold text-center text-tucont-text-primary mb-12">
               Compare todos os recursos
             </h2>
             
-            <div className="bg-slate-800/50 backdrop-blur-xl border border-slate-700/50 rounded-3xl p-8 overflow-x-auto">
+            <div className="bg-background border border-border rounded-3xl p-8 overflow-x-auto shadow-lg">
               <table className="w-full">
                 <thead>
-                  <tr className="border-b border-slate-700">
-                    <th className="text-left py-4 text-slate-300">Recursos</th>
-                    <th className="text-center py-4 text-blue-400">Essencial</th>
-                    <th className="text-center py-4 text-orange-400">Crescimento</th>
-                    <th className="text-center py-4 text-purple-400">Enterprise</th>
+                  <tr className="border-b border-border">
+                    <th className="text-left py-4 text-tucont-text-primary">Recursos</th>
+                    <th className="text-center py-4 text-tucont-royal">Zen Plus</th>
+                    <th className="text-center py-4 text-tucont-orange">Zen Pro</th>
                   </tr>
                 </thead>
                 <tbody className="text-sm">
-                  <tr className="border-b border-slate-700/50">
-                    <td className="py-4 text-slate-300">Notas fiscais/mês</td>
-                    <td className="text-center py-4">100</td>
-                    <td className="text-center py-4">500</td>
-                    <td className="text-center py-4">Ilimitado</td>
+                  <tr className="border-b border-border">
+                    <td className="py-4 text-tucont-text-secondary">Notas fiscais/mês</td>
+                    <td className="text-center py-4 text-tucont-text-primary">100</td>
+                    <td className="text-center py-4 text-tucont-text-primary">500</td>
                   </tr>
-                  <tr className="border-b border-slate-700/50">
-                    <td className="py-4 text-slate-300">Usuários</td>
-                    <td className="text-center py-4">1</td>
-                    <td className="text-center py-4">3</td>
-                    <td className="text-center py-4">Ilimitado</td>
+                  <tr className="border-b border-border">
+                    <td className="py-4 text-tucont-text-secondary">Usuários</td>
+                    <td className="text-center py-4 text-tucont-text-primary">1</td>
+                    <td className="text-center py-4 text-tucont-text-primary">3</td>
                   </tr>
-                  <tr className="border-b border-slate-700/50">
-                    <td className="py-4 text-slate-300">Mentoria</td>
-                    <td className="text-center py-4">-</td>
-                    <td className="text-center py-4">Mensal</td>
-                    <td className="text-center py-4">Semanal</td>
+                  <tr className="border-b border-border">
+                    <td className="py-4 text-tucont-text-secondary">Mentoria</td>
+                    <td className="text-center py-4 text-tucont-text-primary">-</td>
+                    <td className="text-center py-4 text-tucont-text-primary">Mensal</td>
                   </tr>
-                  <tr className="border-b border-slate-700/50">
-                    <td className="py-4 text-slate-300">BPO Financeiro</td>
-                    <td className="text-center py-4">-</td>
-                    <td className="text-center py-4">✓</td>
-                    <td className="text-center py-4">✓</td>
+                  <tr className="border-b border-border">
+                    <td className="py-4 text-tucont-text-secondary">BPO Financeiro</td>
+                    <td className="text-center py-4 text-tucont-text-primary">-</td>
+                    <td className="text-center py-4 text-tucont-text-primary">✓</td>
                   </tr>
                   <tr>
-                    <td className="py-4 text-slate-300">Suporte</td>
-                    <td className="text-center py-4">Comercial</td>
-                    <td className="text-center py-4">Prioritário</td>
-                    <td className="text-center py-4">24/7</td>
+                    <td className="py-4 text-tucont-text-secondary">Suporte</td>
+                    <td className="text-center py-4 text-tucont-text-primary">Comercial</td>
+                    <td className="text-center py-4 text-tucont-text-primary">Prioritário</td>
                   </tr>
                 </tbody>
               </table>
@@ -271,17 +265,17 @@ const Planos = () => {
         </section>
 
         {/* FAQ Section */}
-        <section className="py-16 px-4">
+        <section className="py-16 px-4 bg-background">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold text-center text-white mb-12">
+            <h2 className="text-3xl font-bold text-center text-tucont-text-primary mb-12">
               Perguntas Frequentes
             </h2>
             
             <div className="space-y-6">
               {faqs.map((faq, index) => (
-                <div key={index} className="bg-slate-900/80 backdrop-blur-xl border border-slate-700/50 rounded-2xl p-6">
-                  <h3 className="text-lg font-semibold text-white mb-4">{faq.question}</h3>
-                  <p className="text-slate-300 leading-relaxed">{faq.answer}</p>
+                <div key={index} className="bg-card border border-border rounded-2xl p-6 shadow-lg">
+                  <h3 className="text-lg font-semibold text-tucont-text-primary mb-4">{faq.question}</h3>
+                  <p className="text-tucont-text-secondary leading-relaxed">{faq.answer}</p>
                 </div>
               ))}
             </div>
@@ -289,18 +283,18 @@ const Planos = () => {
         </section>
 
         {/* Final CTA */}
-        <section className="py-16 px-4">
+        <section className="py-16 px-4 bg-tucont-secondary">
           <div className="max-w-4xl mx-auto text-center">
-            <div className="bg-gradient-to-r from-slate-800/50 to-slate-700/50 backdrop-blur-xl border border-slate-600/50 rounded-3xl p-8">
-              <h3 className="text-2xl font-bold text-white mb-4">
+            <div className="bg-card border border-border rounded-3xl p-8 shadow-lg">
+              <h3 className="text-2xl font-bold text-tucont-text-primary mb-4">
                 Não sabe qual plano escolher?
               </h3>
-              <p className="text-slate-300 mb-6 text-lg">
+              <p className="text-tucont-text-secondary mb-6 text-lg">
                 Fale conosco e nossa equipe te ajudará a encontrar a solução perfeita para sua empresa.
               </p>
               <Button 
                 onClick={() => window.open(`https://wa.me/5511999999999?text=${encodeURIComponent("Quero ajuda para escolher o melhor plano para minha empresa")}`, '_blank')}
-                className="bg-gradient-to-r from-blue-500 via-purple-500 to-orange-500 hover:from-blue-600 hover:via-purple-600 hover:to-orange-600 text-white px-8 py-4 text-lg rounded-full shadow-2xl transform hover:scale-105 transition-all duration-300"
+                className="bg-tucont-cta hover:bg-tucont-cta/90 text-white px-8 py-4 text-lg rounded-full shadow-lg hover-glow-cta transition-all duration-300"
               >
                 <Phone className="w-5 h-5 mr-2" />
                 Falar com nossa equipe

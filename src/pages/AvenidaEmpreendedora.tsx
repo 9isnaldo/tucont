@@ -173,27 +173,27 @@ const AvenidaEmpreendedora = () => {
       
       <main className="pt-24">
         {/* Hero Section */}
-        <section className="py-16 px-4 bg-gradient-to-br from-slate-950 via-orange-950/30 to-slate-900 relative overflow-hidden">
+        <section className="py-16 px-4 bg-gradient-to-br from-tucont-royal/20 via-tucont-orange/10 to-tucont-secondary relative overflow-hidden">
           <div className="absolute inset-0">
-            <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-orange-500/10 rounded-full blur-3xl animate-pulse"></div>
-            <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-red-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
+            <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-tucont-orange/5 rounded-full blur-3xl animate-pulse"></div>
+            <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-tucont-royal/5 rounded-full blur-3xl animate-pulse delay-1000"></div>
           </div>
           
           <div className="max-w-6xl mx-auto text-center relative z-10">
-            <div className="inline-flex items-center gap-2 bg-gradient-to-r from-orange-500/20 to-red-500/20 backdrop-blur-xl border border-orange-500/30 text-orange-300 px-6 py-3 rounded-full mb-8">
+            <div className="inline-flex items-center gap-2 bg-secondary border border-border text-tucont-royal px-6 py-3 rounded-full mb-8">
               <TrendingUp className="w-5 h-5" />
               <span className="font-medium">Nosso Grande Diferencial</span>
             </div>
             
             <h1 className="text-5xl md:text-6xl font-bold mb-8 leading-tight">
-              <span className="bg-gradient-to-r from-orange-400 via-red-400 to-pink-400 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-tucont-orange via-tucont-royal to-tucont-text-primary bg-clip-text text-transparent">
                 Avenida Empreendedora
               </span>
               <br />
-              <span className="text-white">Da ideia à operação</span>
+              <span className="text-tucont-text-primary">Da ideia à operação</span>
             </h1>
             
-            <p className="text-xl text-slate-300 max-w-4xl mx-auto leading-relaxed mb-8">
+            <p className="text-xl text-tucont-text-secondary max-w-4xl mx-auto leading-relaxed mb-8">
               Jornada completa com metodologia exclusiva, frameworks validados e mentoria 1:1 
               para transformar sua ideia em um negócio de sucesso.
             </p>
@@ -201,7 +201,7 @@ const AvenidaEmpreendedora = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button 
                 onClick={() => window.open(`https://wa.me/5511999999999?text=${encodeURIComponent("Quero conhecer a Avenida Empreendedora")}`, '_blank')}
-                className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white px-8 py-4 text-lg rounded-full shadow-2xl transform hover:scale-105 transition-all duration-300"
+                className="bg-tucont-cta hover:bg-tucont-cta/90 text-white px-8 py-4 text-lg rounded-full shadow-lg hover-glow-cta transition-all duration-300"
               >
                 <Rocket className="w-5 h-5 mr-2" />
                 Quero Empreender com a Tucont
@@ -209,7 +209,7 @@ const AvenidaEmpreendedora = () => {
               <Button 
                 onClick={() => window.open(`https://wa.me/5511999999999?text=${encodeURIComponent("Quero falar com um consultor da Avenida Empreendedora")}`, '_blank')}
                 variant="outline"
-                className="border-orange-500 text-orange-500 bg-transparent backdrop-blur-sm hover:bg-orange-500/10 hover:border-orange-400 hover:text-orange-400 transition-all duration-300 px-8 py-4 text-lg rounded-full"
+                className="border-tucont-orange text-tucont-orange bg-transparent hover:bg-tucont-orange/10 hover:border-tucont-orange/80 hover:text-tucont-orange/80 transition-all duration-300 px-8 py-4 text-lg rounded-full"
               >
                 <MessageCircle className="w-5 h-5 mr-2" />
                 Fale com um Consultor
@@ -219,13 +219,13 @@ const AvenidaEmpreendedora = () => {
         </section>
 
         {/* Journey Timeline */}
-        <section className="py-24 px-4">
+        <section className="py-24 px-4 bg-tucont-secondary">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold text-white mb-4">
+              <h2 className="text-4xl font-bold text-tucont-text-primary mb-4">
                 Sua Jornada Empreendedora
               </h2>
-              <p className="text-xl text-slate-300">
+              <p className="text-xl text-tucont-text-secondary">
                 5 etapas estruturadas para o crescimento sustentável
               </p>
             </div>
