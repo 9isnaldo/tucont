@@ -116,7 +116,76 @@ const HeroSection = () => {
             </div>
           </div>
 
-                    {/* Right Side - WhatsApp Conversation */}
+          {/* AI Input Interface */}
+          <div className="max-w-3xl mx-auto space-y-4">
+            <div className="relative">
+              <div className="flex gap-3 bg-card/90 backdrop-blur-xl border border-border rounded-2xl p-4 shadow-2xl">
+                <div className="flex-1">
+                  <input
+                    type="text"
+                    placeholder="Vamos destravar, escreva o que você precisa..."
+                    value={inputValue}
+                    onChange={(e) => setInputValue(e.target.value)}
+                    onKeyPress={(e) => e.key === 'Enter' && handleInputSubmit()}
+                    className="w-full bg-transparent text-foreground placeholder:text-muted-foreground text-lg focus:outline-none"
+                  />
+                </div>
+                <Button 
+                  onClick={handleInputSubmit}
+                  disabled={!inputValue.trim() || isTyping}
+                  variant="cta"
+                  size="lg"
+                  className="px-6 py-3 rounded-xl font-semibold"
+                >
+                  {isTyping ? (
+                    <div className="flex items-center gap-2">
+                      <Bot className="w-5 h-5 animate-pulse" />
+                      Pensando...
+                    </div>
+                  ) : (
+                    <div className="flex items-center gap-2">
+                      <Sparkles className="w-5 h-5" />
+                      Resolver
+                    </div>
+                  )}
+                </Button>
+              </div>
+            </div>
+
+            <p className="text-muted-foreground text-sm">
+              Resposta em minutos • Sem formulários • Sem enrolação
+            </p>
+
+            {/* AI Response */}
+            {(isTyping || aiResponse) && (
+              <div className="bg-secondary backdrop-blur-xl border border-primary/30 rounded-2xl p-6 text-left">
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center flex-shrink-0">
+                    <Bot className="w-6 h-6 text-primary-foreground" />
+                  </div>
+                  <div className="flex-1">
+                    <h4 className="font-semibold text-primary mb-2">IA Tucont</h4>
+                    {isTyping ? (
+                      <div className="flex items-center gap-2 text-muted-foreground">
+                        <div className="flex gap-1">
+                          <div className="w-2 h-2 bg-primary rounded-full animate-bounce"></div>
+                          <div className="w-2 h-2 bg-primary rounded-full animate-bounce delay-100"></div>
+                          <div className="w-2 h-2 bg-primary rounded-full animate-bounce delay-200"></div>
+                        </div>
+                        Analisando sua demanda...
+                      </div>
+                    ) : (
+                      <p className="text-foreground leading-relaxed">{aiResponse}</p>
+                    )}
+                  </div>
+                </div>
+              </div>
+            )}
+          </div>
+          
+          </div>
+
+          {/* Right Side - WhatsApp Conversation */}
           <div className="hidden lg:block">
             <div className="bg-card rounded-3xl p-6 shadow-2xl border border-border max-w-md mx-auto">
               {/* WhatsApp Header */}
