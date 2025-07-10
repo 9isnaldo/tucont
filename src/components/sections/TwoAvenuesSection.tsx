@@ -15,8 +15,8 @@ const TwoAvenuesSection = () => {
   };
 
   return (
-    <section className="py-24 px-4 bg-slate-950 relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-r from-blue-600/5 via-transparent to-orange-500/5"></div>
+    <section className="py-24 px-4 bg-background relative overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-r from-tucont-royal/5 via-transparent to-tucont-orange/5"></div>
       
       {/* Road/Path Background Effect */}
       <div className="absolute inset-0 opacity-10">
@@ -39,19 +39,19 @@ const TwoAvenuesSection = () => {
       
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 bg-slate-800/50 backdrop-blur-xl border border-slate-700/50 text-blue-300 px-6 py-3 rounded-full mb-8">
+          <div className="inline-flex items-center gap-2 bg-secondary backdrop-blur-xl border border-border text-tucont-royal px-6 py-3 rounded-full mb-8">
             <Route className="w-5 h-5" />
             <span className="font-medium">Integratividade</span>
           </div>
           
           <h2 className="text-5xl md:text-6xl font-bold mb-8 leading-tight">
-            <span className="bg-gradient-to-r from-white via-blue-200 to-orange-300 bg-clip-text text-transparent">
-              A Tucont resolve as duas principais avenidas: a Empreendedora e a Legal.
+            <span className="text-tucont-text-primary">
+              A Tucont resolve as duas principais avenidas: a <span className="text-tucont-orange">Empreendedora</span> e a <span className="text-tucont-royal">Legal</span>.
             </span>
           </h2>
           
-          <p className="text-xl text-slate-300 max-w-4xl mx-auto leading-relaxed">
-            <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent font-bold text-shadow-glow">
+          <p className="text-xl text-tucont-text-secondary max-w-4xl mx-auto leading-relaxed">
+            <span className="text-tucont-orange font-bold">
               Nossa revolução
             </span>
             : Muito mais que somente atender ao Governo, somos um copiloto estratégico, que automatiza a burocracia e impulsiona seu crescimento!

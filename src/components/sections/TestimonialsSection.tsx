@@ -27,11 +27,11 @@ const TestimonialsSection = () => {
   ];
 
   return (
-    <section className="py-24 px-4 bg-gradient-to-br from-slate-900 via-blue-950/30 to-slate-900">
+    <section className="py-24 px-4 bg-tucont-secondary-gray">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-8">
-            <span className="bg-gradient-to-r from-white via-blue-200 to-orange-300 bg-clip-text text-transparent">
+            <span className="text-tucont-text-primary">
               Quem já transformou sua empresa
             </span>
           </h2>
@@ -39,16 +39,16 @@ const TestimonialsSection = () => {
 
         <div className="grid md:grid-cols-3 gap-8">
           {testimonials.map((testimonial, index) => (
-            <div key={index} className="bg-slate-800/50 backdrop-blur-xl border border-slate-700/50 rounded-3xl p-6 hover:bg-slate-800/70 transition-all duration-300 transform hover:scale-105">
+            <div key={index} className="bg-background border border-border rounded-3xl p-6 hover:bg-secondary transition-all duration-300 transform hover:scale-105">
               <div className="flex items-center gap-1 mb-4">
                 {[...Array(testimonial.rating)].map((_, i) => (
-                  <Star key={i} className="w-4 h-4 text-yellow-400 fill-current" />
+                  <Star key={i} className="w-4 h-4 text-tucont-orange fill-current" />
                 ))}
               </div>
               
-              <Quote className="w-8 h-8 text-blue-400 mb-4" />
+              <Quote className="w-8 h-8 text-tucont-royal mb-4" />
               
-              <p className="text-slate-300 mb-6 leading-relaxed">
+              <p className="text-tucont-text-secondary mb-6 leading-relaxed">
                 "{testimonial.text}"
               </p>
               
@@ -56,11 +56,11 @@ const TestimonialsSection = () => {
                 <img 
                   src={testimonial.image} 
                   alt={testimonial.name}
-                  className="w-12 h-12 rounded-full border-2 border-blue-400/50"
+                  className="w-12 h-12 rounded-full border-2 border-tucont-royal/50"
                 />
                 <div>
-                  <h4 className="font-semibold text-white">{testimonial.name}</h4>
-                  <p className="text-slate-400 text-sm">{testimonial.role}</p>
+                  <h4 className="font-semibold text-tucont-text-primary">{testimonial.name}</h4>
+                  <p className="text-tucont-text-secondary text-sm">{testimonial.role}</p>
                 </div>
               </div>
             </div>

@@ -93,25 +93,25 @@ const GrowthModelsSection = () => {
   };
 
   return (
-    <section id="growth-models-section" className="relative bg-slate-950" style={{ height: `${100 + (businessSteps.length - 1) * 100}vh` }}>
+    <section id="growth-models-section" className="relative bg-tucont-secondary-gray" style={{ height: `${100 + (businessSteps.length - 1) * 100}vh` }}>
       {/* Sticky container */}
       <div className="sticky top-0 h-screen flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-950/20 via-slate-950/50 to-orange-950/20"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-tucont-royal/5 via-background/50 to-tucont-orange/5"></div>
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           {/* Header */}
           <div className="text-center mb-12 lg:mb-16">
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 lg:mb-8 leading-tight">
-              <span className="bg-gradient-to-r from-white via-blue-200 to-orange-300 bg-clip-text text-transparent">
+              <span className="text-tucont-text-primary">
                 Em qual momento seu negócio está?
               </span>
             </h2>
-            <p className="text-lg md:text-xl text-slate-300 max-w-4xl mx-auto leading-relaxed">
-              <span className="font-semibold text-blue-400">Criar e Validar</span>, 
-              <span className="font-semibold text-orange-400"> Regularizar</span>, 
-              <span className="font-semibold text-blue-400"> Vender e Emitir Notas</span>, 
-              <span className="font-semibold text-orange-400"> Cuidar do Fisco</span>, 
-              <span className="font-semibold text-blue-400"> Tracionar e Evoluir</span>.
+            <p className="text-lg md:text-xl text-tucont-text-secondary max-w-4xl mx-auto leading-relaxed">
+              <span className="font-semibold text-tucont-royal">Criar e Validar</span>, 
+              <span className="font-semibold text-tucont-orange"> Regularizar</span>, 
+              <span className="font-semibold text-tucont-royal"> Vender e Emitir Notas</span>, 
+              <span className="font-semibold text-tucont-orange"> Cuidar do Fisco</span>, 
+              <span className="font-semibold text-tucont-royal"> Tracionar e Evoluir</span>.
             </p>
           </div>
 
@@ -164,15 +164,17 @@ const GrowthModelsSection = () => {
                       : 'opacity-0 transform translate-x-8 absolute inset-0'
                   }`}
                 >
-                  <h3 className="text-3xl lg:text-4xl font-bold text-white mb-4 lg:mb-6">
+                  <h3 className="text-3xl lg:text-4xl font-bold text-tucont-text-primary mb-4 lg:mb-6">
                     {step.title}
                   </h3>
-                  <p className="text-lg lg:text-xl text-slate-300 leading-relaxed mb-6 lg:mb-8">
+                  <p className="text-lg lg:text-xl text-tucont-text-secondary leading-relaxed mb-6 lg:mb-8">
                     {step.text}
                   </p>
                   <Button 
                     onClick={() => handleStepClick(step)}
-                    className="bg-gradient-to-r from-blue-500 to-orange-500 hover:from-blue-600 hover:to-orange-600 text-white font-semibold px-6 py-3 lg:px-8 lg:py-4 rounded-full shadow-2xl shadow-blue-500/25 transition-all duration-300 hover:scale-105"
+                    variant="cta"
+                    size="lg"
+                    className="font-semibold px-6 py-3 lg:px-8 lg:py-4 rounded-full shadow-2xl transition-all duration-300 hover:scale-105"
                   >
                     {step.cta}
                     <ArrowRight className="w-4 h-4 lg:w-5 lg:h-5 ml-2" />
@@ -209,17 +211,19 @@ const GrowthModelsSection = () => {
       </div>
 
       {/* Bottom CTA that appears after all cards */}
-      <div className="absolute bottom-0 left-0 right-0 bg-slate-950/95 backdrop-blur-xl border-t border-slate-800/30 py-12 lg:py-16">
+      <div className="absolute bottom-0 left-0 right-0 bg-background/95 backdrop-blur-xl border-t border-border py-12 lg:py-16">
         <div className="max-w-3xl mx-auto text-center px-4 sm:px-6">
-          <h3 className="text-xl lg:text-2xl font-bold text-white mb-4">
+          <h3 className="text-xl lg:text-2xl font-bold text-tucont-text-primary mb-4">
             Não sabe em qual momento está?
           </h3>
-          <p className="text-slate-300 mb-6 text-sm lg:text-base">
+          <p className="text-tucont-text-secondary mb-6 text-sm lg:text-base">
             Calma, nós te ajudamos. Conte-nos um pouco, que nossa equipe humana e de IA, recomendará.
           </p>
           <Button 
             onClick={() => setIsModalOpen(true)}
-            className="bg-gradient-to-r from-blue-600 via-blue-700 to-orange-600 hover:from-blue-700 hover:via-blue-800 hover:to-orange-700 text-white px-6 py-3 lg:px-8 lg:py-4 text-base lg:text-lg rounded-full shadow-2xl hover:shadow-blue-500/20 transform hover:scale-105 transition-all duration-300"
+            variant="royal"
+            size="lg"
+            className="px-6 py-3 lg:px-8 lg:py-4 text-base lg:text-lg rounded-full shadow-2xl transform hover:scale-105 transition-all duration-300"
           >
             <Zap className="w-4 h-4 lg:w-5 lg:h-5 mr-2" />
             Descobrir meu momento ideal

@@ -8,17 +8,17 @@ const WhyChooseTucontSection = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
-    <section className="py-24 px-4 bg-slate-900 relative overflow-hidden">
+    <section className="py-24 px-4 bg-background relative overflow-hidden">
       
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 via-slate-900 to-orange-900/20"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-tucont-royal/5 via-background to-tucont-orange/5"></div>
       
       <div className="max-w-7xl mx-auto relative z-10">
         
         <div className="text-center mb-20">
-          <h2 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
-            Por que escolhem a <span className="bg-gradient-to-r from-orange-400 to-orange-500 bg-clip-text text-transparent">Tucont Integrativa</span>?
+          <h2 className="text-5xl md:text-6xl font-bold mb-6 leading-tight text-tucont-text-primary">
+            Por que escolhem a <span className="text-tucont-orange">Tucont Integrativa</span>?
           </h2>
-          <p className="text-2xl text-slate-300 font-semibold">
+          <p className="text-2xl text-tucont-text-secondary font-semibold">
             Porque também somos empreendedores, te entendemos!
           </p>
         </div>

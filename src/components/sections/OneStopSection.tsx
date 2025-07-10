@@ -29,29 +29,29 @@ const OneStopSection = () => {
   };
 
   return (
-    <section className="py-24 px-4 bg-slate-950 relative overflow-hidden">
+    <section className="py-24 px-4 bg-background relative overflow-hidden">
       {/* Background Effects */}
-      <div className="absolute inset-0 bg-gradient-to-br from-green-950/20 via-transparent to-blue-950/20"></div>
-      <div className="absolute top-1/3 left-1/4 w-80 h-80 bg-green-500/10 rounded-full blur-3xl animate-pulse"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-tucont-cta/5 via-transparent to-tucont-royal/5"></div>
+      <div className="absolute top-1/3 left-1/4 w-80 h-80 bg-tucont-cta/10 rounded-full blur-3xl animate-pulse"></div>
       
       <div className="max-w-7xl mx-auto text-center relative z-10">
         
-        <div className="inline-flex items-center gap-2 bg-slate-800/50 backdrop-blur-xl border border-slate-700/50 text-green-300 px-6 py-3 rounded-full mb-8">
+        <div className="inline-flex items-center gap-2 bg-secondary backdrop-blur-xl border border-border text-tucont-cta px-6 py-3 rounded-full mb-8">
           <CheckCircle className="w-5 h-5" />
           <span className="font-medium">Balcão Único</span>
         </div>
         
         <h2 className="text-5xl md:text-7xl font-bold mb-8 leading-tight">
-          <span className="bg-gradient-to-r from-white via-green-200 to-blue-300 bg-clip-text text-transparent">
+          <span className="text-tucont-text-primary">
             Tudo em um só lugar.
           </span>
           <br />
-          <span className="text-orange-400 text-4xl md:text-6xl">
+          <span className="text-tucont-orange text-4xl md:text-6xl">
             Tudo agora.
           </span>
         </h2>
 
-        <p className="text-xl md:text-2xl text-slate-300 mb-16 max-w-4xl mx-auto leading-relaxed">
+        <p className="text-xl md:text-2xl text-tucont-text-secondary mb-16 max-w-4xl mx-auto leading-relaxed">
           Pare de usar 10 sistemas diferentes. Com a Tucont, você tem tudo integrado 
           em uma única plataforma inteligente.
         </p>
@@ -63,7 +63,7 @@ const OneStopSection = () => {
               <div className={`w-20 h-20 md:w-24 md:h-24 bg-gradient-to-r ${service.color} rounded-3xl flex items-center justify-center mx-auto mb-4 shadow-2xl group-hover:scale-110 transform transition-all duration-300 group-hover:shadow-xl`}>
                 <service.icon className="w-10 h-10 md:w-12 md:h-12 text-white" />
               </div>
-              <h3 className="font-semibold text-white text-sm md:text-base group-hover:text-orange-300 transition-colors">
+              <h3 className="font-semibold text-tucont-text-primary text-sm md:text-base group-hover:text-tucont-orange transition-colors">
                 {service.label}
               </h3>
             </div>
@@ -71,18 +71,18 @@ const OneStopSection = () => {
         </div>
 
         {/* Destaque da Integração */}
-        <div className="bg-gradient-to-r from-slate-800/50 to-slate-700/50 backdrop-blur-xl border border-slate-600/50 rounded-3xl p-8 md:p-12 max-w-4xl mx-auto mb-12">
+        <div className="bg-secondary backdrop-blur-xl border border-border rounded-3xl p-8 md:p-12 max-w-4xl mx-auto mb-12">
           <div className="flex items-center justify-center gap-4 mb-6">
-            <Zap className="w-12 h-12 text-orange-400" />
-            <Sparkles className="w-8 h-8 text-yellow-400 animate-pulse" />
+            <Zap className="w-12 h-12 text-tucont-orange" />
+            <Sparkles className="w-8 h-8 text-tucont-royal animate-pulse" />
           </div>
           
-          <h3 className="text-3xl md:text-4xl font-bold text-white mb-6">
+          <h3 className="text-3xl md:text-4xl font-bold text-tucont-text-primary mb-6">
             Integração Total em 24 horas
           </h3>
           
-          <p className="text-slate-300 mb-8 text-lg md:text-xl leading-relaxed">
-            Nossa equipe configura tudo para você. <span className="font-semibold text-green-400">Amanhã sua empresa já estará rodando no piloto automático.</span>
+          <p className="text-tucont-text-secondary mb-8 text-lg md:text-xl leading-relaxed">
+            Nossa equipe configura tudo para você. <span className="font-semibold text-tucont-cta">Amanhã sua empresa já estará rodando no piloto automático.</span>
           </p>
 
           {/* Benefícios da Integração */}
@@ -91,45 +91,45 @@ const OneStopSection = () => {
               <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-emerald-400 rounded-full flex items-center justify-center mx-auto mb-3">
                 <CheckCircle className="w-6 h-6 text-white" />
               </div>
-              <h4 className="font-semibold text-white mb-2">Zero Configuração</h4>
-              <p className="text-slate-400 text-sm">Fazemos tudo para você</p>
+              <h4 className="font-semibold text-tucont-text-primary mb-2">Zero Configuração</h4>
+              <p className="text-tucont-text-secondary text-sm">Fazemos tudo para você</p>
             </div>
             
             <div className="text-center">
               <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-cyan-400 rounded-full flex items-center justify-center mx-auto mb-3">
                 <Zap className="w-6 h-6 text-white" />
               </div>
-              <h4 className="font-semibold text-white mb-2">Automação Total</h4>
-              <p className="text-slate-400 text-sm">Processos inteligentes</p>
+              <h4 className="font-semibold text-tucont-text-primary mb-2">Automação Total</h4>
+              <p className="text-tucont-text-secondary text-sm">Processos inteligentes</p>
             </div>
             
             <div className="text-center">
               <div className="w-12 h-12 bg-gradient-to-r from-orange-500 to-red-400 rounded-full flex items-center justify-center mx-auto mb-3">
                 <Users className="w-6 h-6 text-white" />
               </div>
-              <h4 className="font-semibold text-white mb-2">Suporte Humano</h4>
-              <p className="text-slate-400 text-sm">Equipe sempre disponível</p>
+              <h4 className="font-semibold text-tucont-text-primary mb-2">Suporte Humano</h4>
+              <p className="text-tucont-text-secondary text-sm">Equipe sempre disponível</p>
             </div>
           </div>
 
           <button 
             onClick={() => setIsModalOpen(true)}
-            className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white px-10 py-5 rounded-full font-bold shadow-2xl transform hover:scale-105 transition-all duration-300 text-lg md:text-xl"
+            className="bg-tucont-cta hover:bg-tucont-cta/90 text-white px-10 py-5 rounded-full font-bold shadow-2xl transform hover:scale-105 transition-all duration-300 text-lg md:text-xl"
           >
             <Zap className="w-6 h-6 mr-3 inline" />
             Configurar minha empresa agora
             <Sparkles className="w-5 h-5 ml-3 inline" />
           </button>
           
-          <p className="text-slate-400 text-sm mt-4">
+          <p className="text-tucont-text-secondary text-sm mt-4">
             Implementação completa • Sem dor de cabeça • Resultados imediatos
           </p>
         </div>
 
         {/* Frase de Impacto Final */}
         <div className="text-center">
-          <p className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-green-400 to-blue-400 bg-clip-text text-transparent">
-            "Sua empresa conectada, automatizada e crescendo. Tudo agora."
+          <p className="text-2xl md:text-3xl font-bold text-tucont-text-primary">
+            "Sua empresa conectada, automatizada e crescendo. <span className="text-tucont-orange">Tudo agora.</span>"
           </p>
         </div>
       </div>

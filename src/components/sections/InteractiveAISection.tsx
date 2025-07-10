@@ -38,29 +38,29 @@ const InteractiveAISection = () => {
   };
 
   return (
-    <section className="py-24 px-4 bg-gradient-to-br from-slate-900 via-purple-950/20 to-slate-900 relative overflow-hidden">
+    <section className="py-24 px-4 bg-tucont-secondary-gray relative overflow-hidden">
       {/* Background Effects */}
-      <div className="absolute inset-0 bg-gradient-to-r from-purple-600/5 via-transparent to-blue-500/5"></div>
-      <div className="absolute top-1/3 left-1/3 w-80 h-80 bg-purple-500/10 rounded-full blur-3xl animate-pulse"></div>
+      <div className="absolute inset-0 bg-gradient-to-r from-tucont-royal/5 via-transparent to-tucont-orange/5"></div>
+      <div className="absolute top-1/3 left-1/3 w-80 h-80 bg-tucont-royal/10 rounded-full blur-3xl animate-pulse"></div>
       
       <div className="max-w-4xl mx-auto relative z-10">
         
         {/* Header */}
         <div className="text-center mb-12">
-          <div className="inline-flex items-center gap-2 bg-purple-500/20 backdrop-blur-sm border border-purple-500/30 rounded-full px-6 py-3 mb-8">
-            <Bot className="w-5 h-5 text-purple-400" />
-            <span className="text-sm font-medium text-purple-200">
+          <div className="inline-flex items-center gap-2 bg-tucont-royal/10 backdrop-blur-sm border border-tucont-royal/30 rounded-full px-6 py-3 mb-8">
+            <Bot className="w-5 h-5 text-tucont-royal" />
+            <span className="text-sm font-medium text-tucont-royal">
               IA Interativa
             </span>
           </div>
           
           <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
-            <span className="bg-gradient-to-r from-purple-400 via-blue-400 to-cyan-400 bg-clip-text text-transparent">
+            <span className="text-tucont-text-primary">
               Descreva sua demanda
             </span>
           </h2>
           
-          <p className="text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-lg text-tucont-text-secondary max-w-2xl mx-auto leading-relaxed">
             Nossa IA entende sua necessidade e conecta você diretamente com o especialista certo.
           </p>
         </div>
