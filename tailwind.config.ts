@@ -61,6 +61,13 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				tucont: {
+					'dark-blue': 'hsl(var(--tucont-dark-blue))',
+					'orange': 'hsl(var(--tucont-orange))',
+					'white': 'hsl(var(--tucont-white))',
+					'light-blue': 'hsl(var(--tucont-light-blue))',
+					'light-gray': 'hsl(var(--tucont-light-gray))'
 				}
 			},
 			borderRadius: {
