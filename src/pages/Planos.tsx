@@ -1,83 +1,46 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
-import { Check, Star, Zap, ArrowRight, Shield, Users, TrendingUp, Clock, Phone, Mail } from "lucide-react";
+import { Check, Star, Zap, ArrowRight, Shield, Users, TrendingUp, Clock, Phone, Mail, ChevronDown, ChevronUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useState } from "react";
 
 const Planos = () => {
+  const [billingCycle, setBillingCycle] = useState<'monthly' | 'annually'>('monthly');
+  const [expandedPlan, setExpandedPlan] = useState<number | null>(null);
+
   const plans = [
     {
-      name: "Essencial",
+      name: "Zen Plus",
       description: "Para empreendedores que estão começando",
-      price: "R$ 297",
-      period: "/mês",
+      monthlyPrice: "R$ 149,00",
+      annualPrice: "R$ 134,10", // 10% discount
       features: [
-        "Abertura de empresa completa",
-        "Emissão de notas fiscais",
-        "Compliance fiscal automatizado",
-        "Suporte via WhatsApp",
-        "Relatórios mensais",
-        "Certificado digital básico",
-        "Backup automático de dados"
+        "Contabilidade completa",
+        "Processo de abertura",
+        "Emissão de NFs pela PJZen",
+        "Até 1 sócio (Pró-Labore)",
+        "Até 25K de faturamento/mês"
       ],
-      limits: [
-        "Até 100 notas fiscais/mês",
-        "1 usuário",
-        "Suporte em horário comercial"
-      ],
-      cta: "Começar agora",
+      cta: "COMECE AGORA",
       popular: false,
       color: "from-blue-500 to-blue-600"
     },
     {
-      name: "Crescimento",
+      name: "Zen Pro",
       description: "Para empresas que querem escalar",
-      price: "R$ 597",
-      period: "/mês",
+      monthlyPrice: "R$ 299,00",
+      annualPrice: "R$ 269,10", // 10% discount
       features: [
-        "Tudo do plano Essencial",
-        "Mentoria estratégica mensal",
-        "Análise de mercado personalizada",
-        "Planejamento tributário avançado",
-        "BPO financeiro incluído",
-        "Certificado digital premium",
-        "Relatórios executivos semanais",
-        "Integração com bancos",
-        "Dashboard avançado"
+        "Contabilidade completa",
+        "Processo de abertura",
+        "Emissão de NFs pela PJZen",
+        "Até 2 sócios (Pró-Labore)",
+        "Até 100K de faturamento/mês"
       ],
-      limits: [
-        "Até 500 notas fiscais/mês",
-        "3 usuários",
-        "Suporte prioritário"
-      ],
-      cta: "Escolher este plano",
+      cta: "COMECE AGORA",
       popular: true,
       color: "from-orange-500 to-orange-600"
-    },
-    {
-      name: "Enterprise",
-      description: "Para empresas estabelecidas",
-      price: "Sob consulta",
-      period: "",
-      features: [
-        "Tudo do plano Crescimento",
-        "Mentoria semanal dedicada",
-        "Auditoria completa trimestral",
-        "Implementação de frameworks exclusivos",
-        "Consultoria para IPO/M&A",
-        "Suporte prioritário 24/7",
-        "Gerente de conta dedicado",
-        "Integrações customizadas",
-        "Relatórios personalizados"
-      ],
-      limits: [
-        "Notas fiscais ilimitadas",
-        "Usuários ilimitados",
-        "Suporte 24/7"
-      ],
-      cta: "Falar com especialista",
-      popular: false,
-      color: "from-purple-500 to-purple-600"
     }
   ];
 
@@ -119,7 +82,7 @@ const Planos = () => {
           <div className="max-w-6xl mx-auto text-center">
             <div className="inline-flex items-center gap-2 bg-slate-800/50 backdrop-blur-xl border border-blue-400/30 text-blue-300 px-6 py-3 rounded-full mb-8">
               <Star className="w-5 h-5" />
-              <span className="font-medium">Planos Validados por +1000 Empresas</span>
+              <span className="font-medium">Planos Validados para o seu momento</span>
             </div>
             
             <h1 className="text-5xl md:text-6xl font-bold mb-8">
@@ -138,8 +101,36 @@ const Planos = () => {
         <section className="py-24 px-4 bg-slate-950 relative overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-br from-blue-950/30 via-transparent to-orange-950/30"></div>
           
-          <div className="max-w-7xl mx-auto relative z-10">
-            <div className="grid md:grid-cols-3 gap-8 mb-16">
+          <div className="max-w-4xl mx-auto relative z-10">
+            {/* Billing Toggle */}
+            <div className="flex justify-center mb-12">
+              <div className="bg-slate-800/50 backdrop-blur-xl border border-slate-700/50 rounded-full p-2 flex">
+                <button
+                  onClick={() => setBillingCycle('monthly')}
+                  className={`px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
+                    billingCycle === 'monthly'
+                      ? 'bg-blue-500 text-white shadow-lg'
+                      : 'text-slate-400 hover:text-white'
+                  }`}
+                >
+                  Mensal
+                </button>
+                <button
+                  onClick={() => setBillingCycle('annually')}
+                  className={`px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
+                    billingCycle === 'annually'
+                      ? 'bg-blue-500 text-white shadow-lg'
+                      : 'text-slate-400 hover:text-white'
+                  }`}
+                >
+                  Anual
+                  <span className="ml-2 text-xs bg-green-500 text-white px-2 py-1 rounded-full">-10%</span>
+                </button>
+              </div>
+            </div>
+
+            {/* Plans Grid */}
+            <div className="grid md:grid-cols-2 gap-6 mb-16">
               {plans.map((plan, index) => (
                 <div 
                   key={index}
@@ -155,44 +146,29 @@ const Planos = () => {
                     </div>
                   )}
 
-                  {/* Glow Effect */}
-                  <div className={`absolute inset-0 bg-gradient-to-r ${plan.color} opacity-0 group-hover:opacity-20 rounded-3xl blur-xl transition-all duration-500`}></div>
-                  
                   {/* Card */}
-                  <div className={`relative bg-slate-900/80 backdrop-blur-xl border ${plan.popular ? 'border-orange-400/50' : 'border-slate-700/50'} rounded-3xl p-8 hover:bg-slate-800/80 transition-all duration-300 transform hover:scale-105 hover:-translate-y-2 shadow-2xl group-hover:shadow-xl h-full flex flex-col`}>
+                  <div className={`relative bg-slate-900/80 backdrop-blur-xl border ${plan.popular ? 'border-orange-400/50' : 'border-slate-700/50'} rounded-3xl p-8 hover:bg-slate-800/80 transition-all duration-300 shadow-2xl h-full flex flex-col`}>
                     
                     {/* Header */}
-                    <div className="text-center mb-8">
-                      <h3 className="text-2xl font-bold text-white mb-2">{plan.name}</h3>
-                      <p className="text-slate-400 mb-6">{plan.description}</p>
+                    <div className="text-center mb-6">
+                      <h3 className={`text-2xl font-bold mb-2 bg-gradient-to-r ${plan.color} bg-clip-text text-transparent`}>
+                        {plan.name}
+                      </h3>
                       
-                      <div className="flex items-baseline justify-center gap-2">
-                        <span className={`text-4xl font-bold bg-gradient-to-r ${plan.color} bg-clip-text text-transparent`}>
-                          {plan.price}
+                      <div className="flex items-baseline justify-center gap-2 mb-4">
+                        <span className="text-4xl font-bold text-white">
+                          {billingCycle === 'monthly' ? plan.monthlyPrice : plan.annualPrice}
                         </span>
-                        {plan.period && (
-                          <span className="text-slate-400 text-lg">{plan.period}</span>
-                        )}
+                        <span className="text-slate-400 text-lg">MENSAL</span>
                       </div>
                     </div>
 
-                    {/* Features */}
-                    <div className="space-y-4 mb-6 flex-grow">
+                    {/* Compact Features */}
+                    <div className="space-y-3 mb-6 flex-grow">
                       {plan.features.map((feature, idx) => (
                         <div key={idx} className="flex items-center gap-3">
                           <Check className="w-5 h-5 text-green-400 flex-shrink-0" />
-                          <span className="text-slate-300">{feature}</span>
-                        </div>
-                      ))}
-                    </div>
-
-                    {/* Limits */}
-                    <div className="space-y-2 mb-8 pt-4 border-t border-slate-700/50">
-                      <p className="text-sm text-slate-400 font-medium">Limites:</p>
-                      {plan.limits.map((limit, idx) => (
-                        <div key={idx} className="flex items-center gap-2">
-                          <div className="w-2 h-2 bg-slate-500 rounded-full"></div>
-                          <span className="text-slate-400 text-sm">{limit}</span>
+                          <span className="text-slate-300 text-sm">{feature}</span>
                         </div>
                       ))}
                     </div>
@@ -200,11 +176,39 @@ const Planos = () => {
                     {/* CTA Button */}
                     <Button 
                       onClick={() => handlePlanClick(plan)}
-                      className={`w-full bg-gradient-to-r ${plan.color} hover:shadow-lg text-white rounded-xl py-4 font-semibold hover-glow-orange text-lg`}
+                      className={`w-full bg-gradient-to-r ${plan.color} hover:shadow-lg text-white rounded-xl py-4 font-semibold text-lg mb-4`}
                     >
                       {plan.cta}
-                      <ArrowRight className="w-5 h-5 ml-2" />
                     </Button>
+
+                    {/* Saiba Mais Button */}
+                    <button
+                      onClick={() => setExpandedPlan(expandedPlan === index ? null : index)}
+                      className="text-blue-400 hover:text-blue-300 text-sm font-medium flex items-center justify-center gap-2 transition-colors"
+                    >
+                      Saiba mais
+                      {expandedPlan === index ? (
+                        <ChevronUp className="w-4 h-4" />
+                      ) : (
+                        <ChevronDown className="w-4 h-4" />
+                      )}
+                    </button>
+
+                    {/* Expanded Content */}
+                    {expandedPlan === index && (
+                      <div className="mt-6 pt-6 border-t border-slate-700/50 animate-fade-in">
+                        <p className="text-slate-400 mb-4">{plan.description}</p>
+                        <div className="space-y-3">
+                          <h4 className="text-white font-semibold">Recursos adicionais:</h4>
+                          <div className="text-sm text-slate-300 space-y-1">
+                            <div>• Backup automático de dados</div>
+                            <div>• Certificado digital incluído</div>
+                            <div>• Relatórios personalizados</div>
+                            <div>• Suporte especializado</div>
+                          </div>
+                        </div>
+                      </div>
+                    )}
                   </div>
                 </div>
               ))}
@@ -294,23 +298,13 @@ const Planos = () => {
               <p className="text-slate-300 mb-6 text-lg">
                 Fale conosco e nossa equipe te ajudará a encontrar a solução perfeita para sua empresa.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button 
-                  onClick={() => window.open(`https://wa.me/5511999999999?text=${encodeURIComponent("Quero ajuda para escolher o melhor plano para minha empresa")}`, '_blank')}
-                  className="bg-gradient-to-r from-blue-500 via-purple-500 to-orange-500 hover:from-blue-600 hover:via-purple-600 hover:to-orange-600 text-white px-8 py-4 text-lg rounded-full shadow-2xl transform hover:scale-105 transition-all duration-300"
-                >
-                  <Phone className="w-5 h-5 mr-2" />
-                  Falar com especialista
-                </Button>
-                <Button 
-                  onClick={() => window.open('mailto:contato@tucont.com.br', '_blank')}
-                  variant="outline"
-                  className="border-orange-500 text-orange-500 bg-transparent backdrop-blur-sm hover:bg-orange-500/10 hover:border-orange-400 hover:text-orange-400 transition-all duration-300 px-8 py-4 text-lg rounded-full"
-                >
-                  <Mail className="w-5 h-5 mr-2" />
-                  Enviar e-mail
-                </Button>
-              </div>
+              <Button 
+                onClick={() => window.open(`https://wa.me/5511999999999?text=${encodeURIComponent("Quero ajuda para escolher o melhor plano para minha empresa")}`, '_blank')}
+                className="bg-gradient-to-r from-blue-500 via-purple-500 to-orange-500 hover:from-blue-600 hover:via-purple-600 hover:to-orange-600 text-white px-8 py-4 text-lg rounded-full shadow-2xl transform hover:scale-105 transition-all duration-300"
+              >
+                <Phone className="w-5 h-5 mr-2" />
+                Falar com nossa equipe
+              </Button>
             </div>
           </div>
         </section>
