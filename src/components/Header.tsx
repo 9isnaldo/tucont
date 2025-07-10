@@ -92,7 +92,7 @@ const Header = () => {
               Para Contabilidades
             </Link>
             
-            <Link to="/marketplace" className="text-white hover:text-orange-400 transition-colors font-medium">
+            <Link to="/bem-balcao" className="text-white hover:text-orange-400 transition-colors font-medium">
               Marketplace
             </Link>
           </nav>
@@ -137,7 +137,7 @@ const Header = () => {
               <Link to="/parceiros-contadores" className="block text-white hover:text-orange-400 w-full text-left">
                 Para Contabilidades
               </Link>
-              <Link to="/marketplace" className="block text-white hover:text-orange-400 w-full text-left">
+              <Link to="/bem-balcao" className="block text-white hover:text-orange-400 w-full text-left">
                 Marketplace
               </Link>
               <div className="flex gap-4 pt-4">
