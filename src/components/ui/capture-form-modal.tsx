@@ -4,6 +4,7 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/u
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { X } from "lucide-react";
 
 interface CaptureFormData {
@@ -11,16 +12,35 @@ interface CaptureFormData {
   email: string;
   phone: string;
   cnpj: string;
+  service?: string;
+  website?: string;
 }
 
 interface CaptureFormModalProps {
   isOpen: boolean;
   onClose: () => void;
+  hasExtraFields?: boolean;
 }
 
-export const CaptureFormModal = ({ isOpen, onClose }: CaptureFormModalProps) => {
-  const { register, handleSubmit, formState: { errors }, reset } = useForm<CaptureFormData>();
+export const CaptureFormModal = ({ isOpen, onClose, hasExtraFields = false }: CaptureFormModalProps) => {
+  const { register, handleSubmit, formState: { errors }, reset, setValue, watch } = useForm<CaptureFormData>();
   const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const serviceOptions = [
+    "Abertura de Empresa",
+    "Contabilidade",
+    "BPO Financeiro", 
+    "Certificado Digital",
+    "Consultoria Empresarial",
+    "Mentoria de Crescimento",
+    "Planejamento Tributário",
+    "Análise de Mercado",
+    "Gestão de Clínicas (Iupcare)",
+    "Emissão de Notas Fiscais",
+    "Outro"
+  ];
+
+  const selectedService = watch("service");
 
   const onSubmit = async (data: CaptureFormData) => {
     setIsSubmitting(true);
@@ -31,13 +51,22 @@ export const CaptureFormModal = ({ isOpen, onClose }: CaptureFormModalProps) => 
     await new Promise(resolve => setTimeout(resolve, 1000));
     
     // Redirecionar para WhatsApp com os dados
-    const message = `Olá! Gostaria de conhecer as duas avenidas integradas da Tucont.
+    let message = `Olá! Gostaria de conhecer as duas avenidas integradas da Tucont.
     
 Meus dados:
 Nome: ${data.name}
 Email: ${data.email}  
 Telefone: ${data.phone}
 CNPJ: ${data.cnpj}`;
+
+    if (hasExtraFields) {
+      if (data.service) {
+        message += `\nServiço de interesse: ${data.service}`;
+      }
+      if (data.website) {
+        message += `\nSite da empresa: ${data.website}`;
+      }
+    }
     
     window.open(`https://wa.me/5511999999999?text=${encodeURIComponent(message)}`, '_blank');
     
@@ -150,6 +179,41 @@ CNPJ: ${data.cnpj}`;
                   <p className="text-red-400 text-sm mt-1">{errors.cnpj.message}</p>
                 )}
               </div>
+
+              {hasExtraFields && (
+                <>
+                  <div>
+                    <Label htmlFor="service" className="text-white font-medium">
+                      Produto/Serviço de Interesse
+                    </Label>
+                    <Select value={selectedService} onValueChange={(value) => setValue("service", value)}>
+                      <SelectTrigger className="bg-white/10 border-white/20 text-white backdrop-blur-sm focus:bg-white/15 focus:border-orange-400/50">
+                        <SelectValue placeholder="Selecione um serviço" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        {serviceOptions.map((service) => (
+                          <SelectItem key={service} value={service}>
+                            {service}
+                          </SelectItem>
+                        ))}
+                      </SelectContent>
+                    </Select>
+                  </div>
+
+                  <div>
+                    <Label htmlFor="website" className="text-white font-medium">
+                      Site da Empresa (opcional)
+                    </Label>
+                    <Input
+                      id="website"
+                      type="url"
+                      placeholder="https://www.suaempresa.com.br"
+                      className="bg-white/10 border-white/20 text-white placeholder:text-slate-300 backdrop-blur-sm focus:bg-white/15 focus:border-orange-400/50"
+                      {...register("website")}
+                    />
+                  </div>
+                </>
+              )}
 
               <Button
                 type="submit"

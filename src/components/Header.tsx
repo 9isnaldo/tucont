@@ -74,7 +74,7 @@ const Header = () => {
                       <span>Jornada Empreendedora</span>
                     </Link>
                     
-                    <Link to="/produtos" className="flex items-center gap-3 p-3 hover:bg-slate-700 rounded-md cursor-pointer text-white hover:text-white transition-colors">
+                    <Link to="/bem-balcao" className="flex items-center gap-3 p-3 hover:bg-slate-700 rounded-md cursor-pointer text-white hover:text-white transition-colors">
                       <ShoppingCart className="w-5 h-5 text-orange-400" />
                       <span>Plataforma para Vendas, NFs e Financeiro</span>
                     </Link>
