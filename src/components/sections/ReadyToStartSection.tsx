@@ -9,13 +9,13 @@ const ReadyToStartSection = () => {
   };
 
   return (
-    <section className="py-24 px-4">
+    <section className="py-24 px-4 bg-tucont-secondary-gray">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-orange-300 to-yellow-300 bg-clip-text text-transparent">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-tucont-orange to-tucont-royal bg-clip-text text-transparent">
             Pronto para Empreender com a Tucont?
           </h2>
-          <p className="text-xl text-blue-200 max-w-3xl mx-auto">
+          <p className="text-xl text-tucont-text-secondary max-w-3xl mx-auto">
             Escolha como quer começar sua jornada de crescimento empresarial
           </p>
         </div>
@@ -50,16 +50,17 @@ const ReadyToStartSection = () => {
               shadow: "shadow-orange-500/10"
             }
           ].map((option, index) => (
-            <div key={index} className={`bg-gradient-to-r ${option.gradient} backdrop-blur-xl border ${option.border} rounded-2xl p-8 shadow-2xl ${option.shadow} hover:shadow-xl transition-all duration-300 transform hover:scale-105`}>
+            <div key={index} className="bg-card border border-border rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
               <div className="text-center">
-                <div className="w-16 h-16 bg-gradient-to-r from-slate-700/80 to-slate-800/80 backdrop-blur-sm border border-slate-600/30 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                  <option.icon className="w-8 h-8 text-orange-400" />
+                <div className="w-16 h-16 bg-tucont-royal rounded-2xl flex items-center justify-center mx-auto mb-6">
+                  <option.icon className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-4">{option.title}</h3>
-                <p className="text-blue-200 mb-6 leading-relaxed">{option.description}</p>
+                <h3 className="text-2xl font-bold text-tucont-text-primary mb-4">{option.title}</h3>
+                <p className="text-tucont-text-secondary mb-6 leading-relaxed">{option.description}</p>
                 <Button 
                   onClick={() => openWhatsApp(`Quero ${option.action.toLowerCase()} com a Tucont`)}
-                  className="w-full bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 py-3 rounded-xl font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
+                  variant="cta"
+                  className="w-full py-3 rounded-xl font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
                 >
                   {option.action}
                 </Button>

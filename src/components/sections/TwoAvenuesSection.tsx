@@ -201,7 +201,7 @@ const TwoAvenuesSection = () => {
 
         {/* Texto explicativo antes do CTA */}
         <div className="text-center mb-8">
-          <p className="text-lg text-slate-300 max-w-4xl mx-auto leading-relaxed">
+          <p className="text-lg text-tucont-text-secondary max-w-4xl mx-auto leading-relaxed font-medium">
             Enquanto outros cuidam apenas do fisco, nós revolucionamos. 
             Navegue pelas avenidas que transformam completamente o seu negócio.
           </p>

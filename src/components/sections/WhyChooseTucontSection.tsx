@@ -27,10 +27,10 @@ const WhyChooseTucontSection = () => {
         <div className="mb-24 relative">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="space-y-6">
-              <h3 className="text-4xl font-bold text-white mb-6">
+              <h3 className="text-4xl font-bold text-tucont-text-primary mb-6">
                 Nosso Sonho Grande:
               </h3>
-              <div className="text-xl text-slate-300 leading-relaxed space-y-4">
+              <div className="text-xl text-tucont-text-secondary leading-relaxed space-y-4">
                 <p>
                   Contribuir para o Brasil a chegar a <span className="text-orange-400 font-bold">50 milhões de PJs</span> e
                   mudar a sociedade, pelo despertar do empreendedorismo e acesso às oportunidades.
@@ -97,10 +97,10 @@ const WhyChooseTucontSection = () => {
             </div>
             
             <div className="order-1 lg:order-2 space-y-6">
-              <h3 className="text-4xl font-bold text-white mb-6">
+              <h3 className="text-4xl font-bold text-tucont-text-primary mb-6">
                 Temos experiência
               </h3>
-              <div className="text-xl text-slate-300 leading-relaxed space-y-4">
+              <div className="text-xl text-tucont-text-secondary leading-relaxed space-y-4">
                 <p>
                   Depois de criar, inspirar e ajudar mais de <span className="text-orange-400 font-bold">30 negócios</span>, 
                   tínhamos o dever de impactar e transformar mais empreendedores.
@@ -122,10 +122,10 @@ const WhyChooseTucontSection = () => {
         <div className="mb-16 relative">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="space-y-6">
-              <h3 className="text-4xl font-bold text-white mb-6">
-                Somos Integrativos, é <span className="bg-gradient-to-r from-blue-400 to-orange-400 bg-clip-text text-transparent">Você no Centro</span>
+              <h3 className="text-4xl font-bold text-tucont-text-primary mb-6">
+                Somos Integrativos, é <span className="bg-gradient-to-r from-tucont-royal to-tucont-orange bg-clip-text text-transparent">Você no Centro</span>
               </h3>
-              <div className="text-xl text-slate-300 leading-relaxed space-y-4">
+              <div className="text-xl text-tucont-text-secondary leading-relaxed space-y-4">
                 <p>
                   Enquanto a Contabilidade Tradicional é <span className="text-slate-400 italic">reativa e foca no Governo</span>.
                 </p>
@@ -236,10 +236,10 @@ const WhyChooseTucontSection = () => {
         {/* CTA Section */}
         <div className="text-center mt-16">
           <div className="bg-gradient-to-r from-blue-500/10 to-orange-500/10 rounded-3xl p-12 backdrop-blur-sm border border-gradient-to-r from-blue-500/20 to-orange-500/20">
-            <h3 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              Pronto para <span className="bg-gradient-to-r from-blue-400 to-orange-400 bg-clip-text text-transparent">transformar</span> seu negócio?
+            <h3 className="text-3xl md:text-4xl font-bold text-tucont-text-primary mb-6">
+              Pronto para <span className="bg-gradient-to-r from-tucont-royal to-tucont-orange bg-clip-text text-transparent">transformar</span> seu negócio?
             </h3>
-            <p className="text-xl text-slate-300 mb-8 max-w-2xl mx-auto">
+            <p className="text-xl text-tucont-text-secondary mb-8 max-w-2xl mx-auto">
               Junte-se aos negócios que já transformaram suas jornadas empreendedoras conosco. 
               Vamos construir o futuro juntos!
             </p>

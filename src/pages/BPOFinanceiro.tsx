@@ -105,12 +105,12 @@ const BPOFinanceiro = () => {
   };
 
   return (
-    <div className="min-h-screen bg-slate-950 text-white">
+    <div className="min-h-screen bg-background">
       <Header />
       
       <main className="pt-24">
         {/* Hero Section */}
-        <section className="py-16 px-4 bg-gradient-to-br from-slate-950 via-blue-950/30 to-slate-900">
+        <section className="py-16 px-4 bg-background">
           <div className="max-w-6xl mx-auto text-center">
             <div className="flex justify-center mb-8">
               <img 
@@ -120,37 +120,37 @@ const BPOFinanceiro = () => {
               />
             </div>
             <h1 className="text-5xl md:text-6xl font-bold mb-8">
-              <span className="bg-gradient-to-r from-orange-400 via-blue-400 to-green-400 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-tucont-orange via-tucont-royal to-tucont-cta-green bg-clip-text text-transparent">
                 BPO Financeiro
               </span>
             </h1>
-            <p className="text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed mb-8">
+            <p className="text-xl text-tucont-text-secondary max-w-3xl mx-auto leading-relaxed mb-8">
               Terceirize sua gestão financeira com quem entende do seu negócio
             </p>
           </div>
         </section>
 
         {/* Missão Section */}
-        <section className="py-16 px-4">
+        <section className="py-16 px-4 bg-tucont-secondary-gray">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">Nossa Missão</h2>
-              <p className="text-xl text-orange-200 max-w-4xl mx-auto leading-relaxed">
+              <h2 className="text-3xl md:text-4xl font-bold text-tucont-text-primary mb-6">Nossa Missão</h2>
+              <p className="text-xl text-tucont-text-secondary max-w-4xl mx-auto leading-relaxed">
                 "Transformar a gestão financeira e administrativa de PMEs através de serviços especializados e tecnologia de ponta"
               </p>
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
               {valores.map((valor, index) => (
-                <Card key={index} className="bg-slate-900/50 border-slate-700/50 hover:bg-slate-800/50 transition-all duration-300">
+                <Card key={index} className="bg-card border-border hover:shadow-lg transition-all duration-300">
                   <CardHeader className="text-center">
-                    <div className="w-12 h-12 bg-gradient-to-r from-orange-500 via-blue-500 to-green-500 rounded-xl flex items-center justify-center mx-auto mb-4">
+                    <div className="w-12 h-12 bg-gradient-to-r from-tucont-orange via-tucont-royal to-tucont-cta-green rounded-xl flex items-center justify-center mx-auto mb-4">
                       <valor.icon className="w-6 h-6 text-white" />
                     </div>
-                    <CardTitle className="text-white">{valor.title}</CardTitle>
+                    <CardTitle className="text-tucont-text-primary">{valor.title}</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <CardDescription className="text-slate-400 text-center">
+                    <CardDescription className="text-tucont-text-secondary text-center">
                       {valor.description}
                     </CardDescription>
                   </CardContent>
@@ -159,9 +159,9 @@ const BPOFinanceiro = () => {
             </div>
 
             <div className="text-center mt-12">
-              <div className="bg-slate-900/50 border border-orange-500/30 rounded-2xl p-8 max-w-4xl mx-auto">
-                <h3 className="text-2xl font-bold text-white mb-4">Nosso Diferencial</h3>
-                <p className="text-lg text-orange-200">
+              <div className="bg-card border border-tucont-orange/30 rounded-2xl p-8 max-w-4xl mx-auto">
+                <h3 className="text-2xl font-bold text-tucont-text-primary mb-4">Nosso Diferencial</h3>
+                <p className="text-lg text-tucont-text-secondary">
                   "Combinamos experiência em gestão financeira com tecnologia própria adaptável"
                 </p>
               </div>

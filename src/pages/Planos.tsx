@@ -73,44 +73,44 @@ const Planos = () => {
   };
 
   return (
-    <div className="min-h-screen bg-slate-950 text-white">
+    <div className="min-h-screen bg-background">
       <Header />
       
       <main className="pt-24">
         {/* Hero Section */}
-        <section className="py-16 px-4 bg-gradient-to-br from-slate-950 via-blue-950/30 to-slate-900">
+        <section className="py-16 px-4 bg-background">
           <div className="max-w-6xl mx-auto text-center">
-            <div className="inline-flex items-center gap-2 bg-slate-800/50 backdrop-blur-xl border border-blue-400/30 text-blue-300 px-6 py-3 rounded-full mb-8">
+            <div className="inline-flex items-center gap-2 bg-secondary border border-border text-tucont-royal px-6 py-3 rounded-full mb-8">
               <Star className="w-5 h-5" />
               <span className="font-medium">Planos Validados para o seu momento</span>
             </div>
             
             <h1 className="text-5xl md:text-6xl font-bold mb-8">
-              <span className="bg-gradient-to-r from-white via-blue-200 to-orange-300 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-tucont-text-primary via-tucont-royal to-tucont-orange bg-clip-text text-transparent">
                 Escolha o plano ideal para acelerar seu negócio
               </span>
             </h1>
-            <p className="text-xl text-slate-300 max-w-4xl mx-auto leading-relaxed">
-              Soluções completas que combinam <span className="font-semibold text-blue-400">tecnologia avançada</span> 
-              com <span className="font-semibold text-orange-400">mentoria estratégica</span> para o crescimento sustentável.
+            <p className="text-xl text-tucont-text-secondary max-w-4xl mx-auto leading-relaxed">
+              Soluções completas que combinam <span className="font-semibold text-tucont-royal">tecnologia avançada</span> 
+              com <span className="font-semibold text-tucont-orange">mentoria estratégica</span> para o crescimento sustentável.
             </p>
           </div>
         </section>
 
         {/* Plans Section */}
-        <section className="py-24 px-4 bg-slate-950 relative overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-br from-blue-950/30 via-transparent to-orange-950/30"></div>
+        <section className="py-24 px-4 bg-tucont-secondary-gray relative overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-br from-tucont-royal/5 via-transparent to-tucont-orange/5"></div>
           
           <div className="max-w-4xl mx-auto relative z-10">
             {/* Billing Toggle */}
             <div className="flex justify-center mb-12">
-              <div className="bg-slate-800/50 backdrop-blur-xl border border-slate-700/50 rounded-full p-2 flex">
+              <div className="bg-card border border-border rounded-full p-2 flex">
                 <button
                   onClick={() => setBillingCycle('monthly')}
                   className={`px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
                     billingCycle === 'monthly'
-                      ? 'bg-blue-500 text-white shadow-lg'
-                      : 'text-slate-400 hover:text-white'
+                      ? 'bg-tucont-royal text-white shadow-lg'
+                      : 'text-tucont-text-secondary hover:text-tucont-text-primary'
                   }`}
                 >
                   Mensal
@@ -119,12 +119,12 @@ const Planos = () => {
                   onClick={() => setBillingCycle('annually')}
                   className={`px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
                     billingCycle === 'annually'
-                      ? 'bg-blue-500 text-white shadow-lg'
-                      : 'text-slate-400 hover:text-white'
+                      ? 'bg-tucont-royal text-white shadow-lg'
+                      : 'text-tucont-text-secondary hover:text-tucont-text-primary'
                   }`}
                 >
                   Anual
-                  <span className="ml-2 text-xs bg-green-500 text-white px-2 py-1 rounded-full">-10%</span>
+                  <span className="ml-2 text-xs bg-tucont-cta-green text-white px-2 py-1 rounded-full">-10%</span>
                 </button>
               </div>
             </div>
@@ -147,7 +147,7 @@ const Planos = () => {
                   )}
 
                   {/* Card */}
-                  <div className={`relative bg-slate-900/80 backdrop-blur-xl border ${plan.popular ? 'border-orange-400/50' : 'border-slate-700/50'} rounded-3xl p-8 hover:bg-slate-800/80 transition-all duration-300 shadow-2xl h-full flex flex-col`}>
+                  <div className={`relative bg-card border ${plan.popular ? 'border-tucont-orange/50' : 'border-border'} rounded-3xl p-8 hover:shadow-lg transition-all duration-300 shadow-sm h-full flex flex-col`}>
                     
                     {/* Header */}
                     <div className="text-center mb-6">
@@ -156,10 +156,10 @@ const Planos = () => {
                       </h3>
                       
                       <div className="flex items-baseline justify-center gap-2 mb-4">
-                        <span className="text-4xl font-bold text-white">
+                        <span className="text-4xl font-bold text-tucont-text-primary">
                           {billingCycle === 'monthly' ? plan.monthlyPrice : plan.annualPrice}
                         </span>
-                        <span className="text-slate-400 text-lg">MENSAL</span>
+                        <span className="text-tucont-text-secondary text-lg">MENSAL</span>
                       </div>
                     </div>
 
@@ -167,8 +167,8 @@ const Planos = () => {
                     <div className="space-y-3 mb-6 flex-grow">
                       {plan.features.map((feature, idx) => (
                         <div key={idx} className="flex items-center gap-3">
-                          <Check className="w-5 h-5 text-green-400 flex-shrink-0" />
-                          <span className="text-slate-300 text-sm">{feature}</span>
+                          <Check className="w-5 h-5 text-tucont-cta-green flex-shrink-0" />
+                          <span className="text-tucont-text-secondary text-sm">{feature}</span>
                         </div>
                       ))}
                     </div>
