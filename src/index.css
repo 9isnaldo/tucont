@@ -44,21 +44,12 @@
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
 
-    /* Tucont Brand Colors - Light Mode */
+    /* Tucont Brand Colors */
     --tucont-dark-blue: 221 100% 15%; /* #000D4F */
     --tucont-orange: 33 100% 50%; /* #FF8C00 */
     --tucont-white: 0 0% 100%; /* #FFFFFF */
     --tucont-light-blue: 208 100% 56%; /* #1E90FF */
     --tucont-light-gray: 0 0% 96%; /* #F5F5F5 */
-    
-    /* Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(var(--tucont-dark-blue)), hsl(var(--tucont-light-blue)));
-    --gradient-secondary: linear-gradient(135deg, hsl(var(--tucont-orange)), hsl(33 100% 60%));
-    --gradient-hero: linear-gradient(135deg, hsl(var(--tucont-dark-blue)) 0%, hsl(var(--tucont-light-blue)) 100%);
-    
-    /* Shadows */
-    --shadow-elegant: 0 10px 30px -10px hsl(var(--tucont-dark-blue) / 0.2);
-    --shadow-orange-glow: 0 0 20px hsl(var(--tucont-orange) / 0.3);
   }
 
   .dark {
@@ -97,22 +88,6 @@
     --sidebar-accent-foreground: 240 4.8% 95.9%;
     --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 217.2 91.2% 59.8%;
-    
-    /* Tucont Brand Colors - Dark Mode */
-    --tucont-dark-blue: 221 100% 25%; /* Lighter for dark mode */
-    --tucont-orange: 33 100% 55%; /* Slightly brighter for dark mode */
-    --tucont-white: 0 0% 98%; /* Slightly off-white for dark mode */
-    --tucont-light-blue: 208 100% 65%; /* Brighter for dark mode */
-    --tucont-light-gray: 0 0% 15%; /* Dark gray for dark mode */
-    
-    /* Dark mode gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(var(--tucont-light-blue)), hsl(var(--tucont-dark-blue)));
-    --gradient-secondary: linear-gradient(135deg, hsl(var(--tucont-orange)), hsl(33 100% 45%));
-    --gradient-hero: linear-gradient(135deg, hsl(var(--tucont-light-blue)) 0%, hsl(var(--tucont-dark-blue)) 100%);
-    
-    /* Dark mode shadows */
-    --shadow-elegant: 0 10px 30px -10px hsl(0 0% 0% / 0.5);
-    --shadow-orange-glow: 0 0 20px hsl(var(--tucont-orange) / 0.4);
   }
 }
 

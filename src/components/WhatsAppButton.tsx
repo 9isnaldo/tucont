@@ -40,10 +40,10 @@ const WhatsAppButton = () => {
       {/* Tooltip */}
       {showTooltip && (
         <div className="fixed bottom-32 right-6 z-50 animate-fade-in">
-          <div className="bg-card rounded-2xl shadow-2xl p-4 max-w-xs relative border border-border">
+          <div className="bg-white rounded-2xl shadow-2xl p-4 max-w-xs relative">
             <button
               onClick={() => setShowTooltip(false)}
-              className="absolute -top-2 -right-2 w-6 h-6 bg-muted rounded-full flex items-center justify-center text-muted-foreground hover:bg-muted/80 transition-colors"
+              className="absolute -top-2 -right-2 w-6 h-6 bg-slate-400 rounded-full flex items-center justify-center text-white hover:bg-slate-500 transition-colors"
             >
               <X className="w-3 h-3" />
             </button>
@@ -53,17 +53,17 @@ const WhatsAppButton = () => {
                 <MessageCircle className="w-5 h-5 text-white" />
               </div>
               <div>
-                <h4 className="font-semibold text-foreground text-sm mb-1">
+                <h4 className="font-semibold text-slate-900 text-sm mb-1">
                   Fale com nossa IA agora!
                 </h4>
-                <p className="text-muted-foreground text-xs leading-relaxed">
+                <p className="text-slate-600 text-xs leading-relaxed">
                   Resolva sua demanda em minutos. Nossa equipe está online e pronta para ajudar.
                 </p>
               </div>
             </div>
             
             {/* Arrow */}
-            <div className="absolute bottom-[-8px] right-8 w-0 h-0 border-l-8 border-r-8 border-t-8 border-l-transparent border-r-transparent border-t-card"></div>
+            <div className="absolute bottom-[-8px] right-8 w-0 h-0 border-l-8 border-r-8 border-t-8 border-l-transparent border-r-transparent border-t-white"></div>
           </div>
         </div>
       )}
