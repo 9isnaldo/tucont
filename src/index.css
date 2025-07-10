@@ -6,50 +6,53 @@
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --foreground: 215 25% 27%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 215 25% 27%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 215 25% 27%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 230 100% 50%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 215 20% 98%;
+    --secondary-foreground: 215 25% 27%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 215 20% 98%;
+    --muted-foreground: 215 15% 60%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 215 20% 98%;
+    --accent-foreground: 215 25% 27%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 215 20% 93%;
+    --input: 215 20% 93%;
+    --ring: 230 100% 50%;
 
     --radius: 0.5rem;
 
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 215 25% 27%;
+    --sidebar-primary: 230 100% 50%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 215 20% 98%;
+    --sidebar-accent-foreground: 215 25% 27%;
+    --sidebar-border: 215 20% 93%;
+    --sidebar-ring: 230 100% 50%;
 
     /* Tucont Brand Colors */
-    --tucont-dark-blue: 221 100% 15%; /* #000D4F */
+    --tucont-royal-blue: 230 100% 50%; /* Royal Blue para botões e ênfase */
     --tucont-orange: 33 100% 50%; /* #FF8C00 */
     --tucont-white: 0 0% 100%; /* #FFFFFF */
     --tucont-light-blue: 208 100% 56%; /* #1E90FF */
-    --tucont-light-gray: 0 0% 96%; /* #F5F5F5 */
+    --tucont-secondary-gray: 215 20% 98%; /* #F5F7FA */
+    --tucont-cta-green: 145 100% 39%; /* #00C853 */
+    --tucont-text-primary: 215 25% 27%; /* Texto principal escuro */
+    --tucont-text-secondary: 215 15% 60%; /* Texto secundário */
   }
 
   .dark {
@@ -108,8 +111,8 @@
 
 /* Custom Tucont brand classes */
 @layer utilities {
-  .bg-tucont-dark {
-    background-color: hsl(var(--tucont-dark-blue));
+  .bg-tucont-royal {
+    background-color: hsl(var(--tucont-royal-blue));
   }
   
   .bg-tucont-orange {
@@ -120,12 +123,40 @@
     background-color: hsl(var(--tucont-light-blue));
   }
   
+  .bg-tucont-secondary {
+    background-color: hsl(var(--tucont-secondary-gray));
+  }
+  
+  .bg-tucont-cta {
+    background-color: hsl(var(--tucont-cta-green));
+  }
+  
+  .text-tucont-royal {
+    color: hsl(var(--tucont-royal-blue));
+  }
+  
   .text-tucont-orange {
     color: hsl(var(--tucont-orange));
   }
   
   .text-tucont-light-blue {
     color: hsl(var(--tucont-light-blue));
+  }
+  
+  .text-tucont-primary {
+    color: hsl(var(--tucont-text-primary));
+  }
+  
+  .text-tucont-secondary {
+    color: hsl(var(--tucont-text-secondary));
+  }
+  
+  .text-tucont-cta {
+    color: hsl(var(--tucont-cta-green));
+  }
+  
+  .border-tucont-royal {
+    border-color: hsl(var(--tucont-royal-blue));
   }
   
   .border-tucont-orange {
@@ -136,12 +167,25 @@
     border-color: hsl(var(--tucont-light-blue));
   }
   
-  .hover-glow-orange {
+  .border-tucont-cta {
+    border-color: hsl(var(--tucont-cta-green));
+  }
+  
+  .hover-glow-royal {
     transition: all 0.3s ease;
   }
   
-  .hover-glow-orange:hover {
-    box-shadow: 0 0 20px hsl(var(--tucont-orange) / 0.5);
+  .hover-glow-royal:hover {
+    box-shadow: 0 0 20px hsl(var(--tucont-royal-blue) / 0.3);
+    transform: translateY(-2px);
+  }
+  
+  .hover-glow-cta {
+    transition: all 0.3s ease;
+  }
+  
+  .hover-glow-cta:hover {
+    box-shadow: 0 0 20px hsl(var(--tucont-cta-green) / 0.3);
     transform: translateY(-2px);
   }
 }

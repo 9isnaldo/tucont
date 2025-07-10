@@ -61,6 +61,15 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				tucont: {
+					'royal': 'hsl(var(--tucont-royal-blue))',
+					'orange': 'hsl(var(--tucont-orange))',
+					'light-blue': 'hsl(var(--tucont-light-blue))',
+					'secondary-gray': 'hsl(var(--tucont-secondary-gray))',
+					'cta-green': 'hsl(var(--tucont-cta-green))',
+					'text-primary': 'hsl(var(--tucont-text-primary))',
+					'text-secondary': 'hsl(var(--tucont-text-secondary))'
 				}
 			},
 			borderRadius: {
