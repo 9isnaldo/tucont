@@ -78,7 +78,7 @@ const TwoAvenuesSection = () => {
             </div>
 
             <div className="absolute inset-0 bg-gradient-to-r from-orange-500/30 to-red-500/30 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
-            <div className="relative bg-slate-900/80 backdrop-blur-xl border border-orange-400/50 rounded-3xl p-8 shadow-2xl hover:shadow-orange-500/30 transition-all duration-500 transform hover:scale-105 hover:-translate-y-2 h-full">
+            <div className="relative bg-background backdrop-blur-xl border border-orange-400/50 rounded-3xl p-8 shadow-2xl hover:shadow-orange-500/30 transition-all duration-500 transform hover:scale-105 hover:-translate-y-2 h-full">
               
               <div className="flex items-center gap-4 mb-6 mt-4">
                 <div className="w-16 h-16 bg-gradient-to-r from-orange-500 to-red-500 rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
@@ -95,28 +95,28 @@ const TwoAvenuesSection = () => {
                 </div>
               </div>
               
-              <h4 className="text-xl font-semibold text-white mb-4">
+              <h4 className="text-xl font-semibold text-foreground mb-4">
                 Planos, estratégia e operação
               </h4>
               
-              <p className="text-orange-200 mb-6 leading-relaxed">
+              <p className="text-muted-foreground mb-6 leading-relaxed">
                 Da ideia a operação, do plano a execução, nós vamos com você!
               </p>
 
               <ul className="space-y-3 mb-8">
-                <li className="flex items-center gap-3 text-slate-300">
+                <li className="flex items-center gap-3 text-muted-foreground">
                   <div className="w-2 h-2 bg-orange-400 rounded-full"></div>
                   <span>Educação, materiais e frameworks aplicáveis imediatamente</span>
                 </li>
-                <li className="flex items-center gap-3 text-slate-300">
+                <li className="flex items-center gap-3 text-muted-foreground">
                   <div className="w-2 h-2 bg-orange-400 rounded-full"></div>
                   <span>Do MVP ao Go-to-Market</span>
                 </li>
-                <li className="flex items-center gap-3 text-slate-300">
+                <li className="flex items-center gap-3 text-muted-foreground">
                   <div className="w-2 h-2 bg-orange-400 rounded-full"></div>
                   <span>Venda, emita notas e controle o financeiro em nosso ERP</span>
                 </li>
-                <li className="flex items-center gap-3 text-slate-300">
+                <li className="flex items-center gap-3 text-muted-foreground">
                   <div className="w-2 h-2 bg-orange-400 rounded-full"></div>
                   <span>Mentoria 1:1 especializada</span>
                 </li>
@@ -135,7 +135,7 @@ const TwoAvenuesSection = () => {
           {/* Avenida Legal - Right side (destination) */}
           <div className="group relative order-2">
             <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
-            <div className="relative bg-slate-900/80 backdrop-blur-xl border border-blue-400/30 rounded-3xl p-8 shadow-2xl hover:shadow-blue-500/20 transition-all duration-500 transform hover:scale-105 hover:-translate-y-2 h-full">
+            <div className="relative bg-background backdrop-blur-xl border border-blue-400/30 rounded-3xl p-8 shadow-2xl hover:shadow-blue-500/20 transition-all duration-500 transform hover:scale-105 hover:-translate-y-2 h-full">
               
               {/* Rótulo da Avenida */}
               <div className="absolute -top-3 left-6">
@@ -160,29 +160,29 @@ const TwoAvenuesSection = () => {
                 </div>
               </div>
               
-              <h4 className="text-xl font-semibold text-white mb-4">
+              <h4 className="text-xl font-semibold text-foreground mb-4">
                 Conformidade Fiscal
               </h4>
               
-              <p className="text-blue-200 mb-6 leading-relaxed">
+              <p className="text-muted-foreground mb-6 leading-relaxed">
                 Automação e IA para agilizar cuidar da burocracia fiscal. Nossa equipe para cuidar de você e sua empresa. 
                 Faz o seu. A gente cuida do resto.
               </p>
 
               <ul className="space-y-3 mb-8">
-                <li className="flex items-center gap-3 text-slate-300">
+                <li className="flex items-center gap-3 text-muted-foreground">
                   <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
                   <span>Emissão automática de notas fiscais</span>
                 </li>
-                <li className="flex items-center gap-3 text-slate-300">
+                <li className="flex items-center gap-3 text-muted-foreground">
                   <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
                   <span>Compliance fiscal em tempo real</span>
                 </li>
-                <li className="flex items-center gap-3 text-slate-300">
+                <li className="flex items-center gap-3 text-muted-foreground">
                   <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
                   <span>Seus documentos disponíveis 24/7</span>
                 </li>
-                <li className="flex items-center gap-3 text-slate-300">
+                <li className="flex items-center gap-3 text-muted-foreground">
                   <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
                   <span>WhatsApp, chat e e-mail SEM enrolação, perguntas ou solicitações no seu tempo</span>
                 </li>

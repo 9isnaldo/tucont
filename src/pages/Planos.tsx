@@ -11,7 +11,7 @@ const Planos = () => {
 
   const plans = [
     {
-      name: "Zen Plus",
+      name: "Tucont Essencial",
       description: "Para empreendedores que estão começando",
       monthlyPrice: "R$ 149,00",
       annualPrice: "R$ 134,10", // 10% discount
@@ -27,7 +27,7 @@ const Planos = () => {
       color: "from-blue-500 to-blue-600"
     },
     {
-      name: "Zen Pro",
+      name: "Tucont Evoluindo",
       description: "Para empresas que querem escalar",
       monthlyPrice: "R$ 299,00",
       annualPrice: "R$ 269,10", // 10% discount
@@ -41,6 +41,24 @@ const Planos = () => {
       cta: "COMECE AGORA",
       popular: true,
       color: "from-orange-500 to-orange-600"
+    },
+    {
+      name: "Tucont Crescimento",
+      description: "Para empresas em pleno crescimento",
+      monthlyPrice: "R$ 499,00",
+      annualPrice: "R$ 449,10", // 10% discount
+      features: [
+        "Contabilidade completa",
+        "Processo de abertura",
+        "Emissão de NFs pela PJZen",
+        "Até 5 sócios (Pró-Labore)",
+        "Até 500K de faturamento/mês",
+        "BPO Financeiro completo",
+        "Mentoria estratégica semanal"
+      ],
+      cta: "COMECE AGORA",
+      popular: false,
+      color: "from-purple-500 to-purple-600"
     }
   ];
 
@@ -130,7 +148,7 @@ const Planos = () => {
             </div>
 
             {/* Plans Grid */}
-            <div className="grid md:grid-cols-2 gap-6 mb-16">
+            <div className="grid md:grid-cols-3 gap-6 mb-16">
               {plans.map((plan, index) => (
                 <div 
                   key={index}
@@ -228,8 +246,9 @@ const Planos = () => {
                 <thead>
                   <tr className="border-b border-border">
                     <th className="text-left py-4 text-tucont-text-primary">Recursos</th>
-                    <th className="text-center py-4 text-tucont-royal">Zen Plus</th>
-                    <th className="text-center py-4 text-tucont-orange">Zen Pro</th>
+                    <th className="text-center py-4 text-tucont-royal">Tucont Essencial</th>
+                    <th className="text-center py-4 text-tucont-orange">Tucont Evoluindo</th>
+                    <th className="text-center py-4 text-purple-600">Tucont Crescimento</th>
                   </tr>
                 </thead>
                 <tbody className="text-sm">
@@ -237,26 +256,31 @@ const Planos = () => {
                     <td className="py-4 text-tucont-text-secondary">Notas fiscais/mês</td>
                     <td className="text-center py-4 text-tucont-text-primary">100</td>
                     <td className="text-center py-4 text-tucont-text-primary">500</td>
+                    <td className="text-center py-4 text-tucont-text-primary">Ilimitado</td>
                   </tr>
                   <tr className="border-b border-border">
                     <td className="py-4 text-tucont-text-secondary">Usuários</td>
                     <td className="text-center py-4 text-tucont-text-primary">1</td>
                     <td className="text-center py-4 text-tucont-text-primary">3</td>
+                    <td className="text-center py-4 text-tucont-text-primary">5</td>
                   </tr>
                   <tr className="border-b border-border">
                     <td className="py-4 text-tucont-text-secondary">Mentoria</td>
                     <td className="text-center py-4 text-tucont-text-primary">-</td>
                     <td className="text-center py-4 text-tucont-text-primary">Mensal</td>
+                    <td className="text-center py-4 text-tucont-text-primary">Semanal</td>
                   </tr>
                   <tr className="border-b border-border">
                     <td className="py-4 text-tucont-text-secondary">BPO Financeiro</td>
                     <td className="text-center py-4 text-tucont-text-primary">-</td>
                     <td className="text-center py-4 text-tucont-text-primary">✓</td>
+                    <td className="text-center py-4 text-tucont-text-primary">✓ Completo</td>
                   </tr>
                   <tr>
                     <td className="py-4 text-tucont-text-secondary">Suporte</td>
                     <td className="text-center py-4 text-tucont-text-primary">Comercial</td>
                     <td className="text-center py-4 text-tucont-text-primary">Prioritário</td>
+                    <td className="text-center py-4 text-tucont-text-primary">VIP</td>
                   </tr>
                 </tbody>
               </table>

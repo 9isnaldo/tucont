@@ -38,7 +38,7 @@ const InteractiveAISection = () => {
   };
 
   return (
-    <section className="py-24 px-4 bg-tucont-secondary-gray relative overflow-hidden">
+    <section className="py-24 px-4 bg-background relative overflow-hidden">
       {/* Background Effects */}
       <div className="absolute inset-0 bg-gradient-to-r from-tucont-royal/5 via-transparent to-tucont-orange/5"></div>
       <div className="absolute top-1/3 left-1/3 w-80 h-80 bg-tucont-royal/10 rounded-full blur-3xl animate-pulse"></div>
@@ -65,24 +65,24 @@ const InteractiveAISection = () => {
           </p>
         </div>
 
-        {/* Input Interface */}
+        {/* Input Interface - Estilo da imagem anexa */}
         <div className="space-y-6">
           <div className="relative">
-            <div className="flex gap-3 bg-slate-800/50 backdrop-blur-xl border border-slate-700/50 rounded-2xl p-4 shadow-2xl">
+            <div className="flex gap-3 bg-background/90 backdrop-blur-xl border border-border rounded-2xl p-4 shadow-2xl max-w-2xl mx-auto">
               <div className="flex-1">
                 <input
                   type="text"
-                  placeholder="Ex: Quero abrir uma empresa de tecnologia"
+                  placeholder="Vamos destravar, escreva o que você precisa..."
                   value={inputValue}
                   onChange={(e) => setInputValue(e.target.value)}
                   onKeyPress={(e) => e.key === 'Enter' && handleInputSubmit()}
-                  className="w-full bg-transparent text-white placeholder:text-slate-400 text-lg focus:outline-none"
+                  className="w-full bg-transparent text-foreground placeholder:text-muted-foreground text-lg focus:outline-none"
                 />
               </div>
               <Button 
                 onClick={handleInputSubmit}
                 disabled={!inputValue.trim() || isTyping}
-                className="bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-600 hover:to-blue-600 px-6 py-3 rounded-xl font-semibold"
+                className="bg-tucont-cta-green hover:bg-tucont-cta-green/90 px-6 py-3 rounded-xl font-semibold text-white"
               >
                 {isTyping ? (
                   <div className="flex items-center gap-2">
@@ -92,38 +92,42 @@ const InteractiveAISection = () => {
                 ) : (
                   <div className="flex items-center gap-2">
                     <Sparkles className="w-5 h-5" />
-                    Analisar
+                    Resolver
                   </div>
                 )}
               </Button>
             </div>
+            
+            <p className="text-muted-foreground text-sm text-center mt-3">
+              Resposta em minutos • Sem formulários • Sem enrolação
+            </p>
           </div>
 
           {/* AI Response */}
           {(isTyping || aiResponse) && (
-            <div className="bg-gradient-to-r from-purple-900/30 to-slate-800/30 backdrop-blur-xl border border-purple-400/30 rounded-2xl p-6">
+            <div className="bg-secondary backdrop-blur-xl border border-primary/30 rounded-2xl p-6 max-w-2xl mx-auto">
               <div className="flex items-start gap-4">
-                <div className="w-10 h-10 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full flex items-center justify-center flex-shrink-0">
-                  <Bot className="w-6 h-6 text-white" />
+                <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center flex-shrink-0">
+                  <Bot className="w-6 h-6 text-primary-foreground" />
                 </div>
                 <div className="flex-1">
-                  <h4 className="font-semibold text-purple-300 mb-2">IA Tucont</h4>
+                  <h4 className="font-semibold text-primary mb-2">IA Tucont</h4>
                   {isTyping ? (
-                    <div className="flex items-center gap-2 text-slate-400">
+                    <div className="flex items-center gap-2 text-muted-foreground">
                       <div className="flex gap-1">
-                        <div className="w-2 h-2 bg-purple-400 rounded-full animate-bounce"></div>
-                        <div className="w-2 h-2 bg-purple-400 rounded-full animate-bounce delay-100"></div>
-                        <div className="w-2 h-2 bg-purple-400 rounded-full animate-bounce delay-200"></div>
+                        <div className="w-2 h-2 bg-primary rounded-full animate-bounce"></div>
+                        <div className="w-2 h-2 bg-primary rounded-full animate-bounce delay-100"></div>
+                        <div className="w-2 h-2 bg-primary rounded-full animate-bounce delay-200"></div>
                       </div>
                       Processando sua demanda...
                     </div>
                   ) : (
                     <>
-                      <p className="text-slate-200 leading-relaxed mb-4">{aiResponse}</p>
+                      <p className="text-foreground leading-relaxed mb-4">{aiResponse}</p>
                       <div className="flex flex-col sm:flex-row gap-3">
                         <Button 
                           onClick={openWhatsApp}
-                          className="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white px-6 py-3 rounded-xl font-semibold shadow-lg hover:shadow-green-500/25 transition-all duration-300"
+                          className="bg-tucont-cta-green hover:bg-tucont-cta-green/90 text-white px-6 py-3 rounded-xl font-semibold shadow-lg transition-all duration-300"
                         >
                           <MessageCircle className="w-5 h-5 mr-2" />
                           Conversar no WhatsApp
@@ -131,7 +135,7 @@ const InteractiveAISection = () => {
                         </Button>
                         <Button 
                           onClick={() => setIsModalOpen(true)}
-                          className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white px-6 py-3 rounded-xl font-semibold shadow-lg hover:shadow-orange-500/25 transition-all duration-300"
+                          className="bg-tucont-orange hover:bg-tucont-orange/90 text-white px-6 py-3 rounded-xl font-semibold shadow-lg transition-all duration-300"
                         >
                           Configurar minha empresa agora
                         </Button>
@@ -146,12 +150,12 @@ const InteractiveAISection = () => {
           {/* CTA when no response yet */}
           {!isTyping && !aiResponse && (
             <div className="text-center">
-              <p className="text-slate-400 mb-4">
+              <p className="text-muted-foreground mb-4">
                 Ou fale diretamente com nossa equipe:
               </p>
               <Button 
                 onClick={openWhatsApp}
-                className="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white px-6 py-3 rounded-xl font-semibold shadow-lg hover:shadow-green-500/25 transition-all duration-300"
+                className="bg-tucont-cta-green hover:bg-tucont-cta-green/90 text-white px-6 py-3 rounded-xl font-semibold shadow-lg transition-all duration-300"
               >
                 <MessageCircle className="w-5 h-5 mr-2" />
                 Conversar no WhatsApp
