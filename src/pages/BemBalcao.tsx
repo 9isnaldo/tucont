@@ -209,21 +209,6 @@ const BemBalcao = () => {
           </div>
         </section>
 
-        {/* Stats Section */}
-        <section className="py-16 px-4 bg-slate-900/50">
-          <div className="max-w-6xl mx-auto">
-            <div className="grid md:grid-cols-4 gap-8">
-              {stats.map((stat, index) => (
-                <div key={index} className="text-center">
-                  <div className="text-4xl font-bold bg-gradient-to-r from-blue-400 to-orange-400 bg-clip-text text-transparent mb-2">
-                    {stat.value}
-                  </div>
-                  <div className="text-slate-300">{stat.label}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
 
         {/* Certificate Offer Section */}
         <section className="py-16 px-4">
