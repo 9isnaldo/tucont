@@ -5,7 +5,7 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
   {
     variants: {
       variant: {
@@ -18,8 +18,10 @@ const buttonVariants = cva(
           "bg-secondary text-secondary-foreground hover:bg-secondary/80",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
-        cta: "bg-tucont-cta-green text-white hover:bg-tucont-cta-green/90 hover-glow-cta",
-        royal: "bg-tucont-royal text-white hover:bg-tucont-royal/90 hover-glow-royal",
+        "primary-outline": "border-2 border-tucont-text-primary bg-background text-tucont-text-primary hover:bg-tucont-text-primary hover:text-white font-semibold",
+        "cta-orange": "bg-tucont-orange text-white hover:bg-tucont-orange/90 font-semibold shadow-lg hover:shadow-xl hover:shadow-tucont-orange/25 hover:-translate-y-0.5",
+        "cta-green": "bg-tucont-cta-green text-white hover:bg-tucont-cta-green/90 font-semibold shadow-lg hover:shadow-xl hover:shadow-tucont-cta-green/25 hover:-translate-y-0.5",
+        "royal": "bg-tucont-royal text-white hover:bg-tucont-royal/90 font-semibold shadow-lg hover:shadow-xl hover:shadow-tucont-royal/25 hover:-translate-y-0.5",
       },
       size: {
         default: "h-10 px-4 py-2",

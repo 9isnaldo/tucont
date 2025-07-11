@@ -194,7 +194,8 @@ const Planos = () => {
                     {/* CTA Button */}
                     <Button 
                       onClick={() => handlePlanClick(plan)}
-                      className={`w-full bg-gradient-to-r ${plan.color} hover:shadow-lg text-white rounded-xl py-4 font-semibold text-lg mb-4`}
+                      variant={plan.popular ? "cta-orange" : "royal"}
+                      className="w-full rounded-xl py-4 font-semibold text-lg mb-4"
                     >
                       {plan.cta}
                     </Button>
@@ -318,7 +319,8 @@ const Planos = () => {
               </p>
               <Button 
                 onClick={() => window.open(`https://wa.me/5511999999999?text=${encodeURIComponent("Quero ajuda para escolher o melhor plano para minha empresa")}`, '_blank')}
-                className="bg-tucont-cta hover:bg-tucont-cta/90 text-white px-8 py-4 text-lg rounded-full shadow-lg hover-glow-cta transition-all duration-300"
+                variant="cta-green"
+                className="px-8 py-4 text-lg rounded-full"
               >
                 <Phone className="w-5 h-5 mr-2" />
                 Falar com nossa equipe

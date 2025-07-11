@@ -57,16 +57,14 @@ const HeroSection = () => {
           {/* User Type Buttons */}
           <div className="flex flex-col sm:flex-row justify-center gap-4 mb-8">
             <Button 
-              variant="outline" 
+              variant="primary-outline" 
               size="lg"
-              className="border-foreground text-foreground hover:bg-foreground hover:text-background"
             >
               Quero minha empresa agora
             </Button>
             <Button 
-              variant="cta" 
+              variant="cta-orange" 
               size="lg"
-              className="bg-tucont-orange hover:bg-tucont-orange/90 text-white"
             >
               Fale Conosco no WhatsApp
             </Button>

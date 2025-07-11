@@ -59,7 +59,7 @@ const ReadyToStartSection = () => {
                 <p className="text-tucont-text-secondary mb-6 leading-relaxed">{option.description}</p>
                 <Button 
                   onClick={() => openWhatsApp(`Quero ${option.action.toLowerCase()} com a Tucont`)}
-                  variant="cta"
+                  variant="cta-orange"
                   className="w-full py-3 rounded-xl font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
                 >
                   {option.action}

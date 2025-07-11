@@ -101,15 +101,14 @@ const Header = () => {
           <div className="hidden lg:flex items-center gap-4">
             <Link to="/planos">
               <Button 
-                variant="outline" 
-                className="border-orange-500 text-orange-500 bg-transparent backdrop-blur-sm hover:bg-orange-500/10 hover:border-orange-400 hover:text-orange-400 transition-all duration-300"
+                variant="primary-outline"
               >
                 Planos
               </Button>
             </Link>
             <Button 
               onClick={() => window.open('https://app.tucont.com.br/auth/login', '_blank')} 
-              className="bg-orange-500/20 border border-orange-500 text-orange-500 backdrop-blur-sm hover:bg-orange-500/30 hover:border-orange-400 hover:text-orange-400 hover:shadow-lg hover:shadow-orange-500/25 transition-all duration-300"
+              variant="cta-orange"
             >
               Acessar
             </Button>
@@ -143,15 +142,16 @@ const Header = () => {
               <div className="flex gap-4 pt-4">
                 <Link to="/planos" className="flex-1">
                   <Button 
-                    variant="outline" 
-                    className="w-full border-orange-500 text-orange-500 bg-transparent backdrop-blur-sm hover:bg-orange-500/10"
+                    variant="primary-outline"
+                    className="w-full"
                   >
                     Planos
                   </Button>
                 </Link>
                 <Button 
                   onClick={() => window.open('https://app.tucont.com.br/auth/login', '_blank')} 
-                  className="flex-1 bg-orange-500/20 border border-orange-500 text-orange-500 backdrop-blur-sm hover:bg-orange-500/30"
+                  variant="cta-orange"
+                  className="flex-1"
                 >
                   Acessar
                 </Button>

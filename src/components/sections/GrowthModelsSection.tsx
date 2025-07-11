@@ -172,7 +172,7 @@ const GrowthModelsSection = () => {
                   </p>
                   <Button 
                     onClick={() => handleStepClick(step)}
-                    variant="cta"
+                    variant="cta-green"
                     size="lg"
                     className="font-semibold px-6 py-3 lg:px-8 lg:py-4 rounded-full shadow-2xl transition-all duration-300 hover:scale-105"
                   >

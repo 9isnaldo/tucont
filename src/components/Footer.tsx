@@ -27,11 +27,11 @@ const Footer = () => {
               Revolucionando a contabilidade no Brasil com IA, automação e mentoria estratégica.
             </p>
             <div className="flex gap-4">
-              <button onClick={openWhatsApp} className="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center hover:bg-green-700 transition-colors">
-                <MessageCircle className="w-6 h-6" />
+              <button onClick={openWhatsApp} className="w-12 h-12 bg-tucont-cta-green rounded-full flex items-center justify-center hover:bg-tucont-cta-green/90 transition-all duration-300 hover:shadow-lg hover:shadow-tucont-cta-green/25 hover:-translate-y-0.5">
+                <MessageCircle className="w-6 h-6 text-white" />
               </button>
-              <a href="#" className="w-12 h-12 bg-pink-600 rounded-full flex items-center justify-center hover:bg-pink-700 transition-colors">
-                <Instagram className="w-6 h-6" />
+              <a href="#" className="w-12 h-12 bg-gradient-to-r from-pink-500 to-pink-600 rounded-full flex items-center justify-center hover:from-pink-600 hover:to-pink-700 transition-all duration-300 hover:shadow-lg hover:shadow-pink-500/25 hover:-translate-y-0.5">
+                <Instagram className="w-6 h-6 text-white" />
               </a>
             </div>
           </div>
