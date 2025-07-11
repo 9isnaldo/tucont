@@ -139,7 +139,9 @@ const ServicesSection = () => {
                 {/* CTA Button */}
                 <Button 
                   onClick={() => handleServiceClick(service)}
-                  className={`w-full bg-gradient-to-r ${service.color} hover:shadow-lg text-white rounded-xl py-4 font-semibold transform transition-all duration-300 ${hoveredCard === index ? 'scale-105' : ''} text-lg`}
+                  variant="cta-green"
+                  size="lg"
+                  className={`w-full transform transition-all duration-300 ${hoveredCard === index ? 'scale-105' : ''}`}
                 >
                   Quero este agora
                   <ArrowRight className="w-5 h-5 ml-2" />
@@ -153,8 +155,9 @@ const ServicesSection = () => {
         <div className="text-center mb-16">
           <Button 
             onClick={handleSeeAllServices}
-            variant="outline"
-            className="border-slate-600 text-slate-300 hover:bg-slate-800/50 px-8 py-4 text-lg rounded-xl"
+            variant="primary-outline"
+            size="lg"
+            className="px-8 py-4 text-lg"
           >
             Ver todos os serviços
             <ArrowRight className="w-5 h-5 ml-2" />
@@ -172,7 +175,9 @@ const ServicesSection = () => {
             </p>
             <Button 
               onClick={() => window.open(`https://wa.me/5511999999999?text=${encodeURIComponent("Quero uma análise completa da minha empresa")}`, '_blank')}
-              className="bg-gradient-to-r from-blue-500 via-purple-500 to-orange-500 hover:from-blue-600 hover:via-purple-600 hover:to-orange-600 text-white px-10 py-5 text-xl rounded-full shadow-2xl transform hover:scale-105 transition-all duration-300"
+              variant="royal"
+              size="lg"
+              className="px-10 py-5 text-xl rounded-full shadow-2xl transform hover:scale-105 transition-all duration-300"
             >
               <Sparkles className="w-6 h-6 mr-3" />
               Análise gratuita com IA

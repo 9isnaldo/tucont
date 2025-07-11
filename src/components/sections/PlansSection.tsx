@@ -128,7 +128,9 @@ const PlansSection = () => {
                 {/* CTA Button */}
                 <Button 
                   onClick={() => handlePlanClick(plan)}
-                  className={`w-full bg-gradient-to-r ${plan.color} hover:shadow-lg text-white rounded-xl py-4 font-semibold hover-glow-orange text-lg`}
+                  variant={plan.popular ? "cta-orange" : plan.name === "Essencial" ? "royal" : "cta-green"}
+                  size="lg"
+                  className="w-full"
                 >
                   {plan.cta}
                   <ArrowRight className="w-5 h-5 ml-2" />
@@ -149,7 +151,9 @@ const PlansSection = () => {
             </p>
             <Button 
               onClick={() => window.open(`https://wa.me/5511999999999?text=${encodeURIComponent("Quero ajuda para escolher o melhor plano para minha empresa")}`, '_blank')}
-              className="bg-gradient-to-r from-blue-500 via-purple-500 to-orange-500 hover:from-blue-600 hover:via-purple-600 hover:to-orange-600 text-white px-10 py-5 text-xl rounded-full shadow-2xl transform hover:scale-105 transition-all duration-300"
+              variant="royal"
+              size="lg"
+              className="px-10 py-5 text-xl rounded-full shadow-2xl transform hover:scale-105 transition-all duration-300"
             >
               <Zap className="w-6 h-6 mr-3" />
               Falar com especialista

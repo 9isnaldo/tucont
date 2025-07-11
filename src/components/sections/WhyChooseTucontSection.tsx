@@ -247,17 +247,18 @@ const WhyChooseTucontSection = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Button 
                 onClick={() => setIsModalOpen(true)}
+                variant="royal"
                 size="lg" 
-                className="bg-gradient-to-r from-blue-500 to-orange-500 hover:from-blue-600 hover:to-orange-600 text-white font-semibold px-8 py-4 rounded-full shadow-2xl shadow-blue-500/25 transition-all duration-300 hover:scale-105 hover:shadow-orange-500/25"
+                className="px-8 py-4 rounded-full shadow-2xl transition-all duration-300 hover:scale-105"
               >
                 Começar Agora
                 <ArrowRight className="w-5 h-5 ml-2" />
               </Button>
               
               <Button 
-                variant="outline" 
+                variant="primary-outline"
                 size="lg"
-                className="border-2 border-slate-400 text-slate-300 hover:bg-slate-800 hover:text-white px-8 py-4 rounded-full transition-all duration-300"
+                className="px-8 py-4 rounded-full transition-all duration-300"
               >
                 Falar com Especialista
               </Button>

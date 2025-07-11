@@ -124,7 +124,9 @@ const TwoAvenuesSection = () => {
 
               <Button 
                 onClick={() => navigateToAvenue('business')}
-                className="w-full bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white rounded-xl py-4 font-semibold text-lg shadow-lg"
+                variant="cta-orange"
+                size="lg"
+                className="w-full"
               >
                 Ver soluções desta avenida
                 <ArrowRight className="w-5 h-5 ml-2" />
@@ -190,7 +192,9 @@ const TwoAvenuesSection = () => {
 
               <Button 
                 onClick={() => navigateToAvenue('legal')}
-                className="w-full bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white rounded-xl py-4 font-semibold text-lg"
+                variant="royal"
+                size="lg"
+                className="w-full"
               >
                 Ver soluções desta avenida
                 <ArrowRight className="w-5 h-5 ml-2" />
@@ -211,7 +215,9 @@ const TwoAvenuesSection = () => {
         <div className="text-center">
           <Button 
             onClick={() => setIsFormModalOpen(true)}
-            className="bg-gradient-to-r from-blue-500 via-purple-500 to-orange-500 hover:from-blue-600 hover:via-purple-600 hover:to-orange-600 text-white px-10 py-5 text-xl rounded-full shadow-2xl transform hover:scale-105 transition-all duration-300"
+            variant="royal"
+            size="lg"
+            className="px-10 py-5 text-xl rounded-full shadow-2xl transform hover:scale-105 transition-all duration-300"
           >
             Quero as duas avenidas integradas
           </Button>

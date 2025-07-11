@@ -85,7 +85,9 @@ const AgentesSection = () => {
             <div className="space-y-4">
               <Button 
                 onClick={openWhatsApp}
-                className="w-full md:w-auto bg-gradient-to-r from-orange-500 to-yellow-500 hover:from-orange-600 hover:to-yellow-600 text-slate-900 px-10 py-5 text-xl font-bold rounded-2xl shadow-2xl transform hover:scale-105 transition-all duration-300"
+                variant="cta-orange"
+                size="lg"
+                className="w-full md:w-auto px-10 py-5 text-xl font-bold rounded-2xl shadow-2xl transform hover:scale-105 transition-all duration-300"
               >
                 <Users className="w-6 h-6 mr-3" />
                 Quero ser um Agente Tucont

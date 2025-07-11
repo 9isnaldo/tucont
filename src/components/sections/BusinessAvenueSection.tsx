@@ -66,7 +66,9 @@ const BusinessAvenueSection = () => {
             </div>
             
             <Button 
-              className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 px-8 py-4 text-lg rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg"
+              variant="cta-orange"
+              size="lg"
+              className="px-8 py-4 text-lg transition-all duration-300 transform hover:scale-105 shadow-lg"
               onClick={() => openWhatsApp("Quero conhecer a Avenida de Negócios da Tucont")}
             >
               <TrendingUp className="w-6 h-6 mr-2" />
