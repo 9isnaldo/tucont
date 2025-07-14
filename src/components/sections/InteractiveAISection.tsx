@@ -34,7 +34,7 @@ const InteractiveAISection = () => {
     const message = inputValue 
       ? `Olá! Acabei de usar a IA no site da Tucont e minha demanda é: ${inputValue}`
       : "Olá! Quero falar com um especialista da Tucont";
-    window.open(`https://wa.me/5511999999999?text=${encodeURIComponent(message)}`, '_blank');
+    window.open(`https://wa.me/5531975740510?text=${encodeURIComponent(message)}`, '_blank');
   };
 
   return (

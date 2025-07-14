@@ -14,7 +14,7 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const openWhatsApp = () => {
-    window.open(`https://wa.me/5511999999999?text=${encodeURIComponent("Olá! Quero conhecer a Tucont")}`, '_blank');
+    window.open(`https://wa.me/5531975740510?text=${encodeURIComponent("Olá! Quero conhecer a Tucont")}`, '_blank');
   };
 
   const scrollToSection = (sectionId: string) => {
@@ -37,7 +37,7 @@ const Header = () => {
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-8">
             <Link to="/" className="text-white hover:text-orange-400 transition-colors font-medium">
-              Iníco
+              Início
             </Link>
             <div className="relative group">
               <button className="text-white hover:text-orange-400 transition-colors font-medium flex items-center gap-1">
@@ -63,7 +63,7 @@ const Header = () => {
                       rel="noopener noreferrer"
                       className="flex items-center gap-3 p-3 hover:bg-slate-700 rounded-md cursor-pointer text-white hover:text-white transition-colors"
                     >
-                      <Home className="w-5 h-5 text-orange-400" />
+                    <Home className="w-5 h-5 text-orange-400" />
                       <span>Abrir empresa</span>
                     </a>
                     

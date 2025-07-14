@@ -18,7 +18,7 @@ const buttonVariants = cva(
           "bg-secondary text-secondary-foreground hover:bg-secondary/80",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
-        "primary-outline": "border-2 border-tucont-text-primary bg-background text-tucont-text-primary hover:bg-tucont-text-primary hover:text-white font-semibold",
+        "primary-outline": "border-2 border-tucont-text-primary bg-background text-tucont-text-primary hover:bg-tucont-text-primary hover:text-white font-semibold shadow-lg hover:shadow-xl hover:shadow-tucont-text-primary/25 hover:-translate-y-0.5",
         "cta-orange": "bg-tucont-orange text-white hover:bg-tucont-orange/90 font-semibold shadow-lg hover:shadow-xl hover:shadow-tucont-orange/25 hover:-translate-y-0.5",
         "cta-green": "bg-tucont-cta-green text-white hover:bg-tucont-cta-green/90 font-semibold shadow-lg hover:shadow-xl hover:shadow-tucont-cta-green/25 hover:-translate-y-0.5",
         "royal": "bg-tucont-royal text-white hover:bg-tucont-royal/90 font-semibold shadow-lg hover:shadow-xl hover:shadow-tucont-royal/25 hover:-translate-y-0.5",

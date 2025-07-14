@@ -30,7 +30,7 @@ const WhatsAppButton = () => {
 
   const openWhatsApp = () => {
     const message = "Olá! Vim do site e quero conhecer a Tucont 🚀";
-    window.open(`https://wa.me/5511999999999?text=${encodeURIComponent(message)}`, '_blank');
+    window.open(`https://wa.me/5531975740510?text=${encodeURIComponent(message)}`, '_blank');
   };
 
   if (!isVisible) return null;
