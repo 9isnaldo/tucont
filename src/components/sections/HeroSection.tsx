@@ -1,7 +1,6 @@
 
 import { Button } from "@/components/ui/button";
 import { Sparkles } from "lucide-react";
-
 const HeroSection = () => {
 
   return (
@@ -98,10 +97,10 @@ const HeroSection = () => {
               {/* WhatsApp Header */}
               <div className="flex items-center gap-3 mb-6 pb-4 border-b border-border">
                 <div className="w-10 h-10 bg-tucont-cta-green rounded-full flex items-center justify-center">
-                  <span className="text-white font-semibold text-sm">T</span>
+                  <img src="/lovable-uploads/logo-tucont.svg" alt="Tucont" className="h-12" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-foreground">Assistente TuCont</h4>
+                  <h4 className="font-bold text-foreground">Tucont Whatsapp</h4>
                   <p className="text-sm text-tucont-cta-green font-semibold">Online agora</p>
                 </div>
               </div>
@@ -110,7 +109,7 @@ const HeroSection = () => {
               <div className="space-y-4">
                 <div className="bg-muted rounded-2xl rounded-tl-sm p-3">
                   <p className="text-sm text-foreground">
-                    Olá Geraldo 👋! Seja bem-vindo(a) à <strong>Tucont sua contabilidade integrativa!</strong>
+                    Olá Geraldo 👋! Seja bem-vindo(a) à <strong>Tucont sua Contabilidade Integrativa!</strong>
                   </p>
                 </div>
 
