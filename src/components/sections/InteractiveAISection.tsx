@@ -38,7 +38,7 @@ const InteractiveAISection = () => {
   };
 
   return (
-    <section className="py-24 px-4 bg-background relative overflow-hidden">
+    <section className="py-24 px-4 bg-slate-900/95 relative overflow-hidden">
       {/* Background Effects */}
       <div className="absolute inset-0 bg-gradient-to-r from-tucont-royal/5 via-transparent to-tucont-orange/5"></div>
       <div className="absolute top-1/3 left-1/3 w-80 h-80 bg-tucont-royal/10 rounded-full blur-3xl animate-pulse"></div>
@@ -47,21 +47,21 @@ const InteractiveAISection = () => {
         
         {/* Header */}
         <div className="text-center mb-12">
-          <div className="inline-flex items-center gap-2 bg-tucont-royal/10 backdrop-blur-sm border border-tucont-royal/30 rounded-full px-6 py-3 mb-8">
+          <div className="inline-flex items-center gap-2 bg-white backdrop-blur-sm border border-tucont-royal/40 rounded-full px-6 py-3 mb-8">
             <Bot className="w-5 h-5 text-tucont-royal" />
-            <span className="text-sm font-medium text-tucont-royal">
+            <span className="text-sm font-semibold text-tucont-royal">
               IA Interativa
             </span>
           </div>
           
           <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
-            <span className="text-tucont-text-primary">
-              Vamos resolvendo, escreve aí
+            <span className="text-white">
+              Escreve daí, que vamos resolvendo de cá
             </span>
           </h2>
           
-          <p className="text-lg text-tucont-text-secondary max-w-2xl mx-auto leading-relaxed">
-            Nossa IA entende sua necessidade e conecta você diretamente com o especialista certo.
+          <p className="text-lg text-tucont-text-secondary max-w-5xl mx-auto leading-relaxed">
+            Nossa IA entende sua necessidade e conecta você diretamente com a solução.
           </p>
         </div>
 
@@ -98,8 +98,8 @@ const InteractiveAISection = () => {
               </Button>
             </div>
             
-            <p className="text-muted-foreground text-sm text-center mt-3">
-              Resposta em minutos • Sem formulários • Sem enrolação
+            <p className="text-white text-sm font-semibold text-center mt-3">
+              Sem formulários • Sem enrolação
             </p>
           </div>
 

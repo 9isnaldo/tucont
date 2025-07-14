@@ -8,7 +8,6 @@ const HeroSection = () => {
     <section className="min-h-screen bg-gradient-to-br from-background via-secondary to-muted relative overflow-hidden flex items-center">
       {/* Background effects */}
       <div className="absolute inset-0">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl animate-pulse"></div>
         <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-tucont-orange/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-r from-primary/5 to-tucont-orange/5 rounded-full blur-3xl animate-pulse delay-500"></div>
       </div>
@@ -27,25 +26,25 @@ const HeroSection = () => {
           {/* Headlines */}
           <div className="space-y-6">
             <h1 className="text-4xl md:text-6xl font-bold leading-tight">
-              <span className="text-foreground">
+              <span className="text-slate-900/95">
                 A{" "}
               </span>
               <span className="text-tucont-orange">
                 tucont{" "}
               </span>
-              <span className="text-foreground">
+              <span className="text-slate-900/95">
                 é a primeira contabilidade{" "}
               </span>
               <span className="text-tucont-orange">
                 integrativa{" "}
               </span>
-              <span className="text-foreground">
+              <span className="text-slate-900/95">
                 do Brasil!
               </span>
             </h1>
             
             <div className="space-y-4">
-              <p className="text-xl md:text-2xl font-bold text-muted-foreground max-w-4xl mx-auto leading-relaxed">
+              <p className="text-xl md:text-2xl font-bold text-tucont-royal max-w-4xl mx-auto leading-relaxed">
                 Seu sonho precisa de um CNPJ? A gente resolve!
               </p>
               <p className="text-lg md:text-xl font-semibold text-foreground max-w-4xl mx-auto">
@@ -55,15 +54,15 @@ const HeroSection = () => {
           </div>
 
           {/* User Type Buttons */}
-          <div className="flex flex-col sm:flex-row justify-center gap-4 mb-8">
+          <div className="flex flex-col sm:flex-row justify-center gap-8 mb-8">
             <Button 
-              variant="primary-outline" 
+              variant="cta-orange" 
               size="lg"
             >
               Quero minha empresa agora
             </Button>
             <Button 
-              variant="cta-orange" 
+              variant="cta-green" 
               size="lg"
             >
               Fale Conosco no WhatsApp
@@ -71,20 +70,20 @@ const HeroSection = () => {
           </div>
 
           {/* Features Grid */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8 max-w-4xl mx-auto">
-            <div className="flex items-center gap-2 text-sm text-muted-foreground">
+          <div className="grid grid-cols-2 gap-4 mb-8 max-w-6xl mx-auto">
+            <div className="flex items-center gap-2 text-sm font-semibold text-muted-foreground">
               <div className="w-2 h-2 bg-red-500 rounded-full"></div>
               <span>Abertura de CNPJ em 24h</span>
             </div>
-            <div className="flex items-center gap-2 text-sm text-muted-foreground">
+            <div className="flex items-center gap-2 text-sm font-semibold text-muted-foreground">
               <div className="w-2 h-2 bg-red-500 rounded-full"></div>
               <span>100% Digital</span>
             </div>
-            <div className="flex items-center gap-2 text-sm text-muted-foreground">
+            <div className="flex items-center gap-2 text-sm font-semibold text-muted-foreground">
               <div className="w-2 h-2 bg-red-500 rounded-full"></div>
               <span>Emita Notas Fiscais em nossa plataforma</span>
             </div>
-            <div className="flex items-center gap-2 text-sm text-muted-foreground">
+            <div className="flex items-center gap-2 text-sm font-semibold text-muted-foreground">
               <div className="w-2 h-2 bg-red-500 rounded-full"></div>
               <span>Atendimento 24/7 WhatsApp</span>
             </div>
@@ -102,8 +101,8 @@ const HeroSection = () => {
                   <span className="text-white font-semibold text-sm">T</span>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-foreground">Assistente TuCont</h4>
-                  <p className="text-sm text-tucont-cta-green">agora online</p>
+                  <h4 className="font-bold text-foreground">Assistente TuCont</h4>
+                  <p className="text-sm text-tucont-cta-green font-semibold">Online agora</p>
                 </div>
               </div>
 
@@ -126,7 +125,7 @@ const HeroSection = () => {
                 </div>
 
                 <div className="bg-primary text-primary-foreground rounded-2xl rounded-tr-sm p-3 ml-8">
-                  <p className="text-sm">1</p>
+                  <p className="text-sm font-semibold">1</p>
                 </div>
 
                 <div className="bg-muted rounded-2xl rounded-tl-sm p-3">

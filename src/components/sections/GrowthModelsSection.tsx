@@ -106,12 +106,8 @@ const GrowthModelsSection = () => {
                 Em qual momento seu negócio está?
               </span>
             </h2>
-            <p className="text-lg md:text-xl text-tucont-text-secondary max-w-4xl mx-auto leading-relaxed">
-              <span className="font-semibold text-tucont-royal">Criar e Validar</span>, 
-              <span className="font-semibold text-tucont-orange"> Regularizar</span>, 
-              <span className="font-semibold text-tucont-royal"> Vender e Emitir Notas</span>, 
-              <span className="font-semibold text-tucont-orange"> Cuidar do Fisco</span>, 
-              <span className="font-semibold text-tucont-royal"> Tracionar e Evoluir</span>.
+            <p className="text-lg font-semibold text-tucont-royal md:text-xl text-tucont-text-secondary max-w-4xl mx-auto leading-relaxed">
+              <span>Criar e Validar, Regularizar, Vender e Emitir Notas, Cuidar do Fisco, Tracionar e Evoluir</span>
             </p>
           </div>
 

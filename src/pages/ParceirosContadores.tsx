@@ -220,15 +220,15 @@ const ParceirosContadores = () => {
         </section>
 
         {/* Stats Section */}
-        <section className="py-16 px-4 bg-slate-900/50">
-          <div className="max-w-6xl mx-auto">
+        <section className="py-16 px-4 bg-slate-900/95">
+          <div className="max-w-7xl mx-auto">
             <div className="grid md:grid-cols-4 gap-8">
               {stats.map((stat, index) => (
                 <div key={index} className="text-center">
-                  <div className="text-4xl font-bold bg-gradient-to-r from-blue-400 to-orange-400 bg-clip-text text-transparent mb-2">
+                  <div className="text-4xl font-bold text-tucont-orange text-transparent mb-2">
                     {stat.value}
                   </div>
-                  <div className="text-slate-300">{stat.label}</div>
+                  <div className="text-white font-bold">{stat.label}</div>
                 </div>
               ))}
             </div>
@@ -239,17 +239,19 @@ const ParceirosContadores = () => {
         <section className="py-16 px-4">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="text-4xl font-bold text-white mb-4">
+              <h2 className="text-6xl font-bold text-slate-900/95 mb-1">
                 Benefícios da Parceria
               </h2>
-              <p className="text-xl text-slate-300">
-                Tudo que você precisa para se destacar no mercado
-              </p>
+              <h2 className="text-lg md:text-xl text-tucont-text-secondary max-w-4xl mx-auto leading-relaxed">
+                <span className="font-semibold text-tucont-royal">
+                  Tudo que você precisa para se destacar no mercado
+                </span>                
+              </h2>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-8">
+            <div className="grid md:grid-cols-2  gap-8">
               {benefits.map((benefit, index) => (
-                <div key={index} className="bg-slate-900/80 backdrop-blur-xl border border-slate-700/50 rounded-2xl p-6 hover:bg-slate-800/80 transition-all duration-300">
+                <div key={index} className="bg-slate-900/80 backdrop-blur-xl border border-slate-700/50 rounded-2xl p-6 bg-slate-900/95 transition-all"> bg-slate-900/95
                   <div className="flex items-center gap-4 mb-4">
                     <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-orange-500 rounded-xl flex items-center justify-center">
                       <benefit.icon className="w-6 h-6 text-white" />
