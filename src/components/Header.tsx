@@ -36,6 +36,9 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-8">
+            <Link to="/" className="text-white hover:text-orange-400 transition-colors font-medium">
+              Iníco
+            </Link>
             <div className="relative group">
               <button className="text-white hover:text-orange-400 transition-colors font-medium flex items-center gap-1">
                 Para você e sua empresa
