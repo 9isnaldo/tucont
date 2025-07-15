@@ -197,15 +197,15 @@ const GrowthModelsSection = () => {
                 ))}
               </div>
 
-              {/* Text side */}
+              {/* Text side - Corrigido para manter os botões sempre clicáveis */}
               <div className="space-y-8 relative order-1 lg:order-2">
                 {businessSteps.map((step, index) => (
                   <div
                     key={step.id}
                     className={`transition-all duration-1000 ease-out ${
                       activeStep === index 
-                        ? 'opacity-100 transform translate-x-0' 
-                        : 'opacity-0 transform translate-x-8 absolute inset-0'
+                        ? 'opacity-100 transform translate-x-0 h-auto' 
+                        : 'opacity-0 transform translate-x-8 h-0 overflow-hidden absolute'
                     }`}
                   >
                     <h3 className="text-3xl lg:text-4xl font-bold text-tucont-text-primary mb-4 lg:mb-6">
@@ -214,15 +214,17 @@ const GrowthModelsSection = () => {
                     <p className="text-lg lg:text-xl text-tucont-text-secondary leading-relaxed mb-6 lg:mb-8">
                       {step.text}
                     </p>
-                    <Button 
-                      onClick={() => handleStepClick(step)}
-                      variant="cta-green"
-                      size="lg"
-                      className="font-semibold px-6 py-3 lg:px-8 lg:py-4 shadow-2xl transition-all duration-300 hover:scale-105"
-                    >
-                      {step.cta}
-                      <ArrowRight className="w-4 h-4 lg:w-5 lg:h-5 ml-2" />
-                    </Button>
+                    <div className="relative z-20"> {/* Adicionado z-index para garantir que o botão fique acima */}
+                      <Button 
+                        onClick={() => handleStepClick(step)}
+                        variant="royal"
+                        size="lg"
+                        className="font-semibold px-6 py-3 lg:px-8 lg:py-4 shadow-2xl transition-all duration-300 hover:scale-105"
+                      >
+                        {step.cta}
+                        <ArrowRight className="w-4 h-4 lg:w-5 lg:h-5 ml-2" />
+                      </Button>
+                    </div>
                   </div>
                 ))}
               </div>

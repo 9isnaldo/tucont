@@ -87,7 +87,7 @@ const TwoAvenuesSection = () => {
           
           {/* Avenida Empreendedora - Left side (start of journey) */}
           <div className="group relative">
-            <div className="bg-card rounded-3xl p-8 shadow-2xl border border-border h-full transition-all duration-500 transform hover:scale-[1.02] hover:-translate-y-2">
+            <div className="bg-card rounded-3xl p-8 shadow-2xl border border-border h-full flex flex-col">
               
               <div className="flex items-center gap-4 mb-6 mt-4">
                 <div className="w-16 h-16 bg-gradient-to-br from-orange-600 to-red-600 rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
@@ -131,15 +131,17 @@ const TwoAvenuesSection = () => {
                 </li>
               </ul>
 
-              <Button 
-                onClick={() => navigateToAvenue('business')}
-                variant="cta-orange"
-                size="lg"
-                className="w-full group-hover:shadow-lg group-hover:shadow-orange-500/30 transition-all"
-              >
-                Ver soluções desta avenida
-                <ArrowRight className="w-5 h-5 ml-2 transition-transform group-hover:translate-x-1" />
-              </Button>
+              <div className="mt-auto pt-6">
+                <Button 
+                  onClick={() => navigateToAvenue('business')}
+                  variant="cta-orange"
+                  size="lg"
+                  className="w-full group-hover:shadow-lg group-hover:shadow-orange-500/30 transition-all"
+                >
+                  Ver soluções desta avenida
+                  <ArrowRight className="w-5 h-5 ml-2 transition-transform group-hover:translate-x-1" />
+                </Button>
+              </div>
             </div>
           </div>
 
