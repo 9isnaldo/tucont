@@ -115,7 +115,7 @@ const TwoAvenuesSection = () => {
               <ul className="space-y-3 mb-8">
                 <li className="flex items-center gap-3 text-orange-500">
                   <div className="w-2 h-2 bg-orange-400 rounded-full flex-shrink-0"></div>
-                  <span>Educação, materiais e frameworks aplicáveis imediatamente</span>
+                  <span>Venda, emita notas e controle o financeiro em nosso ERP</span>
                 </li>
                 <li className="flex items-center gap-3 text-orange-500">
                   <div className="w-2 h-2 bg-orange-400 rounded-full flex-shrink-0"></div>
@@ -123,7 +123,7 @@ const TwoAvenuesSection = () => {
                 </li>
                 <li className="flex items-center gap-3 text-orange-500">
                   <div className="w-2 h-2 bg-orange-400 rounded-full flex-shrink-0"></div>
-                  <span>Venda, emita notas e controle o financeiro em nosso ERP</span>
+                  <span>Educação, materiais e frameworks aplicáveis imediatamente</span>
                 </li>
                 <li className="flex items-center gap-3 text-orange-500">
                   <div className="w-2 h-2 bg-orange-400 rounded-full flex-shrink-0"></div>
@@ -178,11 +178,11 @@ const TwoAvenuesSection = () => {
                 </li>
                 <li className="flex items-center gap-3 text-blue-500">
                   <div className="w-2 h-2 bg-blue-400 rounded-full flex-shrink-0"></div>
-                  <span>Compliance fiscal em tempo real</span>
+                  <span>Obrigações fiscais em tempo real</span>
                 </li>
                 <li className="flex items-center gap-3 text-blue-500">
                   <div className="w-2 h-2 bg-blue-400 rounded-full flex-shrink-0"></div>
-                  <span>Seus documentos disponíveis 24/7</span>
+                  <span>Seus documentos disponíveis na nuvem 24/7</span>
                 </li>
                 <li className="flex items-center gap-3 text-blue-500">
                   <div className="w-2 h-2 bg-blue-400 rounded-full flex-shrink-0"></div>
