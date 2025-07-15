@@ -1,11 +1,10 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { X } from "lucide-react";
+import { X, Send } from "lucide-react";
 
 interface CaptureFormData {
   name: string;
@@ -79,157 +78,154 @@ CNPJ: ${data.cnpj}`;
     onClose();
   };
 
+  if (!isOpen) return null;
+
   return (
-    <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="sm:max-w-md border-0 bg-transparent p-0 shadow-none">
-        <div className="relative">
-          {/* Background glassmorphism */}
-          <div className="absolute inset-0 bg-gradient-to-br from-orange-500/20 via-purple-600/20 to-slate-900/80 backdrop-blur-xl rounded-3xl"></div>
-          <div className="absolute inset-0 bg-gradient-to-br from-orange-400/10 to-purple-500/10 rounded-3xl"></div>
-          
-          {/* Content */}
-          <div className="relative p-8 rounded-3xl border border-orange-400/30">
-            {/* Close button */}
-            <Button
-              variant="ghost"
-              size="sm"
-              className="absolute right-4 top-4 text-white hover:bg-white/10"
-              onClick={onClose}
-            >
-              <X className="h-4 w-4" />
-            </Button>
-
-            <DialogHeader className="mb-6">
-              <DialogTitle className="text-2xl font-bold text-white text-center">
-                Tudo o que você precisa para a{" "}
-                <span className="bg-gradient-to-r from-orange-400 to-yellow-400 bg-clip-text text-transparent">
-                  gestão do seu negócio
-                </span>
-              </DialogTitle>
-              <p className="text-slate-300 text-center mt-2">
-                Comece a usar o Tucont gratuitamente
-              </p>
-            </DialogHeader>
-
-            <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
-              <div>
-                <Label htmlFor="name" className="text-white font-medium">
-                  Nome
-                </Label>
-                <Input
-                  id="name"
-                  placeholder="Nome"
-                  className="bg-white/10 border-white/20 text-white placeholder:text-slate-300 backdrop-blur-sm focus:bg-white/15 focus:border-orange-400/50"
-                  {...register("name", { required: "Nome é obrigatório" })}
-                />
-                {errors.name && (
-                  <p className="text-red-400 text-sm mt-1">{errors.name.message}</p>
-                )}
-              </div>
-
-              <div>
-                <Label htmlFor="email" className="text-white font-medium">
-                  E-mail
-                </Label>
-                <Input
-                  id="email"
-                  type="email"
-                  placeholder="E-mail"
-                  className="bg-white/10 border-white/20 text-white placeholder:text-slate-300 backdrop-blur-sm focus:bg-white/15 focus:border-orange-400/50"
-                  {...register("email", { 
-                    required: "E-mail é obrigatório",
-                    pattern: {
-                      value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                      message: "E-mail inválido"
-                    }
-                  })}
-                />
-                {errors.email && (
-                  <p className="text-red-400 text-sm mt-1">{errors.email.message}</p>
-                )}
-              </div>
-
-              <div>
-                <Label htmlFor="phone" className="text-white font-medium">
-                  Telefone
-                </Label>
-                <div className="flex gap-2">
-                  <div className="flex items-center bg-white/10 border border-white/20 rounded-md px-3 py-2 backdrop-blur-sm">
-                    <span className="text-white text-sm">🇧🇷 +55</span>
-                  </div>
-                  <Input
-                    id="phone"
-                    placeholder="Telefone"
-                    className="flex-1 bg-white/10 border-white/20 text-white placeholder:text-slate-300 backdrop-blur-sm focus:bg-white/15 focus:border-orange-400/50"
-                    {...register("phone", { required: "Telefone é obrigatório" })}
-                  />
-                </div>
-                {errors.phone && (
-                  <p className="text-red-400 text-sm mt-1">{errors.phone.message}</p>
-                )}
-              </div>
-
-              <div>
-                <Label htmlFor="cnpj" className="text-white font-medium">
-                  CNPJ
-                </Label>
-                <Input
-                  id="cnpj"
-                  placeholder="CNPJ"
-                  className="bg-white/10 border-white/20 text-white placeholder:text-slate-300 backdrop-blur-sm focus:bg-white/15 focus:border-orange-400/50"
-                  {...register("cnpj", { required: "CNPJ é obrigatório" })}
-                />
-                {errors.cnpj && (
-                  <p className="text-red-400 text-sm mt-1">{errors.cnpj.message}</p>
-                )}
-              </div>
-
-              {hasExtraFields && (
-                <>
-                  <div>
-                    <Label htmlFor="service" className="text-white font-medium">
-                      Produto/Serviço de Interesse ou a Ofertar
-                    </Label>
-                    <Select value={selectedService} onValueChange={(value) => setValue("service", value)}>
-                      <SelectTrigger className="bg-white/10 border-white/20 text-white backdrop-blur-sm focus:bg-white/15 focus:border-orange-400/50">
-                        <SelectValue placeholder="Selecione um serviço" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        {serviceOptions.map((service) => (
-                          <SelectItem key={service} value={service}>
-                            {service}
-                          </SelectItem>
-                        ))}
-                      </SelectContent>
-                    </Select>
-                  </div>
-
-                  <div>
-                    <Label htmlFor="website" className="text-white font-medium">
-                      Site da Empresa (opcional)
-                    </Label>
-                    <Input
-                      id="website"
-                      type="url"
-                      placeholder="https://www.suaempresa.com.br"
-                      className="bg-white/10 border-white/20 text-white placeholder:text-slate-300 backdrop-blur-sm focus:bg-white/15 focus:border-orange-400/50"
-                      {...register("website")}
-                    />
-                  </div>
-                </>
-              )}
-
-              <Button
-                type="submit"
-                disabled={isSubmitting}
-                className="w-full bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-semibold py-3 rounded-xl shadow-lg transition-all duration-300 hover:scale-105"
-              >
-                {isSubmitting ? "Enviando..." : "Experimente agora"}
-              </Button>
-            </form>
-          </div>
+    <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 p-4">
+      <div className="bg-slate-900/95 backdrop-blur-xl border border-slate-700/50 rounded-3xl p-8 max-w-md w-full shadow-2xl">
+        <div className="flex items-center justify-between mb-6">
+          <h3 className="text-2xl font-bold text-white">
+            Tudo o que você precisa para a{" "}
+            <span className="bg-gradient-to-r from-orange-400 to-yellow-400 bg-clip-text text-transparent">
+              gestão do seu negócio
+            </span>
+          </h3>
+          <Button
+            onClick={onClose}
+            variant="ghost"
+            size="sm"
+            className="text-slate-400 hover:text-white"
+          >
+            <X className="w-5 h-5" />
+          </Button>
         </div>
-      </DialogContent>
-    </Dialog>
+
+        <p className="text-slate-300 text-sm mb-6">
+          Comece a usar o Tucont gratuitamente
+        </p>
+
+        <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+          <div>
+            <Label htmlFor="name" className="text-white text-sm font-medium">
+              Nome
+            </Label>
+            <Input
+              id="name"
+              placeholder="Nome"
+              className="bg-slate-800/70 border-slate-500 text-white placeholder:text-slate-400 focus:border-orange-400 focus:ring-orange-400"
+              {...register("name", { required: "Nome é obrigatório" })}
+            />
+            {errors.name && (
+              <p className="text-red-400 text-sm mt-1">{errors.name.message}</p>
+            )}
+          </div>
+
+          <div>
+            <Label htmlFor="email" className="text-white text-sm font-medium">
+              E-mail
+            </Label>
+            <Input
+              id="email"
+              type="email"
+              placeholder="E-mail"
+              className="bg-slate-800/70 border-slate-500 text-white placeholder:text-slate-400 focus:border-orange-400 focus:ring-orange-400"
+              {...register("email", { 
+                required: "E-mail é obrigatório",
+                pattern: {
+                  value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                  message: "E-mail inválido"
+                }
+              })}
+            />
+            {errors.email && (
+              <p className="text-red-400 text-sm mt-1">{errors.email.message}</p>
+            )}
+          </div>
+
+          <div>
+            <Label htmlFor="phone" className="text-white text-sm font-medium">
+              Telefone
+            </Label>
+            <div className="flex gap-2">
+              <div className="flex items-center bg-slate-800/70 border border-slate-500 rounded-md px-3 py-2">
+                <span className="text-white text-sm">🇧🇷 +55</span>
+              </div>
+              <Input
+                id="phone"
+                placeholder="Telefone"
+                className="flex-1 bg-slate-800/70 border-slate-500 text-white placeholder:text-slate-400 focus:border-orange-400 focus:ring-orange-400"
+                {...register("phone", { required: "Telefone é obrigatório" })}
+              />
+            </div>
+            {errors.phone && (
+              <p className="text-red-400 text-sm mt-1">{errors.phone.message}</p>
+            )}
+          </div>
+
+          <div>
+            <Label htmlFor="cnpj" className="text-white text-sm font-medium">
+              CNPJ
+            </Label>
+            <Input
+              id="cnpj"
+              placeholder="CNPJ"
+              className="bg-slate-800/70 border-slate-500 text-white placeholder:text-slate-400 focus:border-orange-400 focus:ring-orange-400"
+              {...register("cnpj", { required: "CNPJ é obrigatório" })}
+            />
+            {errors.cnpj && (
+              <p className="text-red-400 text-sm mt-1">{errors.cnpj.message}</p>
+            )}
+          </div>
+
+          {hasExtraFields && (
+            <>
+              <div>
+                <Label htmlFor="service" className="text-white text-sm font-medium">
+                  Produto/Serviço de Interesse ou a Ofertar
+                </Label>
+                <Select value={selectedService} onValueChange={(value) => setValue("service", value)}>
+                  <SelectTrigger className="bg-slate-800/70 border-slate-500 text-white placeholder:text-slate-400 focus:border-orange-400 focus:ring-orange-400">
+                    <SelectValue placeholder="Selecione um serviço" />
+                  </SelectTrigger>
+                  <SelectContent className="bg-slate-800 border-slate-700 text-white">
+                    {serviceOptions.map((service) => (
+                      <SelectItem 
+                        key={service} 
+                        value={service}
+                        className="hover:bg-slate-700 focus:bg-slate-700"
+                      >
+                        {service}
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+              </div>
+
+              <div>
+                <Label htmlFor="website" className="text-white text-sm font-medium">
+                  Site da Empresa (opcional)
+                </Label>
+                <Input
+                  id="website"
+                  type="url"
+                  placeholder="https://www.suaempresa.com.br"
+                  className="bg-slate-800/70 border-slate-500 text-white placeholder:text-slate-400 focus:border-orange-400 focus:ring-orange-400"
+                  {...register("website")}
+                />
+              </div>
+            </>
+          )}
+
+          <Button
+            type="submit"
+            disabled={isSubmitting}
+            className="w-full bg-gradient-to-r from-blue-600 via-blue-700 to-orange-600 hover:from-blue-700 hover:via-blue-800 hover:to-orange-700 text-white py-3 font-semibold shadow-lg mt-4"
+          >
+            <Send className="w-4 h-4 mr-2" />
+            {isSubmitting ? "Enviando..." : "Experimente agora"}
+          </Button>
+        </form>
+      </div>
+    </div>
   );
 };

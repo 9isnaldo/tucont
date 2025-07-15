@@ -1,15 +1,25 @@
 import { useState, useEffect } from "react";
+import { useForm } from "react-hook-form";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Zap, X, Send } from "lucide-react";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
+import { Input } from "@/components/ui/input";
+
+interface DiscoveryFormData {
+  name: string;
+  phone: string;
+  cnpj: string;
+}
 
 const GrowthModelsSection = () => {
   const [activeStep, setActiveStep] = useState(0);
   const [showDiscoveryForm, setShowDiscoveryForm] = useState(false);
   const [selectedOptions, setSelectedOptions] = useState<string[]>([]);
   const [additionalInfo, setAdditionalInfo] = useState("");
+
+  const { register, handleSubmit, formState: { errors }, reset } = useForm<DiscoveryFormData>();
 
   const businessSteps = [
     {
@@ -98,7 +108,7 @@ const GrowthModelsSection = () => {
 
   const handleStepClick = (step: any) => {
     const message = `Olá! Quero ajuda com: ${step.title} - ${step.text}`;
-    window.open(`https://wa.me/5531975740510?text=${encodeURIComponent(message)}`, '_blank');
+    window.open(`https://wa.me/5511999999999?text=${encodeURIComponent(message)}`, '_blank');
   };
 
   const handleOptionChange = (option: string, checked: boolean) => {
@@ -109,11 +119,23 @@ const GrowthModelsSection = () => {
     }
   };
 
-  const handleDiscoverySubmit = () => {
+  const handleDiscoverySubmit = (formData: DiscoveryFormData) => {
     const selectedText = selectedOptions.join(", ");
-    const fullMessage = `Opções selecionadas: ${selectedText}. Informações adicionais: ${additionalInfo}`;
-    window.open(`https://wa.me/5531975740510?text=${encodeURIComponent(fullMessage)}`, '_blank');
+    const fullMessage = `
+      Dados do cliente:
+      Nome: ${formData.name}
+      Telefone: ${formData.phone}
+      CNPJ: ${formData.cnpj}
+      
+      Opções selecionadas: ${selectedText}
+      Informações adicionais: ${additionalInfo}
+    `;
+    
+    window.open(`https://wa.me/5511999999999?text=${encodeURIComponent(fullMessage)}`, '_blank');
     setShowDiscoveryForm(false);
+    reset();
+    setSelectedOptions([]);
+    setAdditionalInfo("");
   };
 
   return (
@@ -263,7 +285,12 @@ const GrowthModelsSection = () => {
                 Descobrir meu momento
               </h3>
               <Button
-                onClick={() => setShowDiscoveryForm(false)}
+                onClick={() => {
+                  setShowDiscoveryForm(false);
+                  reset();
+                  setSelectedOptions([]);
+                  setAdditionalInfo("");
+                }}
                 variant="ghost"
                 size="sm"
                 className="text-slate-400 hover:text-white"
@@ -272,52 +299,111 @@ const GrowthModelsSection = () => {
               </Button>
             </div>
 
-            <div className="space-y-4 mb-6">
-              <p className="text-slate-200 text-sm font-medium">
-                Marque as opções que se aplicam ao seu momento atual:
-              </p>
-              
-              {discoveryOptions.map((option, index) => (
-                <div key={index} className="flex items-start space-x-3 p-3 rounded-lg hover:bg-slate-800/50 transition-colors">
-                  <Checkbox
-                    id={`option-${index}`}
-                    checked={selectedOptions.includes(option)}
-                    onCheckedChange={(checked) => 
-                      handleOptionChange(option, checked as boolean)
-                    }
-                    className="mt-1 border-2 border-orange-400 data-[state=checked]:bg-orange-500 data-[state=checked]:border-orange-500"
-                  />
-                  <Label 
-                    htmlFor={`option-${index}`}
-                    className="text-white text-sm leading-relaxed cursor-pointer flex-1"
-                  >
-                    {option}
+            <form onSubmit={handleSubmit(handleDiscoverySubmit)}>
+              <div className="space-y-4 mb-6">
+                {/* Nome Field */}
+                <div>
+                  <Label htmlFor="name" className="text-white text-sm font-medium">
+                    Nome
                   </Label>
+                  <Input
+                    id="name"
+                    placeholder="Seu nome completo"
+                    className="bg-slate-800/70 border border-slate-600 text-white placeholder:text-slate-400 rounded-lg focus:border-slate-500 focus:ring-0 focus:outline-none transition-colors"
+                    {...register("name", { required: "Nome é obrigatório" })}
+                  />
+                  {errors.name && (
+                    <p className="text-red-400 text-sm mt-1">{errors.name.message}</p>
+                  )}
                 </div>
-              ))}
-            </div>
 
-            <div className="space-y-4 mb-6">
-              <Label htmlFor="additional-info" className="text-white text-sm font-medium">
-                Conte-nos mais sobre seu momento
-              </Label>
-              <Textarea
-                id="additional-info"
-                placeholder="Descreva sua situação atual, desafios ou objetivos..."
-                value={additionalInfo}
-                onChange={(e) => setAdditionalInfo(e.target.value)}
-                className="bg-slate-800/70 border-slate-500 text-white placeholder:text-slate-400 resize-none focus:border-orange-400 focus:ring-orange-400"
-                rows={4}
-              />
-            </div>
+                {/* Telefone Field */}
+                <div>
+                  <Label htmlFor="phone" className="text-white text-sm font-medium">
+                    Telefone
+                  </Label>
+                  <div className="flex gap-2">
+                    <div className="flex items-center bg-slate-800/70 border border-slate-600 rounded-lg px-3 py-2">
+                      <span className="text-white text-sm">🇧🇷 +55</span>
+                    </div>
+                    <Input
+                      id="phone"
+                      placeholder="Telefone"
+                      className="flex-1 bg-slate-800/70 border border-slate-600 text-white placeholder:text-slate-400 rounded-lg focus:border-slate-500 focus:ring-0 focus:outline-none transition-colors"
+                      {...register("phone", { required: "Telefone é obrigatório" })}
+                    />
+                  </div>
+                  {errors.phone && (
+                    <p className="text-red-400 text-sm mt-1">{errors.phone.message}</p>
+                  )}
+                </div>
 
-            <Button
-              onClick={handleDiscoverySubmit}
-              className="w-full bg-gradient-to-r from-blue-600 via-blue-700 to-orange-600 hover:from-blue-700 hover:via-blue-800 hover:to-orange-700 text-white py-3 font-semibold shadow-lg"
-            >
-              <Send className="w-4 h-4 mr-2" />
-              Enviar para nossa equipe
-            </Button>
+                {/* CNPJ Field */}
+                <div>
+                  <Label htmlFor="cnpj" className="text-white text-sm font-medium">
+                    CNPJ
+                  </Label>
+                  <Input
+                    id="cnpj"
+                    placeholder="CNPJ da sua empresa"
+                    className="bg-slate-800/70 border border-slate-600 text-white placeholder:text-slate-400 rounded-lg focus:border-slate-500 focus:ring-0 focus:outline-none transition-colors"
+                    {...register("cnpj", { required: "CNPJ é obrigatório" })}
+                  />
+                  {errors.cnpj && (
+                    <p className="text-red-400 text-sm mt-1">{errors.cnpj.message}</p>
+                  )}
+                </div>
+
+                {/* Discovery Options */}
+                <div>
+                  <p className="text-slate-200 text-sm font-medium mb-2">
+                    Marque as opções que se aplicam ao seu momento atual:
+                  </p>
+                  
+                  {discoveryOptions.map((option, index) => (
+                    <div key={index} className="flex items-start space-x-3 p-3 rounded-lg hover:bg-slate-800/50 transition-colors">
+                      <Checkbox
+                        id={`option-${index}`}
+                        checked={selectedOptions.includes(option)}
+                        onCheckedChange={(checked) => 
+                          handleOptionChange(option, checked as boolean)
+                        }
+                        className="mt-1 border-2 border-slate-400 data-[state=checked]:bg-orange-500 data-[state=checked]:border-orange-500 focus:ring-0 focus:ring-offset-0 focus:outline-none"
+                      />
+                      <Label 
+                        htmlFor={`option-${index}`}
+                        className="text-white text-sm leading-relaxed cursor-pointer flex-1"
+                      >
+                        {option}
+                      </Label>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Additional Info */}
+                <div>
+                  <Label htmlFor="additional-info" className="text-white text-sm font-medium">
+                    Conte-nos mais sobre seu momento
+                  </Label>
+                  <Textarea
+                    id="additional-info"
+                    placeholder="Descreva sua situação atual, desafios ou objetivos..."
+                    value={additionalInfo}
+                    onChange={(e) => setAdditionalInfo(e.target.value)}
+                    className="bg-slate-800/70 border border-slate-600 text-white placeholder:text-slate-400 resize-none rounded-lg focus:border-slate-500 focus:ring-0 focus:outline-none transition-colors"
+                    rows={4}
+                  />
+                </div>
+              </div>
+
+              <Button
+                type="submit"
+                className="w-full bg-gradient-to-r from-blue-600 via-blue-700 to-orange-600 hover:from-blue-700 hover:via-blue-800 hover:to-orange-700 text-white py-3 font-semibold shadow-lg"
+              >
+                <Send className="w-4 h-4 mr-2" />
+                Enviar para nossa equipe
+              </Button>
+            </form>
           </div>
         </div>
       )}
