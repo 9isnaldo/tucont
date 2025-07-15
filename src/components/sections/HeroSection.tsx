@@ -25,19 +25,19 @@ const HeroSection = () => {
           {/* Headlines */}
           <div className="space-y-6">
             <h1 className="text-4xl md:text-6xl font-bold leading-tight">
-              <span className="text-slate-900/95">
+              <span className="text-slate-800">
                 A{" "}
               </span>
               <span className="text-tucont-orange">
                 tucont{" "}
               </span>
-              <span className="text-slate-900/95">
+              <span className="text-slate-800">
                 é a primeira contabilidade{" "}
               </span>
               <span className="text-tucont-orange">
                 integrativa{" "}
               </span>
-              <span className="text-slate-900/95">
+              <span className="text-slate-800">
                 do Brasil!
               </span>
             </h1>
@@ -54,12 +54,17 @@ const HeroSection = () => {
 
           {/* User Type Buttons */}
           <div className="flex flex-col sm:flex-row justify-center gap-8 mb-8">
+            <a 
+              href="https://rouvbymulgc.typeform.com/to/OSIekGSL?typeform-source=www.tucont.com.br" 
+              target="_blank" 
+              >                    
             <Button 
               variant="cta-orange" 
               size="lg"
             >
               Quero minha empresa agora
             </Button>
+            </a>
             <Button 
               variant="cta-green" 
               size="lg"
@@ -72,11 +77,11 @@ const HeroSection = () => {
           <div className="grid grid-cols-2 gap-4 mb-8 max-w-6xl mx-auto">
             <div className="flex items-center gap-2 text-sm font-semibold text-muted-foreground">
               <div className="w-2 h-2 bg-red-500 rounded-full"></div>
-              <span>Abertura de CNPJ em 24h</span>
+              <span>Abertura de CNPJ em 24h, 100% digital</span>
             </div>
             <div className="flex items-center gap-2 text-sm font-semibold text-muted-foreground">
               <div className="w-2 h-2 bg-red-500 rounded-full"></div>
-              <span>100% Digital</span>
+              <span>Certificado Digital Grátis</span>
             </div>
             <div className="flex items-center gap-2 text-sm font-semibold text-muted-foreground">
               <div className="w-2 h-2 bg-red-500 rounded-full"></div>

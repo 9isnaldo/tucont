@@ -196,7 +196,7 @@ const GrowthModelsSection = () => {
                       onClick={() => handleStepClick(step)}
                       variant="cta-green"
                       size="lg"
-                      className="font-semibold px-6 py-3 lg:px-8 lg:py-4 rounded-full shadow-2xl transition-all duration-300 hover:scale-105"
+                      className="font-semibold px-6 py-3 lg:px-8 lg:py-4 shadow-2xl transition-all duration-300 hover:scale-105"
                     >
                       {step.cta}
                       <ArrowRight className="w-4 h-4 lg:w-5 lg:h-5 ml-2" />
@@ -246,7 +246,7 @@ const GrowthModelsSection = () => {
             onClick={() => setShowDiscoveryForm(true)}
             variant="royal"
             size="lg"
-            className="px-6 py-3 lg:px-8 lg:py-4 text-base lg:text-lg rounded-full shadow-2xl transform hover:scale-105 transition-all duration-300"
+            className="px-6 py-3 lg:px-8 lg:py-4 text-base lg:text-lg shadow-2xl transform hover:scale-105 transition-all duration-300"
           >
             <Zap className="w-4 h-4 lg:w-5 lg:h-5 mr-2" />
             Descobrir meu momento ideal
@@ -313,7 +313,7 @@ const GrowthModelsSection = () => {
 
             <Button
               onClick={handleDiscoverySubmit}
-              className="w-full bg-gradient-to-r from-blue-600 via-blue-700 to-orange-600 hover:from-blue-700 hover:via-blue-800 hover:to-orange-700 text-white rounded-full py-3 font-semibold shadow-lg"
+              className="w-full bg-gradient-to-r from-blue-600 via-blue-700 to-orange-600 hover:from-blue-700 hover:via-blue-800 hover:to-orange-700 text-white py-3 font-semibold shadow-lg"
             >
               <Send className="w-4 h-4 mr-2" />
               Enviar para nossa equipe

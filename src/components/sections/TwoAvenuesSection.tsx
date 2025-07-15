@@ -220,7 +220,7 @@ const TwoAvenuesSection = () => {
             onClick={() => setIsFormModalOpen(true)}
             variant="royal"
             size="lg"
-            className="px-10 py-5 text-xl rounded-full shadow-2xl hover:shadow-blue-500/40 transform hover:scale-105 transition-all duration-300"
+            className="px-10 py-5 text-xl shadow-2xl hover:shadow-blue-500/40 transform hover:scale-105 transition-all duration-300"
           >
             Quero as duas avenidas integradas
           </Button>
