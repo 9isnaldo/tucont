@@ -41,8 +41,8 @@ const GrowthModelsSection = () => {
       text: "Transforme sua ideia em realidade. Validamos seu modelo de negócio, definimos a estrutura legal ideal e orientamos os primeiros passos para criar uma base sólida.",
       cta: "Começar minha jornada",
       action: {
-        url: "/avenida-empreendedora.html",
-        isExternal: true
+        url: "/avenida-empreendedora",
+        isExternal: false
       }
     },
     {
@@ -63,8 +63,8 @@ const GrowthModelsSection = () => {
       text: "Plataforma completa para vendas e emissão automática de notas fiscais. Simplifique sua operação e foque no que realmente importa: crescer.",
       cta: "Automatizar vendas",
       action: {
-        url: "/marketplace.html",
-        isExternal: true
+        url: "/marketplace",
+        isExternal: false
       }
     },
     {
@@ -74,8 +74,8 @@ const GrowthModelsSection = () => {
       text: "Compliance fiscal automatizado com IA. Nossa tecnologia cuida de todas as obrigações fiscais, relatórios e deadlines para você dormir tranquilo.",
       cta: "Automatizar fisco",
       action: {
-        url: "/avenida-legal.html",
-        isExternal: true
+        url: "/avenida-legal",
+        isExternal: false
       }
     },
     {
@@ -85,8 +85,8 @@ const GrowthModelsSection = () => {
       text: "Plataforma de Jornada Empreendedora, Frameworks Validados para crescimento sustentável e Mentoria estratégica. Destravamos seu potencial empreendedor com orientação especializada.",
       cta: "Acelerar crescimento",
       action: {
-        url: "/avenida-empreendedora.html",
-        isExternal: true
+        url: "/avenida-empreendedora",
+        isExternal: false
       }
     }
   ];
@@ -138,15 +138,9 @@ const GrowthModelsSection = () => {
     return () => window.removeEventListener('scroll', scrollHandler);
   }, [activeStep]);
 
-   const handleStepClick = (step: BusinessStep) => {
+  const handleStepClick = (step: BusinessStep) => {
     if (step.action.isExternal) {
-      // Usando URL absoluta para produção
-      const baseUrl = window.location.origin;
-      const fullUrl = step.action.url.startsWith('http') 
-        ? step.action.url 
-        : `${baseUrl}${step.action.url}`;
-      
-      window.open(fullUrl, '_blank', 'noopener,noreferrer');
+      window.open(step.action.url, '_blank', 'noopener,noreferrer');
     } else {
       window.location.href = step.action.url;
     }
