@@ -22,6 +22,7 @@ interface BusinessStep {
   action: {
     url: string;
     isExternal?: boolean;
+    openInNewTab?: boolean;
   };
 }
 
@@ -41,8 +42,9 @@ const GrowthModelsSection = () => {
       text: "Transforme sua ideia em realidade. Validamos seu modelo de negócio, definimos a estrutura legal ideal e orientamos os primeiros passos para criar uma base sólida.",
       cta: "Começar minha jornada",
       action: {
-        url: "/avenida-empreendedora",
-        isExternal: false
+        url: "https://rouvbymulgc.typeform.com/to/OSIekGSL?typeform-source=www.tucont.com.br",
+        isExternal: true,
+        openInNewTab: true
       }
     },
     {
@@ -52,8 +54,9 @@ const GrowthModelsSection = () => {
       text: "CNPJ em 24h com orientação completa. Cuidamos de toda burocracia legal, escolhemos o melhor enquadramento tributário e deixamos sua empresa 100% regularizada.",
       cta: "Regularizar agora",
       action: {
-        url: "https://rouvbymulgc.typeform.com/to/OSIekGSL?typeform-source=www.tucont.com.br",
-        isExternal: true
+        url: "/avenida-empreendedora",
+        isExternal: false,
+        openInNewTab: true
       }
     },
     {
@@ -63,8 +66,9 @@ const GrowthModelsSection = () => {
       text: "Plataforma completa para vendas e emissão automática de notas fiscais. Simplifique sua operação e foque no que realmente importa: crescer.",
       cta: "Automatizar vendas",
       action: {
-        url: "/marketplace",
-        isExternal: false
+        url: "/avenida-empreendedora",
+        isExternal: false,
+        openInNewTab: true
       }
     },
     {
@@ -74,8 +78,9 @@ const GrowthModelsSection = () => {
       text: "Compliance fiscal automatizado com IA. Nossa tecnologia cuida de todas as obrigações fiscais, relatórios e deadlines para você dormir tranquilo.",
       cta: "Automatizar fisco",
       action: {
-        url: "/avenida-legal",
-        isExternal: false
+        url: "/avenida-empreendedora",
+        isExternal: false,
+        openInNewTab: true
       }
     },
     {
@@ -86,7 +91,8 @@ const GrowthModelsSection = () => {
       cta: "Acelerar crescimento",
       action: {
         url: "/avenida-empreendedora",
-        isExternal: false
+        isExternal: false,
+        openInNewTab: true
       }
     }
   ];
@@ -139,8 +145,11 @@ const GrowthModelsSection = () => {
   }, [activeStep]);
 
   const handleStepClick = (step: BusinessStep) => {
-    if (step.action.isExternal) {
-      window.open(step.action.url, '_blank', 'noopener,noreferrer');
+    if (step.action.openInNewTab) {
+      const url = step.action.isExternal 
+        ? step.action.url 
+        : `${window.location.origin}${step.action.url}`;
+      window.open(url, '_blank', 'noopener,noreferrer');
     } else {
       window.location.href = step.action.url;
     }
