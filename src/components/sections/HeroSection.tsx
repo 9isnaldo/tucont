@@ -1,6 +1,12 @@
 
 import { Button } from "@/components/ui/button";
 import { Sparkles } from "lucide-react";
+
+const handlePlanClick = (plan: any) => {
+  const message = `Olá! Tenho interesse no plano ${plan.name}. Gostaria de mais informações.`;
+  window.open(`https://wa.me/5511999999999?text=${encodeURIComponent(message)}`, '_blank');
+};
+
 const HeroSection = () => {
 
   return (
@@ -65,7 +71,8 @@ const HeroSection = () => {
               Quero minha empresa agora
             </Button>
             </a>
-            <Button 
+            <Button
+              onClick={() => window.open(`https://wa.me/5531975740510?text=${encodeURIComponent("Quero destravar meu empreendedorismo e abrir minha empresa!")}`, '_blank')}
               variant="cta-green" 
               size="lg"
             >
