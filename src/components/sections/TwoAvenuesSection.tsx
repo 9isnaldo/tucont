@@ -84,14 +84,7 @@ const TwoAvenuesSection = () => {
         </div>
 
         <div className="grid lg:grid-cols-2 gap-16 mb-16 relative">
-          {/* Connecting Road Element - Enhanced */}
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-0 hidden lg:block">
-            <div className="w-40 h-3 bg-gradient-to-r from-orange-500/40 via-yellow-400/60 to-blue-500/40 rounded-full blur-[6px]"></div>
-            <div className="w-32 h-2 bg-gradient-to-r from-orange-400 via-yellow-300 to-blue-400 rounded-full mt-1 mx-auto shadow-lg shadow-blue-400/30"></div>
-            <div className="absolute -left-4 top-1/2 transform -translate-y-1/2 w-8 h-8 rounded-full bg-gradient-to-br from-orange-400 to-yellow-200 shadow-lg animate-pulse"></div>
-            <div className="absolute -right-4 top-1/2 transform -translate-y-1/2 w-8 h-8 rounded-full bg-gradient-to-br from-blue-400 to-cyan-200 shadow-lg animate-pulse"></div>
-          </div>
-
+          
           {/* Avenida Empreendedora - Left side (start of journey) */}
           <div className="group relative">
             <div className="bg-card rounded-3xl p-8 shadow-2xl border border-border h-full transition-all duration-500 transform hover:scale-[1.02] hover:-translate-y-2">
