@@ -98,7 +98,7 @@ const GrowthModelsSection = () => {
 
   const handleStepClick = (step: any) => {
     const message = `Olá! Quero ajuda com: ${step.title} - ${step.text}`;
-    window.open(`https://wa.me/5511999999999?text=${encodeURIComponent(message)}`, '_blank');
+    window.open(`https://wa.me/5531975740510?text=${encodeURIComponent(message)}`, '_blank');
   };
 
   const handleOptionChange = (option: string, checked: boolean) => {
@@ -112,7 +112,7 @@ const GrowthModelsSection = () => {
   const handleDiscoverySubmit = () => {
     const selectedText = selectedOptions.join(", ");
     const fullMessage = `Opções selecionadas: ${selectedText}. Informações adicionais: ${additionalInfo}`;
-    window.open(`https://wa.me/5511999999999?text=${encodeURIComponent(fullMessage)}`, '_blank');
+    window.open(`https://wa.me/5531975740510?text=${encodeURIComponent(fullMessage)}`, '_blank');
     setShowDiscoveryForm(false);
   };
 

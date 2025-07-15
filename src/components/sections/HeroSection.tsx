@@ -31,19 +31,19 @@ const HeroSection = () => {
           {/* Headlines */}
           <div className="space-y-6">
             <h1 className="text-4xl md:text-6xl font-bold leading-tight">
-              <span className="text-slate-800">
+              <span className="text-slate-800-custom">
                 A{" "}
               </span>
               <span className="text-tucont-orange">
                 tucont{" "}
               </span>
-              <span className="text-slate-800">
+              <span className="text-slate-800-custom">
                 é a primeira contabilidade{" "}
               </span>
               <span className="text-tucont-orange">
                 integrativa{" "}
               </span>
-              <span className="text-slate-800">
+              <span className="text-slate-800-custom">
                 do Brasil!
               </span>
             </h1>
@@ -71,13 +71,17 @@ const HeroSection = () => {
               Quero minha empresa agora
             </Button>
             </a>
+            
+            <a
+            onClick={() => window.open(`https://wa.me/5531975740510?text=${encodeURIComponent("Quero destravar meu empreendedorismo e abrir minha empresa!")}`, '_blank')}
+            >
             <Button
-              onClick={() => window.open(`https://wa.me/5531975740510?text=${encodeURIComponent("Quero destravar meu empreendedorismo e abrir minha empresa!")}`, '_blank')}
               variant="cta-green" 
               size="lg"
             >
               Fale Conosco no WhatsApp
             </Button>
+            </a>
           </div>
 
           {/* Features Grid */}

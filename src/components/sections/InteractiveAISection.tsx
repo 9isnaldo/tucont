@@ -38,7 +38,7 @@ const InteractiveAISection = () => {
   };
 
   return (
-    <section className="py-24 px-4 bg-slate-900/95 relative overflow-hidden">
+    <section className="py-24 px-4 bg-slate-800">
       {/* Background Effects */}
       <div className="absolute inset-0 bg-gradient-to-r from-tucont-royal/5 via-transparent to-tucont-orange/5"></div>
       <div className="absolute top-1/3 left-1/3 w-80 h-80 bg-tucont-royal/10 rounded-full blur-3xl animate-pulse"></div>
@@ -97,10 +97,6 @@ const InteractiveAISection = () => {
                 )}
               </Button>
             </div>
-            
-            <p className="text-white text-sm font-semibold text-center mt-3">
-              Sem formulários • Sem enrolação
-            </p>
           </div>
 
           {/* AI Response */}
