@@ -13,6 +13,18 @@ interface DiscoveryFormData {
   cnpj: string;
 }
 
+interface BusinessStep {
+  id: number;
+  title: string;
+  image: string;
+  text: string;
+  cta: string;
+  action: {
+    url: string;
+    isExternal?: boolean;
+  };
+}
+
 const GrowthModelsSection = () => {
   const [activeStep, setActiveStep] = useState(0);
   const [showDiscoveryForm, setShowDiscoveryForm] = useState(false);
@@ -21,41 +33,61 @@ const GrowthModelsSection = () => {
 
   const { register, handleSubmit, formState: { errors }, reset } = useForm<DiscoveryFormData>();
 
-  const businessSteps = [
+  const businessSteps: BusinessStep[] = [
     {
       id: 0,
       title: "Criar e Validar",
       image: "/lovable-uploads/41fcb3b9-a11b-4ca7-aac8-3e452f41999b.png",
       text: "Transforme sua ideia em realidade. Validamos seu modelo de negócio, definimos a estrutura legal ideal e orientamos os primeiros passos para criar uma base sólida.",
-      cta: "Começar minha jornada"
+      cta: "Começar minha jornada",
+      action: {
+        url: "/avenida-empreendedora",
+        isExternal: true
+      }
     },
     {
       id: 1,
       title: "Regularizar",
       image: "/lovable-uploads/186878a1-99b4-4f84-877a-85bf6fb1e737.png",
       text: "CNPJ em 24h com orientação completa. Cuidamos de toda burocracia legal, escolhemos o melhor enquadramento tributário e deixamos sua empresa 100% regularizada.",
-      cta: "Regularizar agora"
+      cta: "Regularizar agora",
+      action: {
+        url: "https://rouvbymulgc.typeform.com/to/OSIekGSL?typeform-source=www.tucont.com.br",
+        isExternal: true
+      }
     },
     {
       id: 2,
       title: "Vender e Emitir Notas",
       image: "/lovable-uploads/f32255a9-8411-4496-88d0-12256b5cadb3.png",
       text: "Plataforma completa para vendas e emissão automática de notas fiscais. Simplifique sua operação e foque no que realmente importa: crescer.",
-      cta: "Automatizar vendas"
+      cta: "Automatizar vendas",
+      action: {
+        url: "/marketplace",
+        isExternal: true
+      }
     },
     {
       id: 3,
       title: "Cuidar do Fisco",
       image: "/lovable-uploads/3cff2625-e342-4add-b38e-c92bcc0db520.png",
       text: "Compliance fiscal automatizado com IA. Nossa tecnologia cuida de todas as obrigações fiscais, relatórios e deadlines para você dormir tranquilo.",
-      cta: "Automatizar fisco"
+      cta: "Automatizar fisco",
+      action: {
+        url: "/avenida-legal",
+        isExternal: true
+      }
     },
     {
       id: 4,
       title: "Tracionar e Evoluir",
       image: "/lovable-uploads/05c65c48-85aa-4a2b-ad4b-75e4beea5a17.png",
       text: "Plataforma de Jornada Empreendedora, Frameworks Validados para crescimento sustentável e Mentoria estratégica. Destravamos seu potencial empreendedor com orientação especializada.",
-      cta: "Acelerar crescimento"
+      cta: "Acelerar crescimento",
+      action: {
+        url: "/avenida-empreendedora",
+        isExternal: true
+      }
     }
   ];
 
@@ -104,19 +136,20 @@ const GrowthModelsSection = () => {
     window.addEventListener('scroll', scrollHandler, { passive: true });
     handleScroll();
     return () => window.removeEventListener('scroll', scrollHandler);
-  }, [activeStep, businessSteps.length]);
+  }, [activeStep]);
 
-  const handleStepClick = (step: any) => {
-    const message = `Olá! Quero ajuda com: ${step.title} - ${step.text}`;
-    window.open(`https://wa.me/5511999999999?text=${encodeURIComponent(message)}`, '_blank');
+  const handleStepClick = (step: BusinessStep) => {
+    if (step.action.isExternal) {
+      window.open(step.action.url, '_blank', 'noopener,noreferrer');
+    } else {
+      window.location.href = step.action.url;
+    }
   };
 
   const handleOptionChange = (option: string, checked: boolean) => {
-    if (checked) {
-      setSelectedOptions([...selectedOptions, option]);
-    } else {
-      setSelectedOptions(selectedOptions.filter(item => item !== option));
-    }
+    setSelectedOptions(prev => 
+      checked ? [...prev, option] : prev.filter(item => item !== option)
+    );
   };
 
   const handleDiscoverySubmit = (formData: DiscoveryFormData) => {
@@ -163,13 +196,13 @@ const GrowthModelsSection = () => {
             <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
               {/* Image side */}
               <div className="relative h-80 md:h-96 order-2 lg:order-1">
-                {businessSteps.map((step, index) => (
+                {businessSteps.map((step) => (
                   <div
                     key={step.id}
                     className={`absolute inset-0 transition-all duration-1000 ease-out ${
-                      activeStep === index 
+                      activeStep === step.id 
                         ? 'opacity-100 scale-100 transform translate-x-0' 
-                        : index < activeStep 
+                        : step.id < activeStep 
                           ? 'opacity-0 scale-95 transform -translate-x-8'
                           : 'opacity-0 scale-95 transform translate-x-8'
                     }`}
@@ -197,13 +230,13 @@ const GrowthModelsSection = () => {
                 ))}
               </div>
 
-              {/* Text side - Corrigido para manter os botões sempre clicáveis */}
+              {/* Text side */}
               <div className="space-y-8 relative order-1 lg:order-2">
-                {businessSteps.map((step, index) => (
+                {businessSteps.map((step) => (
                   <div
                     key={step.id}
                     className={`transition-all duration-1000 ease-out ${
-                      activeStep === index 
+                      activeStep === step.id 
                         ? 'opacity-100 transform translate-x-0 h-auto' 
                         : 'opacity-0 transform translate-x-8 h-0 overflow-hidden absolute'
                     }`}
@@ -214,7 +247,7 @@ const GrowthModelsSection = () => {
                     <p className="text-lg lg:text-xl text-tucont-text-secondary leading-relaxed mb-6 lg:mb-8">
                       {step.text}
                     </p>
-                    <div className="relative z-20"> {/* Adicionado z-index para garantir que o botão fique acima */}
+                    <div className="relative z-20">
                       <Button 
                         onClick={() => handleStepClick(step)}
                         variant="royal"
@@ -232,22 +265,22 @@ const GrowthModelsSection = () => {
 
             {/* Progress indicators */}
             <div className="flex justify-center mt-12 lg:mt-16 space-x-3">
-              {businessSteps.map((_, index) => (
+              {businessSteps.map((step) => (
                 <div
-                  key={index}
+                  key={step.id}
                   className={`w-2 h-2 lg:w-3 lg:h-3 rounded-full transition-all duration-500 ${
-                    activeStep === index 
+                    activeStep === step.id 
                       ? 'bg-gradient-to-r from-blue-500 to-orange-500 scale-125' 
                       : 'bg-slate-600 hover:bg-slate-500 cursor-pointer'
                   }`}
-                  onClick={() => setActiveStep(index)}
+                  onClick={() => setActiveStep(step.id)}
                   role="button"
                   tabIndex={0}
-                  aria-label={`Ir para etapa ${index + 1}: ${businessSteps[index].title}`}
+                  aria-label={`Ir para etapa ${step.id + 1}: ${step.title}`}
                   onKeyDown={(e) => {
                     if (e.key === 'Enter' || e.key === ' ') {
                       e.preventDefault();
-                      setActiveStep(index);
+                      setActiveStep(step.id);
                     }
                   }}
                 />
@@ -257,7 +290,7 @@ const GrowthModelsSection = () => {
         </div>
       </section>
 
-      {/* Bottom CTA - appears naturally after scroll */}
+      {/* Bottom CTA */}
       <div className="relative bg-background/95 backdrop-blur-xl border-t border-border py-12 lg:py-16">
         <div className="max-w-3xl mx-auto text-center px-4 sm:px-6">
           <h3 className="text-xl lg:text-2xl font-bold text-tucont-text-primary mb-4">
@@ -278,7 +311,7 @@ const GrowthModelsSection = () => {
         </div>
       </div>
 
-      {/* Discovery Form - integrated directly in the page */}
+      {/* Discovery Form */}
       {showDiscoveryForm && (
         <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 p-4">
           <div className="bg-slate-900/95 backdrop-blur-xl border border-slate-700/50 rounded-3xl p-8 max-w-md w-full shadow-2xl">
@@ -303,7 +336,6 @@ const GrowthModelsSection = () => {
 
             <form onSubmit={handleSubmit(handleDiscoverySubmit)}>
               <div className="space-y-4 mb-6">
-                {/* Nome Field */}
                 <div>
                   <Label htmlFor="name" className="text-white text-sm font-medium">
                     Nome
@@ -319,7 +351,6 @@ const GrowthModelsSection = () => {
                   )}
                 </div>
 
-                {/* Telefone Field */}
                 <div>
                   <Label htmlFor="phone" className="text-white text-sm font-medium">
                     Telefone
@@ -340,7 +371,6 @@ const GrowthModelsSection = () => {
                   )}
                 </div>
 
-                {/* CNPJ Field */}
                 <div>
                   <Label htmlFor="cnpj" className="text-white text-sm font-medium">
                     CNPJ
@@ -356,7 +386,6 @@ const GrowthModelsSection = () => {
                   )}
                 </div>
 
-                {/* Discovery Options */}
                 <div>
                   <p className="text-slate-200 text-sm font-medium mb-2">
                     Marque as opções que se aplicam ao seu momento atual:
@@ -382,7 +411,6 @@ const GrowthModelsSection = () => {
                   ))}
                 </div>
 
-                {/* Additional Info */}
                 <div>
                   <Label htmlFor="additional-info" className="text-white text-sm font-medium">
                     Conte-nos mais sobre seu momento
