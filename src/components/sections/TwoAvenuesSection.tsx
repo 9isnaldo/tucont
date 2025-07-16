@@ -70,7 +70,7 @@ const TwoAvenuesSection = () => {
           </div>
           
           <h2 className="text-5xl md:text-6xl font-bold mb-8 leading-tight">
-            <span className="text-slate-900/95">
+            <span className="text-slate-800-custom">
               A Tucont resolve as duas principais avenidas: a <span className="text-tucont-orange">Empreendedora</span> e a <span className="text-tucont-royal">Legal</span>.
             </span>
           </h2>

@@ -1,10 +1,10 @@
 
 import { Button } from "@/components/ui/button";
-import { Sparkles } from "lucide-react";
+import { Bot } from "lucide-react";
 
 const handlePlanClick = (plan: any) => {
   const message = `Olá! Tenho interesse no plano ${plan.name}. Gostaria de mais informações.`;
-  window.open(`https://wa.me/5511999999999?text=${encodeURIComponent(message)}`, '_blank');
+  window.open(`https://wa.me/5531975740510?text=${encodeURIComponent(message)}`, '_blank');
 };
 
 const HeroSection = () => {
@@ -23,8 +23,8 @@ const HeroSection = () => {
           <div className="text-center lg:text-left space-y-8">
           
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 bg-secondary backdrop-blur-xl border border-primary/30 text-primary px-6 py-3 rounded-full">
-            <Sparkles className="w-5 h-5" />
+          <div className="inline-flex shadow-lg items-center gap-2 bg-secondary backdrop-blur-xl border border-primary/30 text-primary px-6 py-3 rounded-full">
+            <Bot className="w-5 h-5" />
             <span className="font-medium">Plataforma + IA + Jornada Empreendedora</span>
           </div>
 

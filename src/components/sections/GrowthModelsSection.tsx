@@ -22,7 +22,6 @@ interface BusinessStep {
   action: {
     url: string;
     isExternal?: boolean;
-    openInNewTab?: boolean;
   };
 }
 
@@ -42,9 +41,8 @@ const GrowthModelsSection = () => {
       text: "Transforme sua ideia em realidade. Validamos seu modelo de negócio, definimos a estrutura legal ideal e orientamos os primeiros passos para criar uma base sólida.",
       cta: "Começar minha jornada",
       action: {
-        url: "https://rouvbymulgc.typeform.com/to/OSIekGSL?typeform-source=www.tucont.com.br",
-        isExternal: true,
-        openInNewTab: true
+        url: "/avenida-empreendedora",
+        isExternal: true
       }
     },
     {
@@ -54,9 +52,8 @@ const GrowthModelsSection = () => {
       text: "CNPJ em 24h com orientação completa. Cuidamos de toda burocracia legal, escolhemos o melhor enquadramento tributário e deixamos sua empresa 100% regularizada.",
       cta: "Regularizar agora",
       action: {
-        url: "/avenida-empreendedora",
-        isExternal: false,
-        openInNewTab: true
+        url: "https://rouvbymulgc.typeform.com/to/OSIekGSL?typeform-source=www.tucont.com.br",
+        isExternal: true
       }
     },
     {
@@ -66,9 +63,8 @@ const GrowthModelsSection = () => {
       text: "Plataforma completa para vendas e emissão automática de notas fiscais. Simplifique sua operação e foque no que realmente importa: crescer.",
       cta: "Automatizar vendas",
       action: {
-        url: "/avenida-empreendedora",
-        isExternal: false,
-        openInNewTab: true
+        url: "/marketplace",
+        isExternal: true
       }
     },
     {
@@ -78,9 +74,8 @@ const GrowthModelsSection = () => {
       text: "Compliance fiscal automatizado com IA. Nossa tecnologia cuida de todas as obrigações fiscais, relatórios e deadlines para você dormir tranquilo.",
       cta: "Automatizar fisco",
       action: {
-        url: "/avenida-empreendedora",
-        isExternal: false,
-        openInNewTab: true
+        url: "/avenida-legal",
+        isExternal: true
       }
     },
     {
@@ -91,8 +86,7 @@ const GrowthModelsSection = () => {
       cta: "Acelerar crescimento",
       action: {
         url: "/avenida-empreendedora",
-        isExternal: false,
-        openInNewTab: true
+        isExternal: true
       }
     }
   ];
@@ -145,11 +139,8 @@ const GrowthModelsSection = () => {
   }, [activeStep]);
 
   const handleStepClick = (step: BusinessStep) => {
-    if (step.action.openInNewTab) {
-      const url = step.action.isExternal 
-        ? step.action.url 
-        : `${window.location.origin}${step.action.url}`;
-      window.open(url, '_blank', 'noopener,noreferrer');
+    if (step.action.isExternal) {
+      window.open(step.action.url, '_blank', 'noopener,noreferrer');
     } else {
       window.location.href = step.action.url;
     }
@@ -191,12 +182,12 @@ const GrowthModelsSection = () => {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             {/* Header */}
             <div className="text-center mb-12 lg:mb-16">
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 lg:mb-8 leading-tight">
-                <span className="text-tucont-text-primary">
+              <h2 className="text-5xl md:text-6xl font-bold mb-8 leading-tight">
+                <span className="text-slate-800-custom">
                   Em qual momento seu negócio está?
                 </span>
               </h2>
-              <p className="text-lg font-semibold text-tucont-royal md:text-xl text-tucont-text-secondary max-w-4xl mx-auto leading-relaxed">
+              <p className="text-2xl text-tucont-text-secondary font-semibold">
                 <span>Criar e Validar, Regularizar, Vender e Emitir Notas, Cuidar do Fisco, Tracionar e Evoluir</span>
               </p>
             </div>

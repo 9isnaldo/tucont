@@ -1,232 +1,200 @@
-
 import { useState } from "react";
-import { TrendingUp, Users, Lightbulb, BookOpen, ArrowRight } from "lucide-react";
+import { Users, Lightbulb, BookOpen, ArrowRight, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { CaptureFormModal } from "@/components/ui/capture-form-modal";
 
 const WhyChooseTucontSection = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
+  const animationsCSS = `
+    @keyframes float1 {
+      0%, 100% { transform: translateY(0) translateX(0); }
+      50% { transform: translateY(-20px) translateX(10px); }
+    }
+    @keyframes float2 {
+      0%, 100% { transform: translateY(0) translateX(0); }
+      50% { transform: translateY(20px) translateX(-10px); }
+    }
+    @keyframes bounce-x {
+      0%, 100% { transform: translateX(0); }
+      50% { transform: translateX(5px); }
+    }
+    @keyframes orbita1 {
+      0%, 100% { transform: translateY(0) translateX(0); }
+      50% { transform: translateY(-10px) translateX(-10px); }
+    }
+    @keyframes orbita2 {
+      0%, 100% { transform: translateY(0) translateX(0); }
+      50% { transform: translateY(-10px) translateX(10px); }
+    }
+    @keyframes orbita3 {
+      0%, 100% { transform: translateY(0) translateX(0); }
+      50% { transform: translateY(10px) translateX(0); }
+    }
+    .animate-float1 { animation: float1 8s ease-in-out infinite; }
+    .animate-float2 { animation: float2 10s ease-in-out infinite; }
+    .animate-bounce-x { animation: bounce-x 2s ease-in-out infinite; }
+    .animate-orbita1 { animation: orbita1 6s ease-in-out infinite; }
+    .animate-orbita2 { animation: orbita2 7s ease-in-out infinite 0.5s; }
+    .animate-orbita3 { animation: orbita3 5s ease-in-out infinite 0.3s; }
+  `;
+
   return (
-    <section className="py-24 px-4 bg-background relative overflow-hidden">
+    <section className="py-20 px-4 bg-white relative overflow-hidden">
+      {/* Efeitos de fundo */}
+      <div className="absolute inset-0 overflow-hidden z-0">
+        <div className="absolute top-0 left-0 w-1/2 h-full bg-gradient-to-r from-blue-50/40 to-transparent"></div>
+        <div className="absolute bottom-0 right-0 w-1/2 h-full bg-gradient-to-l from-orange-50/40 to-transparent"></div>
+        <div className="absolute top-20 left-20 w-32 h-32 rounded-full bg-blue-100/30 blur-xl animate-float1"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-40 h-40 rounded-full bg-orange-100/30 blur-xl animate-float2"></div>
+      </div>
       
-      <div className="absolute inset-0 bg-gradient-to-br from-tucont-royal/5 via-background to-tucont-orange/5"></div>
-      
-      <div className="max-w-7xl mx-auto relative z-10">
-        
-        <div className="text-center mb-20">
-          <h2 className="text-5xl md:text-6xl font-bold mb-6 leading-tight text-tucont-text-primary">
-            Por que escolhem a <span className="text-tucont-orange">Tucont Integrativa</span>?
-          </h2>
+      <div className="max-w-6xl mx-auto relative z-10">
+        {/* Cabeçalho */}
+        <div className="text-center mb-16">
+            <div className="inline-flex items-center mb-8 shadow-lg gap-2 bg-secondary backdrop-blur-xl border border-primary/30 text-primary px-6 py-3 rounded-full">
+              <Sparkles className="w-5 h-5" />
+            <span className="font-medium">Empreendedorismo Integrativo</span>
+          </div>
+          <h2 className="text-slate-800-custom text-5xl md:text-6xl font-bold mb-8 leading-tight">
+            Por que escolhem a <span className="text-tucont-orange">Tucont</span>?
+          </h2 >
           <p className="text-2xl text-tucont-text-secondary font-semibold">
-            Porque também somos empreendedores, te entendemos!
+            Porque transformamos a contabilidade em uma <span className="text-tucont-royal">experiência humana</span> e tecnológica.
           </p>
         </div>
 
-        
-        <div className="mb-24 relative">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div className="space-y-6">
-              <h3 className="text-4xl font-bold text-tucont-text-primary mb-6">
-                Nosso Sonho Grande:
+        {/* 1º Bloco - Nosso Sonho Grande */}
+        <div className="mb-20 bg-gradient-to-r from-blue-50 to-orange-50 p-8 rounded-2xl border border-gray-100 shadow-2xl">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="space-y-5">
+              <h3 className="text-3xl font-bold text-gray-900 mb-5">
+                Nosso <span className="text-blue-600">Sonho Grande</span>
               </h3>
-              <div className="text-xl text-tucont-text-secondary leading-relaxed space-y-4">
+              <div className="text-gray-600 leading-relaxed space-y-4">
                 <p>
-                  Contribuir para o Brasil a chegar a <span className="text-orange-400 font-bold">50 milhões de PJs</span> e
-                  mudar a sociedade, pelo despertar do empreendedorismo e acesso às oportunidades.
+                  Contribuir para o Brasil chegar a <span className="text-blue-600 font-semibold">50 milhões de PJs</span> e
+                  mudar a sociedade pelo despertar do empreendedorismo.
+                </p>
+                <p className="text-orange-500 font-medium">
+                  "O empreendedorismo muda vidas e transforma realidades"
                 </p>
               </div>
             </div>
             
-            <div className="flex justify-center relative">
-              <div className="text-center space-y-8">
-                <div className="flex items-center justify-center gap-8">
+            <div className="flex justify-center">
+              <div className="bg-white p-6 rounded-xl shadow-2xl border border-gray-200 w-full max-w-md relative">
+                <div className="absolute -top-3 -right-3 bg-orange-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-sm">
+                  Meta 2030
+                </div>
+                <div className="flex items-center justify-center gap-6">
                   <div className="text-center">
-                    <div className="text-4xl font-bold text-orange-400 mb-2">21MM</div>
-                    <div className="text-slate-400 text-sm">Atual</div>
+                    <div className="text-3xl font-bold text-gray-800 mb-1">21MM</div>
+                    <div className="text-gray-500 text-sm">Atual</div>
                   </div>
                   <div className="flex-1 relative">
-                    <div className="h-2 bg-gradient-to-r from-orange-400 to-blue-400 rounded-full shadow-lg shadow-orange-400/50"></div>
-                    <TrendingUp className="w-8 h-8 text-blue-400 absolute -top-3 right-0 transform translate-x-4 filter drop-shadow-lg drop-shadow-blue-400/30" />
+                    <div className="h-2 bg-gradient-to-r from-orange-400 to-blue-500 rounded-full shadow-inner"></div>
                   </div>
                   <div className="text-center">
-                    <div className="text-4xl font-bold text-blue-400 mb-2">50MM</div>
-                    <div className="text-slate-400 text-sm">Meta</div>
+                    <div className="text-3xl font-bold text-blue-600 mb-1">50MM</div>
+                    <div className="text-gray-500 text-sm">Meta</div>
                   </div>
                 </div>
-                <div className="text-slate-300 text-sm">
+                <div className="text-center text-gray-500 text-sm mt-4">
                   Pessoas Jurídicas no Brasil
                 </div>
               </div>
             </div>
           </div>
-          
-          <div className="absolute -bottom-12 left-1/2 transform -translate-x-1/2">
-            <div className="w-1 h-24 bg-gradient-to-b from-orange-400 to-purple-400 rounded-full shadow-lg shadow-orange-400/50 animate-pulse"></div>
-          </div>
         </div>
 
-        
-        <div className="mb-24 relative">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div className="order-2 lg:order-1 flex justify-center relative">
-              <div className="relative w-full h-96 max-w-md">
-                {/* Card background com efeitos de glass */}
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-orange-500/20 rounded-2xl backdrop-blur-sm"></div>
-                
-                {/* Imagem do Geraldo ocupando todo o card */}
-                <div className="absolute inset-4">
-                  <div className="relative w-full h-full">
-                    <div className="absolute inset-0 bg-gradient-to-r from-blue-500/30 to-orange-500/30 rounded-xl blur-lg animate-pulse"></div>
-                    <img 
-                      src="/lovable-uploads/693aec20-2c27-48a1-8efe-f12b58bff5bf.png" 
-                      alt="Geraldo Oliveira" 
-                      className="relative w-full h-full object-cover rounded-xl shadow-2xl"
-                      style={{
-                        boxShadow: '0 0 50px rgba(59, 130, 246, 0.4), 0 0 100px rgba(249, 115, 22, 0.3)',
-                        objectPosition: 'center 50%'
-                      }}
-                    />
-                    {/* Badge do nome */}
-                    <div className="absolute -bottom-2 -right-2 bg-gradient-to-r from-blue-500 to-orange-500 text-white px-4 py-2 rounded-full font-bold shadow-lg text-sm">
-                      Geraldo Oliveira
-                    </div>
-                  </div>
+        {/* 2º Bloco - Temos experiência */}
+        <div className="mb-20 flex flex-col lg:flex-row gap-8 bg-white p-8 rounded-2xl border border-gray-100 shadow-2xl hover:shadow-2xl transition-shadow">
+          <div className="lg:w-1/2 flex justify-center">
+            <div className="relative w-full h-80 max-w-md">
+              <div className="absolute inset-0 rounded-xl overflow-hidden border-2 border-white shadow-2xl">
+                <img 
+                  src="/lovable-uploads/693aec20-2c27-48a1-8efe-f12b58bff5bf.png" 
+                  alt="Geraldo Oliveira" 
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4">
+                  <div className="text-white font-medium">Geraldo Oliveira</div>
+                  <div className="text-orange-300 text-sm">Fundador & CEO</div>
                 </div>
               </div>
-            </div>
-            
-            <div className="order-1 lg:order-2 space-y-6">
-              <h3 className="text-4xl font-bold text-tucont-text-primary mb-6">
-                Temos experiência
-              </h3>
-              <div className="text-xl text-tucont-text-secondary leading-relaxed space-y-4">
-                <p>
-                  Depois de criar, inspirar e ajudar mais de <span className="text-orange-400 font-bold">30 negócios</span>, 
-                  tínhamos o dever de impactar e transformar mais empreendedores.
-                </p>
-                <p>
-                  Eu sou o <span className="text-orange-400 font-bold">Geraldo Oliveira</span>, jornadeando no empreendedorismo 
-                  com a Infoco, Iuptec, Iupcare e agora transformando o mercado com a <span className="text-orange-400 font-bold">Tucont!</span>
-                </p>
+              <div className="absolute -bottom-3 -right-3 bg-white px-3 py-1 rounded-full shadow-md border border-gray-200 text-sm font-medium">
+                +30 negócios
               </div>
             </div>
           </div>
           
-          <div className="absolute -bottom-12 right-1/3 transform translate-x-1/2">
-            <div className="w-1 h-24 bg-gradient-to-b from-purple-400 to-blue-400 rounded-full shadow-lg shadow-purple-400/50 animate-pulse delay-500"></div>
+          <div className="lg:w-1/2 space-y-5">
+            <h3 className="text-3xl font-bold text-gray-900 mb-5">
+              Jornada <span className="text-blue-600">Real</span>
+            </h3>
+            <div className="text-gray-600 leading-relaxed space-y-4">
+              <p>
+                Depois de criar e ajudar mais de <span className="text-blue-600 font-semibold">30 negócios</span>, 
+                transformamos nossa experiência em metodologia para você.
+              </p>
+              <p>
+                "Na Tucont, vivemos na pele os desafios do empreendedor. Por isso criamos soluções que <span className="text-orange-500 font-medium">realmente funcionam</span>"
+              </p>
+            </div>
+            <div className="flex items-center gap-2 text-sm text-gray-500 mt-6">
+              <div className="flex items-center gap-1 bg-blue-50 px-3 py-1 rounded-full shadow-xs">
+                <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
+                <span>Infoco</span>
+              </div>
+              <div className="flex items-center gap-1 bg-orange-50 px-3 py-1 rounded-full shadow-xs">
+                <div className="w-2 h-2 bg-orange-400 rounded-full"></div>
+                <span>Iuptec</span>
+              </div>
+              <div className="flex items-center gap-1 bg-blue-50 px-3 py-1 rounded-full shadow-xs">
+                <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
+                <span>Iupcare</span>
+              </div>
+            </div>
           </div>
         </div>
 
         {/* 3º Bloco - Somos Integrativos */}
-        <div className="mb-16 relative">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div className="space-y-6">
-              <h3 className="text-4xl font-bold text-tucont-text-primary mb-6">
-                Somos Integrativos, é <span className="bg-gradient-to-r from-tucont-royal to-tucont-orange bg-clip-text text-transparent">Você no Centro</span>
+        <div className="mb-16 bg-gradient-to-br from-blue-50 to-orange-50 p-8 rounded-2xl border border-gray-100 shadow-2xl">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="space-y-5">
+              <h3 className="text-3xl font-bold text-gray-900 mb-5">
+                Abordagem <span className="text-blue-600">Integrativa</span>
               </h3>
-              <div className="text-xl text-tucont-text-secondary leading-relaxed space-y-4">
+              <div className="text-gray-600 leading-relaxed space-y-4">
                 <p>
-                  Enquanto a Contabilidade Tradicional é <span className="text-slate-400 italic">reativa e foca no Governo</span>.
+                  Enquanto a contabilidade tradicional é reativa, nós somos <span className="text-blue-600 font-semibold">proativos</span>.
                 </p>
                 <p>
-                  A Tucont Integrativa foca no seu negócio, utiliza tecnologia proprietária para integrar e fluir a rotina empresarial.
+                  Combinamos <span className="text-orange-500 font-medium">tecnologia</span>, <span className="text-orange-500 font-medium">pessoas</span> e <span className="text-orange-500 font-medium">educação</span> para criar uma experiência completa para seu negócio.
                 </p>
               </div>
             </div>
             
             <div className="flex justify-center relative">
-              <div className="relative w-full h-96 max-w-md">
-                
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-orange-500/20 rounded-2xl backdrop-blur-sm"></div>
-                
-                {/* Empreendedora no centro - imagem ocupando todo o card */}
-                <div className="absolute inset-4">
-                  <div className="relative w-full h-full">
-                    <div className="absolute inset-0 bg-gradient-to-r from-blue-500/30 to-orange-500/30 rounded-xl blur-lg animate-pulse"></div>
-                    <img 
-                      src="/lovable-uploads/b869c949-b485-49f0-94dc-c7e090134647.png" 
-                      alt="Empreendedora no centro" 
-                      className="relative w-full h-full object-cover rounded-xl shadow-2xl"
-                      style={{
-                        boxShadow: '0 0 30px rgba(59, 130, 246, 0.4), 0 0 60px rgba(249, 115, 22, 0.2)'
-                      }}
-                    />
-                  </div>
+              <div className="relative w-full h-80 max-w-md">
+                <div className="absolute inset-0 rounded-xl overflow-hidden border-2 border-white shadow-2xl">
+                  <img 
+                    src="/lovable-uploads/b869c949-b485-49f0-94dc-c7e090134647.png" 
+                    alt="Empreendedora no centro" 
+                    className="w-full h-full object-cover"
+                  />
                 </div>
                 
-                {/* Ícones orbitando - ajustados para orbitar a imagem maior */}
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="relative w-full h-full">
-                    
-                    {/* Pessoas - esquerda */}
-                    <div className="absolute top-1/2 -left-8 transform -translate-y-1/2 flex flex-col items-center">
-                      <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center shadow-2xl shadow-blue-500/50 animate-bounce mb-2">
-                        <Users className="w-8 h-8 text-white" />
-                      </div>
-                      <div className="text-xs text-slate-300 font-medium">Pessoas</div>
-                    </div>
-                    
-                    {/* Educação - topo */}
-                    <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center">
-                      <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-orange-500 rounded-full flex items-center justify-center shadow-2xl shadow-purple-500/50 animate-bounce delay-500 mb-2">
-                        <BookOpen className="w-8 h-8 text-white" />
-                      </div>
-                      <div className="text-xs text-slate-300 font-medium">Educação</div>
-                    </div>
-                    
-                    {/* Tecnologia - direita */}
-                    <div className="absolute top-1/2 -right-8 transform -translate-y-1/2 flex flex-col items-center">
-                      <div className="w-16 h-16 bg-gradient-to-r from-orange-500 to-blue-500 rounded-full flex items-center justify-center shadow-2xl shadow-orange-500/50 animate-bounce delay-1000 mb-2">
-                        <Lightbulb className="w-8 h-8 text-white" />
-                      </div>
-                      <div className="text-xs text-slate-300 font-medium">Tecnologia</div>
-                    </div>
-                    
-                    {/* Linhas conectoras animadas - ajustadas para a nova posição */}
-                    <svg className="absolute inset-0 w-full h-full" viewBox="0 0 320 384">
-                      <defs>
-                        <linearGradient id="flow1" x1="0%" y1="50%" x2="100%" y2="50%">
-                          <stop offset="0%" stopColor="#3b82f6" stopOpacity="0.6" />
-                          <stop offset="100%" stopColor="#8b5cf6" stopOpacity="0.6" />
-                        </linearGradient>
-                        <linearGradient id="flow2" x1="0%" y1="50%" x2="100%" y2="50%">
-                          <stop offset="0%" stopColor="#8b5cf6" stopOpacity="0.6" />
-                          <stop offset="100%" stopColor="#f97316" stopOpacity="0.6" />
-                        </linearGradient>
-                      </defs>
-                      
-                      {/* Linha da esquerda para o centro */}
-                      <path
-                        d="M 24,192 Q 80,192 120,192"
-                        stroke="url(#flow1)"
-                        strokeWidth="3"
-                        fill="none"
-                        className="animate-pulse"
-                        filter="drop-shadow(0 0 8px rgba(59, 130, 246, 0.4))"
-                      />
-                      
-                      {/* Linha da direita para o centro */}
-                      <path
-                        d="M 200,192 Q 240,192 296,192"
-                        stroke="url(#flow2)"
-                        strokeWidth="3"
-                        fill="none"
-                        className="animate-pulse delay-500"
-                        filter="drop-shadow(0 0 8px rgba(139, 92, 246, 0.4))"
-                      />
-                      
-                      {/* Linha do topo para o centro */}
-                      <path
-                        d="M 160,24 Q 160,80 160,120"
-                        stroke="url(#flow1)"
-                        strokeWidth="3"
-                        fill="none"
-                        className="animate-pulse delay-1000"
-                        filter="drop-shadow(0 0 8px rgba(139, 92, 246, 0.4))"
-                      />
-                    </svg>
-                  </div>
+                {/* Ícones orbitando com animação */}
+                <div className="absolute -top-4 -left-4 bg-white p-2 rounded-full shadow-md border border-gray-200 animate-orbita1">
+                  <Users className="w-6 h-6 text-blue-500" />
+                </div>
+                <div className="absolute -top-4 -right-4 bg-white p-2 rounded-full shadow-md border border-gray-200 animate-orbita2">
+                  <Lightbulb className="w-6 h-6 text-orange-500" />
+                </div>
+                <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 bg-white p-2 rounded-full shadow-md border border-gray-200 animate-orbita3">
+                  <BookOpen className="w-6 h-6 text-blue-500" />
                 </div>
               </div>
             </div>
@@ -234,53 +202,58 @@ const WhyChooseTucontSection = () => {
         </div>
 
         {/* CTA Section */}
-        <div className="text-center mt-16">
-          <div className="bg-gradient-to-r from-blue-500/10 to-orange-500/10 rounded-3xl p-12 backdrop-blur-sm border border-gradient-to-r from-blue-500/20 to-orange-500/20">
-            <h3 className="text-3xl md:text-4xl font-bold text-tucont-text-primary mb-6">
-              Pronto para <span className="bg-gradient-to-r from-tucont-royal to-tucont-orange bg-clip-text text-transparent">transformar</span> seu negócio?
-            </h3>
-            <p className="text-xl text-tucont-text-secondary mb-8 max-w-2xl mx-auto">
-              Junte-se aos negócios que já transformaram suas jornadas empreendedoras conosco. 
-              Vamos construir o futuro juntos!
-            </p>
-            
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Button 
-                onClick={() => setIsModalOpen(true)}
-                variant="royal"
-                size="lg" 
-                className="px-8 py-4 rounded-full shadow-2xl transition-all duration-300 hover:scale-105"
-              >
-                Começar Agora
-                <ArrowRight className="w-5 h-5 ml-2" />
-              </Button>
+        <div className="text-center mt-12">
+          <div className="bg-gradient-to-r from-blue-600 to-orange-500 p-0.5 rounded-2xl shadow-2xl inline-block">
+            <div className="bg-white p-8 rounded-2xl">
+              <h3 className="text-3xl font-bold text-gray-900 mb-5">
+                Pronto para <span className="text-tucont-orange">transformar</span> seu negócio?
+              </h3>
+              <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
+                Junte-se a milhares de empreendedores que já descobriram uma nova forma de fazer contabilidade.
+              </p>
               
-              <Button 
-                variant="primary-outline"
-                size="lg"
-                className="px-8 py-4 rounded-full transition-all duration-300"
-              >
-                Falar com Especialista
-              </Button>
-            </div>
-            
-            <div className="mt-8 flex items-center justify-center gap-8 text-sm text-slate-400">
-              <div className="flex items-center gap-2">
-                <div className="w-2 h-2 bg-green-400 rounded-full"></div>
-                <span>Sem compromisso</span>
+              <div className="flex flex-col sm:flex-row gap-3 justify-center items-center">
+                <Button 
+                  onClick={() => setIsModalOpen(true)}
+                  className="px-6 py-3 rounded-lg bg-gradient-to-r from-blue-600 to-blue-500 text-white shadow-lg hover:shadow-xl transition-all hover:scale-[1.02]"
+                >
+                  Começar Agora
+                  <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                </Button>
+                
+                <a
+                  onClick={() => window.open(`https://wa.me/5531975740510?text=${encodeURIComponent("Quero destravar meu empreendedorismo!")}`, '_blank')}
+                  >
+                  <Button
+                    variant="cta-green" 
+                    size="lg"
+                  >
+                    Falar com Especialista
+                  </Button>
+                </a>
               </div>
-              <div className="flex items-center gap-2">
-                <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
-                <span>Consultoria gratuita</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <div className="w-2 h-2 bg-orange-400 rounded-full"></div>
-                <span>Resultados garantidos</span>
+              
+              <div className="mt-6 flex flex-wrap items-center justify-center gap-4 text-sm text-gray-500">
+                <div className="flex items-center gap-2 bg-blue-50 px-3 py-1 rounded-full shadow-xs">
+                  <div className="w-2 h-2 bg-green-400 rounded-full"></div>
+                  <span>Sem compromisso</span>
+                </div>
+                <div className="flex items-center gap-2 bg-orange-50 px-3 py-1 rounded-full shadow-xs">
+                  <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
+                  <span>Consultoria gratuita</span>
+                </div>
+                <div className="flex items-center gap-2 bg-blue-50 px-3 py-1 rounded-full shadow-xs">
+                  <div className="w-2 h-2 bg-orange-400 rounded-full"></div>
+                  <span>Resultados garantidos</span>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
+
+      {/* Injetando as animações CSS */}
+      <style dangerouslySetInnerHTML={{ __html: animationsCSS }} />
 
       <CaptureFormModal 
         isOpen={isModalOpen} 
