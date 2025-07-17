@@ -42,7 +42,7 @@ const GrowthModelsSection = () => {
       cta: "Começar minha jornada",
       action: {
         url: "/avenida-empreendedora",
-        isExternal: true
+        isExternal: false
       }
     },
     {
