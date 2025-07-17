@@ -30,7 +30,7 @@ const Planos = () => {
       name: "Tucont Evoluindo",
       description: "Para empresas que querem escalar",
       monthlyPrice: "R$ 299,00",
-      annualPrice: "R$ 269,10", // 10% discount
+      annualPrice: "R$ 269,10",
       features: [
         "Contabilidade completa",
         "Processo de abertura",
@@ -46,7 +46,7 @@ const Planos = () => {
       name: "Tucont Crescimento",
       description: "Para empresas em pleno crescimento",
       monthlyPrice: "R$ 499,00",
-      annualPrice: "R$ 449,10", // 10% discount
+      annualPrice: "R$ 449,10",
       features: [
         "Contabilidade completa",
         "Processo de abertura",
@@ -87,7 +87,7 @@ const Planos = () => {
 
   const handlePlanClick = (plan: any) => {
     const message = `Olá! Tenho interesse no plano ${plan.name}. Gostaria de mais informações.`;
-    window.open(`https://wa.me/5511999999999?text=${encodeURIComponent(message)}`, '_blank');
+    window.open(`https://wa.me/5531975740510?text=${encodeURIComponent(message)}`, '_blank');
   };
 
   return (
@@ -103,11 +103,17 @@ const Planos = () => {
               <span className="font-medium">Planos Validados para o seu momento</span>
             </div>
             
-            <h1 className="text-5xl md:text-6xl font-bold mb-8">
-              <span className="bg-gradient-to-r from-tucont-text-primary via-tucont-royal to-tucont-orange bg-clip-text text-transparent">
-                Escolha o plano ideal para acelerar seu negócio
+            <h2 className="text-5xl md:text-6xl font-bold mb-8 leading-tight">
+              <span className="text-slate-800-custom">
+                Escolha o plano ideal para <span className="text-tucont-orange">acelerar</span> seu <span className="text-tucont-orange">negócio</span>
               </span>
-            </h1>
+            </h2>
+            <p className="text-xl text-foreground font-semibold max-w-4xl mx-auto">
+              <span className="text-tucont-royal font-bold">
+                Nossa revolução
+              </span>
+              : Muito mais que somente atender ao Governo, somos um copiloto estratégico, que automatiza a burocracia e impulsiona seu crescimento!
+            </p>
             <p className="text-xl text-tucont-text-secondary max-w-4xl mx-auto leading-relaxed">
               Soluções completas que combinam <span className="font-semibold text-tucont-royal">tecnologia avançada</span> 
               com <span className="font-semibold text-tucont-orange">mentoria estratégica</span> para o crescimento sustentável.
@@ -318,9 +324,9 @@ const Planos = () => {
                 Fale conosco e nossa equipe te ajudará a encontrar a solução perfeita para sua empresa.
               </p>
               <Button 
-                onClick={() => window.open(`https://wa.me/5511999999999?text=${encodeURIComponent("Quero ajuda para escolher o melhor plano para minha empresa")}`, '_blank')}
+                onClick={() => window.open(`https://wa.me/5531975740510?text=${encodeURIComponent("Quero ajuda para escolher o melhor plano para minha empresa")}`, '_blank')}
                 variant="cta-green"
-                className="px-8 py-4 text-lg rounded-full"
+                className="px-8 py-4 text-lg"
               >
                 <Phone className="w-5 h-5 mr-2" />
                 Falar com nossa equipe

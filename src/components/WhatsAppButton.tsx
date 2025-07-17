@@ -50,7 +50,7 @@ const WhatsAppButton = () => {
             
             <div className="flex items-start gap-3">
               <div className="w-10 h-10 bg-tucont-cta-green rounded-full flex items-center justify-center flex-shrink-0">
-                <MessageCircle className="w-5 h-5 text-white" />
+                <img src="/lovable-uploads/whatsApp.svg" alt="Whatsapp" className="h-5" />
               </div>
               <div>
                 <h4 className="font-semibold text-foreground text-sm mb-1">
@@ -74,7 +74,7 @@ const WhatsAppButton = () => {
         className="fixed bottom-6 right-6 w-16 h-16 bg-tucont-cta-green hover:bg-tucont-cta-green/90 rounded-full shadow-2xl flex items-center justify-center z-50 transform hover:scale-110 transition-all duration-300 animate-bounce hover-glow-cta"
         style={{ animationIterationCount: 3, animationDelay: '1s' }}
       >
-        <MessageCircle className="w-8 h-8 text-white" />
+        <img src="/lovable-uploads/whatsApp.svg" alt="Whatsapp" className="h-8" />
         
         {/* Notification dot */}
         <div className="absolute -top-1 -right-1 w-4 h-4 bg-destructive rounded-full animate-pulse"></div>

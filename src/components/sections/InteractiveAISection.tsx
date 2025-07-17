@@ -49,7 +49,7 @@ const InteractiveAISection = () => {
         <div className="text-center mb-12">
           <div className="inline-flex items-center gap-2 bg-white backdrop-blur-sm border border-tucont-royal/40 rounded-full px-6 py-3 mb-8">
             <Bot className="w-5 h-5 text-tucont-royal" />
-            <span className="text-sm font-semibold text-tucont-royal">
+            <span className="text-sm w9font-semibold text-tucont-royal">
               IA Interativa
             </span>
           </div>

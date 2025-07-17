@@ -25,7 +25,7 @@ const OneStopSection = () => {
   ];
 
   const openWhatsApp = () => {
-    window.open(`https://wa.me/5511999999999?text=${encodeURIComponent("Quero a integração total da Tucont - Tudo em um só lugar")}`, '_blank');
+    window.open(`https://wa.me/5531975740510?text=${encodeURIComponent("Quero a integração total da Tucont - Tudo em um só lugar")}`, '_blank');
   };
 
   return (
@@ -36,10 +36,13 @@ const OneStopSection = () => {
       
       <div className="max-w-7xl mx-auto text-center relative z-10">
         
-        <div className="inline-flex items-center gap-2 bg-secondary backdrop-blur-xl border border-border text-tucont-cta px-6 py-3 rounded-full mb-8">
-          <CheckCircle className="w-5 h-5" />
-          <span className="font-medium">Plataforma All-in-one</span>
-        </div>
+        <div className="inline-flex shadow-lg items-center gap-2 bg-white backdrop-blur-sm border border-tucont-royal/40 rounded-full px-6 py-3 mb-8">
+            <CheckCircle className="w-5 h-5 text-tucont-royal" />
+            <span className="text-sm w9font-semibold text-tucont-royal">
+              Plataforma All-in-one
+            </span>
+          </div>
+          
         
         <h2 className="text-5xl md:text-7xl font-bold mb-8 leading-tight">
           <span className="text-tucont-text-primary">

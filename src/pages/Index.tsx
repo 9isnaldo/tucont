@@ -29,7 +29,7 @@ const Index = () => {
       <ForWhomSection />
       <WhyChooseTucontSection />
       <OneStopSection />
-      <TestimonialsSection />
+      {/*  <TestimonialsSection /> OCULTO POR ENQUANTO */}
       
       <div id="contato">
         <Footer />
