@@ -164,7 +164,7 @@ const GrowthModelsSection = () => {
       Informações adicionais: ${additionalInfo}
     `;
     
-    window.open(`https://wa.me/5511999999999?text=${encodeURIComponent(fullMessage)}`, '_blank');
+    window.open(`https://wa.me/5531975740510?text=${encodeURIComponent(fullMessage)}`, '_blank');
     setShowDiscoveryForm(false);
     reset();
     setSelectedOptions([]);

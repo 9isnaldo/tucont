@@ -96,7 +96,7 @@ const Planos = () => {
       
       <main className="pt-24">
         {/* Hero Section */}
-        <section className="py-16 px-4 bg-background">
+        <section className="py-16 px-4 bg-gradient-to-r from-blue-50 to-orange-50">
           <div className="max-w-6xl mx-auto text-center">
             <div className="inline-flex items-center gap-2 bg-secondary border border-border text-tucont-royal px-6 py-3 rounded-full mb-8">
               <Star className="w-5 h-5" />
@@ -108,13 +108,7 @@ const Planos = () => {
                 Escolha o plano ideal para <span className="text-tucont-orange">acelerar</span> seu <span className="text-tucont-orange">negócio</span>
               </span>
             </h2>
-            <p className="text-xl text-foreground font-semibold max-w-4xl mx-auto">
-              <span className="text-tucont-royal font-bold">
-                Nossa revolução
-              </span>
-              : Muito mais que somente atender ao Governo, somos um copiloto estratégico, que automatiza a burocracia e impulsiona seu crescimento!
-            </p>
-            <p className="text-xl text-tucont-text-secondary max-w-4xl mx-auto leading-relaxed">
+            <p className="text-2xl text-tucont-text-secondary font-semibold">
               Soluções completas que combinam <span className="font-semibold text-tucont-royal">tecnologia avançada</span> 
               com <span className="font-semibold text-tucont-orange">mentoria estratégica</span> para o crescimento sustentável.
             </p>
@@ -122,7 +116,7 @@ const Planos = () => {
         </section>
 
         {/* Plans Section */}
-        <section className="py-24 px-4 bg-tucont-secondary relative overflow-hidden">
+        <section className="py-24 px-4 bg-background relative overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-br from-tucont-royal/5 via-transparent to-tucont-orange/5"></div>
           
           <div className="max-w-4xl mx-auto relative z-10">
