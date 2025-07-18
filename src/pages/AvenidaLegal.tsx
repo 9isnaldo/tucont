@@ -33,7 +33,7 @@ const AvenidaLegal = () => {
         "Validação automática de dados"
       ],
       icon: Database,
-      color: "from-blue-500 to-cyan-500"
+      color: "bg-gradient-to-br from-blue-600 to-blue-400 shadow-blue-500/20"
     },
     {
       step: "02",
@@ -46,7 +46,7 @@ const AvenidaLegal = () => {
         "Sugestões de otimização"
       ],
       icon: Bot,
-      color: "from-cyan-500 to-blue-500"
+      color: "bg-gradient-to-br from-cyan-500 to-blue-500 shadow-cyan-500/20"
     },
     {
       step: "03",
@@ -59,7 +59,7 @@ const AvenidaLegal = () => {
         "Documentos trabalhistas"
       ],
       icon: FileText,
-      color: "from-blue-500 to-indigo-500"
+      color: "bg-gradient-to-br from-indigo-500 to-blue-600 shadow-indigo-500/20"
     },
     {
       step: "04",
@@ -72,7 +72,7 @@ const AvenidaLegal = () => {
         "Atualizações legislativas"
       ],
       icon: Shield,
-      color: "from-indigo-500 to-purple-500"
+      color: "bg-gradient-to-br from-blue-700 to-indigo-600 shadow-blue-700/20"
     }
   ];
 
@@ -175,52 +175,58 @@ const AvenidaLegal = () => {
 
   const handleServiceClick = (service: any) => {
     const message = `Olá! Tenho interesse no serviço da Avenida Legal: ${service.title}`;
-    window.open(`https://wa.me/5511999999999?text=${encodeURIComponent(message)}`, '_blank');
+    window.open(`https://wa.me/5531975740510?text=${encodeURIComponent(message)}`, '_blank');
   };
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-gradient-to-r from-blue-50 to-cyan-50 relative overflow-hidden">
+      {/* Background Elements */}
+      <div className="fixed inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-0 left-1/4 w-72 h-72 bg-blue-100 rounded-full filter blur-3xl opacity-20 animate-[float_8s_ease-in-out_infinite]"></div>
+        <div className="absolute top-1/3 right-1/4 w-96 h-96 bg-cyan-100 rounded-full filter blur-3xl opacity-20 animate-[float_10s_ease-in-out_infinite]"></div>
+        <div className="absolute bottom-0 left-1/2 w-80 h-80 bg-indigo-100 rounded-full filter blur-3xl opacity-20 animate-[float_12s_ease-in-out_infinite]"></div>
+      </div>
+
       <Header />
       
-      <main className="pt-24">
+      <main className="pt-24 relative z-10">
         {/* Hero Section */}
-        <section className="py-16 px-4 bg-gradient-to-br from-tucont-royal/20 via-tucont-light-blue/10 to-tucont-secondary relative overflow-hidden">
-          <div className="absolute inset-0">
-            <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-tucont-royal/5 rounded-full blur-3xl animate-pulse"></div>
-            <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-tucont-light-blue/5 rounded-full blur-3xl animate-pulse delay-1000"></div>
-          </div>
-          
-          <div className="max-w-6xl mx-auto text-center relative z-10">
-            <div className="inline-flex items-center gap-2 bg-secondary border border-border text-tucont-royal px-6 py-3 rounded-full mb-8">
+        <section className="py-20 px-4">
+          <div className="max-w-6xl mx-auto text-center">
+            <div className="inline-flex shadow-lg items-center gap-2 bg-secondary backdrop-blur-xl border border-primary/30 text-primary mb-8 px-6 py-3 rounded-full">
               <Shield className="w-5 h-5" />
               <span className="font-medium">Zero Preocupação com Fisco</span>
             </div>
             
             <h1 className="text-5xl md:text-6xl font-bold mb-8 leading-tight">
-              <span className="bg-gradient-to-r from-tucont-royal via-tucont-light-blue to-tucont-text-primary bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-blue-600 via-blue-500 to-cyan-500 bg-clip-text text-transparent">
                 Avenida Legal
               </span>
               <br />
-              <span className="text-tucont-text-primary">100% Automatizada</span>
+              <span className="text-slate-800-custom">100% Automatizada</span>
             </h1>
             
-            <p className="text-xl text-tucont-text-secondary max-w-4xl mx-auto leading-relaxed mb-8">
+            <p className="text-2xl text-tucont-text-secondary font-semibold mb-6">
               Nossa IA cuida de toda burocracia fiscal e trabalhista, 
               deixando você livre para focar no crescimento do seu negócio.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a
+                href="https://rouvbymulgc.typeform.com/to/OSIekGSL?typeform-source=www.tucont.com.br" 
+                target="_blank" 
+              >
               <Button 
-                onClick={() => window.open(`https://wa.me/5511999999999?text=${encodeURIComponent("Quero automatizar meu fisco com a Avenida Legal")}`, '_blank')}
-                className="bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white px-8 py-4 text-lg rounded-full shadow-2xl transform hover:scale-105 transition-all duration-300"
+                className="bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-700 hover:to-cyan-600 text-white px-8 py-4 text-lg shadow-lg hover:shadow-blue-500/30 transition-all duration-300 transform hover:-translate-y-1"
               >
                 <Zap className="w-5 h-5 mr-2" />
                 Automatizar meu Fisco
               </Button>
+              </a>
               <Button 
-                onClick={() => window.open(`https://wa.me/5511999999999?text=${encodeURIComponent("Quero falar com um especialista da Avenida Legal")}`, '_blank')}
+                onClick={() => window.open(`https://wa.me/5531975740510?text=${encodeURIComponent("Quero falar com um especialista da Avenida Legal")}`, '_blank')}
                 variant="outline"
-                className="border-blue-500 text-blue-500 bg-transparent backdrop-blur-sm hover:bg-blue-500/10 hover:border-blue-400 hover:text-blue-400 transition-all duration-300 px-8 py-4 text-lg rounded-full"
+                className="border-blue-500 text-blue-600 bg-white hover:bg-slate-800/90 hover:border-white hover:text-white transition-all duration-300 px-8 py-4 text-lg shadow-lg hover:shadow-blue-500/30 transition-all duration-300 transform hover:-translate-y-1"
               >
                 <Users className="w-5 h-5 mr-2" />
                 Fale com um Especialista
@@ -230,15 +236,15 @@ const AvenidaLegal = () => {
         </section>
 
         {/* Stats Section */}
-        <section className="py-16 px-4 bg-slate-900/50">
+        <section className="py-16 px-4 bg-slate-900/95">
           <div className="max-w-6xl mx-auto">
             <div className="grid md:grid-cols-4 gap-8">
               {stats.map((stat, index) => (
-                <div key={index} className="text-center">
-                  <div className="text-4xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent mb-2">
+                <div key={index} className="text-center bg-gradient-to-r from-blue-50 to-cyan-50 p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300">
+                  <div className="text-4xl font-bold bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent mb-2">
                     {stat.value}
                   </div>
-                  <div className="text-slate-300">{stat.label}</div>
+                  <div className="text-gray-600 font-medium">{stat.label}</div>
                 </div>
               ))}
             </div>
@@ -246,13 +252,13 @@ const AvenidaLegal = () => {
         </section>
 
         {/* Automation Process */}
-        <section className="py-24 px-4">
+        <section className="py-24 px-4 bg-white">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold text-white mb-4">
+              <h2 className="text-tucont-royal md:text-6xl font-bold leading-tight mb-4">
                 Esteira Automatizada
               </h2>
-              <p className="text-xl text-slate-300">
+              <p className="text-2xl text-tucont-text-secondary font-semibold">
                 Como nossa IA cuida de tudo para você
               </p>
             </div>
@@ -262,31 +268,31 @@ const AvenidaLegal = () => {
                 <div key={index} className="relative">
                   {/* Connecting Line */}
                   {index < automationSteps.length - 1 && (
-                    <div className="absolute left-8 top-20 w-0.5 h-12 bg-gradient-to-b from-blue-500/50 to-cyan-500/50"></div>
+                    <div className="absolute left-8 top-20 w-0.5 h-12 bg-gradient-to-b from-blue-400 to-cyan-400"></div>
                   )}
                   
-                  <div className="flex flex-col md:flex-row items-start gap-6">
+                  <div className="flex flex-col md:flex-row items-start gap-6 ">
                     {/* Step Icon */}
-                    <div className="flex items-center gap-4 flex-shrink-0">
-                      <div className={`w-16 h-16 bg-gradient-to-r ${step.color} rounded-2xl flex items-center justify-center shadow-lg`}>
+                    <div className="flex items-center gap-4 flex-shrink-0  ">
+                      <div className={`w-16 h-16 ${step.color} rounded-2xl flex items-center justify-center shadow-lg`}>
                         <step.icon className="w-8 h-8 text-white" />
                       </div>
-                      <div className="hidden md:block">
-                        <span className="text-3xl font-bold text-slate-600">{step.step}</span>
+                      <div className="hidden md:block ">
+                        <span className="text-3xl font-bold text-slate-800-custom">{step.step}</span>
                       </div>
                     </div>
 
                     {/* Step Content */}
                     <div className="flex-1">
-                      <div className="bg-slate-900/80 backdrop-blur-xl border border-slate-700/50 rounded-2xl p-6 hover:bg-slate-800/80 transition-all duration-300">
-                        <h3 className="text-2xl font-bold text-white mb-2">{step.title}</h3>
-                        <p className="text-slate-300 mb-4">{step.description}</p>
+                      <div className="bg-gradient-to-r from-blue-50 to-cyan-50 border border-gray-100 rounded-2xl p-6 shadow-2xl">
+                        <h3 className="text-2xl font-bold text-slate-800-custom mb-2">{step.title}</h3>
+                        <p className="text-gray-600 mb-4">{step.description}</p>
                         
                         <div className="grid md:grid-cols-2 gap-3">
                           {step.details.map((detail, idx) => (
                             <div key={idx} className="flex items-center gap-2">
-                              <CheckCircle className="w-4 h-4 text-green-400 flex-shrink-0" />
-                              <span className="text-slate-300 text-sm">{detail}</span>
+                              <CheckCircle className="w-4 h-4 text-cyan-500 flex-shrink-0" />
+                              <span className="text-gray-600 text-sm">{detail}</span>
                             </div>
                           ))}
                         </div>
@@ -300,48 +306,48 @@ const AvenidaLegal = () => {
         </section>
 
         {/* Services Section */}
-        <section className="py-16 px-4 bg-slate-900/50">
+        <section className="py-16 px-4 bg-gradient-to-r from-blue-50 to-orange-50">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="text-4xl font-bold text-white mb-4">
+              <h2 className="text-tucont-royal md:text-6xl font-bold leading-tight mb-4">
                 Serviços Detalhados
               </h2>
-              <p className="text-xl text-slate-300">
+              <p className="text-2xl text-tucont-text-secondary font-semibold">
                 Tudo automatizado para sua tranquilidade
               </p>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-8">
+            <div className="grid md:grid-cols-2 gap-14">
               {services.map((service, index) => (
-                <div key={index} className="bg-slate-900/80 backdrop-blur-xl border border-slate-700/50 rounded-2xl p-6 hover:bg-slate-800/80 transition-all duration-300">
+                <div key={index} className="bg-white rounded-2xl p-8 shadow-2xl transition-all duration-300 group border border-gray-100">
                   <div className="flex items-center gap-4 mb-4">
-                    <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center">
+                    <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center group-hover:from-blue-600 group-hover:to-cyan-600 transition-all duration-300">
                       <service.icon className="w-6 h-6 text-white" />
                     </div>
-                    <h3 className="text-xl font-bold text-white">{service.title}</h3>
+                    <h3 className="text-xl font-bold text-gray-900">{service.title}</h3>
                   </div>
                   
-                  <p className="text-slate-300 mb-4">{service.description}</p>
+                  <p className="text-gray-600 mb-4">{service.description}</p>
                   
                   <div className="mb-4">
-                    <h4 className="font-semibold text-white mb-2">Recursos:</h4>
+                    <h4 className="font-semibold text-gray-900 mb-2">Recursos:</h4>
                     <div className="space-y-2">
                       {service.features.map((feature, idx) => (
                         <div key={idx} className="flex items-center gap-2">
-                          <CheckCircle className="w-4 h-4 text-green-400 flex-shrink-0" />
-                          <span className="text-slate-300 text-sm">{feature}</span>
+                          <CheckCircle className="w-4 h-4 text-cyan-500 flex-shrink-0" />
+                          <span className="text-gray-600 text-sm">{feature}</span>
                         </div>
                       ))}
                     </div>
                   </div>
 
                   <div className="mb-6">
-                    <h4 className="font-semibold text-white mb-2">Benefícios:</h4>
+                    <h4 className="font-semibold text-gray-900 mb-2">Benefícios:</h4>
                     <div className="space-y-2">
                       {service.benefits.map((benefit, idx) => (
                         <div key={idx} className="flex items-center gap-2">
-                          <TrendingUp className="w-4 h-4 text-blue-400 flex-shrink-0" />
-                          <span className="text-slate-300 text-sm">{benefit}</span>
+                          <TrendingUp className="w-4 h-4 text-blue-500 flex-shrink-0" />
+                          <span className="text-gray-600 text-sm">{benefit}</span>
                         </div>
                       ))}
                     </div>
@@ -349,7 +355,7 @@ const AvenidaLegal = () => {
 
                   <Button 
                     onClick={() => handleServiceClick(service)}
-                    className="w-full bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white rounded-xl py-3"
+                    className="w-full bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-700 hover:to-cyan-600 text-white rounded-xl py-3 transition-all duration-300"
                   >
                     Quero este serviço
                     <ArrowRight className="w-4 h-4 ml-2" />
@@ -361,25 +367,25 @@ const AvenidaLegal = () => {
         </section>
 
         {/* Security Section */}
-        <section className="py-16 px-4">
+        <section className="py-16 px-4 bg-white">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="text-4xl font-bold text-white mb-4">
+              <h2 className="text-tucont-royal md:text-6xl font-bold leading-tight mb-4">
                 Segurança e Confiabilidade
               </h2>
-              <p className="text-xl text-slate-300">
+              <p className="text-2xl text-tucont-text-secondary font-semibold">
                 Seus dados protegidos com a mais alta tecnologia
               </p>
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               {securityFeatures.map((feature, index) => (
-                <div key={index} className="bg-slate-900/80 backdrop-blur-xl border border-slate-700/50 rounded-2xl p-6 text-center hover:bg-slate-800/80 transition-all duration-300">
+                <div key={index} className="bg-white border border-gray-100 rounded-2xl p-6 text-center hover:shadow-lg transition-all duration-300">
                   <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center mx-auto mb-4">
                     <feature.icon className="w-6 h-6 text-white" />
                   </div>
-                  <h3 className="text-lg font-bold text-white mb-2">{feature.title}</h3>
-                  <p className="text-slate-300 text-sm">{feature.description}</p>
+                  <h3 className="text-lg font-bold text-gray-900 mb-2">{feature.title}</h3>
+                  <p className="text-gray-600 text-sm">{feature.description}</p>
                 </div>
               ))}
             </div>
@@ -387,61 +393,65 @@ const AvenidaLegal = () => {
         </section>
 
         {/* Benefits Section */}
-        <section className="py-16 px-4 bg-gradient-to-r from-blue-950/50 to-cyan-950/50">
+        <section className="py-16 px-4 bg-slate-900/95">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
               <h2 className="text-4xl font-bold text-white mb-4">
                 Benefícios da Automação
               </h2>
-              <p className="text-xl text-slate-300">
+              <p className="text-xl text-tucont-royal text-semibold">
                 Liberdade para focar no que realmente importa
               </p>
             </div>
 
             <div className="grid md:grid-cols-3 gap-8">
-              <div className="bg-slate-900/80 backdrop-blur-xl border border-slate-700/50 rounded-2xl p-6 text-center">
-                <div className="text-5xl font-bold text-green-400 mb-2">80%</div>
-                <div className="text-white font-semibold mb-2">Redução de Tempo</div>
-                <div className="text-slate-300 text-sm">Economize até 80% do tempo gasto com burocracia fiscal</div>
+              <div className="bg-gradient-to-r from-blue-50 to-cyan-50 rounded-2xl p-6 text-center hover:shadow-lg shadow-white transition-all duration-300">
+                <div className="text-5xl font-bold text-cyan-500 mb-2">80%</div>
+                <div className="text-gray-900 font-semibold mb-2">Redução de Tempo</div>
+                <div className="text-gray-600 text-sm">Economize até 80% do tempo gasto com burocracia fiscal</div>
               </div>
               
-              <div className="bg-slate-900/80 backdrop-blur-xl border border-slate-700/50 rounded-2xl p-6 text-center">
-                <div className="text-5xl font-bold text-blue-400 mb-2">0</div>
-                <div className="text-white font-semibold mb-2">Erros Humanos</div>
-                <div className="text-slate-300 text-sm">Eliminação completa de erros de digitação e cálculo</div>
+              <div className="bg-gradient-to-r from-blue-50 to-cyan-50 rounded-2xl p-6 text-center hover:shadow-lg transition-all duration-300">
+                <div className="text-5xl font-bold text-blue-500 mb-2">0</div>
+                <div className="text-gray-900 font-semibold mb-2">Erros Humanos</div>
+                <div className="text-gray-600 text-sm">Eliminação completa de erros de digitação e cálculo</div>
               </div>
               
-              <div className="bg-slate-900/80 backdrop-blur-xl border border-slate-700/50 rounded-2xl p-6 text-center">
-                <div className="text-5xl font-bold text-orange-400 mb-2">24/7</div>
-                <div className="text-white font-semibold mb-2">Monitoramento</div>
-                <div className="text-slate-300 text-sm">Vigilância contínua de prazos e obrigações</div>
+              <div className="bg-gradient-to-r from-blue-50 to-cyan-50 rounded-2xl p-6 text-center hover:shadow-lg transition-all duration-300">
+                <div className="text-5xl font-bold text-indigo-500 mb-2">24/7</div>
+                <div className="text-gray-900 font-semibold mb-2">Monitoramento</div>
+                <div className="text-gray-600 text-sm">Vigilância contínua de prazos e obrigações</div>
               </div>
             </div>
           </div>
         </section>
 
         {/* Final CTA */}
-        <section className="py-16 px-4">
+        <section className="py-16 px-4 bg-white">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-4xl font-bold text-white mb-4">
+            <h2 className="text-4xl font-bold text-tucont-royal mb-4">
               Pronto para automatizar sua conformidade fiscal?
             </h2>
-            <p className="text-xl text-slate-300 mb-8">
+            <p className="text-xl text-tucont-text-secondary font-semibold mb-8">
               Deixe nossa IA cuidar de tudo enquanto você foca no crescimento
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a
+                href="https://rouvbymulgc.typeform.com/to/OSIekGSL?typeform-source=www.tucont.com.br" 
+                target="_blank" 
+              >
               <Button 
-                onClick={() => window.open(`https://wa.me/5511999999999?text=${encodeURIComponent("Quero automatizar minha conformidade fiscal com a Avenida Legal")}`, '_blank')}
-                className="bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white px-8 py-4 text-lg rounded-full shadow-2xl transform hover:scale-105 transition-all duration-300"
+                className="bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-700 hover:to-cyan-600 text-white px-8 py-4 text-lg shadow-lg hover:shadow-blue-500/30 transition-all duration-300 transform hover:-translate-y-1"
               >
                 <Zap className="w-5 h-5 mr-2" />
                 Automatizar agora
               </Button>
+              </a>
               <Button 
-                onClick={() => window.open(`https://wa.me/5511999999999?text=${encodeURIComponent("Quero conhecer mais sobre as soluções legais da Tucont")}`, '_blank')}
+                onClick={() => window.open(`https://wa.me/5531975740510?text=${encodeURIComponent("Quero conhecer mais sobre as soluções legais da Tucont")}`, '_blank')}
                 variant="outline"
-                className="border-blue-500 text-blue-500 bg-transparent backdrop-blur-sm hover:bg-blue-500/10 hover:border-blue-400 hover:text-blue-400 transition-all duration-300 px-8 py-4 text-lg rounded-full"
+                className="border-blue-500 text-blue-600 bg-white hover:bg-slate-800/90 hover:border-white hover:text-white transition-all duration-300 px-8 py-4 text-lg shadow-lg hover:shadow-blue-500/30 transition-all duration-300 transform hover:-translate-y-1"
               >
                 <Calendar className="w-5 h-5 mr-2" />
                 Conhecer Soluções Legais
