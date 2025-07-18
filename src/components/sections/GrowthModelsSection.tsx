@@ -6,6 +6,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
+import { Link } from "react-router-dom";
 
 interface DiscoveryFormData {
   name: string;
@@ -248,15 +249,13 @@ const GrowthModelsSection = () => {
                       {step.text}
                     </p>
                     <div className="relative z-20">
-                      <Button 
-                        onClick={() => handleStepClick(step)}
-                        variant="royal"
-                        size="lg"
-                        className="font-semibold px-6 py-3 lg:px-8 lg:py-4 shadow-2xl transition-all duration-300 hover:scale-105"
+                      <Link 
+                        to={step.action.url}
+                       className="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-tucont-royal text-white hover:bg-tucont-royal/90 hover:shadow-xl hover:shadow-tucont-royal/25 hover:-translate-y-0.5 h-11 rounded-md font-semibold px-6 py-3 lg:px-8 lg:py-4 shadow-2xl transition-all duration-300 hover:scale-105"
                       >
                         {step.cta}
                         <ArrowRight className="w-4 h-4 lg:w-5 lg:h-5 ml-2" />
-                      </Button>
+                      </Link>
                     </div>
                   </div>
                 ))}

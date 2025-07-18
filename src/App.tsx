@@ -13,6 +13,7 @@ import ParceirosContadores from "./pages/ParceirosContadores";
 import BemBalcao from "./pages/BemBalcao";
 import Marketplace from "./pages/Marketplace";
 import NotFound from "./pages/NotFound";
+import { ScrollToTop } from "./lib/ScrollToTop";
 
 const queryClient = new QueryClient();
 
@@ -22,6 +23,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+      <ScrollToTop />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/bpo-financeiro" element={<BPOFinanceiro />} />
