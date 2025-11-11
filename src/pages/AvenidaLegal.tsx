@@ -19,6 +19,71 @@ import {
   Settings
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+
+const StepCard = ({ step, index }: { step: any, index: number }) => {
+  const [ref, inView] = useInView({
+    threshold: 0.5,
+    triggerOnce: false
+  });
+
+  const variants = {
+    hidden: { 
+      opacity: 0, 
+      x: -50,
+      transition: { duration: 0.5 }
+    },
+    visible: { 
+      opacity: 1, 
+      x: 0,
+      transition: { 
+        duration: 0.8,
+        delay: index * 0.2
+      }
+    }
+  };
+
+  return (
+    <motion.div
+      ref={ref}
+      initial="hidden"
+      animate={inView ? "visible" : "hidden"}
+      variants={variants}
+      className="relative z-[1]"
+      style={{ zIndex: 4 - index }}
+    >
+      <div className="flex flex-col md:flex-row items-start gap-6">
+        {/* Step Icon */}
+        <div className="flex items-center gap-4 flex-shrink-0">
+          <div className={`w-16 h-16 ${step.color} rounded-2xl flex items-center justify-center shadow-lg`}>
+            <step.icon className="w-8 h-8 text-white" />
+          </div>
+          <div className="hidden md:block">
+            <span className="text-3xl font-bold text-slate-800-custom">{step.step}</span>
+          </div>
+        </div>
+
+        {/* Step Content */}
+        <div className="flex-1">
+          <div className="bg-gradient-to-r from-blue-50 to-cyan-50 border border-gray-100 rounded-2xl p-6 shadow-2xl">
+            <h3 className="text-2xl font-bold text-slate-800-custom mb-2">{step.title}</h3>
+            <p className="text-gray-600 mb-4">{step.description}</p>
+            
+            <div className="grid md:grid-cols-2 gap-3">
+              {step.details.map((detail: string, idx: number) => (
+                <div key={idx} className="flex items-center gap-2">
+                  <CheckCircle className="w-4 h-4 text-cyan-500 flex-shrink-0" />
+                  <span className="text-gray-600 text-sm">{detail}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </motion.div>
+  );
+};
 
 const AvenidaLegal = () => {
   const automationSteps = [
@@ -263,42 +328,15 @@ const AvenidaLegal = () => {
               </p>
             </div>
 
-            <div className="space-y-12">
+            <div className="space-y-32 md:space-y-48 relative">
               {automationSteps.map((step, index) => (
                 <div key={index} className="relative">
                   {/* Connecting Line */}
                   {index < automationSteps.length - 1 && (
-                    <div className="absolute left-8 top-20 w-0.5 h-12 bg-gradient-to-b from-blue-400 to-cyan-400"></div>
+                    <div className="absolute left-8 top-24 w-0.5 h-[120%] bg-gradient-to-b from-blue-400 to-cyan-400 z-0"></div>
                   )}
                   
-                  <div className="flex flex-col md:flex-row items-start gap-6 ">
-                    {/* Step Icon */}
-                    <div className="flex items-center gap-4 flex-shrink-0  ">
-                      <div className={`w-16 h-16 ${step.color} rounded-2xl flex items-center justify-center shadow-lg`}>
-                        <step.icon className="w-8 h-8 text-white" />
-                      </div>
-                      <div className="hidden md:block ">
-                        <span className="text-3xl font-bold text-slate-800-custom">{step.step}</span>
-                      </div>
-                    </div>
-
-                    {/* Step Content */}
-                    <div className="flex-1">
-                      <div className="bg-gradient-to-r from-blue-50 to-cyan-50 border border-gray-100 rounded-2xl p-6 shadow-2xl">
-                        <h3 className="text-2xl font-bold text-slate-800-custom mb-2">{step.title}</h3>
-                        <p className="text-gray-600 mb-4">{step.description}</p>
-                        
-                        <div className="grid md:grid-cols-2 gap-3">
-                          {step.details.map((detail, idx) => (
-                            <div key={idx} className="flex items-center gap-2">
-                              <CheckCircle className="w-4 h-4 text-cyan-500 flex-shrink-0" />
-                              <span className="text-gray-600 text-sm">{detail}</span>
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                  <StepCard step={step} index={index} />
                 </div>
               ))}
             </div>

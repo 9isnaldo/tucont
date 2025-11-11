@@ -284,7 +284,7 @@ const BemBalcao = () => {
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
               <h2 className="text-4xl font-bold text-white mb-4">
-                Produtos em Destaque
+                Nossos Produtos em Destaque
               </h2>
               <p className="text-xl text-slate-300">
                 Soluções completas para seu negócio
